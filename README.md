@@ -1,5 +1,5 @@
 # COS 214 Project - City Simulator
-![image](https://drive.google.com/file/d/1Je00UqFjAZE5KVIBv0gn1L-sTR02PGEi/view?usp=drive_link)
+![alt text]((https://t4.ftcdn.net/jpg/04/21/53/71/360_F_421537108_zfWG63kTnrRhLeRtYIgGjWk5nFInOArD.jpg))
 
 # Contents
 
