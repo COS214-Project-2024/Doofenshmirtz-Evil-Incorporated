@@ -1,5 +1,6 @@
 # COS 214 Project - City Simulator
-![image](https://drive.google.com/file/d/1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9)
+
+<a href="https://drive.google.com/uc?export=view&id=1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9"><img src="https://drive.google.com/uc?export=view&id=1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
 
 # Contents
 
