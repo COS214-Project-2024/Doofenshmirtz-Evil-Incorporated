@@ -74,6 +74,19 @@ CityUnit *Citizen::getJob() const
 }
 
 /**
+ * @brief Getter for citizen's current satisfaction level
+ */
+int Citizen::getSatisfaction() const
+{
+    return this->satisfactionScore;
+}
+
+int Citizen::getBalance() const
+{
+    return this->bankBalance;
+}
+
+/**
  * @brief Make citizen travel to next location in their natural routine i.e. home => leisure => job
  * FFurthermore, slighlty influences satisfaction based on current state of citizen
  */

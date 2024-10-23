@@ -52,6 +52,16 @@ public:
 	CityUnit* getJob() const;
 
 	/**
+     * @brief Getter for citizen's current satisfaction level
+     */
+	int getSatisfaction() const;
+
+	/**
+     * @brief Getter for citizen's current bank account balance
+     */	
+	int getBalance() const;
+
+	/**
      * @brief Sets citizen's state while ensuring memory safety
      * @param newState state to transistion to allowed values : AtHomeState | AtWorkState | AtLeisureState
      */
