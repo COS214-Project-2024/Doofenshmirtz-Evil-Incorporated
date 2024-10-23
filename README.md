@@ -88,7 +88,7 @@ make run
     <tr>
       <td align="center">
 	  	Tiaan Bosman<br> u22704958 <br>
-		<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmystickermania.com%2Fsticker-packs%2Fdisney-cartoons%2Fphineas-ferb-doofenshmirtz-platypus&psig=AOvVaw2m0YvZVDD99aayiTD63T5Q&ust=1729779670727000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIC09MnZpIkDFQAAAAAdAAAAABAR" alt="your pfp" width="200" height="200">
+		<img src="https://avatarfiles.alphacoders.com/176/176387.jpg" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	Singleton <br> Facade <br> UI <br> Server<br><br>
