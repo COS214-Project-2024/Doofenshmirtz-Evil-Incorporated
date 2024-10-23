@@ -55,17 +55,17 @@ make run
     <tr><th>Member</th><th>Roles</th><th>Description</th></tr>
     <tr>
       <td align="center">
-	  	NAME<br> STUDENT-NR <br>
-		<img src="" alt="your pfp">
+	  	John-Peter Krause<br>u23533529<br>
+		<img src="https://i.redd.it/ur34et8qmft91.jpg" alt="johna profile">
 	  </td>
 	  <td align="center">
-	  	BLAH <br> BLAH <br> BLAH <br> BLAH<br><br>
-		<a href="">
+	  	Observer<br>Singleton<br>
+		<a href="https://github.com/johnpeterprogramming">
 			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
-	  	Very cool description
+	  	Rizz 100<br>Ohio Gyat<br>Sneak 100<br>The Rizzler<br>Skibidi<br>
 	  </td>
 	</tr>
     <tr>
