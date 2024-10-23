@@ -1,19 +1,25 @@
 #ifndef CITIZENLOCATIONSTATE_H
 #define CITIZENLOCATIONSTATE_H
 
+class Citizen;
+class CommuteStrategy;
 class CityUnit;
 
 class CitizenLocationState {
 
+private:
+
+	CommuteStrategy* strategy;
 
 public:
 	CitizenLocationState();
 
+	void chooseStrategy(int travelDistance);
+
 	virtual ~CitizenLocationState();
 
-	void setState(CitizenLocationState* newState);
+	virtual void travel(Citizen* citizen) = 0;
 
-	virtual void handleState(CityUnit* citizenHome, CityUnit* cititzenJob) = 0;
 };
 
 #endif

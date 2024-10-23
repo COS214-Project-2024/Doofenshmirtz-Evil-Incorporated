@@ -13,7 +13,7 @@ public:
 
 	~AtHomeState();
 
-	void handleState(CityUnit* citizenHome, CityUnit* cititzenJob);
+	void travel(Citizen* citizen);
 };
 
 #endif

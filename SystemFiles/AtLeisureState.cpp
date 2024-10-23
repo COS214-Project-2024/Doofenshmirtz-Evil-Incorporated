@@ -1,15 +1,23 @@
 #include "AtLeisureState.h"
+#include "Citizen.h"
+#include "CityUnit.h"
 
 AtLeisureState::AtLeisureState() {
-	// TODO - implement AtLeisureState::AtLeisureState
-	throw "Not yet implemented";
+
 }
 
 AtLeisureState::~AtLeisureState()
 {
 }
 
-void AtLeisureState::handleState(CityUnit* citizenHome, CityUnit* cititzenJob) {
-	// TODO - implement AtLeisureState::handleState
-	throw "Not yet implemented";
+
+// Travels from AtLeisureState to AtHomeState
+void AtLeisureState::travel(Citizen *citizen)
+{
+	// Get distance between citizen leisure location and citizen home location to set strategy
+	int travelDistance = citizen->getLeisure()->calculateDistanceTo(citizen->getHome());
+	this->chooseStrategy(travelDistance);
+
+	// Set state of citizen to AtWorkState
+	citizen->setState(new AtHomeState());
 }
