@@ -3,21 +3,52 @@
 #include "CityUnit.h"
 #include "AtWorkState.h"
 
+/**
+ * @brief Constructor for AtHomeState.
+ */
 AtHomeState::AtHomeState() {
 
 }
 
+/**
+ * @brief Destructor for AtHomeState.
+ */
 AtHomeState::~AtHomeState()
 {
 }
 
-// Travels from AtHomeState to AtWorkState
-void AtHomeState::travel(Citizen *citizen)
-{
-	// Get distance between citizen home location and citizen work location to set strategy
-	int travelDistance = citizen->getHome()->calculateDistanceTo(citizen->getJob());
-	this->chooseStrategy(travelDistance);
 
-	// Set state of citizen to AtWorkState
-	citizen->setState(new AtWorkState());
+/**
+ * @brief Handles the travel logic for a citizen in the AtHomeState.
+ *
+ * This method transitions a citizen from their home to their workplace,
+ * provided they are employed (i.e., they have a job). The method calculates 
+ * the travel distance between the citizen's home and their job, chooses a 
+ * strategy based on the distance, and transitions them to the AtWorkState.
+ *
+ * @param citizen The citizen attempting to travel from home.
+ * @note If the citizen is unemployed (i.e., they don't have a job), they 
+ *       remain in the AtHomeState, and no travel occurs.
+ */
+void AtHomeState::travel(Citizen *citizen)
+{	
+	// Check if citizen is employed before attempting a transistion
+	if(citizen->getJob() != nullptr)
+	{
+		// Get distance between citizen home location and citizen work location to set strategy
+		int travelDistance = citizen->getHome()->calculateDistanceTo(citizen->getJob());
+		this->chooseStrategy(travelDistance);
+
+		// Set state of citizen to AtWorkState
+		citizen->setState(new AtWorkState());
+	}
+
+}
+
+/**
+ * @brief Returns "AtHomeState"
+ */
+std::string AtHomeState::getStateName()
+{
+    return "AtHomeState";
 }

@@ -22,6 +22,7 @@ private:
     int bankBalance;         ///< The bank balance of the citizen (ranges from 20,000 to 100,000 on creation).
 
 public:
+
     /**
      * @brief Constructor for Citizen class.
      * @param home Pointer to the citizen's home CityUnit.
@@ -52,12 +53,13 @@ public:
 
 	/**
      * @brief Sets citizen's state while ensuring memory safety
-     * @param newState state to transistion to
+     * @param newState state to transistion to allowed values : AtHomeState | AtWorkState | AtLeisureState
      */
 	void setState(CitizenLocationState* newState);
 
 	/**
      * @brief Make citizen travel to next location in their natural routine i.e. home => leisure => job
+	 * Furthermore, slighlty influences satisfaction based on current state of citizen
      */
 	void followRoutine();
 };
