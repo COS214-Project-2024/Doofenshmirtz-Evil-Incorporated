@@ -56,7 +56,7 @@ make run
     <tr>
       <td align="center">
 	  	John-Peter Krause<br>u23533529<br>
-		<img src="https://i.redd.it/ur34et8qmft91.jpg" alt="johna profile">
+		<img src="https://i.redd.it/ur34et8qmft91.jpg" alt="johna profile" width="100" height="100">
 	  </td>
 	  <td align="center">
 	  	Observer<br>Singleton<br>
