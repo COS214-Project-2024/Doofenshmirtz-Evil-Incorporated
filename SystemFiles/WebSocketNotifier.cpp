@@ -1,23 +1,34 @@
 #include "WebSocketNotifier.h"
 
-WebSocketNotifier::WebSocketNotifier() {
-	// TODO - implement WebSocketNotifier::WebSocketNotifier
-	throw "Not yet implemented";
+WebSocketNotifier::WebSocketNotifier() : myServer(nullptr)
+{
+	// Constructor, assign null to server
 }
 
-void WebSocketNotifier::log(nlohmann::json message) {
-	// TODO - implement WebSocketNotifier::log
-	throw "Not yet implemented";
+void WebSocketNotifier::log(nlohmann::json message)
+{
+	if (myServer)
+	{
+		myServer->write(message); // Delegate message to server
+	}
+	else
+	{
+		std::cout << "Server not set for WebSocketNotifier" << std::endl; // No server
+	}
 }
 
-void WebSocketNotifier::setServer(Server* server) {
-	// TODO - implement WebSocketNotifier::setServer
-	throw "Not yet implemented";
+void WebSocketNotifier::setServer(Server *server)
+{
+	myServer = server; // Sets server
 }
 
-WebSocketNotifier* WebSocketNotifier::getInstance() {
-	// TODO - implement WebSocketNotifier::getInstance
-	throw "Not yet implemented";
+WebSocketNotifier *WebSocketNotifier::getInstance()
+{
+	if (Instance == nullptr) // If no instance
+	{
+		Instance = new WebSocketNotifier(); // create instance
+	}
+	return Instance;
 }
 
 WebSocketNotifier::~WebSocketNotifier()
