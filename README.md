@@ -70,17 +70,19 @@ make run
 	</tr>
     <tr>
       <td align="center">
-	  	NAME<br> STUDENT-NR <br>
-		<img src="" alt="your pfp">
+	  	Philipp du Plessis<br> 23526204 <br>
+		<img src="https://64.media.tumblr.com/e45427d8581bdf7afa9c649d9a711ad7/b73c26f96996b26c-85/s1280x1920/733cd4b5ac71712eb3927ba6d3105e869683005c.png" alt="philip profile">
 	  </td>
 	  <td align="center">
-	  	BLAH <br> BLAH <br> BLAH <br> BLAH<br><br>
-		<a href="">
+	  	State <br> Server <br> Facade <br>  <br><br>
+		<a href="https://github.com/phillDup">
 			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
-	  	Very cool description
+	  	Designing those patterns<br>
+		500 cigarettes <br>
+		Don't ask me about my Scooby-Doo impression (rho rho)
 	  </td>
 	</tr>
     <tr>
