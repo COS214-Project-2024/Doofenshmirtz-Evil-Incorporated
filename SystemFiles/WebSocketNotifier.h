@@ -2,22 +2,23 @@
 #define WEBSOCKETNOTIFIER_H
 
 #include "Server.h"
+#include <iostream>
 
-class WebSocketNotifier {
-
-private:
-	Server* myServer;
+class WebSocketNotifier
+{
 
 public:
-	WebSocketNotifier();
-
+	static WebSocketNotifier *getInstance();
 	void log(nlohmann::json message);
+	void setServer(Server *server);
 
-	void setServer(Server* server);
-
-	static WebSocketNotifier* getInstance();
-
+protected:
+	WebSocketNotifier();
 	~WebSocketNotifier();
+
+private:
+	Server *myServer;
+	static WebSocketNotifier *Instance;
 };
 
 #endif
