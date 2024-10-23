@@ -3,17 +3,16 @@
 
 class Government;
 
-class SimulationRunnerFacade {
+class SimulationRunnerFacade
+{
 
 private:
-	Government* goverment;
+    Government *government;
 
 public:
-
     SimulationRunnerFacade();
-
+    void attachGovernment();
     void runSimulation();
-
     ~SimulationRunnerFacade();
 };
 
