@@ -11,6 +11,7 @@
 CitizenLocationState::CitizenLocationState() {
 
 	this->strategy = nullptr;
+	srand(time(0));  
 }
 
 
@@ -21,65 +22,69 @@ CitizenLocationState::CitizenLocationState() {
  */
 void CitizenLocationState::chooseStrategy(int travelDistance)
 {
-	//clear old strategy
-	if(this->strategy != nullptr)
+	// Clear old strategy
+	if (this->strategy != nullptr)
 	{
 		delete this->strategy;
 	}
-	//for random aspect to make simulation more simulation-y
-	srand(time(0));
+
+	// For random aspect to make simulation more simulation-y
+	
 	int chance = rand() % 100;
 
-	//choose random strategy
-	if(chance <= 12)
+	// Choose random strategy with a 12% chance
+	if (chance < 12)
 	{
-		if(chance <= 3)
+		// Evenly distribute chances across 4 strategies
+		int randomChoice = chance % 4;
+		switch (randomChoice)
 		{
-			this->strategy = new RoadStrategy();
-			return;
+			case 0:
+				this->strategy = new RoadStrategy();
+				break;
+			case 1:
+				this->strategy = new PublicTransportStrategy();
+				break;
+			case 2:
+				this->strategy = new RailwayStrategy();
+				break;
+			case 3:
+				this->strategy = new AirportStrategy();
+				break;
 		}
-		if(chance <= 6)
-		{
-			this->strategy = new PublicTransportStrategy();
-			return;
-		}
-		if(chance <= 9)
-		{
-			this->strategy = new RailwayStrategy();
-			return;
-		}
-		if(chance <= 12)
-		{
-			this->strategy = new AirportStrategy();
-			return;
-		}
+		return;
 	}
-	//If not random
-	//The distances migh have to change based on how the computeDistance function is implemented
+
+	// If not random, choose based on travel distance
+	if (travelDistance <= 5)
+	{
+		this->strategy = new RoadStrategy();
+	}
+	else if (travelDistance <= 10)
+	{
+		this->strategy = new PublicTransportStrategy();
+	}
+	else if (travelDistance <= 15)
+	{
+		this->strategy = new RailwayStrategy();
+	}
+	else if (travelDistance <= 30)
+	{
+		this->strategy = new AirportStrategy();
+	}
+}
+
+
+std::string CitizenLocationState::getTravelMethod()
+{
+    if(this->strategy)
+	{
+		return this->strategy->getTravelStrategyName();
+	}
 	else
 	{
-		if(travelDistance <= 5)
-		{
-			this->strategy = new RoadStrategy();
-			return;
-		}
-		if(travelDistance <= 10)
-		{
-			this->strategy = new PublicTransportStrategy();
-			return;
-		}
-		if(travelDistance <= 15)
-		{
-			this->strategy = new RailwayStrategy();
-			return;
-		}
-		if(travelDistance <= 30)
-		{
-			this->strategy = new AirportStrategy();
-			return;
-		}
+		return "none";
 	}
-	
 }
 
 /**

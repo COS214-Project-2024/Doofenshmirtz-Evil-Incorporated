@@ -21,3 +21,11 @@ RailwayStrategy::~RailwayStrategy()
 std::string RailwayStrategy::getTravelStrategyName() {
     return "RailwayStrategy";
 }
+
+int RailwayStrategy::handleCommuteState()
+{
+    //socket things go here please 
+    std::cout << "Socket stuff, GOIN OFF THE RAILS ON A CRAZT TRAIN!!\n";
+    //my code, no touchy
+    return 10;//okay jy mag, maar net as jy mooi vra
+}

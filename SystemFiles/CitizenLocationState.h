@@ -16,7 +16,7 @@ class CityUnit;
  */
 class CitizenLocationState {
 
-private:
+protected:
 
 	CommuteStrategy* strategy; ///< The strategy for determining commute behavior.
 
@@ -38,6 +38,7 @@ public:
      * @param travelDistance The distance the citizen needs to travel.
      */
 	void chooseStrategy(int travelDistance);
+     std::string getTravelMethod();
 
 	/**
      * @brief Virtual destructor for CitizenLocationState.
@@ -61,6 +62,7 @@ public:
      * what string is returned
      */
 	virtual std::string getStateName() = 0;
+
 };
 
 #endif

@@ -55,7 +55,20 @@ CityUnit *Citizen::getLeisure() const
 {
     return this->citizenLeisure;
 }
-
+/**
+* @brief updates the citizen'z satisfaction level according to an operator and a value passed in
+*/
+void Citizen::updateSatisfaction(std::string op, int value)
+{
+    if(op == "+")
+    {
+        this->satisfactionScore += value;
+    }
+    else
+    {
+        this->satisfactionScore -= value;
+    }
+}
 
 /**
  * @brief Getter for citizen's current Home CityUnit*

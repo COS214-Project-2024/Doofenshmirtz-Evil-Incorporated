@@ -25,6 +25,9 @@ public:
      * @return A string representing the name of the travel strategy.
      */
     std::string getTravelStrategyName();
+
+    int handleCommuteState();
+
 };
 
 #endif
