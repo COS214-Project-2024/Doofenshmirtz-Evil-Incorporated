@@ -1,18 +1,27 @@
 #include "District.h"
+#include <algorithm>
+#include <vector>
+#include <iostream>
+
 
 District::District() {
-	// TODO - implement District::District
-	throw "Not yet implemented";
 }
 
 void District::add(CityUnit* newUnit) {
-	// TODO - implement District::add
-	throw "Not yet implemented";
+	containedCityUnit.push_back(newUnit);
 }
 
 void District::remove(CityUnit* unit) {
-	// TODO - implement District::remove
-	throw "Not yet implemented";
+	CityUnit* itemToRemove = unit;
+
+	auto it = std::find(containedCityUnit.begin(),containedCityUnit.end(),itemToRemove);
+
+	if (it != containedCityUnit.end())
+	{
+		containedCityUnit.erase(it);
+	}else{
+		throw "Item to remove not found";
+	}
 }
 
 District::~District()
@@ -30,8 +39,22 @@ Iterator* District::createIterator() {
 }
 
 double District::getEmploymentRate() {
-	// TODO - implement District::getEmploymentRate
-	throw "Not yet implemented";
+	int buildingsInUnit = containedCityUnit.size();
+	double totalEmploymentRate = 0;
+	for (auto unit:containedCityUnit)
+	{
+		totalEmploymentRate += unit->getEmploymentRate();
+	}
+	double districtEmploymentRate = totalEmploymentRate/buildingsInUnit;
+
+
+	if ((districtEmploymentRate < 0) || (districtEmploymentRate > 1))
+	{
+		throw "Value Error, distrcitEmploymentRate less than 0 or greater than 1";
+	}else{
+		return districtEmploymentRate;
+	}
+
 }
 
 int District::payTaxes(int s) {
@@ -45,6 +68,14 @@ int District::evaluateHappiness() {
 }
 
 int District::countCitizens() {
-	// TODO - implement District::countCitizens
-	throw "Not yet implemented";
+	int totalCitizens = 0;
+
+	for (auto unit:containedCityUnit){
+		if (unit->getUsedCapacity() > 0)
+		{
+			totalCitizens+= unit->getUsedCapacity();
+		}
+	}
+
+	return totalCitizens;
 }
