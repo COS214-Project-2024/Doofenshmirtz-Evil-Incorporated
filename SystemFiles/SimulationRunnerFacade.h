@@ -3,16 +3,22 @@
 
 class Government;
 
+/**
+ * @brief Facade class for running simulations.
+ *
+ * This class provides a simplified interface to run simulations,
+ * coordinating interactions with other components, such as the
+ * Government and WebSocketNotifier.
+ */
 class SimulationRunnerFacade
 {
 
-private:
-    Government *government;
-
 public:
+    /// Constructor for the SimulationRunnerFacade class.
     SimulationRunnerFacade();
-    void attachGovernment();
+    /// Runs the simulation process.
     void runSimulation();
+    /// Destructor for the SimulationRunnerFacade class.
     ~SimulationRunnerFacade();
 };
 
