@@ -2,17 +2,31 @@
 #define RAILWAYSTRATEGY_H
 
 #include "CommuteStrategy.h"
+
+/**
+ * @class RailwayStrategy
+ * @brief A concrete implementation of the CommuteStrategy class for railway-based transportation.
+ */
 class RailwayStrategy : public CommuteStrategy {
 
-
 public:
-	RailwayStrategy();
+    /**
+     * @brief Constructs a RailwayStrategy object.
+     */
+    RailwayStrategy();
 
-	~RailwayStrategy();
+    /**
+     * @brief Destroys the RailwayStrategy object.
+     */
+    ~RailwayStrategy();
 
-	void handleCommuteState();
+    /**
+     * @brief Gets the name of the travel strategy.
+     * @return A string representing the name of the travel strategy.
+     */
+    std::string getTravelStrategyName();
 
-	std::string getTravelStrategyName();
+    int handleCommuteState();
 };
 
 #endif

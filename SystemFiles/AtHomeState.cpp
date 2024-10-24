@@ -2,6 +2,7 @@
 #include "Citizen.h"
 #include "CityUnit.h"
 #include "AtWorkState.h"
+#include "CommuteStrategy.h"
 
 /**
  * @brief Constructor for AtHomeState.
@@ -38,7 +39,8 @@ void AtHomeState::travel(Citizen *citizen)
 		// Get distance between citizen home location and citizen work location to set strategy
 		int travelDistance = citizen->getHome()->calculateDistanceTo(citizen->getJob());
 		this->chooseStrategy(travelDistance);
-
+		int temp = this->strategy->handleCommuteState();
+		citizen->updateSatisfaction("+",temp);
 		// Set state of citizen to AtWorkState
 		citizen->setState(new AtWorkState());
 	}

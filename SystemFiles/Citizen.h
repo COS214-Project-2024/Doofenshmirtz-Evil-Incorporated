@@ -40,6 +40,10 @@ public:
      * @brief Getter for citizen's leisure CityUnit*
      */
 	CityUnit* getLeisure() const;
+     /**
+     * @brief updates the citizen'z satisfaction level according to an operator and a value passed in
+     */
+     void updateSatisfaction(std::string op,int value);
 
 	/**
      * @brief Getter for citizen's home CityUnit*

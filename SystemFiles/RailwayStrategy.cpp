@@ -1,20 +1,31 @@
 #include "RailwayStrategy.h"
 
+/**
+ * @brief Constructs a RailwayStrategy object.
+ */
 RailwayStrategy::RailwayStrategy() {
-	// TODO - implement RailwayStrategy::RailwayStrategy
-	throw "Not yet implemented";
+
 }
 
+/**
+ * @brief Destroys the RailwayStrategy object.
+ */
 RailwayStrategy::~RailwayStrategy()
 {
 }
 
-void RailwayStrategy::handleCommuteState() {
-	// TODO - implement RailwayStrategy::handleCommuteState
-	throw "Not yet implemented";
+/**
+ * @brief Returns the name of the travel strategy.
+ * @return A string representing "RailwayStrategy".
+ */
+std::string RailwayStrategy::getTravelStrategyName() {
+    return "RailwayStrategy";
 }
 
-std::string RailwayStrategy::getTravelStrategyName() {
-	// TODO - implement RailwayStrategy::getTravelStrategyName
-	throw "Not yet implemented";
+int RailwayStrategy::handleCommuteState()
+{
+    //socket things go here please 
+    std::cout << "Socket stuff, GOIN OFF THE RAILS ON A CRAZT TRAIN!!\n";
+    //my code, no touchy
+    return 10;//okay jy mag, maar net as jy mooi vra
 }

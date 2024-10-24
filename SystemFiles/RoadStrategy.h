@@ -2,17 +2,31 @@
 #define ROADSTRATEGY_H
 
 #include "CommuteStrategy.h"
+
+/**
+ * @class RoadStrategy
+ * @brief A concrete implementation of the CommuteStrategy class for road-based travel.
+ */
 class RoadStrategy : public CommuteStrategy {
 
-
 public:
-	RoadStrategy();
+    /**
+     * @brief Constructs a RoadStrategy object.
+     */
+    RoadStrategy();
 
-	~RoadStrategy();
+    /**
+     * @brief Destroys the RoadStrategy object.
+     */
+    ~RoadStrategy();
 
-	void handleCommuteState();
+    /**
+     * @brief Gets the name of the travel strategy.
+     * @return A string representing the name of the travel strategy.
+     */
+    std::string getTravelStrategyName();
 
-	std::string getTravelStrategyName();
+    int handleCommuteState();
 };
 
 #endif
