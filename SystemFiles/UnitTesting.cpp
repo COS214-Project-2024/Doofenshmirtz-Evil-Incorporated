@@ -12,28 +12,28 @@ TEST_CASE("Example Test")
     CHECK(1 == 1);
 }
 
+// Create mock CityUnits
+class MockCityUnit : public CityUnit {
+public:
+    // We can mock this distance method to return a constant value
+    int calculateDistanceTo(CityUnit* other) override {
+        return 10;  // Arbitrary fixed distance for testing
+    }
+
+    // Necessary Stubs so MockCityUnit is not an abstract class
+    void add(CityUnit* newUnit) {};
+	void remove(CityUnit* unit) {};
+	int getRemainingCapacity() {};
+	int getUsedCapacity() {};
+	void update() {};
+	Iterator* createIterator() {};
+	double getEmploymentRate() {};
+    int payTaxes(int amount) {};
+	int evaluateHappiness() {};
+	int countCitizens() {};
+};
+
 TEST_CASE("CitizenUnitTesting") {
-
-    // Create mock CityUnits
-    class MockCityUnit : public CityUnit {
-    public:
-        // We can mock this distance method to return a constant value
-        int calculateDistanceTo(CityUnit* other) override {
-            return 10;  // Arbitrary fixed distance for testing
-        }
-
-        // Necessary Stubs so MockCityUnit is not an abstract class
-        void add(CityUnit* newUnit) {};
-	    void remove(CityUnit* unit) {};
-	    int getRemainingCapacity() {};
-	    int getUsedCapacity() {};
-	    void update() {};
-	    Iterator* createIterator() {};
-	    double getEmploymentRate() {};
-        int payTaxes(int amount) {};
-	    int evaluateHappiness() {};
-	    int countCitizens() {};
-    };
 
     CityUnit* residential = new MockCityUnit();
     CityUnit* commercial = new MockCityUnit();
@@ -103,4 +103,43 @@ TEST_CASE("CitizenUnitTesting") {
     delete residential;
     delete commercial;
     delete leisure;
+}
+
+TEST_CASE("CitizenLocationStateUnitTesting")
+{
+    SUBCASE("getStateName")
+    {
+        AtHomeState home;
+        AtWorkState work;
+        AtLeisureState leisure;
+
+        CHECK(home.getStateName() == "AtHomeState");
+        CHECK(work.getStateName() == "AtWorkState");
+        CHECK(leisure.getStateName() == "AtLeisureState");
+    }
+
+    SUBCASE("travelTesting")
+    {
+        // Create a citizen to use
+        CityUnit* residential = new MockCityUnit();
+        CityUnit* commercial = new MockCityUnit();
+        CityUnit* leisure = new MockCityUnit();
+
+        Citizen* citizen = new Citizen(residential, commercial, leisure);
+
+        // Travel from home to work
+        AtHomeState home;
+        home.travel(citizen);
+        
+        // Travel from work to leisure
+        AtWorkState work;
+        work.travel(citizen);
+
+        // Travel from leisure to home
+        AtLeisureState leisureState;
+        leisureState.travel(citizen);
+
+
+        delete citizen; delete residential; delete commercial; delete leisure;
+    }
 }
