@@ -56,6 +56,20 @@ TEST_CASE("CitizenUnitTesting") {
         CHECK(citizen.getLeisure() == leisure);
     }
 
+    SUBCASE("Citizen without job is employed")
+    {
+        Citizen citizen(residential, nullptr, leisure);
+        CityUnit* mockJob = new MockCityUnit();
+
+        // Employ the citizen
+        CHECK(citizen.employCitizen(mockJob) == true);
+        CHECK(citizen.getJob() == mockJob);
+
+        // Attempt to employ again (should fail)
+        CHECK(citizen.employCitizen(mockJob) == false);
+        CHECK(citizen.getJob() == mockJob); // Job did not change
+    }
+
     SUBCASE("Citizen member functions working as expected")
     {
         Citizen citizen(residential, commercial, leisure);  
@@ -130,14 +144,17 @@ TEST_CASE("CitizenLocationStateUnitTesting")
         // Travel from home to work
         AtHomeState home;
         home.travel(citizen);
+        CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtWorkState");
         
         // Travel from work to leisure
         AtWorkState work;
         work.travel(citizen);
+        CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtLeisureState");
 
         // Travel from leisure to home
         AtLeisureState leisureState;
         leisureState.travel(citizen);
+        CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtHomeState");
 
 
         delete citizen; delete residential; delete commercial; delete leisure;
