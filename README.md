@@ -102,17 +102,17 @@ make run
 	</tr>
 	<tr>
       <td align="center">
-	  	NAME<br> STUDENT-NR <br>
-		<img src="" alt="your pfp" width="200" height="200">
+	  	Nicolaas Hermanus Pretorius<br> u23525381 <br>
+		<img src="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fwhy-did-man-jonkle-jonkler-is-he-a-killer-v0-rxbvfynz76fb1.jpg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3Da052f9e08c299ad9ac3c9ca73dbdd7a3e851d8a0" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
-	  	BLAH <br> BLAH <br> BLAH <br> BLAH<br><br>
-		<a href="">
+	  	Strategy <br> Command<br> Group dance for demo <br>
+		<a href="https://github.com/NicohaasHerhaasus">
 			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
-	  	Very cool description
+	  	Doth thou despise the smell of olives?
 	  </td>
 	</tr>
 	<tr>
