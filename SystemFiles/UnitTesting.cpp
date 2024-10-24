@@ -68,6 +68,8 @@ TEST_CASE("CitizenUnitTesting") {
         // Attempt to employ again (should fail)
         CHECK(citizen.employCitizen(mockJob) == false);
         CHECK(citizen.getJob() == mockJob); // Job did not change
+
+        delete mockJob;
     }
 
     SUBCASE("Citizen member functions working as expected")
