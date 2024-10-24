@@ -12,8 +12,6 @@ public:
 
 	~AirportStrategy();
 
-	void handleCommuteState();
-
 	std::string getTravelStrategyName();
 };
 

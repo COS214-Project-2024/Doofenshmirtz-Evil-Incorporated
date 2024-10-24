@@ -10,8 +10,6 @@ public:
 
 	~PublicTransportStrategy();
 
-	void handleCommuteState();
-
 	std::string getTravelStrategyName();
 };
 

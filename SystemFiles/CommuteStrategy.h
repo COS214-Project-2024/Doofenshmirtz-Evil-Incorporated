@@ -11,8 +11,6 @@ public:
 
 	virtual ~CommuteStrategy();
 
-	virtual void handleCommuteState() = 0;
-
 	virtual std::string getTravelStrategyName() = 0;
 };
 
