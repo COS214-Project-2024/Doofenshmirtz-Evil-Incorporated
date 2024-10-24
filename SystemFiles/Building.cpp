@@ -1,8 +1,7 @@
 #include "Building.h"
 
 Building::Building(int totalCapcity) {
-	// TODO - implement Building::Building
-	throw "Not yet implemented";
+	this->totalCapacity = totalCapacity;
 }
 
 Building::~Building()
@@ -15,26 +14,48 @@ int Building::calculateDistanceTo(CityUnit* destination) {
 }
 
 int Building::getRemainingCapacity() {
-	// TODO - implement Building::getRemainingCapacity
-	throw "Not yet implemented";
+	int remaining_capacity;
+
+	if (usedCapacity > totalCapacity)
+	{
+		throw "Value Error: usedCapacity greater that totalCapacity";
+		return 1;
+	}else{
+		remaining_capacity = totalCapacity - usedCapacity;
+		return remaining_capacity;
+	}
 }
 
 int Building::getUsedCapacity() {
-	// TODO - implement Building::getUsedCapacity
-	throw "Not yet implemented";
+	return usedCapacity;
 }
 
+/**
+ * @brief Calculate the employment and resturns a decimal value betwen 0 and 1
+ */
 double Building::getEmploymentRate() {
-	// TODO - implement Building::getEmploymentRate
-	throw "Not yet implemented";
+	int employed_citizens = 0;
+	int total_citizens = resident.size();
+
+	for (auto res:resident){
+		if (res->getJob() != NULL)
+		{
+			employed_citizens += 1;
+		}
+	}
+
+	double employment_rate = (employed_citizens/total_citizens);
+	return employment_rate;
 }
 
 int Building::evaluateHappiness() {
 	// TODO - implement Building::evaluateHappiness
 	throw "Not yet implemented";
 }
-
+/**
+ * @brief Gets the amount of citezens in the building
+ * Counts the items in the resident vector
+ */
 int Building::countCitizens() {
-	// TODO - implement Building::countCitizens
-	throw "Not yet implemented";
+	return resident.size();
 }
