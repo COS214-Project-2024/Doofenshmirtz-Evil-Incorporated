@@ -9,7 +9,7 @@ Building::~Building()
 {
 }
 
-void Building::calculateDistanceTo(CityUnit* destination) {
+int Building::calculateDistanceTo(CityUnit* destination) {
 	// TODO - implement Building::calculateDistanceTo
 	throw "Not yet implemented";
 }

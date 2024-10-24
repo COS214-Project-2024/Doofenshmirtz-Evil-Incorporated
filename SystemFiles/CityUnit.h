@@ -21,7 +21,7 @@ public:
 
 	virtual ~CityUnit();
 
-	virtual void calculateDistanceTo(CityUnit* destination) = 0;
+	virtual int calculateDistanceTo(CityUnit* destination) = 0;
 
 	virtual int getRemainingCapacity() = 0;
 

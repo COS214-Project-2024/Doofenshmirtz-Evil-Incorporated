@@ -11,7 +11,7 @@ public:
 
 	virtual ~Building();
 
-	void calculateDistanceTo(CityUnit* destination);
+	int calculateDistanceTo(CityUnit* destination);
 
 	int getRemainingCapacity();
 

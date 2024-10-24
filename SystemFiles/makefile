@@ -40,3 +40,6 @@ run_demo:
 # Run unit tests
 run_tests:
 	./$(TEST_TARGET)
+
+memory_tests:
+	valgrind --leak-check=full ./$(TEST_TARGET)
