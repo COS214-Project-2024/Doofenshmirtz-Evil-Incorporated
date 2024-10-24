@@ -70,19 +70,19 @@ make run
 	</tr>
     <tr>
       <td align="center">
-	  	Philipp du Plessis<br> 23526204 <br>
+	  	Philipp du Plessis<br> u23526204 <br>
 		<img src="https://64.media.tumblr.com/e45427d8581bdf7afa9c649d9a711ad7/b73c26f96996b26c-85/s1280x1920/733cd4b5ac71712eb3927ba6d3105e869683005c.png" alt="philip profile" width="200" height="200">
 	  </td>
 	  <td align="center">
-	  	State <br> Server <br> Facade <br>  <br><br>
+	  	Citizen <br> State <br> Server <br> Facade <br>  <br><br>
 		<a href="https://github.com/phillDup">
 			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
-	  	Designing those patterns<br>
-		500 cigarettes <br>
-		Don't ask me about my Scooby-Doo impression (rho rho)
+	  	Designing them patterns 🧑‍🎨️<br>
+		500 cigarettes 🚬🚬🚬 <br>
+		🗣🗣🗣 Ask me about my Scooby-Doo impression (rhu rho) 🗣🗣🗣 
 	  </td>
 	</tr>
     <tr>
