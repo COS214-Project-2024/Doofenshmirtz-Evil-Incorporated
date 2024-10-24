@@ -103,7 +103,7 @@ make run
 	<tr>
       <td align="center">
 	  	Nicolaas Hermanus Pretorius<br> u23525381 <br>
-		<img src="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Fwhy-did-man-jonkle-jonkler-is-he-a-killer-v0-rxbvfynz76fb1.jpg%3Fwidth%3D1080%26crop%3Dsmart%26auto%3Dwebp%26s%3Da052f9e08c299ad9ac3c9ca73dbdd7a3e851d8a0" alt="your pfp" width="200" height="200">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA4oVF9Z91LUDIJJlroakAORBD7zbyKtkRiQ" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	Strategy <br> Command<br> Group dance for demo <br>
@@ -112,7 +112,8 @@ make run
 		</a>
 	  </td>
 	  <td>
-	  	Doth thou despise the smell of olives?
+		I the nite
+		👉👈🥺
 	  </td>
 	</tr>
 	<tr>
