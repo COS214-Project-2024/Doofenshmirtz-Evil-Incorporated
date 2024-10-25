@@ -29,8 +29,9 @@ void SimulationRunnerFacade::runSimulation()
 
 	// Create a JSON message
 	nlohmann::json message = {
-		{"type", "valueUpdate"},
-		{"data", {{"id", "money"}, {"value", "10"}}}};
+		{"type", "news"},
+		{"data", "Simulation is running..."},
+	};
 
 	// Log the message through the WebSocketNotifier instance.
 	WebSocketNotifier::get_mutable_instance().log(message);
