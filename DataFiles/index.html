@@ -171,6 +171,9 @@
       <button id="city" data-modal-target="modal">Show City</button>
       <button id="education">Better Education Policy</button>
       <button id="short-work">Short Work Week Policy</button>
+      <div class="input-tax">
+        <input type="text" placeholder="Update Tax %" id="taxInput" />
+      </div>
     </div>
 
     <div class="modal" id="modal">
@@ -241,6 +244,25 @@
           toggleModal(document.querySelector(".modal.modal-show").id);
         }
       });
+
+      document
+        .getElementById("taxInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            const taxValue = parseFloat(event.target.value);
+            if (!isNaN(taxValue) && taxValue >= 0 && taxValue <= 100) {
+              alert("Tax value entered: " + taxValue);
+              event.target.value = "";
+              if (socket.readyState === WebSocket.OPEN) {
+                const message = "tax:" + taxValue;
+                socket.send(message); // Send message to the server
+              }
+            } else {
+              alert("Please enter a number between 0 and 100.");
+            }
+          }
+        });
 
       function toggleModal(modalId) {
         const modal = document.getElementById(modalId);
