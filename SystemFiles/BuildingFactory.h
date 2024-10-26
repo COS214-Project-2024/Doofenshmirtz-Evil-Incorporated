@@ -16,6 +16,8 @@ public:
 protected:
 	virtual Building* factoryMethod() = 0;
 
+	//adding random function
+
 };
 
 #endif
