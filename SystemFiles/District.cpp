@@ -29,6 +29,10 @@ District::~District()
 }
 
 void District::update() {
+	// Clock tick
+	// Send people to work
+	// Send to leasure
+	// Send to residential
 	// TODO - implement District::update
 	throw "Not yet implemented";
 }
@@ -47,7 +51,6 @@ double District::getEmploymentRate() {
 	}
 	double districtEmploymentRate = totalEmploymentRate/buildingsInUnit;
 
-
 	if ((districtEmploymentRate < 0) || (districtEmploymentRate > 1))
 	{
 		throw "Value Error, distrcitEmploymentRate less than 0 or greater than 1";
@@ -64,7 +67,6 @@ int District::payTaxes(int s) {
 
 int District::evaluateHappiness() {
 	int totalHappiness = 0;
-
 	for (auto unit:containedCityUnit)
 	{
 		totalHappiness += unit->evaluateHappiness();
@@ -79,7 +81,6 @@ int District::evaluateHappiness() {
 
 int District::countCitizens() {
 	int totalCitizens = 0;
-
 	for (auto unit:containedCityUnit){
 		if (unit->getUsedCapacity() > 0)
 		{
