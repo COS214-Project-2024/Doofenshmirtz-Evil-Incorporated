@@ -133,17 +133,17 @@ make run
 	</tr>
 	<tr>
       <td align="center">
-	  	NAME<br> STUDENT-NR <br>
+	  	Muller Dannhauser<br> 23542765 <br>
 		<img src="" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
-	  	BLAH <br> BLAH <br> BLAH <br> BLAH<br><br>
+	  	CityUnit <br> Composite <br> Stupid Mistikes <br> Horrific code <br><br>
 		<a href="">
-			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+			<img src="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Foiltpr1u61xd1.jpeg">
 		</a>
 	  </td>
 	  <td>
-	  	Very cool description
+	  	The descriptoin is indeed very cool
 	  </td>
 	</tr>
 	<tr>
