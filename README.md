@@ -134,12 +134,12 @@ make run
 	<tr>
       <td align="center">
 	  	Muller Dannhauser<br> 23542765 <br>
-		<img src="" alt="your pfp" width="200" height="200">
+		<img src="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Foiltpr1u61xd1.jpeg" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	CityUnit <br> Composite <br> Stupid Mistikes <br> Horrific code <br><br>
 		<a href="">
-			<img src="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Foiltpr1u61xd1.jpeg">
+			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
