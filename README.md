@@ -119,7 +119,7 @@ make run
 	<tr>
       <td align="center">
 	  	Jack Bawden<br> u23529068 <br>
-		<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.etsy.com%2Flisting%2F1192430119%2Fcustom-drawn-pfp&psig=AOvVaw03myuZrUQlI3ad_JW6gRBf&ust=1730019386196000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIClzsvWq4kDFQAAAAAdAAAAABAE" alt="your pfp" width="200" height="200">
+		<img src="https://i.etsystatic.com/34732889/r/il/b08942/3768265623/il_794xN.3768265623_sji1.jpg" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	Composite <br> Iterator <br> skillz <br> etc<br><br>
