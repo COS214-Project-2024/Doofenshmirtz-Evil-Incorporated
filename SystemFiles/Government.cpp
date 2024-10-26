@@ -1,51 +1,69 @@
 #include "Government.h"
 
-Government::Government() {
-	// TODO - implement Government::Government
-	throw "Not yet implemented";
+#include <iostream>
+
+Government::Government(int govermentBalance) {
+	this->governmentBalance = 0;
 }
 
-Government::~Government()
-{
+Government::~Government() {
+	for (auto it = observerList.begin(); it != observerList.end(); it++) {
+		delete *it;
+	}
+	for (auto it = myCommand.begin(); it != myCommand.end(); it++) {
+		delete *it;
+	}
 }
 
 Government::Government(Government& government) {
-	// TODO - implement Government::Government
-	throw "Not yet implemented";
+	this->governmentBalance = government.governmentBalance;
+	this->resources = government.resources;
+	this->myCommand = government.myCommand;
+	this->observerList = government.observerList;
 }
 
 
-void Government::operator=(Government &rhs)
-{
+void Government::operator=(Government &rhs) {
+	this->governmentBalance = rhs.governmentBalance;
+	this->resources = rhs.resources;
+	this->myCommand = rhs.myCommand;
+	this->observerList = rhs.observerList;
 }
 
-Government *Government::getGovernment()
-{
-    // TODO - implement Government::getGovernment
-	throw "Not yet implemented";
-}
 
 void Government::collectTaxes() {
-	// TODO - implement Government::collectTaxes
-	throw "Not yet implemented";
+	for (CityUnit* unit : observerList) {
+		unit->payTaxes(TAX_RATE);
+		this->governmentBalance += unit->getUsedCapacity() * TAX_RATE;
+	}
 }
 
-void Government::attach(CityUnit * myObserver)
-{
+void Government::attach(CityUnit * myObserver) {
+	observerList.push_back(myObserver);
 }
 
 
 void Government::detach(CityUnit* myObserver) {
-	// TODO - implement Government::detach
-	throw "Not yet implemented";
+	for (auto it = observerList.begin(); it != observerList.end(); it++) {
+		if (*it == myObserver) {
+			observerList.erase(it);
+			delete myObserver;
+			break;
+		}
+	}
 }
 
 void Government::notify() {
-	// TODO - implement Government::notify
-	throw "Not yet implemented";
+	for (CityUnit* unit : observerList) {
+		unit->update();
+	}
 }
 
 void Government::collectResources() {
 	// TODO - implement Government::collectResources
 	throw "Not yet implemented";
+}
+
+int Government::getGovernmentBalance() {
+	return this->governmentBalance;
 }
