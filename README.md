@@ -118,17 +118,17 @@ make run
 	</tr>
 	<tr>
       <td align="center">
-	  	NAME<br> STUDENT-NR <br>
-		<img src="" alt="your pfp" width="200" height="200">
+	  	Jack Bawden<br> u23529068 <br>
+		<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.etsy.com%2Flisting%2F1192430119%2Fcustom-drawn-pfp&psig=AOvVaw03myuZrUQlI3ad_JW6gRBf&ust=1730019386196000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIClzsvWq4kDFQAAAAAdAAAAABAE" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
-	  	BLAH <br> BLAH <br> BLAH <br> BLAH<br><br>
-		<a href="">
+	  	Composite <br> Iterator <br> skillz <br> etc<br><br>
+		<a href="https://github.com/Jack-jack1">
 			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
-	  	Very cool description
+	  	i saw batman in cat womans costume
 	  </td>
 	</tr>
 	<tr>
