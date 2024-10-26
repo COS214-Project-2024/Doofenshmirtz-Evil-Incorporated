@@ -1,30 +1,38 @@
 #include "ConcreteIterator.h"
 
-ConcreteIterator::ConcreteIterator() {
-	// TODO - implement ConcreteIterator::ConcreteIterator
-	throw "Not yet implemented";
+ConcreteIterator::ConcreteIterator(const std::vector<CityUnit*>& cityUnitsParam) : cityUnits(cityUnitsParam), index(0) {
 }
 
 ConcreteIterator::~ConcreteIterator()
 {
+
 }
 
 void ConcreteIterator::first() {
-	// TODO - implement ConcreteIterator::first
-	throw "Not yet implemented";
+	index = 0;
 }
 
 void ConcreteIterator::next() {
-	// TODO - implement ConcreteIterator::next
-	throw "Not yet implemented";
+	if (index < cityUnits.size()) {
+        ++index;
+    }
+}
+void ConcreteIterator::previous() {
+	if (index > 0) {
+        --index;
+    }
 }
 
-void ConcreteIterator::isDone() {
-	// TODO - implement ConcreteIterator::isDone
-	throw "Not yet implemented";
+bool ConcreteIterator::isDone() {
+	if(index >= cityUnits.size()){
+		return true;
+	}
+	return false;
 }
 
-void ConcreteIterator::currentItem() {
-	// TODO - implement ConcreteIterator::currentItem
-	throw "Not yet implemented";
+CityUnit* ConcreteIterator::currentItem() {
+	if(isDone() || index < 0){
+		return nullptr;
+	}
+	return cityUnits[index];
 }
