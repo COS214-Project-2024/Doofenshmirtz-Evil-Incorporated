@@ -34,8 +34,8 @@ void District::update() {
 }
 
 Iterator* District::createIterator() {
-	// TODO - implement District::createIterator
-	throw "Not yet implemented";
+	Iterator* it = new ConcreteIterator();
+	return it;
 }
 
 double District::getEmploymentRate() {
@@ -63,8 +63,18 @@ int District::payTaxes(int s) {
 }
 
 int District::evaluateHappiness() {
-	// TODO - implement District::evaluateHappiness
-	throw "Not yet implemented";
+	int totalHappiness = 0;
+
+	for (auto unit:containedCityUnit)
+	{
+		totalHappiness += unit->evaluateHappiness();
+	}
+
+	if (totalHappiness<0)
+	{
+		throw "Negative happiness";
+	}
+	return totalHappiness/containedCityUnit.size();
 }
 
 int District::countCitizens() {

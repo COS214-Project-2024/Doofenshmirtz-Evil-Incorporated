@@ -60,7 +60,6 @@ int Building::evaluateHappiness() {
 	{
 		throw "Value Error: Satisfaction < 0";
 	}
-
 	return totalSitisfaction/resident.size();
 }
 /**

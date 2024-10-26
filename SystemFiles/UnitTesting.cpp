@@ -12,6 +12,9 @@
 #include "RoadStrategy.h"
 #include "AirportStrategy.h"
 #include "PublicTransportStrategy.h"
+#include "District.h"
+#include "CityUnit.h"
+#include "Building.h"
 
 TEST_CASE("Example Test")
 {

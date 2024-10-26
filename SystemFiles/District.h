@@ -1,7 +1,8 @@
 #ifndef DISTRICT_H
 #define DISTRICT_H
 
-#include "CityUnit.h";
+#include "CityUnit.h"
+#include "ConcreteIterator.h"
 
 class District : public CityUnit {
 
