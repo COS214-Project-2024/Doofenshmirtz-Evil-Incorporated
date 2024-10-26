@@ -33,5 +33,5 @@
 
 
 # enviroment variables
-
 .env
+.vscode
