@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-Government::Government(int govermentBalance) {
-	this->governmentBalance = 0;
+Government::Government(int governmentBalance) {
+	this->governmentBalance = governmentBalance;
 }
 
 Government::~Government() {
@@ -14,22 +14,6 @@ Government::~Government() {
 		delete *it;
 	}
 }
-
-Government::Government(Government& government) {
-	this->governmentBalance = government.governmentBalance;
-	this->resources = government.resources;
-	this->myCommand = government.myCommand;
-	this->observerList = government.observerList;
-}
-
-
-void Government::operator=(Government &rhs) {
-	this->governmentBalance = rhs.governmentBalance;
-	this->resources = rhs.resources;
-	this->myCommand = rhs.myCommand;
-	this->observerList = rhs.observerList;
-}
-
 
 void Government::collectTaxes() {
 	for (CityUnit* unit : observerList) {

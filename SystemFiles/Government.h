@@ -26,21 +26,9 @@ public:
 	
 	/**
 	 * @brief Constructs a Government object with the specified initial balance.
-	 * @param govermentBalance The initial balance of the government's funds.
+	 * @param governmentBalance The initial balance of the government's funds.
 	 */
-	Government(int govermentBalance);
-
-	/**
-	 * @brief Copy constructor for the Government class.
-	 * @param government The Government object to be copied.
-	 */
-	Government(Government& government);
-
-	/**
-	 * @brief Assignment operator for the Government class.
-	 * @param rhs The Government object to be assigned.
-	 */
-	void operator=(Government& rhs);
+	Government(int governmentBalance);
 
 	/**
 	 * @brief Gets the balance of the government's funds.
