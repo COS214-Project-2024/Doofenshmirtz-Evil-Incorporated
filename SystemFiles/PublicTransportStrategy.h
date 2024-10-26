@@ -1,18 +1,33 @@
 #ifndef PUBLICTRANSPORTSTRATEGY_H
 #define PUBLICTRANSPORTSTRATEGY_H
 
-#include "CommuteStrategy.h"	
+#include "CommuteStrategy.h"
+
+/**
+ * @class PublicTransportStrategy
+ * @brief A concrete implementation of the CommuteStrategy class for public transport-based travel.
+ */
 class PublicTransportStrategy : public CommuteStrategy {
 
-
 public:
-	PublicTransportStrategy();
+    /**
+     * @brief Constructs a PublicTransportStrategy object.
+     */
+    PublicTransportStrategy();
 
-	~PublicTransportStrategy();
+    /**
+     * @brief Destroys the PublicTransportStrategy object.
+     */
+    ~PublicTransportStrategy();
 
-	void handleCommuteState();
+    /**
+     * @brief Gets the name of the travel strategy.
+     * @return A string representing the name of the travel strategy.
+     */
+    std::string getTravelStrategyName();
 
-	std::string getTravelStrategyName();
+    int handleCommuteState();
+
 };
 
 #endif

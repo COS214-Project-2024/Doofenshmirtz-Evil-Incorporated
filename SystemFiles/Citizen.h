@@ -40,6 +40,10 @@ public:
      * @brief Getter for citizen's leisure CityUnit*
      */
 	CityUnit* getLeisure() const;
+     /**
+     * @brief updates the citizen'z satisfaction level according to an operator and a value passed in
+     */
+     void updateSatisfaction(std::string op,int value);
 
 	/**
      * @brief Getter for citizen's home CityUnit*
@@ -61,11 +65,27 @@ public:
      */	
 	int getBalance() const;
 
+     /**
+     * @brief Getter for citizen's state
+     */	
+     CitizenLocationState* getCitzenLocationSate();
+
 	/**
      * @brief Sets citizen's state while ensuring memory safety
      * @param newState state to transistion to allowed values : AtHomeState | AtWorkState | AtLeisureState
      */
 	void setState(CitizenLocationState* newState);
+
+     /**
+      * @brief Attempts to employ the citizen at the given job location.
+      *
+      * This method sets the `citizenJob` pointer for the citizen if they are currently unemployed. 
+      * If the citizen is already employed (i.e., `citizenJob` is not nullptr), the method will do nothing.
+      *
+      * @param job A pointer to the CityUnit (building) where the citizen will be employed if the operation is successful.
+      * @return true if the citizen was unemployed and successfully assigned a job, false if the citizen already had a job.
+      */
+     bool employCitizen(CityUnit* job);
 
 	/**
      * @brief Make citizen travel to next location in their natural routine i.e. home => leisure => job

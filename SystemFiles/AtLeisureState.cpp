@@ -1,7 +1,8 @@
 #include "AtLeisureState.h"
 #include "Citizen.h"
 #include "CityUnit.h"
-
+#include "AtHomeState.h"
+#include "CommuteStrategy.h"
 /**
  * @brief Constructor for AtLeisureState.
  */
@@ -28,12 +29,13 @@ AtLeisureState::~AtLeisureState()
  */
 void AtLeisureState::travel(Citizen *citizen)
 {
-	// Get distance between citizen leisure location and citizen home location to set strategy
-	int travelDistance = citizen->getLeisure()->calculateDistanceTo(citizen->getHome());
-	this->chooseStrategy(travelDistance);
-
-	// Set state of citizen to AtWorkState
-	citizen->setState(new AtHomeState());
+	// Get distance between citizen home location and citizen work location to set strategy
+		int travelDistance = citizen->getHome()->calculateDistanceTo(citizen->getJob());
+		this->chooseStrategy(travelDistance);
+		int temp = this->strategy->handleCommuteState();
+		citizen->updateSatisfaction("+",temp);
+		// Set state of citizen to AtHomeState
+		citizen->setState(new AtHomeState());
 }
 
 /**

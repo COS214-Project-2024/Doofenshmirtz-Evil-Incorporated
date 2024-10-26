@@ -6,6 +6,12 @@
 #include "AtHomeState.h"
 #include "AtWorkState.h"
 #include "AtLeisureState.h"
+#include <random>
+#include "CommuteStrategy.h"
+#include "RailwayStrategy.h"
+#include "RoadStrategy.h"
+#include "AirportStrategy.h"
+#include "PublicTransportStrategy.h"
 
 TEST_CASE("Example Test")
 {
@@ -15,9 +21,9 @@ TEST_CASE("Example Test")
 // Create mock CityUnits
 class MockCityUnit : public CityUnit {
 public:
-    // We can mock this distance method to return a constant value
+    // We can mock this distance method to return a value before cityunit is implemented
     int calculateDistanceTo(CityUnit* other) override {
-        return 10;  // Arbitrary fixed distance for testing
+        return 10; //don't worry lol
     }
 
     // Necessary Stubs so MockCityUnit is not an abstract class
@@ -54,6 +60,22 @@ TEST_CASE("CitizenUnitTesting") {
         CHECK(citizen.getHome() == residential);
         CHECK(citizen.getJob() == nullptr); // Citizen is unemployed
         CHECK(citizen.getLeisure() == leisure);
+    }
+
+    SUBCASE("Citizen without job is employed")
+    {
+        Citizen citizen(residential, nullptr, leisure);
+        CityUnit* mockJob = new MockCityUnit();
+
+        // Employ the citizen
+        CHECK(citizen.employCitizen(mockJob) == true);
+        CHECK(citizen.getJob() == mockJob);
+
+        // Attempt to employ again (should fail)
+        CHECK(citizen.employCitizen(mockJob) == false);
+        CHECK(citizen.getJob() == mockJob); // Job did not change
+
+        delete mockJob;
     }
 
     SUBCASE("Citizen member functions working as expected")
@@ -130,16 +152,79 @@ TEST_CASE("CitizenLocationStateUnitTesting")
         // Travel from home to work
         AtHomeState home;
         home.travel(citizen);
+        CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtWorkState");
         
         // Travel from work to leisure
         AtWorkState work;
         work.travel(citizen);
+        CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtLeisureState");
 
         // Travel from leisure to home
         AtLeisureState leisureState;
         leisureState.travel(citizen);
+        CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtHomeState");
 
 
         delete citizen; delete residential; delete commercial; delete leisure;
+    }
+}
+
+TEST_CASE("TransportStrategyUnitTesting")
+{   
+    //create all four concrete strategies
+    CommuteStrategy* roadTest = new RoadStrategy();
+    CommuteStrategy* railTest = new RailwayStrategy();
+    CommuteStrategy* AirTest = new AirportStrategy();
+    CommuteStrategy* publicTest = new PublicTransportStrategy();
+
+    SUBCASE("returnStrategyNameTesting")
+    {
+        CHECK(roadTest->getTravelStrategyName() == "RoadStrategy");
+        CHECK(railTest->getTravelStrategyName() == "RailwayStrategy");
+        CHECK(AirTest->getTravelStrategyName() == "AirportStrategy");
+        CHECK(publicTest->getTravelStrategyName() == "PublicTransportStrategy");
+
+        MESSAGE("roadTest: " << roadTest->getTravelStrategyName());
+        MESSAGE("railTest: " << railTest->getTravelStrategyName());
+        MESSAGE("AirTest: " << AirTest->getTravelStrategyName());
+        MESSAGE("publicTest: " << publicTest->getTravelStrategyName());
+    }
+
+    SUBCASE("returnStrategyNameTesting")
+    {
+        CHECK(roadTest->handleCommuteState() == 8);
+        CHECK(railTest->handleCommuteState() == 10);
+        CHECK(AirTest->handleCommuteState() == 15);
+        CHECK(publicTest->handleCommuteState() == 4);
+
+    }
+
+    delete publicTest;
+    delete AirTest;
+    delete railTest;
+    delete roadTest;
+
+    //note these subcases can fail due to random factor 
+    SUBCASE("CorrectStrategyChosen")
+    {
+        AtHomeState home;
+        home.chooseStrategy(5);
+        CHECK(home.getTravelMethod() == "RoadStrategy");
+        home.chooseStrategy(10);
+        CHECK(home.getTravelMethod() == "PublicTransportStrategy");
+        home.chooseStrategy(15);
+        CHECK(home.getTravelMethod() == "RailwayStrategy");
+        home.chooseStrategy(30);
+        CHECK(home.getTravelMethod() == "AirportStrategy");
+    }
+    SUBCASE("RandomCommuteTesting")
+    {
+        //this is a very very small chance, hence the amount of times I test it
+        AtHomeState home;
+        for(int i = 0; i < 100; i++)
+        {
+            home.chooseStrategy(5);
+            MESSAGE("5: " << home.getTravelMethod());
+        }
     }
 }

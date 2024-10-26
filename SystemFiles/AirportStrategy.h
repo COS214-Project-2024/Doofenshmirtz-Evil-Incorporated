@@ -4,17 +4,30 @@
 #include "CommuteStrategy.h"
 #include <string>
 
+/**
+ * @class AirportStrategy
+ * @brief A concrete implementation of the CommuteStrategy class for airport-based travel.
+ */
 class AirportStrategy : public CommuteStrategy {
 
-
 public:
-	AirportStrategy();
+    /**
+     * @brief Constructs an AirportStrategy object.
+     */
+    AirportStrategy();
 
-	~AirportStrategy();
+    /**
+     * @brief Destroys the AirportStrategy object.
+     */
+    ~AirportStrategy();
 
-	void handleCommuteState();
+    /**
+     * @brief Gets the name of the travel strategy.
+     * @return A string representing the name of the travel strategy.
+     */
+    std::string getTravelStrategyName();
 
-	std::string getTravelStrategyName();
+    int handleCommuteState();
 };
 
 #endif

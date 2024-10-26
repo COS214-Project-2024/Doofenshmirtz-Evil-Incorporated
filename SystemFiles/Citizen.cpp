@@ -55,7 +55,20 @@ CityUnit *Citizen::getLeisure() const
 {
     return this->citizenLeisure;
 }
-
+/**
+* @brief updates the citizen'z satisfaction level according to an operator and a value passed in
+*/
+void Citizen::updateSatisfaction(std::string op, int value)
+{
+    if(op == "+")
+    {
+        this->satisfactionScore += value;
+    }
+    else
+    {
+        this->satisfactionScore -= value;
+    }
+}
 
 /**
  * @brief Getter for citizen's current Home CityUnit*
@@ -81,9 +94,20 @@ int Citizen::getSatisfaction() const
     return this->satisfactionScore;
 }
 
+/**
+ * @brief Getter for citizen's current bank account balance
+ */	
 int Citizen::getBalance() const
 {
     return this->bankBalance;
+}
+
+/**
+* @brief Getter for citizen's state
+*/	
+CitizenLocationState *Citizen::getCitzenLocationSate()
+{
+    return this->citizenLocation;
 }
 
 /**
@@ -129,4 +153,25 @@ void Citizen::setState(CitizenLocationState *newState)
     }
 
     this->citizenLocation = newState;
+}
+
+/**
+ * @brief Attempts to employ the citizen at the given job location.
+ *
+ * This method sets the `citizenJob` pointer for the citizen if they are currently unemployed. 
+ * If the citizen is already employed (i.e., `citizenJob` is not nullptr), the method will do nothing.
+ *
+ * @param job A pointer to the CityUnit (building) where the citizen will be employed if the operation is successful.
+ * @return true if the citizen was unemployed and successfully assigned a job, false if the citizen already had a job.
+ */
+bool Citizen::employCitizen(CityUnit *job)
+{
+    if(!this->isEmployed)
+    {
+        this->isEmployed = true;
+        this->citizenJob = job;
+        return true;
+    }
+
+    return false;
 }

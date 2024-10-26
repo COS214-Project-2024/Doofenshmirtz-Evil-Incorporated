@@ -1,20 +1,31 @@
 #include "PublicTransportStrategy.h"
 
+/**
+ * @brief Constructs a PublicTransportStrategy object.
+ */
 PublicTransportStrategy::PublicTransportStrategy() {
-	// TODO - implement PublicTransportStrategy::PublicTransportStrategy
-	throw "Not yet implemented";
+
 }
 
+/**
+ * @brief Destroys the PublicTransportStrategy object.
+ */
 PublicTransportStrategy::~PublicTransportStrategy()
 {
 }
 
-void PublicTransportStrategy::handleCommuteState() {
-	// TODO - implement PublicTransportStrategy::handleCommuteState
-	throw "Not yet implemented";
+/**
+ * @brief Returns the name of the travel strategy.
+ * @return A string representing "PublicTransport".
+ */
+std::string PublicTransportStrategy::getTravelStrategyName() {
+    return "PublicTransportStrategy";
 }
 
-std::string PublicTransportStrategy::getTravelStrategyName() {
-	// TODO - implement PublicTransportStrategy::getTravelStrategyName
-	throw "Not yet implemented";
+int PublicTransportStrategy::handleCommuteState()
+{
+    //socket things go here please 
+    std::cout << "Socket stuff, here comes the bus?\n";
+    //my code, no touchy
+    return 4;//okay jy mag, maar net as jy mooi vra
 }

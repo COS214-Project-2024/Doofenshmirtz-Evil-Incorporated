@@ -1,20 +1,31 @@
 #include "RoadStrategy.h"
 
+/**
+ * @brief Constructs a RoadStrategy object.
+ */
 RoadStrategy::RoadStrategy() {
-	// TODO - implement RoadStrategy::RoadStrategy
-	throw "Not yet implemented";
+
 }
 
+/**
+ * @brief Destroys the RoadStrategy object.
+ */
 RoadStrategy::~RoadStrategy()
 {
 }
 
-void RoadStrategy::handleCommuteState() {
-	// TODO - implement RoadStrategy::handleCommuteState
-	throw "Not yet implemented";
+/**
+ * @brief Returns the name of the travel strategy.
+ * @return A string representing "RoadStrategy".
+ */
+std::string RoadStrategy::getTravelStrategyName() {
+    return "RoadStrategy";
 }
 
-std::string RoadStrategy::getTravelStrategyName() {
-	// TODO - implement RoadStrategy::getTravelStrategyName
-	throw "Not yet implemented";
+int RoadStrategy::handleCommuteState()
+{
+    //socket things go here please 
+    std::cout << "Socket stuff, fast and fuwious\n";
+    //my code, no touchy
+    return 8;//okay jy mag, maar net as jy mooi vra
 }
