@@ -49,8 +49,19 @@ double Building::getEmploymentRate() {
 }
 
 int Building::evaluateHappiness() {
-	// TODO - implement Building::evaluateHappiness
-	throw "Not yet implemented";
+	int totalSitisfaction = 0;
+
+	for (auto citizen:resident)
+	{
+		totalSitisfaction += citizen->getSatisfaction();
+	}
+
+	if (totalSitisfaction < 0)
+	{
+		throw "Value Error: Satisfaction < 0";
+	}
+
+	return totalSitisfaction/resident.size();
 }
 /**
  * @brief Gets the amount of citezens in the building
