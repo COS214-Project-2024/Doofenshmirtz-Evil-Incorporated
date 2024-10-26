@@ -228,3 +228,73 @@ TEST_CASE("TransportStrategyUnitTesting")
         }
     }
 }
+
+#include "Government.h"
+
+TEST_SUITE("Government Observer") {
+
+    TEST_CASE("Constructor, Copy Constructor, Assignment Operator") {
+        Government gov(1000);
+        Government gov2(gov);
+        Government gov3(200);
+        gov3 = gov2;
+
+        CHECK(gov.getGovernmentBalance() == 1000);
+        CHECK(gov2.getGovernmentBalance() == gov.getGovernmentBalance());
+        CHECK(gov3.getGovernmentBalance() == gov2.getGovernmentBalance());
+    }
+
+    TEST_CASE("Collect Taxes") {
+        CityUnit* residential = new CityUnit();
+        CityUnit* commercial = new CityUnit(); 
+        CityUnit* leisure = new CityUnit();
+
+        Government gov(1000);
+        gov.attach(residential);
+        gov.attach(commercial);
+        gov.attach(leisure);
+
+        gov.collectTaxes();
+        CHECK(gov.getGovernmentBalance() == 3000);
+
+        delete residential;
+        delete commercial;
+        delete leisure;
+    }
+
+    TEST_CASE("Detach Observer") {
+        CityUnit* residential = new CityUnit();
+        CityUnit* commercial = new CityUnit(); 
+        CityUnit* leisure = new CityUnit();
+
+        Government gov(1000);
+        gov.attach(residential);
+        gov.attach(commercial);
+        gov.attach(leisure);
+
+        gov.detach(residential);
+        gov.collectTaxes();
+        CHECK(gov.getGovernmentBalance() == 2000);
+
+        delete residential;
+        delete commercial;
+        delete leisure;
+    }
+
+    TEST_CASE("Notify Observers") {
+        CityUnit* residential = new CityUnit();
+        CityUnit* commercial = new CityUnit(); 
+        CityUnit* leisure = new CityUnit();
+
+        Government gov(1000);
+        gov.attach(residential);
+        gov.attach(commercial);
+        gov.attach(leisure);
+
+        gov.notify();
+
+        delete residential;
+        delete commercial;
+        delete leisure;
+    }
+}
