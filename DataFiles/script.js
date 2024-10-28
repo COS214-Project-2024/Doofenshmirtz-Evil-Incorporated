@@ -156,6 +156,7 @@ document.getElementById("pauseImg").addEventListener("click", function () {
     if (document.getElementById("pauseImg").alt === "start") {
       const message = "start";
       socket.send(message); // Send message to the server
+      document.getElementById("pauseImg").src = "img/stop.png";
       document.getElementById("pauseImg").alt = "stop";
     } else {
       const message = "stop";
