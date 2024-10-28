@@ -1,48 +1,31 @@
-#include "SimulationRunnerFacade.h"
-#include "Government.h"
 #include "WebSocketNotifier.h"
+#include "SimulationRunnerFacade.h"
 #include <iostream>
-#include <nlohmann/json.hpp>
 
 /**
- * @brief Constructor for the SimulationRunnerFacade class.
+ * @brief Implementation of the simulation loop
  *
- * This constructor initializes the facade. No additional setup is needed
- * for this class at the moment.
- */
-SimulationRunnerFacade::SimulationRunnerFacade()
-{
-	// No initialization needed in the constructor.
-}
-
-/**
- * @brief Runs the simulation and sends updates via WebSocket.
+ * @details This method runs the main simulation loop. During each iteration:
+ * - Checks if the simulation should continue
+ * - Creates a JSON messages
+ * - Sends the messages through the WebSocketNotifier
+ * - Waits a certain time before the next iteration
  *
- * This method executes the main simulation loop (currently simplified to a
- * single iteration) and constructs a JSON message to notify observers
- * of changes in the simulation state. The message is logged through the
- * WebSocketNotifier.
+ * The simulation continues until the stopFlag_ is set to true.
+ *
+ * @note This method blocks until the simulation is stopped
+ *
+ * @see WebSocketNotifier::log() for message transmission details
  */
 void SimulationRunnerFacade::runSimulation()
 {
-	std::cout << "Running the simulation..." << std::endl;
+	while (!(*stopFlag_))
+	{
+		nlohmann::json message = {
+			{"type", "news"},
+			{"data", "Simulation is running..."}};
 
-	// Create a JSON message
-	nlohmann::json message = {
-		{"type", "news"},
-		{"data", "Simulation is running..."},
-	};
-
-	// Log the message through the WebSocketNotifier instance.
-	WebSocketNotifier::get_mutable_instance().log(message);
-}
-
-/**
- * @brief Destructor for the SimulationRunnerFacade class.
- *
- * This destructor performs any necessary cleanup when the facade is destroyed.
- */
-SimulationRunnerFacade::~SimulationRunnerFacade()
-{
-	// No cleanup needed in the destructor.
+		WebSocketNotifier::get_mutable_instance().log(message);
+		sleep(1);
+	}
 }
