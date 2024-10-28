@@ -1,3 +1,8 @@
+// DemoMain.h
+
+// Main entry point for the simulation demo application that coordinates
+// between a WebSocket server and simulation runner. The program waits for
+// a start signal from clients before beginning the simulation.
 #include "Server.h"
 #include "SimulationRunnerFacade.h"
 #include "WebSocketNotifier.h"
@@ -5,54 +10,61 @@
 #include <atomic>
 #include <chrono>
 
-/**
- * @brief Entry point of the application.
- *
- * This function initializes and starts the WebSocket server,
- * sets up the WebSocket notifier, and runs the simulation
- * based on incoming WebSocket messages.
- */
 int main()
 {
-    // 1. Create and start the server in a separate thread.
-    Server server;                      // Instantiate the server.
-    std::atomic<bool> startFlag(false); // Flag to indicate when to start the simulation.
-    std::thread serverThread([&]()
-                             { server.start(); }); // Launch server on a new thread.
+    // Control flags for coordinating between server and simulation
+    std::atomic<bool> startFlag(false); // Set to true when simulation should start
+    std::atomic<bool> stopFlag(false);  // Set to true to terminate the program
 
-    // 2. Set the server instance for the WebSocketNotifier.
-    WebSocketNotifier::get_mutable_instance().setServer(&server);
+    // Initialize server component
+    // The server handles WebSocket connections from clients and
+    // responds to commands
+    auto server = std::make_shared<Server>();
+    server->setStartFlag(&startFlag);
+    server->setStopFlag(&stopFlag);
 
-    // 3. Initialize the SimulationRunnerFacade to manage simulations.
-    SimulationRunnerFacade simulation;
+    // Configure WebSocket notification system
+    // This allows the simulation to send progress updates to connected clients
+    WebSocketNotifier::get_mutable_instance().setServer(server);
 
-    // 4. Pass the start flag to the server for signaling.
-    server.setStartFlag(&startFlag);
+    // Launch server in separate thread to handle client connections
+    // asynchronously while main thread manages simulation
+    std::thread serverThread([&server]()
+                             { server->start(); });
 
-    // 5. Poll the start flag until it becomes true (waiting for the "start" message).
-    while (!startFlag)
+    std::cout << "Waiting for start signal..." << std::endl;
+
+    // Initialize simulation system
+    SimulationRunnerFacade simulation(&stopFlag);
+
+    // Main control loop: wait for either start or stop signal from server
+    while (!startFlag && !stopFlag)
     {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Avoid busy waiting with a small delay.
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 
-    // 6. Run the simulation once the start signal is received.
-    simulation.runSimulation();
-
-    // 7. Wait for the server to stop (via a potential "stop" message).
-    while (serverThread.joinable())
+    // Execute simulation if start signal received and stop not triggered
+    if (startFlag && !stopFlag)
     {
-        // Optionally check for a stop condition, if applicable.
-        if (!startFlag) // Can be modified based on actual stop signal logic.
+        std::cout << "Starting simulation..." << std::endl;
+        try
         {
-            break; // Exit the loop if the server should stop.
+            simulation.runSimulation();
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << "Simulation error: " << e.what() << std::endl;
+            stopFlag = true;
         }
     }
 
-    // 8. Join the server thread to ensure it stops gracefully before exiting.
+    // Cleanup phase: ensure server shuts down properly
+    server->stop();
     if (serverThread.joinable())
     {
-        serverThread.join(); // Wait for the server thread to finish.
+        serverThread.join(); // Wait for server thread to complete
     }
 
-    return 0; // Exit the application.
+    std::cout << "Program terminated gracefully." << std::endl;
+    return 0;
 }
