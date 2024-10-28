@@ -28,7 +28,12 @@
         <span id="satisfaction">0%</span>
       </div>
       <div>
-        <img src="img/4.png" class="pause-button" alt="start" id="pauseImg" />
+        <img
+          src="img/play.png"
+          class="pause-button"
+          alt="start"
+          id="pauseImg"
+        />
       </div>
     </div>
 
@@ -268,7 +273,6 @@
         const modal = document.getElementById(modalId);
 
         if (getComputedStyle(modal).display === "flex") {
-          // alternatively: if(modal.classList.contains("modal-show"))
           modal.classList.add("modal-hide");
           setTimeout(() => {
             document.body.style.overflow = "initial";
