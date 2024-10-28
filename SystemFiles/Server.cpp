@@ -1,107 +1,157 @@
 #include "Server.h"
 
-Server::Server()
-{
-	// No initialization needed for the constructor.
-}
-
 Server::~Server()
 {
-	// No cleanup needed for the destructor.
+	stop();
 }
 
-void Server::setStartFlag(std::atomic<bool> *flag)
-{
-	startFlag = flag; // Set the shared start flag pointer.
-}
+void Server::setStartFlag(std::atomic<bool> *flag) { startFlag_ = flag; }
+void Server::setStopFlag(std::atomic<bool> *flag) { stopFlag_ = flag; }
 
 /**
- * @brief Handle a WebSocket session with a client.
+ * @brief Implementation of client session handling
  *
- * This function is called for each incoming WebSocket connection.
- * It reads messages from the client and prints them to standard output.
- * The session continues until the WebSocket connection is closed.
+ * @details This method runs in its own thread and manages the lifecycle of a client
+ * connection. It processes incoming messages and responds to commands.
+ * The session continues until either a 'stop' command is received or an error occurs.
  *
- * @param socket The TCP socket for the client connection.
+ * @param socket Connected client socket to be managed
+ *
+ * @throws May throw exceptions related to WebSocket operations which are caught and logged
  */
 void Server::handleSession(tcp::socket socket)
 {
 	try
 	{
-		// Create a shared pointer for the WebSocket stream.
-		auto local_ws_stream = std::make_shared<websocket::stream<tcp::socket>>(std::move(socket));
-		ws_stream = local_ws_stream; /// Assign to the instance's ws_stream for sending messages.
-		local_ws_stream->accept();	 // Accept WebSocket connection
-
-		for (;;)
+		auto ws = std::make_shared<websocket::stream<tcp::socket>>(std::move(socket));
 		{
-			beast::flat_buffer buffer;	   // Buffer to hold incoming messages.
-			local_ws_stream->read(buffer); // Read a message into the buffer.
-			std::cout << "Received message: " << beast::buffers_to_string(buffer.data()) << std::endl;
-			// Check for the "start" command to set the start flag.
-			if (beast::buffers_to_string(buffer.data()) == "start")
+			std::lock_guard<std::mutex> lock(mutex_);
+			ws_stream_ = ws;
+		}
+
+		ws->accept();
+		std::cout << "Client connected" << std::endl;
+
+		while (running_)
+		{
+			beast::flat_buffer buffer;
+			ws->read(buffer);
+			std::string message = beast::buffers_to_string(buffer.data());
+
+			if (message == "start" && startFlag_)
 			{
-				*startFlag = true; // Signal to start the process.
+				*startFlag_ = true;
+			}
+			else if (message == "stop" && stopFlag_)
+			{
+				*stopFlag_ = true;
+				break;
+			}
+			else if (message == "education")
+			{
+				// WebSocketNotifier::get_mutable_instance()..............
+			}
+			else if (message == "shortwork")
+			{
+				// WebSocketNotifier::get_mutable_instance()..............
+			}
+			else if (message.compare(0, 3, "tax") == 0)
+			{
+				// WebSocketNotifier::get_mutable_instance()..............
 			}
 		}
 	}
 	catch (const std::exception &e)
 	{
-		// Catch and log any exceptions that occur during the session.
-		std::cerr << "Error in session: " << e.what() << std::endl;
+		std::cerr << "Session error: " << e.what() << std::endl;
 	}
 }
 
 /**
- * @brief Start the server and accept incoming connections.
+ * @brief Implementation of server start procedure
  *
- * This function initializes the server and begins accepting
- * incoming WebSocket connections. For each connection,
- * a new thread is spawned to handle the WebSocket session.
+ * @details Initializes the server on port 12345 and begins accepting connections.
+ * Only one client connection is handled at a time. The server continues running
+ * until explicitly stopped or an error occurs.
+ *
+ * @throws May throw exceptions related to socket operations which are caught and logged
  */
 void Server::start()
 {
 	try
 	{
-		net::io_context io_context;											 // Create the I/O context for asynchronous operations.
-		tcp::acceptor acceptor(io_context, tcp::endpoint(tcp::v4(), 12345)); // Set up the acceptor on port 12345.
-		std::cout << "Server is running on port 12345" << std::endl;
+		running_ = true;
+		acceptor_ = tcp::acceptor(io_context_, tcp::endpoint(tcp::v4(), 12345));
+		std::cout << "Server running on port 12345" << std::endl;
 
-		while (true)
+		while (running_)
 		{
-			tcp::socket socket(io_context);										   // Create a socket to accept new connections.
-			acceptor.accept(socket);											   // Wait for a connection.
-			std::thread(&Server::handleSession, this, std::move(socket)).detach(); // Spawn a new thread to handle the session with the connected client.
+			tcp::socket socket(io_context_);
+			acceptor_.accept(socket);
+			// Only handle one client
+			handleSession(std::move(socket));
 		}
 	}
 	catch (const std::exception &e)
 	{
-		// Log any exceptions that occur while starting the server.
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cerr << "Server error: " << e.what() << std::endl;
 	}
 }
 
 /**
- * @brief Write a JSON message to the WebSocket stream.
+ * @brief Implementation of server stop procedure
  *
- * This function sends the provided JSON request as a message
- * over the WebSocket connection. If the WebSocket connection
- * is not active, it logs an error message.
+ * @details Safely shuts down the server by closing the acceptor and any active
+ * WebSocket connections. This method is thread-safe and can be called from any thread.
  *
- * @param request The JSON object to be sent.
+ * @throws May throw exceptions related to socket operations which are caught and logged
  */
-void Server::write(nlohmann::json request)
+void Server::stop()
 {
-	// Check if there is an active WebSocket connection before sending the message.
-	if (ws_stream && ws_stream->is_open())
+	running_ = false;
+	try
 	{
-		std::string message = request.dump();	// Serialize the JSON object to a string.
-		ws_stream->write(net::buffer(message)); // Send the message over the WebSocket.
-		std::cout << "Sent message: " << message << std::endl;
+		if (acceptor_.is_open())
+		{
+			acceptor_.close();
+		}
+
+		std::lock_guard<std::mutex> lock(mutex_);
+		if (ws_stream_ && ws_stream_->is_open())
+		{
+			ws_stream_->close(websocket::close_code::normal);
+		}
 	}
-	else
+	catch (const std::exception &e)
 	{
-		// Log an error if there is no active WebSocket connection.
-		std::cerr << "No active WebSocket connection to send message." << std::endl;
+		std::cerr << "Error stopping server: " << e.what() << std::endl;
+	}
+}
+
+/**
+ * @brief Implementation of JSON message writing to WebSocket
+ *
+ * @details Sends a JSON message to the connected client in a thread-safe manner.
+ * If no client is connected or the connection is closed, the message will not be sent.
+ *
+ * @param request The JSON object to be sent to the client
+ *
+ * @throws May throw exceptions related to WebSocket operations which are caught and logged
+ */
+void Server::write(const nlohmann::json &request)
+{
+	try
+	{
+		std::lock_guard<std::mutex> lock(mutex_);
+		if (ws_stream_ && ws_stream_->is_open())
+		{
+			std::string message = request.dump();
+			ws_stream_->write(net::buffer(message));
+			std::cout << "Sent message: " << message << std::endl;
+		}
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Error writing to websocket: " << e.what() << std::endl;
 	}
 }
