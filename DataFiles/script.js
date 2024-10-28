@@ -173,7 +173,7 @@ var snd1 = new Audio("evil.mp3");
 document.getElementById("education").addEventListener("click", function () {
   snd1.play();
   if (socket.readyState === WebSocket.OPEN) {
-    const message = "Implement Education Policy";
+    const message = "education";
     socket.send(message); // Send message to the server
   } else {
     console.error("WebSocket is not open.");
@@ -186,7 +186,7 @@ var snd2 = new Audio("yay.mp3");
 document.getElementById("short-work").addEventListener("click", function () {
   snd2.play();
   if (socket.readyState === WebSocket.OPEN) {
-    const message = "Implement Short Work Week Policy";
+    const message = "shortwork";
     socket.send(message); // Send message to the server
   } else {
     console.error("WebSocket is not open.");

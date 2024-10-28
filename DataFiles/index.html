@@ -257,7 +257,7 @@
             event.preventDefault();
             const taxValue = parseFloat(event.target.value);
             if (!isNaN(taxValue) && taxValue >= 0 && taxValue <= 100) {
-              alert("Tax value entered: " + taxValue);
+              alert("Tax value entered: " + taxValue + "%");
               event.target.value = "";
               if (socket.readyState === WebSocket.OPEN) {
                 const message = "tax:" + taxValue;
