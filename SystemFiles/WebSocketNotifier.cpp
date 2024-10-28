@@ -1,35 +1,37 @@
 #include "WebSocketNotifier.h"
 
 /**
- * @brief Log a message by sending it to the WebSocket server.
+ * @brief Implementation of JSON message logging
  *
- * This function delegates the message to the server's write function
- * if the server instance has been set. If not, it outputs an error
- * message to the console.
+ * @param message The JSON message to be logged/sent through the WebSocket
  *
- * @param message The JSON object to be sent to the server.
+ * @details Checks if a valid server instance exists and forwards the message
+ * to that server's write method. If no server is configured, the message
+ * will be silently dropped.
+ *
+ * @note This implementation maintains the strong exception guarantee - if the
+ * server write fails, the WebSocketNotifier remains in its original state
  */
-void WebSocketNotifier::log(nlohmann::json message)
+void WebSocketNotifier::log(const nlohmann::json &message)
 {
-	if (myServer)
+	if (server_)
 	{
-		myServer->write(message); // Delegate message to server
-	}
-	else
-	{
-		std::cout << "Server not set for WebSocketNotifier" << std::endl;
+		server_->write(message);
 	}
 }
 
 /**
- * @brief Set the server instance for this notifier.
+ * @brief Implementation of server configuration
  *
- * This function allows the WebSocketNotifier to reference a specific
- * Server instance to which it can send log messages.
+ * @param server Shared pointer to the Server instance to be used for message transmission
  *
- * @param server Pointer to the Server instance to set.
+ * @details Updates the internal server pointer with the provided instance.
+ * The shared_ptr ensures proper memory management of the server instance.
+ *
+ * @warning This method should not be called while log operations are in progress
+ * as it's not thread-safe with respect to logging
  */
-void WebSocketNotifier::setServer(Server *server)
+void WebSocketNotifier::setServer(std::shared_ptr<Server> server)
 {
-	myServer = server;
+	server_ = server;
 }
