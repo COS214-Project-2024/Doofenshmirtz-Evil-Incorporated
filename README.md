@@ -27,6 +27,7 @@ The City Builder Simulation is a C++ project where users manage and develop vari
 ```
 Boostbeast: sudo apt-get install libboost-all-dev
 Nlohmann JSON: sudo apt-get install nlohmann-json3-dev
+Doctest: sudo apt install doctest-dev (Assuming WSL)
 ```
 ### Cloning
 ```
@@ -36,7 +37,9 @@ git clone https://github.com/COS214-Project-2024/Doofenshmirtz-Evil-Incorporated
 ### Building
 This project can be built using Makefile:
 ```
-make
+Compilation: make all (Ensure you are currently in the SystemFiles directory)
+Demo Main: make run_demo
+Testing Main (Unit Tests): make run_tests
 ```
 
 ### Running
@@ -134,7 +137,7 @@ make run
 	<tr>
       <td align="center">
 	  	Muller Dannhauser<br> 23542765 <br>
-		<img src="https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Foiltpr1u61xd1.jpeg" alt="your pfp" width="200" height="200">
+		<img src="https://i.redd.it/oiltpr1u61xd1.jpeg" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	CityUnit <br> Composite <br> Stupid Mistikes <br> Horrific code <br><br>
