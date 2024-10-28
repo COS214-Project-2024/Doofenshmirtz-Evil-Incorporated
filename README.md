@@ -42,15 +42,14 @@ Demo Main: make run_demo
 Testing Main (Unit Tests): make run_tests
 ```
 
-### Running
-For UI mode:
-1. Start the Socket
-```
-make run
-```
-2. Launch the web interface
-* Go to Project/UI/
-* Open splash.html
+### Demo Running
+When make run_demo is called:
+1. Go to Project/DataFiles/
+2. Launch the web interface(index.html)
+3. Console should say client connected(if not refresh html page)
+4. Click play button to run the Simulation.
+5. Click stop button to stop Simulation.
+6. Refresh html to terminate program.
 
 # Team 
 
