@@ -39,7 +39,7 @@ void SimulationRunnerFacade::runSimulation()
 		}
 		if (*TaxFlag_)
 		{
-			std::cout << "Tax rate is set to " << *taxRate_ << std::endl;
+			std::cout << "Tax rate is set to " << taxRate_ << std::endl;
 			*TaxFlag_ = false;
 		}
 		sleep(3);
