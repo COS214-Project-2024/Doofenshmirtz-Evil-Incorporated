@@ -2,7 +2,8 @@
 #include <algorithm>
 #include <vector>
 #include <iostream>
-
+#include "Residential.h"
+#include "Commercial.h"
 
 District::District() {
 }
@@ -29,13 +30,41 @@ District::~District()
 }
 
 void District::update() {
-	// Clock tick
-	// Send people to work
-	// Send to leasure
-	// Send to residential
-	// TODO - implement District::update
-	throw "Not yet implemented";
+	for (auto unit:containedCityUnit){
+		unit->update();
+	}
+	this->employResidents();
 }
+
+void District::employResidents(){
+    // Step 1: Collect available commercial units with open employment slots
+    std::vector<Commercial*> availableCommercialUnits;
+    for (auto unit : containedCityUnit) {
+        if (Commercial* commercialUnit = dynamic_cast<Commercial*>(unit)) {
+            if (commercialUnit->getEmploymentRate() < 1) {
+                availableCommercialUnits.push_back(commercialUnit);
+            }
+        }
+    }
+
+    // Step 2: Iterate over all residential units and employ residents if they don't have a job
+    for (auto unit : containedCityUnit) {
+        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+            for (auto person : resident) {
+                if (person->getJob() == nullptr) {
+                    // Step 3: Try to employ the person in an available commercial unit
+                    for (auto commercialUnit : availableCommercialUnits) {
+                        if (commercialUnit->getEmploymentRate() < 1) {
+                            person->employCitizen(commercialUnit);
+                            break;  // Exit loop after employment to avoid extra iterations
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 Iterator* District::createIterator() {
 	Iterator* it = new ConcreteIterator();
@@ -59,10 +88,17 @@ double District::getEmploymentRate() {
 	}
 
 }
+// TODO Implement paytaxes
+double District::payTaxes(double s) {
 
-int District::payTaxes(int s) {
-	// TODO - implement District::payTaxes
-	throw "Not yet implemented";
+	double totalTax = 0;
+	for (auto unit : containedCityUnit) {
+			if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+				for (auto person : resident) {
+						totalTax += person->getBalance()*s;
+					}
+				}
+        }
 }
 
 int District::evaluateHappiness() {
@@ -80,13 +116,15 @@ int District::evaluateHappiness() {
 }
 
 int District::countCitizens() {
-	int totalCitizens = 0;
-	for (auto unit:containedCityUnit){
-		if (unit->getUsedCapacity() > 0)
-		{
-			totalCitizens+= unit->getUsedCapacity();
-		}
-	}
+		int totalCitizens = 0;
 
-	return totalCitizens;
+		for (auto unit : containedCityUnit) {
+			if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+				for (auto person : resident) {
+						totalCitizens += 1;
+					}
+				}
+        }
+
+		return totalCitizens;
 }

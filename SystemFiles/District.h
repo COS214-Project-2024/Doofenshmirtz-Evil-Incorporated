@@ -20,11 +20,13 @@ public:
 
 	void update();
 
+	void employResidents();
+
 	Iterator* createIterator();
 
 	double getEmploymentRate();
 
-	int payTaxes(int s);
+	double payTaxes(double s);
 
 	int evaluateHappiness();
 

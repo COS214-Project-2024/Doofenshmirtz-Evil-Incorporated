@@ -21,7 +21,7 @@ public:
 
 	virtual void update() = 0;
 
-	virtual int payTaxes(int s) = 0;
+	virtual double payTaxes(double rate) = 0;
 
 	int evaluateHappiness();
 

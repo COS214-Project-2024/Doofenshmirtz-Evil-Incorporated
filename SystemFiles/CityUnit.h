@@ -11,6 +11,7 @@ protected:
 	int totalCapacity;
 	int usedCapacity;
 	std::vector<Citizen*> resident;
+	double taxRate;
 
 public:
 	CityUnit();
@@ -29,14 +30,18 @@ public:
 
 	virtual void update() = 0;
 
+	virtual void employResidents();
+
 	virtual Iterator* createIterator() = 0;
 
 	virtual double getEmploymentRate() = 0;
 
+	virtual double setTaxRate(double);
+
 	/**
 	 * Checks if the building type is residential. If it is then loop through the associated citizens and decrement their balance.
 	 */
-	virtual int payTaxes(int amount) = 0;
+	virtual double payTaxes(double rate) = 0;
 
 	virtual int evaluateHappiness() = 0;
 

@@ -38,7 +38,7 @@ double Building::getEmploymentRate() {
 	int total_citizens = resident.size();
 
 	for (auto res:resident){
-		if (res->getJob() != NULL)
+		if (res->getJob() != nullptr)
 		{
 			employed_citizens += 1;
 		}
