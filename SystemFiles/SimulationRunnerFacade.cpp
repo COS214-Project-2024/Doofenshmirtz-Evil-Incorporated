@@ -26,6 +26,22 @@ void SimulationRunnerFacade::runSimulation()
 			{"data", "Simulation is running..."}};
 
 		WebSocketNotifier::get_mutable_instance().log(message);
-		sleep(1);
+
+		if (*EducationFlag_)
+		{
+			std::cout << "Education policy is set" << std::endl;
+			std::cout << "Short Work Week policy is removed" << std::endl;
+		}
+		if (*ShortWorkFlag_)
+		{
+			std::cout << "Short Work Week policy is set" << std::endl;
+			std::cout << "Education policy is removed" << std::endl;
+		}
+		if (*TaxFlag_)
+		{
+			std::cout << "Tax rate is set to " << *taxRate_ << std::endl;
+			*TaxFlag_ = false;
+		}
+		sleep(3);
 	}
 }

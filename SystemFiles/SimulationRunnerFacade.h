@@ -29,7 +29,7 @@ public:
      *
      * @note The stopFlag must remain valid for the lifetime of the SimulationRunnerFacade
      */
-    SimulationRunnerFacade(std::atomic<bool> *stopFlag) : stopFlag_(stopFlag) {}
+    SimulationRunnerFacade(std::atomic<bool> *stopFlag, std::atomic<bool> *EducationFlag_, std::atomic<bool> *ShortWorkFlag_, std::atomic<bool> *TaxFlag, int &taxRate) : stopFlag_(stopFlag), EducationFlag_(EducationFlag_), ShortWorkFlag_(ShortWorkFlag_), TaxFlag_(TaxFlag), taxRate_(taxRate) {}
 
     /**
      * @brief Run the simulation loop
@@ -40,7 +40,11 @@ public:
     void runSimulation();
 
 private:
-    std::atomic<bool> *stopFlag_; ///< Pointer to external flag controlling simulation execution
+    std::atomic<bool> *stopFlag_;      ///< Pointer to external flag controlling simulation execution
+    std::atomic<bool> *EducationFlag_; ///< Pointer to external education flag
+    std::atomic<bool> *ShortWorkFlag_; ///< Pointer to external Short work flag
+    std::atomic<bool> *TaxFlag_;       ///< Pointer to external Tax flag
+    int &taxRate_;
 };
 
 #endif
