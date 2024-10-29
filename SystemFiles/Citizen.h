@@ -92,6 +92,12 @@ public:
 	 * Furthermore, slighlty influences satisfaction based on current state of citizen
      */
 	void followRoutine();
+
+     /**
+      * @brief Used in district to collect tax
+      * This method subtracts the tax amount from the bank account of the citizen
+      */
+     void takeTax(double amount);
 };
 
 #endif

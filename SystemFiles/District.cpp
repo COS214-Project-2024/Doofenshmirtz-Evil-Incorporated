@@ -27,6 +27,10 @@ void District::remove(CityUnit* unit) {
 
 District::~District()
 {
+	for (auto unit : containedCityUnit) {
+        delete unit;  // Free each dynamically allocated CityUnit
+    }
+    containedCityUnit.clear();  // Clear the vector to avoid dangling pointers
 }
 
 void District::update() {
@@ -88,14 +92,15 @@ double District::getEmploymentRate() {
 	}
 
 }
-// TODO Implement paytaxes
 double District::payTaxes(double s) {
 
 	double totalTax = 0;
 	for (auto unit : containedCityUnit) {
 			if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
 				for (auto person : resident) {
-						totalTax += person->getBalance()*s;
+						double tax = person->getBalance()*s;
+						totalTax += tax;
+						person->takeTax(tax);
 					}
 				}
         }

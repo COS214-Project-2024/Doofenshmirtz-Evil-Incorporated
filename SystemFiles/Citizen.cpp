@@ -175,3 +175,11 @@ bool Citizen::employCitizen(CityUnit *job)
 
     return false;
 }
+
+/**
+  * @brief Used in district to collect tax
+  * This method subtracts the tax amount from the bank account of the citizen
+  */
+void Citizen::takeTax(double amount){
+    this->bankBalance -= amount;
+}
