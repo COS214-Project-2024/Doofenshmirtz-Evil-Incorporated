@@ -13,15 +13,22 @@
 int main()
 {
     // Control flags for coordinating between server and simulation
-    std::atomic<bool> startFlag(false); // Set to true when simulation should start
-    std::atomic<bool> stopFlag(false);  // Set to true to terminate the program
+    std::atomic<bool> startFlag(false);     // Set to true when simulation should start
+    std::atomic<bool> stopFlag(false);      // Set to true to terminate the program
+    std::atomic<bool> EducationFlag(false); // Set to true when simulation recieves education policy
+    std::atomic<bool> WorkFlag(false);      // Set to true when simulation recieve short work week policy
+    std::atomic<bool> TaxFlag(false);       // Set to true when simulation changes tax rate
+    int taxRate = 0;
 
     // Initialize server component
     // The server handles WebSocket connections from clients and
     // responds to commands
-    auto server = std::make_shared<Server>();
+    auto server = std::make_shared<Server>(taxRate);
     server->setStartFlag(&startFlag);
     server->setStopFlag(&stopFlag);
+    server->setEducationFlag(&EducationFlag);
+    server->setWorkFlag(&WorkFlag);
+    server->setTaxFlag(&TaxFlag);
 
     // Configure WebSocket notification system
     // This allows the simulation to send progress updates to connected clients
@@ -35,7 +42,7 @@ int main()
     std::cout << "Waiting for start signal..." << std::endl;
 
     // Initialize simulation system
-    SimulationRunnerFacade simulation(&stopFlag);
+    SimulationRunnerFacade simulation(&stopFlag, &EducationFlag, &WorkFlag, &TaxFlag, taxRate);
 
     // Main control loop: wait for either start or stop signal from server
     while (!startFlag && !stopFlag)
