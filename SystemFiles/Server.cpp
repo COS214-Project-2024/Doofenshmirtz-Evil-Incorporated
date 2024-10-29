@@ -7,7 +7,12 @@ Server::~Server()
 
 void Server::setStartFlag(std::atomic<bool> *flag) { startFlag_ = flag; }
 void Server::setStopFlag(std::atomic<bool> *flag) { stopFlag_ = flag; }
-
+void Server::setEducationFlag(std::atomic<bool> *flag) { EducationFlag_ = flag; }
+void Server::setWorkFlag(std::atomic<bool> *flag) { ShortWorkFlag_ = flag; }
+void Server::setTaxFlag(std::atomic<bool> *flag)
+{
+	TaxFlag_ = flag;
+}
 /**
  * @brief Implementation of client session handling
  *
@@ -49,15 +54,19 @@ void Server::handleSession(tcp::socket socket)
 			}
 			else if (message == "education")
 			{
-				// WebSocketNotifier::get_mutable_instance()..............
+				*EducationFlag_ = true;
+				*ShortWorkFlag_ = false;
 			}
 			else if (message == "shortwork")
 			{
-				// WebSocketNotifier::get_mutable_instance()..............
+				*ShortWorkFlag_ = true;
+				*EducationFlag_ = false;
 			}
 			else if (message.compare(0, 3, "tax") == 0)
 			{
-				// WebSocketNotifier::get_mutable_instance()..............
+				*TaxFlag_ = true;
+				std::string rateStr = message.substr(4);
+				taxRate_ = std::stoi(rateStr);
 			}
 		}
 	}

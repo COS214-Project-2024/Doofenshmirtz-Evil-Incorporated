@@ -35,7 +35,7 @@ public:
 	 * @details Initializes the server with default values. The server starts in a
 	 * non-running state and must be explicitly started using the start() method
 	 */
-	Server() : io_context_(), acceptor_(io_context_), ws_stream_(), running_(false) {}
+	Server(int &taxRate) : io_context_(), acceptor_(io_context_), ws_stream_(), running_(false), taxRate_(taxRate) {}
 	/**
 	 * @brief Destroy the Server object
 	 *
@@ -88,6 +88,27 @@ public:
 	 */
 	void setStopFlag(std::atomic<bool> *flag);
 
+	/**
+	 * @brief Set the flag that will be triggered by the 'education' command
+	 *
+	 * @param flag Pointer to atomic boolean that will be set when education command is received
+	 */
+	void setEducationFlag(std::atomic<bool> *flag);
+
+	/**
+	 * @brief Set the flag that will be triggered by the 'shortwork' command
+	 *
+	 * @param flag Pointer to atomic boolean that will be set when short work command is received
+	 */
+	void setWorkFlag(std::atomic<bool> *flag);
+
+	/**
+	 * @brief Set the flag that will be triggered by the 'tax' command
+	 *
+	 * @param flag Pointer to atomic boolean that will be set when tax command is received
+	 */
+	void setTaxFlag(std::atomic<bool> *flag);
+
 private:
 	net::io_context io_context_;								///< IO context for asynchronous operations
 	tcp::acceptor acceptor_;									///< Acceptor for incoming TCP connections
@@ -96,6 +117,10 @@ private:
 	std::atomic<bool> *startFlag_;								///< Pointer to external start flag
 	std::atomic<bool> *stopFlag_;								///< Pointer to external stop flag
 	std::mutex mutex_;											///< Mutex for thread-safe operations
+	std::atomic<bool> *EducationFlag_;							///< Pointer to external education flag
+	std::atomic<bool> *ShortWorkFlag_;							///< Pointer to external Short work flag
+	std::atomic<bool> *TaxFlag_;								///< Pointer to external Tax flag
+	int &taxRate_;
 };
 
 #endif
