@@ -1,0 +1,439 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    border-bottom: 3px solid #ddd;
+}
+
+.header div {
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.header span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.resources-news-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+
+}
+
+.resources {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 60%;
+    font-size: 18px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 200px;
+}
+
+.resources div {
+    text-align: center;
+    position: relative;
+    width: calc(100% * (1/4) - 10px - 1px);
+}
+
+.resources img {
+    width: 40px;
+}
+
+.resources p {
+    margin: 2px 0 0;
+    transition: all 0.3s ease;
+}
+
+.resources div:hover p {
+    color: #5555c4;
+    transform: scale(1.1);
+}
+
+.breaking-news-tv {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 36%;
+    height: 210px;
+    border: 5px solid #444;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.breaking-news-tv p {
+    padding: 5px;
+    margin: 0;
+    max-height: 100%;
+    font-size: 15px;
+}
+
+.news-image {
+    width: 160px;
+}
+
+.utilities-transportation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 20px 20px 20px;
+}
+
+.utilities {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 18px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+
+.utilities div {
+    width: 120px;
+    text-align: center;
+}
+
+.utilities img {
+    width: 40px;
+}
+
+.utilities p {
+    margin: 2px 0 0;
+}
+
+.utilities div:hover p {
+    color: #5555c4;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.transportation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    width: 35%;
+}
+
+.transport-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.transportation div:hover p  {
+    color: #5555c4;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.transport-item p {
+    margin: 2px 0 0;
+}
+
+
+.transport-item img {
+    width: 50px;
+}
+
+.transport-info {
+    width: 100%;
+    text-align: center;
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+
+.progress-low {
+    background-color: #4caf50; 
+}
+
+.progress-medium {
+    background-color: #ffa500; 
+}
+
+.progress-high {
+    background-color: #f44336; 
+}
+
+.progress-percent {
+    font-size: 14px;
+    color: #333;
+}
+
+
+
+.bubble-effect {
+    animation: bubble 0.5s ease forwards;
+  }
+  
+  @keyframes bubble {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+
+  .gov-section {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 90%; 
+  }
+
+
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+button[disabled] {
+    background-color: #E0E0E0; 
+    color: #A0A0A0; 
+    cursor: not-allowed; 
+    box-shadow: none; 
+    transform: none;
+  }
+  
+  button[disabled]:hover {
+    box-shadow: none; 
+    transform: none; 
+  }
+  
+  button[disabled]:active {
+    box-shadow: none;
+    transform: none; 
+  }
+  
+  .input-tax input {
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 18px;
+    text-align: left;
+    transition: box-shadow 0.15s, transform 0.15s;
+    width: 100%;
+  }
+  
+  .input-tax input:focus {
+    outline: none;
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .input-tax input:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .input-tax input:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: initial;
+    align-items: initial;
+    background-color: transparent;
+  }
+
+
+  .modal.modal-show {
+    animation: zoomIn 0.3s ease-in-out forwards;
+  }
+  .modal.modal-hide {
+    animation: zoomOut 0.2s ease-in-out forwards;
+  }
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 2rem;
+    overflow: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    margin: 0;
+  padding: 2rem 5rem;
+  border-radius: 0;
+  box-shadow: initial;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  text-align: justify;
+  }
+  .modal.modal-show .modal-content {
+    animation: zoomIn 0.3s ease-in-out forwards;
+  }
+  .modal.modal-hide .modal-content {
+    animation: zoomOut 0.2s ease-in-out forwards;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding: 0 0.75rem;
+    color: rgba(0,0,0,0.2);
+    cursor: pointer;
+    user-select: none;
+    font-size: 3rem;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .modal-close:hover, .modal-close:focus {
+    color: rgba(0,0,0,0.5);
+  }
+
+.treemap-container {
+    display: flex;
+    justify-content: center;
+}
+svg {
+    font: 10px sans-serif;
+}
+rect {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    padding: 5px;
+    font: 12px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0; 
+    transition: opacity 0.2s;
+}
+text {
+    font-size: 14px; 
+    font-weight: bold; 
+    fill: black;
+    text-anchor: middle; 
+    dominant-baseline: middle; 
+}
