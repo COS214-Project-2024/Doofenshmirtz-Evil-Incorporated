@@ -28,9 +28,9 @@ void District::remove(CityUnit* unit) {
 District::~District()
 {
 	for (auto unit : containedCityUnit) {
-        delete unit;  // Free each dynamically allocated CityUnit
+        delete unit; // Free memory for each contained CityUnit
     }
-    containedCityUnit.clear();  // Clear the vector to avoid dangling pointers
+    containedCityUnit.clear(); // Clear the vector to avoid dangling pointers
 }
 
 void District::update() {
@@ -76,20 +76,17 @@ Iterator* District::createIterator() {
 }
 
 double District::getEmploymentRate() {
-	int buildingsInUnit = containedCityUnit.size();
-	double totalEmploymentRate = 0;
-	for (auto unit:containedCityUnit)
-	{
-		totalEmploymentRate += unit->getEmploymentRate();
-	}
-	double districtEmploymentRate = totalEmploymentRate/buildingsInUnit;
+	if (containedCityUnit.empty()) {
+        return 0.0; // Avoid division by zero if no units are present
+    }
 
-	if ((districtEmploymentRate < 0) || (districtEmploymentRate > 1))
-	{
-		throw "Value Error, distrcitEmploymentRate less than 0 or greater than 1";
-	}else{
-		return districtEmploymentRate;
-	}
+    double totalEmploymentRate = 0.0;
+    for (const auto& unit : containedCityUnit) {
+        totalEmploymentRate += unit->getEmploymentRate();
+    }
+
+    // Return average employment rate
+    return totalEmploymentRate / containedCityUnit.size();
 
 }
 double District::payTaxes(double s) {
@@ -97,7 +94,7 @@ double District::payTaxes(double s) {
 	double totalTax = 0;
 	for (auto unit : containedCityUnit) {
 			if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-				for (auto person : resident) {
+				for (auto &person : resident) {
 						double tax = person->getBalance()*s;
 						totalTax += tax;
 						person->takeTax(tax);

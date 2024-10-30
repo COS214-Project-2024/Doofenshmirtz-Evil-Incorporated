@@ -2,10 +2,10 @@
 
 Residential::Residential() : Building((rand()%100) + 10){
 	this->usedCapacity = this->totalCapacity;
-	for(int i =0 ;i<this->totalCapacity;i++){
-		Citizen* newCitizen = new Citizen(this, nullptr,nullptr);
-		resident.push_back(newCitizen);
-	}
+    for (int i = 0; i < this->totalCapacity; i++) {
+        Citizen* newCitizen = new Citizen(this, nullptr, nullptr);
+        resident.push_back(newCitizen);
+    }
 }
 
 Residential::~Residential()

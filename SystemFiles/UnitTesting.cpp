@@ -37,7 +37,6 @@ public:
     void update() override {}
     Iterator* createIterator() override { return nullptr; }
     double getEmploymentRate() override { return 0.0; }
-    // int payTaxes(int amount) override { return 0; }
     int evaluateHappiness() override { return 0; }
     int countCitizens() override { return 0; }
 
@@ -123,12 +122,11 @@ TEST_CASE("CitizenUnitTesting") {
         prevSatisfaction = citizen.getSatisfaction();
         citizen.followRoutine();
         satisfactionDiff = prevSatisfaction - citizen.getSatisfaction();
-        CHECK(satisfactionDiff >= -10); 
+        CHECK(satisfactionDiff >= -10);
         CHECK(satisfactionDiff <= 10); // Satisfaction should change at home
         MESSAGE("Citizen satisfaction after followRoutine (AtLeisureState => AtHomeState): " << citizen.getSatisfaction());
-        
+
     }
-    
 
     delete residential;
     delete commercial;
@@ -178,7 +176,7 @@ TEST_CASE("CitizenLocationStateUnitTesting")
 }
 
 TEST_CASE("TransportStrategyUnitTesting")
-{   
+{
     //create all four concrete strategies
     CommuteStrategy* roadTest = new RoadStrategy();
     CommuteStrategy* railTest = new RailwayStrategy();
@@ -238,159 +236,71 @@ TEST_CASE("TransportStrategyUnitTesting")
 }
 
 
+TEST_CASE("District Tests") {
+    District district;
 
+    SUBCASE("Add and Remove Units") {
+        CityUnit* unit1 = new MockCityUnit();
+        CityUnit* unit2 = new MockCityUnit();
 
-// Mock Citizen class for testing
-// Mock Citizen class for testing
-// class MockCitizen : public Citizen {
-// public:
-//     MockCitizen() : Citizen(nullptr, nullptr, nullptr) {}
-//     double getBalance() const override { return 100.0; }
-//     bool employCitizen(Commercial* job) override { setJob(job); return true; }
-// };
+        CHECK_NOTHROW(district.add(unit1));
+        CHECK_NOTHROW(district.add(unit2));
 
-// // Mock Residential class for testing
-// class MockResidential : public Residential {
-// public:
-//     void addMockResident(Citizen* citizen) { resident.push_back(citizen); }
-//     double getEmploymentRate() const override { return 0.5; }
-//     int evaluateHappiness() const override { return 80; }
+        // Attempt to remove the units and check
+        CHECK_NOTHROW(district.remove(unit1));
+        CHECK_NOTHROW(district.remove(unit2));
 
-//     // Implement pure virtual function from CityUnit
-//     Iterator* createIterator() override { return nullptr; }  // Placeholder for testing
-// };
+        // Clean up
+        delete unit1;
+        delete unit2;
+    }
 
-// // Mock Commercial class for testing
-// class MockCommercial : public Commercial {
-// public:
-//     double getEmploymentRate() const override { return 0.75; }
-//     int evaluateHappiness() const override { return 70; }
+    SUBCASE("Employment Rate Calculation") {
+        auto* unit1 = new MockCityUnit(); // If District owns, use new
+        auto* unit2 = new MockCityUnit();
 
-//     // Implement pure virtual function from CityUnit
-//     Iterator* createIterator() override { return nullptr; }  // Placeholder for testing
-// };
-// TEST_SUITE("District") {
+        district.add(unit1);
+        district.add(unit2);
 
-//     TEST_CASE("Add and Remove Units") {
-//         District district;
-//         CityUnit* residential = new MockResidential();
-//         CityUnit* commercial = new MockCommercial();
+        CHECK(district.getEmploymentRate() == doctest::Approx(0.5));
+    }
 
-//         SUBCASE("Add units") {
-//             CHECK_NOTHROW(district.add(residential));
-//             CHECK_NOTHROW(district.add(commercial));
-//         }
+    SUBCASE("Tax Payment Calculation") {
+        CityUnit* unit1 = new MockCityUnit();
+        CityUnit* unit2 = new MockCityUnit();
+        
+        district.add(unit1);
+        district.add(unit2);
 
-//         SUBCASE("Remove units") {
-//             district.add(residential);
-//             district.add(commercial);
+        CHECK(district.payTaxes(0.1) == doctest::Approx(200.0)); // Each unit pays 100
 
-//             CHECK_NOTHROW(district.remove(residential));
-//             CHECK_THROWS_AS(district.remove(residential), const char*); // Removing already removed unit
-//         }
+        delete unit1;
+        delete unit2;
+    }
 
-//         delete residential;
-//         delete commercial;
-//     }
+    SUBCASE("Evaluate Happiness") {
+        CityUnit* unit1 = new MockCityUnit();
+        CityUnit* unit2 = new MockCityUnit();
 
-//     TEST_CASE("Update Units") {
-//         District district;
-//         CityUnit* residential = new MockResidential();
-//         district.add(residential);
-//         CHECK_NOTHROW(district.update());
-//         delete residential;
-//     }
+        district.add(unit1);
+        district.add(unit2);
 
-//     TEST_CASE("Employ Residents") {
-//         District district;
-//         MockResidential* residential = new MockResidential();
-//         MockCommercial* commercial = new MockCommercial();
+        CHECK(district.evaluateHappiness() == 70);
 
-//         district.add(residential);
-//         district.add(commercial);
+        delete unit1;
+        delete unit2;
+    }
 
-//         // Add unemployed citizens to residential
-//         MockCitizen* citizen1 = new MockCitizen();
-//         residential->addMockResident(citizen1);
+    SUBCASE("Count Citizens") {
+        CityUnit* unit1 = new MockCityUnit();
+        CityUnit* unit2 = new MockCityUnit();
 
-//         SUBCASE("Employ resident") {
-//             district.employResidents();
-//             CHECK(citizen1->getJob() != nullptr);  // Ensure citizen got a job
-//         }
+        district.add(unit1);
+        district.add(unit2);
 
-//         delete citizen1;
-//         delete residential;
-//         delete commercial;
-//     }
+        CHECK(district.countCitizens() == 20); // 10 citizens per unit
 
-//     TEST_CASE("Calculate Employment Rate") {
-//         District district;
-//         MockCommercial* commercial1 = new MockCommercial();
-//         MockCommercial* commercial2 = new MockCommercial();
-
-//         district.add(commercial1);
-//         district.add(commercial2);
-
-//         CHECK(district.getEmploymentRate() == doctest::Approx(0.75));  // Average employment rate
-
-//         delete commercial1;
-//         delete commercial2;
-//     }
-
-//     TEST_CASE("Pay Taxes") {
-//         District district;
-//         MockResidential* residential = new MockResidential();
-//         district.add(residential);
-
-//         // Add citizens to residential
-//         MockCitizen* citizen1 = new MockCitizen();
-//         MockCitizen* citizen2 = new MockCitizen();
-//         residential->addMockResident(citizen1);
-//         residential->addMockResident(citizen2);
-
-//         SUBCASE("Calculate total tax") {
-//             double taxRate = 0.1;
-//             CHECK(district.payTaxes(taxRate) == doctest::Approx(20.0));  // Each citizen pays 100 * 0.1 = 10, so 2 * 10 = 20
-//         }
-
-//         delete citizen1;
-//         delete citizen2;
-//         delete residential;
-//     }
-
-//     TEST_CASE("Evaluate Happiness") {
-//         District district;
-//         MockResidential* residential1 = new MockResidential();
-//         MockCommercial* commercial1 = new MockCommercial();
-
-//         residential1->setHappiness(80);
-//         commercial1->setHappiness(70);
-
-//         district.add(residential1);
-//         district.add(commercial1);
-
-//         CHECK(district.evaluateHappiness() == 75);  // Average happiness
-
-//         delete residential1;
-//         delete commercial1;
-//     }
-
-//     TEST_CASE("Count Citizens") {
-//         District district;
-//         MockResidential* residential = new MockResidential();
-//         MockCitizen* citizen1 = new MockCitizen();
-//         MockCitizen* citizen2 = new MockCitizen();
-
-//         // Add citizens to residential
-//         residential->addMockResident(citizen1);
-//         residential->addMockResident(citizen2);
-
-//         district.add(residential);
-
-//         CHECK(district.countCitizens() == 2);  // Total count of residents
-
-//         delete citizen1;
-//         delete citizen2;
-//         delete residential;
-//     }
-// }
+        delete unit1;
+        delete unit2;
+    }
+}

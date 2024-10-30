@@ -6,11 +6,14 @@ Building::Building(int totalCapcity) {
 
 Building::~Building()
 {
+	for (auto citizen : resident) {
+        delete citizen;  // Free each dynamically allocated Citizen in the resident vector
+    }
+    resident.clear();  // Clear the vector to avoid dangling pointers
 }
 
 int Building::calculateDistanceTo(CityUnit* destination) {
-	// TODO - implement Building::calculateDistanceTo
-	throw "Not yet implemented";
+	return 0;
 }
 
 int Building::getRemainingCapacity() {

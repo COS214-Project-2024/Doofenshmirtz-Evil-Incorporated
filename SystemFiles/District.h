@@ -31,6 +31,26 @@ public:
 	int evaluateHappiness();
 
 	int countCitizens();
+
+	int calculateDistanceTo(CityUnit* other) override {
+        // Placeholder implementation
+        return 0; 
+    }
+
+    int getRemainingCapacity() override {
+        // Placeholder implementation
+        return 0;
+    }
+
+    int getUsedCapacity() override {
+        // Placeholder implementation
+        return 0; 
+    }
+
+    double setTaxRate(double amount) override {
+        // Placeholder implementation
+        return amount;
+    }
 };
 
 #endif
