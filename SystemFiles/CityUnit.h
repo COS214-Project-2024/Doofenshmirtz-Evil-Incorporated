@@ -24,6 +24,11 @@ public:
 
 	virtual int calculateDistanceTo(CityUnit* destination) = 0;
 
+	virtual std::vector<Citizen*>& getResidents(){
+		static std::vector<Citizen*> emptyList;  // An empty list for units without residents
+        return emptyList;
+		};
+
 	virtual int getRemainingCapacity() = 0;
 
 	virtual int getUsedCapacity() = 0;

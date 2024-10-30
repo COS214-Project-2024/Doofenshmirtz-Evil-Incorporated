@@ -30,7 +30,6 @@ District::~District()
 	for (auto unit : containedCityUnit) {
         delete unit; // Free memory for each contained CityUnit
     }
-    containedCityUnit.clear(); // Clear the vector to avoid dangling pointers
 }
 
 void District::update() {
@@ -89,18 +88,19 @@ double District::getEmploymentRate() {
     return totalEmploymentRate / containedCityUnit.size();
 
 }
-double District::payTaxes(double s) {
+double District::payTaxes(double rate) {
 
-	double totalTax = 0;
-	for (auto unit : containedCityUnit) {
-			if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-				for (auto &person : resident) {
-						double tax = person->getBalance()*s;
-						totalTax += tax;
-						person->takeTax(tax);
-					}
-				}
+	double totalTax = 0.0;
+    for (auto unit : containedCityUnit) {
+        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+            for (auto person : residentialUnit->getResidents()) {  // Ensure `getResidents()` is correct
+                double tax = person->getBalance() * rate;
+                totalTax += tax;
+                person->takeTax(tax);  // Deduct tax from citizen’s balance
+            }
         }
+    }
+    return totalTax;
 }
 
 int District::evaluateHappiness() {
@@ -120,13 +120,14 @@ int District::evaluateHappiness() {
 int District::countCitizens() {
 		int totalCitizens = 0;
 
-		for (auto unit : containedCityUnit) {
-			if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-				for (auto person : resident) {
-						totalCitizens += 1;
-					}
-				}
+    for (auto unit : containedCityUnit) {
+        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+            // Count citizens in each Residential unit's residents list
+            totalCitizens += residentialUnit->getResidents().size();
         }
+    }
+
+    return totalCitizens;
 
 		return totalCitizens;
 }

@@ -1,7 +1,7 @@
 #include "Building.h"
 
-Building::Building(int totalCapcity) {
-	this->totalCapacity = totalCapacity;
+Building::Building(int Capacity) {
+	this->totalCapacity = Capacity;
 }
 
 Building::~Building()
@@ -71,4 +71,8 @@ int Building::evaluateHappiness() {
  */
 int Building::countCitizens() {
 	return resident.size();
+}
+
+std::vector<Citizen*>& Building::getResidents(){
+	return resident;
 }
