@@ -9,6 +9,10 @@ Commercial::~Commercial()
 }
 
 void Commercial::update() {
-	// TODO - implement Commercial::update
-	throw "Not yet implemented";
+
+	double salary = (rand()%1000)+100;
+	for ( auto person:resident)
+	{
+		person->recieveSalary(salary);
+	}
 }

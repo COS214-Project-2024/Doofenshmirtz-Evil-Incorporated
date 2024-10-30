@@ -9,6 +9,7 @@ Landmark::~Landmark()
 }
 
 void Landmark::update() {
-	// TODO - implement Landmark::update
-	throw "Not yet implemented";
+	for (auto person:resident){
+		person->updateSatisfaction("Visit landmark", 20);
+	}
 }

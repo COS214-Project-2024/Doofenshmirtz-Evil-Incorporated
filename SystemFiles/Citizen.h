@@ -98,6 +98,13 @@ public:
       * This method subtracts the tax amount from the bank account of the citizen
       */
      void takeTax(double amount);
+
+     /**
+ *@param amount A value that is added to the persons bank acount
+ * @brief Used in comercial to recieve salary for employed citizens
+ *It takes in an amount and adds it to the bank balance
+ */
+     void recieveSalary(double amount);
 };
 
 #endif

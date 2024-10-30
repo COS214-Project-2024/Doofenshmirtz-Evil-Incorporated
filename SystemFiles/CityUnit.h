@@ -30,13 +30,13 @@ public:
 
 	virtual void update() = 0;
 
-	virtual void employResidents();
+	virtual void employResidents() = 0;
 
 	virtual Iterator* createIterator() = 0;
 
 	virtual double getEmploymentRate() = 0;
 
-	virtual double setTaxRate(double);
+	virtual double setTaxRate(double amount)=0;
 
 	/**
 	 * Checks if the building type is residential. If it is then loop through the associated citizens and decrement their balance.
@@ -46,6 +46,8 @@ public:
 	virtual int evaluateHappiness() = 0;
 
 	virtual int countCitizens() = 0;
+
+
 };
 
 #endif

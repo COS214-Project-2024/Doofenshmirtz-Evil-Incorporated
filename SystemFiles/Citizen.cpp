@@ -7,7 +7,7 @@
  * Initializes satisfaction score and bank balance randomly.
  */
 Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
-{   
+{
     // Satisfaction between 40 and 70
     srand(time(0));
     this->satisfactionScore = 40 + (rand() % 30);
@@ -182,4 +182,12 @@ bool Citizen::employCitizen(CityUnit *job)
   */
 void Citizen::takeTax(double amount){
     this->bankBalance -= amount;
+}
+
+/**
+ *@brief Used in comercial to recieve salary for employed citizens
+ *It takes in an amount and adds it to the bank balance
+ */
+void Citizen::recieveSalary(double amount){
+    this->bankBalance += amount;
 }
