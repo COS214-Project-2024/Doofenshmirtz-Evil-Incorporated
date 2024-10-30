@@ -23,5 +23,5 @@ jobs:
     #   run: make check
     # - name: make distcheck
     #   run: make distcheck
-    - name: make run
-      run: make run
+    - name: make run_tests
+      run: make run_tests

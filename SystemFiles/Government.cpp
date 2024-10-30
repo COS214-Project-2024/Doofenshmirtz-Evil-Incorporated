@@ -45,7 +45,7 @@ void Government::notify() {
 
 void Government::collectResources() {
 	// TODO - implement Government::collectResources
-	throw "Not yet implemented";
+	throw "Need CityUnit first";
 }
 
 int Government::getGovernmentBalance() {

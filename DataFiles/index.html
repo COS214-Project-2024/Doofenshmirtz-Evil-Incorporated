@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <title>City Simulation</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header">
+      <div>
+        <span>City Simulation</span>
+      </div>
+      <div>
+        <img src="img/1.png" alt="citizen icon" id="citizensImg" />
+        <span id="citizens">0</span>
+      </div>
+      <div>
+        <img src="img/2.png" alt="money icon" id="moneyImg" />
+        <span id="money">0</span>
+      </div>
+      <div>
+        <img src="img/3.png" alt="satisfaction icon" id="satisfactionImg" />
+        <span id="satisfaction">0%</span>
+      </div>
+      <div>
+        <img
+          src="img/play.png"
+          class="pause-button"
+          alt="start"
+          id="pauseImg"
+        />
+      </div>
+    </div>
+
+    <!-- Resources and Breaking News Section -->
+    <div class="resources-news-container">
+      <!-- Resources Section -->
+      <div class="resources">
+        <div>
+          <img src="img/5.png" alt="Residential" id="residentialImg" />
+          <p id="residential">Residential: 3</p>
+        </div>
+        <div>
+          <img src="img/6.png" alt="Commercial" id="commercialImg" />
+          <p id="commercial">Commercial: 2</p>
+        </div>
+        <div>
+          <img src="img/7.png" alt="Industrial" id="industrialImg" />
+          <p id="industrial">Industrial: 4</p>
+        </div>
+        <div>
+          <img src="img/8.png" alt="Landmarks" id="landmarksImg" />
+          <p id="landmarks">Landmarks: 3</p>
+        </div>
+        <div>
+          <img src="img/9.png" alt="Wood" id="woodImg" />
+          <p id="wood">Wood: 4</p>
+        </div>
+        <div>
+          <img src="img/10.png" alt="Concrete" id="concreteImg" />
+          <p id="concrete">Concrete: 6</p>
+        </div>
+        <div>
+          <img src="img/11.png" alt="Steel" id="steelImg" />
+          <p id="steel">Steel: 8</p>
+        </div>
+        <div>
+          <img src="img/12.png" alt="Bricks" id="bricksImg" />
+          <p id="bricks">Bricks: 10</p>
+        </div>
+      </div>
+
+      <!-- Breaking News Section -->
+      <div class="breaking-news-tv"></div>
+    </div>
+
+    <!-- Utilities and Transportation Section -->
+    <div class="utilities-transportation-container">
+      <!-- Utilities Section -->
+      <div class="utilities">
+        <div data-tooltip="Power Supply">
+          <img src="img/18.png" alt="Power" id="powerImg" />
+          <p id="power">Power: 90%</p>
+        </div>
+        <div data-tooltip="Water Supply">
+          <img src="img/19.png" alt="Water" id="waterImg" />
+          <p id="water">Water: 75%</p>
+        </div>
+        <div data-tooltip="Waste Management">
+          <img src="img/20.png" alt="Waste" id="wasteImg" />
+          <p id="waste">Waste: 80%</p>
+        </div>
+        <div data-tooltip="Sewage Systems">
+          <img src="img/21.png" alt="Sewage" id="sewageImg" />
+          <p id="sewage">Sewage: 65%</p>
+        </div>
+      </div>
+
+      <!-- Transportation Section -->
+      <div class="transportation">
+        <div class="transport-item">
+          <img src="img/13.png" alt="Bus" id="progress-publicImg" />
+          <div class="transport-info">
+            <p>Public</p>
+            <div class="progress-bar">
+              <div
+                id="progress-public"
+                class="progress"
+                data-progress="70"
+              ></div>
+            </div>
+            <span
+              class="progress-percent progress-public"
+              id="progress-public-value"
+              >70%</span
+            >
+          </div>
+        </div>
+        <div class="transport-item">
+          <img src="img/14.png" alt="Car" id="progress-carImg" />
+          <div class="transport-info">
+            <p>Car</p>
+            <div class="progress-bar">
+              <div id="progress-car" class="progress" data-progress="90"></div>
+            </div>
+            <span class="progress-percent progress-car" id="progress-car-value"
+              >90%</span
+            >
+          </div>
+        </div>
+        <div class="transport-item">
+          <img src="img/15.png" alt="Train" id="progress-trainImg" />
+          <div class="transport-info">
+            <p>Train</p>
+            <div class="progress-bar">
+              <div
+                id="progress-train"
+                class="progress"
+                data-progress="50"
+              ></div>
+            </div>
+            <span
+              class="progress-percent progress-train"
+              id="progress-train-value"
+              >50%</span
+            >
+          </div>
+        </div>
+        <div class="transport-item">
+          <img src="img/16.png" alt="Plane" id="progress-planeImg" />
+          <div class="transport-info">
+            <p>Plane</p>
+            <div class="progress-bar">
+              <div
+                id="progress-plane"
+                class="progress"
+                data-progress="40"
+              ></div>
+            </div>
+            <span
+              class="progress-percent progress-plane"
+              id="progress-plane-value"
+              >40%</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gov-section">
+      <button id="city" data-modal-target="modal">Show City</button>
+      <button id="education">Better Education Policy</button>
+      <button id="short-work">Short Work Week Policy</button>
+      <div class="input-tax">
+        <input type="text" placeholder="Update Tax %" id="taxInput" />
+      </div>
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h1 style="text-align: center">City Visualization</h1>
+        <div class="tooltip" id="tooltip"></div>
+        <div class="treemap-container" style="margin-bottom: 20px">
+          <svg id="treemap" width="1000px" height="400px"></svg>
+          <!-- SVG for treemap -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Select all progress elements
+      const progressBars = document.querySelectorAll(".progress");
+
+      progressBars.forEach((bar) => {
+        const progressValue = bar.getAttribute("data-progress");
+        bar.style.width = progressValue + "%"; // Set width based on data-progress attribute
+
+        // Dynamically change the color based on progress value
+        if (progressValue <= 40) {
+          bar.classList.add("progress-low"); // Green
+        } else if (progressValue > 40 && progressValue <= 70) {
+          bar.classList.add("progress-medium"); // Orange
+        } else {
+          bar.classList.add("progress-high"); // Red
+        }
+      });
+
+      var snd = new Audio("map.mp3");
+      document.getElementById("city").addEventListener("click", function () {
+        snd.play();
+        snd.currentTime = 0;
+      });
+
+      const modalTriggerButtons = document.querySelectorAll(
+        "[data-modal-target]"
+      );
+      const modals = document.querySelectorAll(".modal");
+      const modalCloseButtons = document.querySelectorAll(".modal-close");
+
+      modalTriggerButtons.forEach((elem) => {
+        elem.addEventListener("click", (event) =>
+          toggleModal(event.currentTarget.getAttribute("data-modal-target"))
+        );
+      });
+      modalCloseButtons.forEach((elem) => {
+        elem.addEventListener("click", (event) =>
+          toggleModal(event.currentTarget.closest(".modal").id)
+        );
+      });
+      modals.forEach((elem) => {
+        elem.addEventListener("click", (event) => {
+          if (event.currentTarget === event.target)
+            toggleModal(event.currentTarget.id);
+        });
+      });
+
+      // Close Modal with "Esc"...
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.keyCode === 27 &&
+          document.querySelector(".modal.modal-show")
+        ) {
+          toggleModal(document.querySelector(".modal.modal-show").id);
+        }
+      });
+
+      document
+        .getElementById("taxInput")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            const taxValue = parseFloat(event.target.value);
+            if (!isNaN(taxValue) && taxValue >= 0 && taxValue <= 100) {
+              alert("Tax value entered: " + taxValue + "%");
+              event.target.value = "";
+              if (socket.readyState === WebSocket.OPEN) {
+                const message = "tax:" + taxValue;
+                socket.send(message); // Send message to the server
+              }
+            } else {
+              alert("Please enter a number between 0 and 100.");
+            }
+          }
+        });
+
+      function toggleModal(modalId) {
+        const modal = document.getElementById(modalId);
+
+        if (getComputedStyle(modal).display === "flex") {
+          modal.classList.add("modal-hide");
+          setTimeout(() => {
+            document.body.style.overflow = "initial";
+            modal.classList.remove("modal-show", "modal-hide");
+            modal.style.display = "none";
+          }, 200);
+        } else {
+          document.body.style.overflow = "hidden";
+          modal.style.display = "flex";
+          modal.classList.add("modal-show");
+        }
+      }
+
+      education = document.getElementById("education");
+      work = document.getElementById("short-work");
+      education.addEventListener("click", () => {
+        education.setAttribute("disabled", true);
+        work.removeAttribute("disabled");
+      });
+      work.addEventListener("click", () => {
+        work.setAttribute("disabled", true);
+        education.removeAttribute("disabled");
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
