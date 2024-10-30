@@ -1,51 +1,53 @@
 #include "Government.h"
 
-Government::Government() {
-	// TODO - implement Government::Government
-	throw "Not yet implemented";
+#include <iostream>
+
+Government::Government(int governmentBalance) {
+	this->governmentBalance = governmentBalance;
 }
 
-Government::~Government()
-{
-}
-
-Government::Government(Government& government) {
-	// TODO - implement Government::Government
-	throw "Not yet implemented";
-}
-
-
-void Government::operator=(Government &rhs)
-{
-}
-
-Government *Government::getGovernment()
-{
-    // TODO - implement Government::getGovernment
-	throw "Not yet implemented";
+Government::~Government() {
+	for (auto it = observerList.begin(); it != observerList.end(); it++) {
+		delete *it;
+	}
+	for (auto it = myCommand.begin(); it != myCommand.end(); it++) {
+		delete *it;
+	}
 }
 
 void Government::collectTaxes() {
-	// TODO - implement Government::collectTaxes
-	throw "Not yet implemented";
+	for (CityUnit* unit : observerList) {
+		unit->payTaxes(TAX_RATE);
+		this->governmentBalance += unit->getUsedCapacity() * TAX_RATE;
+	}
 }
 
-void Government::attach(CityUnit * myObserver)
-{
+void Government::attach(CityUnit * myObserver) {
+	observerList.push_back(myObserver);
 }
 
 
 void Government::detach(CityUnit* myObserver) {
-	// TODO - implement Government::detach
-	throw "Not yet implemented";
+	for (auto it = observerList.begin(); it != observerList.end(); it++) {
+		if (*it == myObserver) {
+			observerList.erase(it);
+			delete myObserver;
+			break;
+		}
+	}
 }
 
 void Government::notify() {
-	// TODO - implement Government::notify
-	throw "Not yet implemented";
+	for (CityUnit* unit : observerList) {
+		unit->update();
+	}
 }
 
 void Government::collectResources() {
 	// TODO - implement Government::collectResources
-	throw "Not yet implemented";
+	throw "Need CityUnit first";
+}
+
+int Government::getGovernmentBalance() {
+	return this->governmentBalance;
 }
