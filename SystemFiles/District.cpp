@@ -5,13 +5,27 @@
 #include "Residential.h"
 #include "Commercial.h"
 
+
+/**
+ * @brief Constructs a District object.
+ */
 District::District() : CityUnit(0, 0, 0) {
 }
 
+
+/**
+ * @brief Adds a new CityUnit to the district.
+ * @param newUnit The CityUnit to be added.
+ */
 void District::add(CityUnit* newUnit) {
 	containedCityUnit.push_back(newUnit);
 }
 
+/**
+ * @brief Removes a specified CityUnit from the district.
+ * @param unit The CityUnit to be removed.
+ * @throws std::exception if the unit is not found in the district.
+ */
 void District::remove(CityUnit* unit) {
 	CityUnit* itemToRemove = unit;
 
@@ -25,6 +39,12 @@ void District::remove(CityUnit* unit) {
 	}
 }
 
+
+/**
+ * @brief Destructor for the District class.
+ *
+ * Cleans up dynamically allocated CityUnits and clears the containedCityUnit vector.
+ */
 District::~District()
 {
 	for (auto unit : containedCityUnit) {
@@ -36,6 +56,10 @@ District::~District()
     containedCityUnit.clear();
 }
 
+
+/**
+ * @brief Updates all CityUnits within the district and employs residents.
+ */
 void District::update() {
 	for (auto unit:containedCityUnit){
 		unit->update();
@@ -43,6 +67,13 @@ void District::update() {
 	this->employResidents();
 }
 
+
+/**
+ * @brief Employs residents from residential units in available commercial units.
+ *
+ * The method ensures that residents without jobs are employed in commercial units
+ * that have open employment slots.
+ */
 void District::employResidents(){
     // Step 1: Collect available commercial units with open employment slots
     std::vector<Commercial*> availableCommercialUnits;
@@ -72,12 +103,20 @@ void District::employResidents(){
     }
 }
 
-
+/**
+ * @brief Creates an iterator for the district.
+ * @return A pointer to the created Iterator.
+ */
 Iterator* District::createIterator() {
 	Iterator* it = new ConcreteIterator();
 	return it;
 }
 
+
+/**
+ * @brief Calculates the average employment rate for the district.
+ * @return The average employment rate as a double.
+ */
 double District::getEmploymentRate() {
 	if (containedCityUnit.empty()) {
         return 0.0; // Avoid division by zero if no units are present
@@ -92,6 +131,12 @@ double District::getEmploymentRate() {
     return totalEmploymentRate / containedCityUnit.size();
 
 }
+
+/**
+ * @brief Collects taxes from residents in the district.
+ * @param rate The tax rate as a decimal.
+ * @return The total amount of tax collected.
+ */
 double District::payTaxes(double rate) {
 
 	double totalTax = 0.0;
@@ -107,6 +152,12 @@ double District::payTaxes(double rate) {
     return totalTax;
 }
 
+
+/**
+ * @brief Evaluates the average happiness level of the district.
+ * @return The average happiness as an integer.
+ * @throws std::exception if total happiness is negative.
+ */
 int District::evaluateHappiness() {
 	int totalHappiness = 0;
 	for (auto unit:containedCityUnit)
@@ -121,6 +172,11 @@ int District::evaluateHappiness() {
 	return totalHappiness/containedCityUnit.size();
 }
 
+
+/**
+ * @brief Counts the total number of citizens in all residential units within the district.
+ * @return The total number of citizens.
+ */
 int District::countCitizens() {
 		int totalCitizens = 0;
 
