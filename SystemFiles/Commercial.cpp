@@ -9,7 +9,6 @@ Commercial::~Commercial()
 }
 
 void Commercial::update() {
-
 	double salary = (rand()%1000)+100;
 	for ( auto person:resident)
 	{

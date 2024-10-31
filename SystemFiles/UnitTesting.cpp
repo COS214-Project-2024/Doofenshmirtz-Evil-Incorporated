@@ -338,7 +338,7 @@ TEST_CASE("District Tests") {
 
         // Expected total tax = (1000 * 0.1) + (2000 * 0.1) = 300
         CHECK(taxCollected == doctest::Approx(300.0));
-        MESSAGE("Total tax collected: " << taxCollected);
+        MESSAGE("Total tax collected: R" << taxCollected);
 
         // Check if citizens' balances are reduced correctly
         CHECK(citizen1->getBalance() == doctest::Approx(900.0)); // 1000 - 100
