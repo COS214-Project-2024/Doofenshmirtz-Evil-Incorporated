@@ -16,9 +16,10 @@ private:
 	BuildingFactory* ResidentialFact ;
 	BuildingFactory* CommercialFact ;
 	BuildingFactory* LandmarkFact ;
+	CityUnit* reciever;
 
 public:
-	SpendResources();
+	SpendResources(CityUnit* district);
 
 	~SpendResources();
 

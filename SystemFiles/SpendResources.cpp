@@ -7,7 +7,7 @@
 #include "CommercialFactory.h"
 #include "LandmarkFactory.h"
 
-SpendResources::SpendResources() {
+SpendResources::SpendResources(CityUnit* district) {
 	this->SewageFact = new SewageSystemFactory();
 	this->WaterFact = new WaterPlantFactory();
 	this->WasteFact = new WasteSiteFactory();
@@ -15,6 +15,7 @@ SpendResources::SpendResources() {
 	this->ResidentialFact = new ResidentialFactory();
 	this->CommercialFact = new CommercialFactory();
 	this->LandmarkFact = new LandmarkFactory();
+	this->reciever = district;
 }
 
 SpendResources::~SpendResources()
@@ -50,7 +51,6 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 	}
 
 	//actually build the buildings
-	//still need to add the building returned to the city unit somehow, dk how yet tho probably just need to attach it to government, will see tomorow how to do it
 	//Check if you have enough money to build a new building.
 	//Use a helper function to check if you have enough resources to build the building.
 	switch (decisionVal)
@@ -60,7 +60,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 		{
 			balance -= CommercialFact->getCost();
 			CityUnit* temp = this->CommercialFact->build();
-			// gvmt->attach(temp);
+			this->reciever->add(temp);
 		}
 		break;
 	case 1:
@@ -68,7 +68,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 		{
 			balance -= LandmarkFact->getCost();
 			CityUnit* temp = this->LandmarkFact->build();
-			// gvmt->attach(temp);
+			this->reciever->add(temp);
 		}
 		break;
 	case 2:
@@ -76,7 +76,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 		{
 			balance -= PowerFact->getCost();
 			CityUnit* temp = this->PowerFact->build();
-			// gvmt->attach(temp);
+			this->reciever->add(temp);
 		}
 		break;
 	case 3:
@@ -84,7 +84,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 		{
 			balance -= WaterFact->getCost();
 			CityUnit* temp = this->WaterFact->build();
-			// gvmt->attach(temp);
+			this->reciever->add(temp);
 		}
 		break;
 	case 4: 
@@ -92,7 +92,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 		{
 			balance -= WasteFact->getCost();
 			CityUnit* temp = this->WasteFact->build();
-			// gvmt->attach(temp);
+			this->reciever->add(temp);
 		}
 		break;
 	case 5: 
@@ -100,7 +100,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 		{
 			balance -= SewageFact->getCost();
 			CityUnit* temp = this->SewageFact->build();
-			// gvmt->attach(temp);
+			this->reciever->add(temp);
 		}
 		break;
 	default:
