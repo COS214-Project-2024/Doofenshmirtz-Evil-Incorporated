@@ -1,5 +1,6 @@
 #include "Citizen.h"
 #include <random>
+#include <ctime>
 
 
 /**
@@ -7,12 +8,13 @@
  * Initializes satisfaction score and bank balance randomly.
  */
 Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
-{   
+{
     // Satisfaction between 40 and 70
     srand(time(0));
     this->satisfactionScore = 40 + (rand() % 30);
 
     // Default state at home
+    this->citizenLocation = nullptr;
     this->setState(new AtHomeState());
 
     // Give citizen a job association if parameter is not a nullptr
@@ -147,6 +149,11 @@ void Citizen::followRoutine()
  */
 void Citizen::setState(CitizenLocationState *newState)
 {
+    
+    if(newState == this->citizenLocation){
+        return;
+    }
+
     if(this->citizenLocation != nullptr)
     {
         delete this->citizenLocation;
@@ -174,4 +181,20 @@ bool Citizen::employCitizen(CityUnit *job)
     }
 
     return false;
+}
+
+/**
+  * @brief Used in district to collect tax
+  * This method subtracts the tax amount from the bank account of the citizen
+  */
+void Citizen::takeTax(double amount){
+    this->bankBalance -= amount;
+}
+
+/**
+ *@brief Used in comercial to recieve salary for employed citizens
+ *It takes in an amount and adds it to the bank balance
+ */
+void Citizen::recieveSalary(double amount){
+    this->bankBalance += amount;
 }

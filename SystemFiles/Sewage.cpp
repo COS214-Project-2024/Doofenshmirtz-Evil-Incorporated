@@ -1,8 +1,7 @@
 #include "Sewage.h"
 
-Sewage::Sewage() {
-	// TODO - implement Sewage::Sewage
-	throw "Not yet implemented";
+Sewage::Sewage(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+{
 }
 
 Sewage::~Sewage()

@@ -7,11 +7,13 @@ class Building : public CityUnit {
 
 
 public:
-	Building(int totalCapacity);
+	Building(int totalCap, int usedCap, double taxR);
 
 	virtual ~Building();
 
 	int calculateDistanceTo(CityUnit* destination);
+
+	std::vector<Citizen*>& getResidents();
 
 	int getRemainingCapacity();
 
@@ -21,11 +23,30 @@ public:
 
 	virtual void update() = 0;
 
-	virtual int payTaxes(int s) = 0;
-
 	int evaluateHappiness();
 
 	int countCitizens();
+
+	/**
+	 *@brief Dummy implementations to endure concrete buildings works as expected
+	 */
+
+	void add(CityUnit* newUnit){};
+	void remove(CityUnit* unit){};
+	void employResidents(){};
+	Iterator* createIterator(){
+		return nullptr;
+	};
+	double setTaxRate(double amount){
+		return 0;
+	};
+	double payTaxes(double rate){
+		return 0;
+	};
+
+	void pushBackResident(Citizen* newCitizen){
+		resident.push_back(newCitizen);
+	};
 };
 
 #endif

@@ -1,40 +1,77 @@
 #include "Building.h"
 
-Building::Building(int totalCapcity) {
-	// TODO - implement Building::Building
-	throw "Not yet implemented";
+Building::Building(int totalCap, int usedCap, double taxR) : CityUnit(totalCap, usedCap, taxR) {
 }
 
 Building::~Building()
 {
+	for (auto citizen : resident) {
+        delete citizen;  // Free each dynamically allocated Citizen in the resident vector
+    }
+    resident.clear();  // Clear the vector to avoid dangling pointers
 }
 
 int Building::calculateDistanceTo(CityUnit* destination) {
-	// TODO - implement Building::calculateDistanceTo
-	throw "Not yet implemented";
+	return 0;
 }
 
 int Building::getRemainingCapacity() {
-	// TODO - implement Building::getRemainingCapacity
-	throw "Not yet implemented";
+	int remaining_capacity;
+
+	if (usedCapacity > totalCapacity)
+	{
+		throw "Value Error: usedCapacity greater that totalCapacity";
+		return 1;
+	}else{
+		remaining_capacity = totalCapacity - usedCapacity;
+		return remaining_capacity;
+	}
 }
 
 int Building::getUsedCapacity() {
-	// TODO - implement Building::getUsedCapacity
-	throw "Not yet implemented";
+	return usedCapacity;
 }
 
+/**
+ * @brief Calculate the employment and resturns a decimal value betwen 0 and 1
+ */
 double Building::getEmploymentRate() {
-	// TODO - implement Building::getEmploymentRate
-	throw "Not yet implemented";
+	int employed_citizens = 0;
+	int total_citizens = resident.size();
+
+	for (auto res:resident){
+		if (res->getJob() != nullptr)
+		{
+			employed_citizens += 1;
+		}
+	}
+
+	double employment_rate = (employed_citizens/total_citizens);
+	return employment_rate;
 }
 
 int Building::evaluateHappiness() {
-	// TODO - implement Building::evaluateHappiness
-	throw "Not yet implemented";
+	int totalSitisfaction = 0;
+
+	for (auto citizen:resident)
+	{
+		totalSitisfaction += citizen->getSatisfaction();
+	}
+
+	if (totalSitisfaction < 0)
+	{
+		throw "Value Error: Satisfaction < 0";
+	}
+	return totalSitisfaction/resident.size();
+}
+/**
+ * @brief Gets the amount of citezens in the building
+ * Counts the items in the resident vector
+ */
+int Building::countCitizens() {
+	return resident.size();
 }
 
-int Building::countCitizens() {
-	// TODO - implement Building::countCitizens
-	throw "Not yet implemented";
+std::vector<Citizen*>& Building::getResidents(){
+	return resident;
 }

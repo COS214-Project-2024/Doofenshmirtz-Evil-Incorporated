@@ -1,8 +1,7 @@
 #include "Landmark.h"
 
 // Note: This currently calls the parent constructor with a set number. Whoever is implementing this, it should be a random number [10,100]
-Landmark::Landmark() : Building(3) {
-
+Landmark::Landmark(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
 }
 
 Landmark::~Landmark()
@@ -10,6 +9,7 @@ Landmark::~Landmark()
 }
 
 void Landmark::update() {
-	// TODO - implement Landmark::update
-	throw "Not yet implemented";
+	for (auto person:resident){
+		person->updateSatisfaction("Visit landmark", 20);
+	}
 }

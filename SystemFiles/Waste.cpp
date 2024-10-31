@@ -1,8 +1,7 @@
 #include "Waste.h"
 
-Waste::Waste() {
-	// TODO - implement Waste::Waste
-	throw "Not yet implemented";
+Waste::Waste(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+{
 }
 
 Waste::~Waste()
