@@ -2,6 +2,7 @@
 #define CITYUNIT_H
 
 #include <vector>
+#include <map>
 #include "Citizen.h"
 #include "Iterator.h"
 
@@ -13,8 +14,10 @@ protected:
 	std::vector<Citizen*> resident;
 	double taxRate;
 
+	// Protected to prevent direct instantiation of CityUnit
+	CityUnit(int totalCap, int usedCap, double taxR);
+
 public:
-	CityUnit();
 
 	virtual void add(CityUnit* newUnit) = 0;
 
@@ -52,6 +55,7 @@ public:
 
 	virtual int countCitizens() = 0;
 
+	virtual std::map<std::string, int> collectResources();
 
 };
 

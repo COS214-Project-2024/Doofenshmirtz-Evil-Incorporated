@@ -7,11 +7,13 @@ class Industrial : public Building {
 
 
 public:
-	Industrial();
+	Industrial(int totalCap, int usedCap, double taxR);
 
-	~Industrial();
+	virtual ~Industrial();
 
-	void update();
+	virtual std::map<std::string, int> collectResources() = 0;
+
+	virtual void update() override;
 };
 
 #endif

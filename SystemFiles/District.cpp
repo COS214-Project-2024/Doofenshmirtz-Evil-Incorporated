@@ -9,7 +9,7 @@
 /**
  * @brief Constructs a District object.
  */
-District::District() {
+District::District() : CityUnit(0, 0, 0) {
 }
 
 

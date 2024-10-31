@@ -1,7 +1,6 @@
 #include "Industrial.h"
 
-// Note: This currently calls the parent constructor with a set number. Whoever is implementing this, it should be a random number [10,100]
-Industrial::Industrial() : Building((rand()%100) + 10) {
+Industrial::Industrial(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
 }
 
 Industrial::~Industrial()
@@ -9,6 +8,5 @@ Industrial::~Industrial()
 }
 
 void Industrial::update() {
-	// TODO - implement Industrial::update
-	throw "Not yet implemented";
+	this->usedCapacity += 10;
 }
