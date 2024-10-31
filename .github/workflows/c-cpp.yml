@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "Developer" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "Developer" ]
 
 jobs:
   build:
@@ -13,8 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install Valgrind
-      run: sudo apt-get update && sudo apt-get install -y valgrind
+    - name: Install Dependancies
+      run: sudo apt-get update && sudo apt-get install -y valgrind libboost-all-dev nlohmann-json3-dev doctest-dev
     # - name: configure
     #   run: ./configure
     # - name: make
