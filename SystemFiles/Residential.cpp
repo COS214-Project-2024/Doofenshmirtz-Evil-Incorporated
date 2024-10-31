@@ -1,12 +1,13 @@
 #include "Residential.h"
+#include <iostream>
 
 Residential::Residential() : Building((rand()%100) + 10){
 	this->usedCapacity = this->totalCapacity;
-
     for (int i = 0; i < this->totalCapacity; i++) {
         Citizen* newCitizen = new Citizen(this, nullptr, nullptr);
         pushBackResident(newCitizen);
     }
+    // Debug output
 }
 
 Residential::~Residential()

@@ -1,6 +1,6 @@
 #include "Building.h"
 
-Building::Building(int Capacity) {
+Building::Building(int Capacity){
 	this->totalCapacity = Capacity;
 }
 
