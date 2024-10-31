@@ -151,7 +151,7 @@ When make run_demo is called:
 	<tr>
       <td align="center">
 	  	Dewald Colesky<br> 23536030 <br>
-		<img src="" alt="your pfp" width="200" height="200">
+		<img src="https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13752494/Screen_Shot_2018_10_31_at_8.14.46_PM.0.jpg?quality=90&strip=all&crop=0.027173913043484,0,99.945652173913,100" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	Factory <br> Moral support <br> Good ideas <br> Overall carry<br><br>
