@@ -1,5 +1,6 @@
 #include "Citizen.h"
 #include <random>
+#include <ctime>
 
 
 /**

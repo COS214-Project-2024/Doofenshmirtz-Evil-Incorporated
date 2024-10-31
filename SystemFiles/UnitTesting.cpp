@@ -17,11 +17,16 @@
 #include "Building.h"
 #include "Residential.h"
 #include "Government.h"
-// Industrial buildings
-#include "SteelIndustrial.h"
-#include "ConcreteIndustrial.h"
-#include "WoodIndustrial.h"
-#include "BrickIndustrial.h"
+#include "Industrial.h"
+#include "BuildingFactory.h"
+#include "SewageSystemFactory.h"
+#include "WasteSiteFactory.h"
+#include "WaterPlantFactory.h"
+#include "PowerPlantFactory.h"
+#include "ResidentialFactory.h"
+#include "CommercialFactory.h"
+#include "LandmarkFactory.h"
+#include "IndustrialFactory.h"
 
 TEST_CASE("Example Test")
 {
@@ -73,6 +78,8 @@ public:
     private:
         std::vector<Citizen*> mockResidents;  // Mock list of residents
 };
+
+
 
 TEST_CASE("CitizenUnitTesting") {
 
@@ -354,6 +361,7 @@ TEST_CASE("District Tests") {
     }
 }
 
+
 TEST_CASE("Government") {
     Government government(50000);
 
@@ -379,26 +387,135 @@ TEST_CASE("Government") {
 
     SUBCASE("Collect Resources") {
         // Create mock CityUnits with a set used capacity
-        SteelIndustrial* steel = new SteelIndustrial(100, 50, 0.1);
-        BrickIndustrial* bricks = new BrickIndustrial(200, 50, 0.1);
-        ConcreteIndustrial* concrete = new ConcreteIndustrial(150, 100, 0.2);
-        WoodIndustrial* wood = new WoodIndustrial(200, 100, 0.1);
+        Industrial* industrial = new Industrial(100, 50, 0.1);
 
-        government.attach(steel);
-        government.attach(bricks);
-        government.attach(concrete);
-        government.attach(wood);
+        government.attach(industrial);
 
         // Collect resources and check the government balance
         government.collectResources();
         std::map<std::string, int> resources = government.getResources();
         CHECK(resources["Steel"] == 50);
-        CHECK(resources["Wood"] == 100);
-        CHECK(resources["Concrete"] == 100);
+        CHECK(resources["Wood"] == 50);
+        CHECK(resources["Concrete"] == 50);
         CHECK(resources["Bricks"] == 50);
     }
 
         // No manual deletion needed if Government manages the memory
 
+    
 
 }
+
+
+TEST_CASE("FactoryTesting")
+{
+    BuildingFactory* sewageSystemFactory = new SewageSystemFactory();
+    BuildingFactory* wasteSiteFactory = new WasteSiteFactory();
+    BuildingFactory* waterPlantFactory = new WaterPlantFactory();
+    BuildingFactory* powerPlantFactory = new PowerPlantFactory();
+    BuildingFactory* residentialFactory = new ResidentialFactory();
+    BuildingFactory* commercialFactory = new CommercialFactory();
+    BuildingFactory* landmarkFactory = new LandmarkFactory();
+    BuildingFactory* industrialFactory = new IndustrialFactory();
+
+    Building* sewageSystem = sewageSystemFactory->build();
+    Building* wasteSite = wasteSiteFactory->build();
+    Building* waterPlant = waterPlantFactory->build();
+    Building* powerPlant = powerPlantFactory->build();
+    Building* residential = residentialFactory->build();
+    Building* commercial = commercialFactory->build();
+    Building* landmark = landmarkFactory->build();
+    Building* industrial = industrialFactory->build();
+
+    SUBCASE("Factories instantiated")
+    {
+        CHECK(sewageSystem != nullptr);
+        CHECK(wasteSite != nullptr);
+        CHECK(waterPlant != nullptr);
+        CHECK(powerPlant != nullptr);
+        CHECK(residential != nullptr);
+        CHECK(commercial != nullptr);
+        CHECK(landmark != nullptr);
+        CHECK(industrial != nullptr);
+    }
+
+    SUBCASE("Factory resourceCost")
+    {
+        CHECK(sewageSystemFactory->getResourceCost()["Wood"] == 50);
+        CHECK(sewageSystemFactory->getResourceCost()["Steel"] == 50);
+        CHECK(sewageSystemFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(sewageSystemFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(wasteSiteFactory->getResourceCost()["Wood"] == 50);
+        CHECK(wasteSiteFactory->getResourceCost()["Steel"] == 50);
+        CHECK(wasteSiteFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(wasteSiteFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(waterPlantFactory->getResourceCost()["Wood"] == 50);
+        CHECK(waterPlantFactory->getResourceCost()["Steel"] == 50);
+        CHECK(waterPlantFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(waterPlantFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(powerPlantFactory->getResourceCost()["Wood"] == 50);
+        CHECK(powerPlantFactory->getResourceCost()["Steel"] == 50);
+        CHECK(powerPlantFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(powerPlantFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(residentialFactory->getResourceCost()["Wood"] == 50);
+        CHECK(residentialFactory->getResourceCost()["Steel"] == 50);
+        CHECK(residentialFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(residentialFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(commercialFactory->getResourceCost()["Wood"] == 50);
+        CHECK(commercialFactory->getResourceCost()["Steel"] == 50);
+        CHECK(commercialFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(commercialFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(landmarkFactory->getResourceCost()["Wood"] == 50);
+        CHECK(landmarkFactory->getResourceCost()["Steel"] == 50);
+        CHECK(landmarkFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(landmarkFactory->getResourceCost()["Concrete"] == 50);
+
+        CHECK(industrialFactory->getResourceCost()["Wood"] == 50);
+        CHECK(industrialFactory->getResourceCost()["Steel"] == 50);
+        CHECK(industrialFactory->getResourceCost()["Bricks"] == 50);
+        CHECK(industrialFactory->getResourceCost()["Concrete"] == 50);
+    }
+
+    SUBCASE("Factory cost")
+    {
+        CHECK(sewageSystemFactory->getCost() == 50);
+        CHECK(wasteSiteFactory->getCost() == 50);
+        CHECK(waterPlantFactory->getCost() == 50);
+        CHECK(powerPlantFactory->getCost() == 50);
+        CHECK(residentialFactory->getCost() == 50);
+        CHECK(commercialFactory->getCost() == 50);
+        CHECK(landmarkFactory->getCost() == 50);
+        CHECK(industrialFactory->getCost() == 50);
+    }
+    
+
+    delete sewageSystem;
+    delete wasteSite;
+    delete waterPlant;
+    delete powerPlant;
+    delete residential;
+    delete commercial;
+    delete landmark;
+    delete industrial;
+
+
+
+    delete sewageSystemFactory;
+    delete wasteSiteFactory;
+    delete waterPlantFactory;
+    delete powerPlantFactory;
+    delete residentialFactory;
+    delete commercialFactory;
+    delete landmarkFactory;
+    delete industrialFactory;   
+
+    
+
+}
+
