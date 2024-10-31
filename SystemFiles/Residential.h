@@ -6,7 +6,7 @@ class Residential : public Building {
 
 
 public:
-	Residential();
+	Residential(int totalCap, int usedCap, double taxR);
 
 	~Residential();
 

@@ -1,7 +1,6 @@
 #include "Building.h"
 
-Building::Building(int Capacity){
-	this->totalCapacity = Capacity;
+Building::Building(int totalCap, int usedCap, double taxR) : CityUnit(totalCap, usedCap, taxR) {
 }
 
 Building::~Building()

@@ -65,6 +65,12 @@ public:
 	void collectResources();
 
 	/**
+	 * @brief Gets the resources managed by the government.
+	 * @return The resources managed by the government.
+	 */
+	std::map<std::string, int> getResources() {return resources;}
+
+	/**
 	 * @brief Destructor for the Government class.
 	 */
 	~Government();

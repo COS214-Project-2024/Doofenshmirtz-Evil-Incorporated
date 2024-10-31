@@ -16,6 +16,12 @@
 #include "CityUnit.h"
 #include "Building.h"
 #include "Residential.h"
+#include "Government.h"
+// Industrial buildings
+#include "SteelIndustrial.h"
+#include "ConcreteIndustrial.h"
+#include "WoodIndustrial.h"
+#include "BrickIndustrial.h"
 
 TEST_CASE("Example Test")
 {
@@ -25,6 +31,7 @@ TEST_CASE("Example Test")
 // Create mock CityUnits
 class MockCityUnit : public CityUnit {
 public:
+    MockCityUnit(int totalCap = 100, int usedCap = 0, double taxR = 0.1) : CityUnit(totalCap, usedCap, taxR) {}
     // Mock implementation for distance calculation
     int calculateDistanceTo(CityUnit* other) override {
         return 10; // Arbitrary mock value
@@ -294,8 +301,8 @@ TEST_CASE("District Tests") {
 
     SUBCASE("Count Citizens") {
 
-        CityUnit* unit1 = new Residential();
-        CityUnit* unit2 = new Residential();
+        CityUnit* unit1 = new Residential(100, 50, 0.1);
+        CityUnit* unit2 = new Residential(200, 100, 0.2);
 
         district.add(unit1);
         district.add(unit2);
@@ -309,11 +316,10 @@ TEST_CASE("District Tests") {
         MESSAGE(district.countCitizens());
         // No manual deletion needed if District manages the memory
     }
-
     SUBCASE("Tax Payment Calculation") {
         // Create Residential units and add them to the District
-        Residential* residentialUnit1 = new Residential();
-        Residential* residentialUnit2 = new Residential();
+        Residential* residentialUnit1 = new Residential(100, 50, 0.1);
+        Residential* residentialUnit2 = new Residential(200, 100, 0.2);
 
         // Create citizens with controlled initial balances
         Citizen* citizen1 = new Citizen(residentialUnit1, nullptr, nullptr);
@@ -346,4 +352,53 @@ TEST_CASE("District Tests") {
 
         // No manual deletion needed if District manages the memory
     }
+}
+
+TEST_CASE("Government") {
+    Government government(50000);
+
+    SUBCASE("Collect Taxes") {
+        // Create mock CityUnits with a set used capacity
+        class MockCityUnitWithTaxes : public MockCityUnit {
+        public:
+            double payTaxes(double rate) override { return 1000; }
+            int getUsedCapacity() override { return 100; }
+        };
+
+        CityUnit* unit1 = new MockCityUnitWithTaxes();
+        CityUnit* unit2 = new MockCityUnitWithTaxes();
+
+        government.attach(unit1);
+        government.attach(unit2);
+
+        // Collect taxes and check the government balance
+        government.collectTaxes();
+        CHECK(government.getGovernmentBalance() == 2000);
+
+    }
+
+    SUBCASE("Collect Resources") {
+        // Create mock CityUnits with a set used capacity
+        SteelIndustrial* steel = new SteelIndustrial(100, 50, 0.1);
+        BrickIndustrial* bricks = new BrickIndustrial(200, 50, 0.1);
+        ConcreteIndustrial* concrete = new ConcreteIndustrial(150, 100, 0.2);
+        WoodIndustrial* wood = new WoodIndustrial(200, 100, 0.1);
+
+        government.attach(steel);
+        government.attach(bricks);
+        government.attach(concrete);
+        government.attach(wood);
+
+        // Collect resources and check the government balance
+        government.collectResources();
+        std::map<std::string, int> resources = government.getResources();
+        CHECK(resources["Steel"] == 50);
+        CHECK(resources["Wood"] == 100);
+        CHECK(resources["Concrete"] == 100);
+        CHECK(resources["Bricks"] == 50);
+    }
+
+        // No manual deletion needed if Government manages the memory
+
+
 }

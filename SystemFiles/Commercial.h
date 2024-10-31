@@ -7,7 +7,7 @@ class Commercial : public Building {
 
 
 public:
-	Commercial();
+	Commercial(int totalCap, int usedCap, double taxR);
 
 	~Commercial();
 

@@ -44,8 +44,13 @@ void Government::notify() {
 }
 
 void Government::collectResources() {
-	// TODO - implement Government::collectResources
-	throw "Need CityUnit first";
+	for (CityUnit* unit : observerList) {
+		std::map<std::string, int> resources = unit->collectResources();
+		for (auto it = resources.begin(); it != resources.end(); it++) {
+			this->resources[it->first] += it->second;
+		}
+		
+	}
 }
 
 int Government::getGovernmentBalance() {
