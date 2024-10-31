@@ -28,8 +28,12 @@ void District::remove(CityUnit* unit) {
 District::~District()
 {
 	for (auto unit : containedCityUnit) {
-        delete unit; // Free memory for each contained CityUnit
+        if (unit != nullptr) {
+            delete unit;  // Ensure each unit is only deleted once
+            unit = nullptr;  // Avoid dangling pointers
+        }
     }
+    containedCityUnit.clear();
 }
 
 void District::update() {

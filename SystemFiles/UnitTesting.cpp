@@ -288,7 +288,7 @@ TEST_CASE("District Tests") {
 
         // Check the average employment rate
         CHECK(district.getEmploymentRate() == doctest::Approx(0.5));
-        MESSAGE(district.getEmploymentRate());
+        MESSAGE("Employment rate: " << district.getEmploymentRate());
         // No manual deletion needed since District manages memory
     }
 
