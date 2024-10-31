@@ -13,6 +13,7 @@ Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
     this->satisfactionScore = 40 + (rand() % 30);
 
     // Default state at home
+    this->citizenLocation = nullptr;
     this->setState(new AtHomeState());
 
     // Give citizen a job association if parameter is not a nullptr
@@ -147,6 +148,11 @@ void Citizen::followRoutine()
  */
 void Citizen::setState(CitizenLocationState *newState)
 {
+    
+    if(newState == this->citizenLocation){
+        return;
+    }
+
     if(this->citizenLocation != nullptr)
     {
         delete this->citizenLocation;

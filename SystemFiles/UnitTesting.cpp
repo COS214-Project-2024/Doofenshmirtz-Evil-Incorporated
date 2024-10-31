@@ -295,7 +295,7 @@ TEST_CASE("District Tests") {
 
         // Check the average employment rate
         CHECK(district.getEmploymentRate() == doctest::Approx(0.5));
-        MESSAGE(district.getEmploymentRate());
+        MESSAGE("Employment rate: " << district.getEmploymentRate());
         // No manual deletion needed since District manages memory
     }
 
@@ -314,6 +314,42 @@ TEST_CASE("District Tests") {
         int expectedCount = unit1->getResidents().size() + unit2->getResidents().size();
         CHECK(district.countCitizens() == expectedCount);
         MESSAGE(district.countCitizens());
+        // No manual deletion needed if District manages the memory
+    }
+    SUBCASE("Tax Payment Calculation") {
+        // Create Residential units and add them to the District
+        Residential* residentialUnit1 = new Residential(100, 50, 0.1);
+        Residential* residentialUnit2 = new Residential(200, 100, 0.2);
+
+        // Create citizens with controlled initial balances
+        Citizen* citizen1 = new Citizen(residentialUnit1, nullptr, nullptr);
+        Citizen* citizen2 = new Citizen(residentialUnit2, nullptr, nullptr);
+
+        // Set controlled balances to ensure predictability
+        citizen1->recieveSalary(1000 - citizen1->getBalance()); // Ensure final balance is exactly 1000
+        citizen2->recieveSalary(2000 - citizen2->getBalance()); // Ensure final balance is exactly 2000
+
+        // Verify that initial balances are as expected
+        CHECK(citizen1->getBalance() == doctest::Approx(1000.0));
+        CHECK(citizen2->getBalance() == doctest::Approx(2000.0));
+
+        residentialUnit1->getResidents().push_back(citizen1);
+        residentialUnit2->getResidents().push_back(citizen2);
+
+        district.add(residentialUnit1);
+        district.add(residentialUnit2);
+
+        double rate = 0.1; // 10% tax rate
+        double taxCollected = district.payTaxes(rate);
+
+        // Expected total tax = (1000 * 0.1) + (2000 * 0.1) = 300
+        CHECK(taxCollected == doctest::Approx(300.0));
+        MESSAGE("Total tax collected: " << taxCollected);
+
+        // Check if citizens' balances are reduced correctly
+        CHECK(citizen1->getBalance() == doctest::Approx(900.0)); // 1000 - 100
+        CHECK(citizen2->getBalance() == doctest::Approx(1800.0)); // 2000 - 200
+
         // No manual deletion needed if District manages the memory
     }
 }
@@ -360,7 +396,9 @@ TEST_CASE("Government") {
         CHECK(resources["Wood"] == 100);
         CHECK(resources["Concrete"] == 100);
         CHECK(resources["Bricks"] == 50);
+    }
 
         // No manual deletion needed if Government manages the memory
-    }
+
+
 }
