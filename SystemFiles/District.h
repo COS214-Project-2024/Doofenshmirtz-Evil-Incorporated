@@ -47,10 +47,7 @@ public:
         return 0;
     }
 
-    double setTaxRate(double amount) override {
-        // Placeholder implementation
-        return amount;
-    }
+    
 };
 
 #endif

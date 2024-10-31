@@ -1,15 +1,13 @@
 #include "SetTax.h"
 
-SetTax::SetTax(float newTaxRatePercentage) {
-	// TODO - implement SetTax::SetTax
-	throw "Not yet implemented";
+SetTax::SetTax(CityUnit* district) {
+	this->reciever = district;
 }
 
 SetTax::~SetTax()
 {
 }
 
-void SetTax::excecuteCommand() {
-	// TODO - implement SetTax::excecuteCommand
-	throw "Not yet implemented";
+void SetTax::excecuteCommand(float newTaxRatePercentage) {
+	this->reciever->setTaxRate(newTaxRatePercentage);
 }
