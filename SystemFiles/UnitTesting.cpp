@@ -124,7 +124,7 @@ TEST_CASE("CitizenUnitTesting") {
     SUBCASE("Routine affects satisfaction") {
 
         Citizen citizen(residential, commercial, leisure);
-        MESSAGE("Citizen satisfaction before routine: " << citizen.getSatisfaction());  
+        MESSAGE("Citizen satisfaction before routine: " << citizen.getSatisfaction());
 
         int prevSatisfaction = citizen.getSatisfaction();
         citizen.followRoutine();
