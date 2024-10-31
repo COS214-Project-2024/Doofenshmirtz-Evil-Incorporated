@@ -34,7 +34,7 @@ public:
 
 	int calculateDistanceTo(CityUnit* other) override {
         // Placeholder implementation
-        return 0; 
+        return 0;
     }
 
     int getRemainingCapacity() override {
@@ -44,7 +44,7 @@ public:
 
     int getUsedCapacity() override {
         // Placeholder implementation
-        return 0; 
+        return 0;
     }
 
     double setTaxRate(double amount) override {
