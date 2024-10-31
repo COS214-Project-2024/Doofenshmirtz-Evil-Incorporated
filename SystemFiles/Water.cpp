@@ -1,8 +1,7 @@
 #include "Water.h"
 
-Water::Water() {
-	// TODO - implement Water::Water
-	throw "Not yet implemented";
+Water::Water(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+{
 }
 
 Water::~Water()

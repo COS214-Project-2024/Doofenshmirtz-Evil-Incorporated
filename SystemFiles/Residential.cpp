@@ -1,8 +1,7 @@
 #include "Residential.h"
 
-Residential::Residential() : Building((rand()%100) + 10){
-	this->usedCapacity = this->totalCapacity;
-    for (int i = 0; i < this->totalCapacity; i++) {
+Residential::Residential(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
+    for (int i = 0; i < usedCap && i < totalCap; i++) {
         Citizen* newCitizen = new Citizen(this, nullptr, nullptr);
         this->pushBackResident(newCitizen);
     }

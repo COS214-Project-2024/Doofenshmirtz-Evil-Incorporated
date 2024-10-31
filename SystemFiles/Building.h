@@ -7,7 +7,7 @@ class Building : public CityUnit {
 
 
 public:
-	Building(int totalCapacity);
+	Building(int totalCap, int usedCap, double taxR);
 
 	virtual ~Building();
 

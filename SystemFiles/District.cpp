@@ -5,7 +5,7 @@
 #include "Residential.h"
 #include "Commercial.h"
 
-District::District() {
+District::District() : CityUnit(0, 0, 0) {
 }
 
 void District::add(CityUnit* newUnit) {
