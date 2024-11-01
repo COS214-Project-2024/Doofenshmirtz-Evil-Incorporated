@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-#include "CityUnit.h" // Include the CityUnit definition
+class CityUnit;
 
 /**
  * @class Iterator
