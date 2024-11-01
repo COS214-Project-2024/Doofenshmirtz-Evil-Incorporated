@@ -7,11 +7,11 @@ class AllocateBudget : public GovernmentCommand {
 
 
 public:
-	AllocateBudget();
+	AllocateBudget(CityUnit* district);
 
 	~AllocateBudget();
 
-	void excecuteCommand();
+	void executeCommand();
 };
 
 #endif

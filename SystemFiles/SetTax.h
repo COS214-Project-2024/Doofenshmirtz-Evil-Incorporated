@@ -5,15 +5,13 @@
 #include "GovernmentCommand.h"
 #include "CityUnit.h"
 class SetTax : public GovernmentCommand {
-private:
-	CityUnit* reciever;
 
 public:
 	SetTax(CityUnit* district);
 
 	~SetTax();
 
-	void excecuteCommand(float newTaxRatePercentage);
+	void executeCommand(double newTaxRatePercentage);
 };
 
 #endif

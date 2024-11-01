@@ -1,15 +1,16 @@
 #ifndef GOVERNMENTCOMMAND_H
 #define GOVERNMENTCOMMAND_H
-
+#include "CityUnit.h"
 class GovernmentCommand {
-
+protected:
+	CityUnit* reciever;
 
 public:
-	GovernmentCommand();
+	GovernmentCommand(CityUnit* district);
 
 	virtual ~GovernmentCommand();
 
-	virtual void excecuteCommand() = 0;
+	virtual void executeCommand() = 0;
 };
 
 #endif

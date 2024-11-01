@@ -7,16 +7,28 @@
 #include "CommercialFactory.h"
 #include "LandmarkFactory.h"
 
-SpendResources::SpendResources(CityUnit* district) {
-	this->SewageFact = new SewageSystemFactory();
-	this->WaterFact = new WaterPlantFactory();
-	this->WasteFact = new WasteSiteFactory();
-	this->PowerFact = new PowerPlantFactory();
-	this->ResidentialFact = new ResidentialFactory();
-	this->CommercialFact = new CommercialFactory();
-	this->LandmarkFact = new LandmarkFactory();
-	this->reciever = district;
+SpendResources::SpendResources(
+    CityUnit* district, 
+    double employmentRate, 
+    std::map<std::string, int>& resources, 
+    int& balance,
+    double citizenSatisfaction, 
+    std::map<std::string, double> utilities
+) : GovernmentCommand(district)
+    , balance(balance)  
+	, resources(resources)
+    , employmentRate(employmentRate)
+    , citizenSatisfaction(citizenSatisfaction)
+    , utilities(utilities) 
+{
+    this->SewageFact = new SewageSystemFactory();
+    this->WaterFact = new WaterPlantFactory();
+    this->WasteFact = new WasteSiteFactory();
+    this->PowerFact = new PowerPlantFactory();
+    this->CommercialFact = new CommercialFactory();
+    this->LandmarkFact = new LandmarkFactory();
 }
+
 
 SpendResources::~SpendResources()
 {
@@ -24,12 +36,11 @@ SpendResources::~SpendResources()
 	delete this->WaterFact;
 	delete this->WasteFact;
 	delete this->PowerFact;
-	delete this->ResidentialFact;
 	delete this->CommercialFact;
 	delete this->LandmarkFact;
 }
 
-void SpendResources::excecuteCommand(double employmentRate, std::map<std::string, int> resources, int& balance,int citizenSatisfaction,std::map<std::string, int> utilities) {
+void SpendResources::executeCommand() {
 	//find all priority values
 	int EmploymentPriority = employmentPriority(employmentRate);//0
 	int citizenSatisfactionPriority = citizenPriority(citizenSatisfaction);//1
@@ -61,6 +72,7 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 			balance -= CommercialFact->getCost();
 			CityUnit* temp = this->CommercialFact->build();
 			this->reciever->add(temp);
+			this->reciever->employResidents();
 		}
 		break;
 	case 1:
@@ -110,26 +122,29 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 
 int SpendResources::employmentPriority(double employmentRate)
 {
-	int bucket = static_cast<int>(employmentRate*10);
-	std::map<int,int> value = {{0,1},{1,4},{2,7},{3,10},{4,13},{5,16},{6,19},{7,22},{8,25},{9,28}};//table of priorities
+	double tmp = (employmentRate*10);
+	int bucket = static_cast<int>(tmp);
+	std::map<int,int> value = {{0,1},{1,4},{2,7},{3,10},{4,13},{5,16},{6,19},{7,22},{8,25},{9,28},{10,28}};//table of priorities
     return value[bucket];
 }
 
 int SpendResources::citizenPriority(double citizenSatisfacction)
 {
-	int bucket = static_cast<int>(citizenPriority*10);
-	std::map<int,int> value = {{0,2},{1,5},{2,8},{3,11},{4,14},{5,17},{6,20},{7,23},{8,26},{9,29}};//table of priorities
+	double tmp = citizenSatisfacction*10;
+	int bucket = static_cast<int>(tmp);
+	std::map<int,int> value = {{0,2},{1,5},{2,8},{3,11},{4,14},{5,17},{6,20},{7,23},{8,26},{9,29},{10,29}};//table of priorities
     return value[bucket];
 }
 
 int SpendResources::utilPriority(double dk)
 {
-	int bucket = static_cast<int>(dk*10);
-	std::map<int,int> value = {{0,30},{1,27},{2,24},{3,21},{4,18},{5,15},{6,12},{7,9},{8,6},{9,3}};//table of priorities
+	double tmp = (dk*10);
+	int bucket = static_cast<int>(tmp);
+	std::map<int,int> value = {{0,30},{1,27},{2,24},{3,21},{4,18},{5,15},{6,12},{7,9},{8,6},{9,3},{10,3}};//table of priorities
     return value[bucket];
 }
 
-bool SpendResources::checkResources(std::map<std::string, int> haveResources, std::map<std::string, int> needResources)
+bool SpendResources::checkResources(std::map<std::string, int>& haveResources, std::map<std::string, int> needResources)
 {
     for (const auto& [resource, amount] : needResources) {
         if (haveResources[resource] < amount) {

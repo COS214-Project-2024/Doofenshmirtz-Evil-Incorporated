@@ -88,7 +88,7 @@ void District::employResidents(){
     // Step 2: Iterate over all residential units and employ residents if they don't have a job
     for (auto unit : containedCityUnit) {
         if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-            for (auto person : resident) {
+            for (auto person : residentialUnit->getResidents()) {
                 if (person->getJob() == nullptr) {
                     // Step 3: Try to employ the person in an available commercial unit
                     for (auto commercialUnit : availableCommercialUnits) {
@@ -189,6 +189,11 @@ int District::countCitizens() {
     return totalCitizens;
 
 		return totalCitizens;
+}
+
+void District::setTaxRate(double amount)
+{
+    this->taxRate = amount;
 }
 
 void District::updateEducationMultiplier(float mult)

@@ -37,16 +37,13 @@ public:
 	Iterator* createIterator(){
 		return nullptr;
 	};
-	double setTaxRate(double amount){
-		return 0;
+	void setTaxRate(double amount){
 	};
 	double payTaxes(){
 		return 0;
 	};
 
-	void pushBackResident(Citizen* newCitizen){
-		resident.push_back(newCitizen);
-	};
+	void pushBackResident(Citizen* newCitizen);
 
 	 void updateEducationMultiplier(float mult);
      void updateWeekMultiplier(float mult);

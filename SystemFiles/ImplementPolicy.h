@@ -7,11 +7,11 @@ class ImplementPolicy : public GovernmentCommand {
 
 
 public:
-	ImplementPolicy();
+	ImplementPolicy(CityUnit* district);
 
 	virtual ~ImplementPolicy();
 
-	virtual void excecuteCommand(int& balance) = 0;
+	virtual void executeCommand(int& balance) = 0;
 };
 
 #endif

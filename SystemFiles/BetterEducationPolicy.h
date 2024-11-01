@@ -8,11 +8,11 @@ private:
 	CityUnit* Reciever;
 
 public:
-	BetterEducationPolicy(CityUnit* Reciever);
+	BetterEducationPolicy(CityUnit* district);
 
 	~BetterEducationPolicy();
 
-	void excecuteCommand(int& balance);
+	void executeCommand(int& balance);
 };
 
 #endif

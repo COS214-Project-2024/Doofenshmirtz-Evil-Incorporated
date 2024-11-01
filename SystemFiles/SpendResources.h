@@ -13,17 +13,22 @@ private:
 	BuildingFactory* WaterFact;
 	BuildingFactory* WasteFact ;
 	BuildingFactory* PowerFact ;
-	BuildingFactory* ResidentialFact ;
 	BuildingFactory* CommercialFact ;
 	BuildingFactory* LandmarkFact ;
-	CityUnit* reciever;
+	int& balance;
+	double employmentRate;
+	std::map<std::string, int>& resources;
+	double citizenSatisfaction;
+	std::map<std::string, double> utilities;
+
+	
 
 public:
-	SpendResources(CityUnit* district);
+	SpendResources(CityUnit* district,double employmentRate, std::map<std::string, int>& resources, int& balance,double citizenSatisfaction,std::map<std::string, double> utilities);
 
 	~SpendResources();
 
-	void excecuteCommand(double employmentRate, std::map<std::string, int> resources, int& balance,int citizenSatisfaction,std::map<std::string, int> utilities);
+	void executeCommand();
 
 	int employmentPriority(double employmentRate);
 
@@ -31,7 +36,7 @@ public:
 
 	int utilPriority(double dk);
 
-	bool checkResources( std::map<std::string, int> haveResources,std::map<std::string, int> needResources);
+	bool checkResources( std::map<std::string, int>& haveResources,std::map<std::string, int> needResources);
 
 };
 

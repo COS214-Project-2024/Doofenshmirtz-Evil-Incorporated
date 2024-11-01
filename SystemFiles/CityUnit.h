@@ -44,7 +44,7 @@ public:
 
 	virtual double getEmploymentRate() = 0;
 
-	inline void setTaxRate(double amount);
+	virtual void setTaxRate(double amount);
 
 	/**
 	 * Checks if the building type is residential. If it is then loop through the associated citizens and decrement their balance.

@@ -1,6 +1,6 @@
 #include "AllocateBudget.h"
 
-AllocateBudget::AllocateBudget() {
+AllocateBudget::AllocateBudget(CityUnit* district):GovernmentCommand(district) {
 
 }
 
@@ -8,6 +8,6 @@ AllocateBudget::~AllocateBudget()
 {
 }
 
-void AllocateBudget::excecuteCommand() {
+void AllocateBudget::executeCommand() {
 	//budget.allocate();
 }

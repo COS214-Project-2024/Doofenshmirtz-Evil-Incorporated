@@ -34,6 +34,8 @@ public:
 
 	int countCitizens();
 
+	void setTaxRate(double amount);
+
 	int calculateDistanceTo(CityUnit* other) override {
         // Placeholder implementation
         return 0;

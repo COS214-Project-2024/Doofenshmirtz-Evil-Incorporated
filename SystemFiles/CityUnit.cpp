@@ -12,7 +12,7 @@ std::map<std::string, int> CityUnit::collectResources() {
     return std::map<std::string, int>();
 }
 
-inline void CityUnit::setTaxRate(double amount)
+void CityUnit::setTaxRate(double amount)
 {
     this->taxRate = amount;
 }

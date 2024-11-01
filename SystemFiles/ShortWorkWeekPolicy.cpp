@@ -1,14 +1,13 @@
 #include "ShortWorkWeekPolicy.h"
 
-ShortWorkWeekPolicy::ShortWorkWeekPolicy(CityUnit* Reciever) {
-	this->Reciever = Reciever;
+ShortWorkWeekPolicy::ShortWorkWeekPolicy(CityUnit* district) :ImplementPolicy(district){
 }
 
 ShortWorkWeekPolicy::~ShortWorkWeekPolicy()
 {
 }
 
-void ShortWorkWeekPolicy::excecuteCommand(int& balance) {
+void ShortWorkWeekPolicy::executeCommand(int& balance) {
 	if(balance >= 100000)
 	{
 		balance -= 100000;

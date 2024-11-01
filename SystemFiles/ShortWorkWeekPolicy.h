@@ -8,11 +8,11 @@ private:
 	CityUnit* Reciever;
 
 public:
-	ShortWorkWeekPolicy(CityUnit* Reciever);
+	ShortWorkWeekPolicy(CityUnit* district);
 
 	~ShortWorkWeekPolicy();
 
-	void excecuteCommand(int& balance);
+	void executeCommand(int& balance);
 };
 
 #endif
