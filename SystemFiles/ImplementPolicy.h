@@ -11,7 +11,7 @@ public:
 
 	virtual ~ImplementPolicy();
 
-	virtual void excecuteCommand() = 0;
+	virtual void excecuteCommand(int& balance) = 0;
 };
 
 #endif

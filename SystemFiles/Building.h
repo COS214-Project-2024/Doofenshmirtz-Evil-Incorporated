@@ -47,6 +47,9 @@ public:
 	void pushBackResident(Citizen* newCitizen){
 		resident.push_back(newCitizen);
 	};
+
+	 void updateEducationMultiplier(float mult);
+     void updateWeekMultiplier(float mult);
 };
 
 #endif

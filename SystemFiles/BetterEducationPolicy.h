@@ -2,16 +2,17 @@
 #define BETTEREDUCATIONPOLICY_H
 
 #include "ImplementPolicy.h"
-
+#include "CityUnit.h"
 class BetterEducationPolicy : public ImplementPolicy {
-
+private:
+	CityUnit* Reciever;
 
 public:
-	BetterEducationPolicy();
+	BetterEducationPolicy(CityUnit* Reciever);
 
 	~BetterEducationPolicy();
 
-	void excecuteCommand();
+	void excecuteCommand(int& balance);
 };
 
 #endif

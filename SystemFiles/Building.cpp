@@ -75,3 +75,8 @@ int Building::countCitizens() {
 std::vector<Citizen*>& Building::getResidents(){
 	return resident;
 }
+
+void updateEducationMultiplier(float mult)
+{return;};
+void updateWeekMultiplier(float mult)
+{return;};

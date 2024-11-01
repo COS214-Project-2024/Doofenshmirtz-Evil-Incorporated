@@ -8,6 +8,8 @@ class District : public CityUnit {
 
 private:
 	std::vector<CityUnit*> containedCityUnit;
+	int educationPolicyMultiplier = 1;
+	int shortweekPolicyMultiplier = 1;
 
 public:
 	District();
@@ -47,7 +49,8 @@ public:
         return 0;
     }
 
-    
+	void updateEducationMultiplier(float mult);
+    void updateWeekMultiplier(float mult);
 };
 
 #endif

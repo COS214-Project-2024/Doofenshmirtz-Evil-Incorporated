@@ -149,7 +149,7 @@ double District::payTaxes(double rate) {
             }
         }
     }
-    return totalTax;
+    return totalTax*educationPolicyMultiplier;
 }
 
 
@@ -169,7 +169,7 @@ int District::evaluateHappiness() {
 	{
 		throw "Negative happiness";
 	}
-	return totalHappiness/containedCityUnit.size();
+	return (totalHappiness/containedCityUnit.size())*shortweekPolicyMultiplier;
 }
 
 
@@ -190,4 +190,16 @@ int District::countCitizens() {
     return totalCitizens;
 
 		return totalCitizens;
+}
+
+void District::updateEducationMultiplier(float mult)
+{
+    this->educationPolicyMultiplier = mult;
+    this->shortweekPolicyMultiplier = 1;
+}
+
+void District::updateWeekMultiplier(float mult)
+{
+    this->shortweekPolicyMultiplier = mult;
+    this->educationPolicyMultiplier = 1;
 }
