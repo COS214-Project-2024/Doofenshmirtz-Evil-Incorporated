@@ -110,21 +110,21 @@ void SpendResources::excecuteCommand(double employmentRate, std::map<std::string
 
 int SpendResources::employmentPriority(double employmentRate)
 {
-	int bucket = static_cast<int>(employmentRate) / 10;
+	int bucket = static_cast<int>(employmentRate*10);
 	std::map<int,int> value = {{0,1},{1,4},{2,7},{3,10},{4,13},{5,16},{6,19},{7,22},{8,25},{9,28}};//table of priorities
     return value[bucket];
 }
 
 int SpendResources::citizenPriority(double citizenSatisfacction)
 {
-    int bucket = static_cast<int>(citizenSatisfacction) / 10;
+	int bucket = static_cast<int>(citizenPriority*10);
 	std::map<int,int> value = {{0,2},{1,5},{2,8},{3,11},{4,14},{5,17},{6,20},{7,23},{8,26},{9,29}};//table of priorities
     return value[bucket];
 }
 
 int SpendResources::utilPriority(double dk)
 {
-    int bucket = static_cast<int>(dk) / 10;
+	int bucket = static_cast<int>(dk*10);
 	std::map<int,int> value = {{0,30},{1,27},{2,24},{3,21},{4,18},{5,15},{6,12},{7,9},{8,6},{9,3}};//table of priorities
     return value[bucket];
 }
