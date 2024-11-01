@@ -2,26 +2,56 @@
 #define CONCRETEITERATOR_H
 
 #include "Iterator.h"
-#include "CityUnit.h"
+#include "CityUnit.h" // Ensure CityUnit is included
+#include <vector>
 
+/**
+ * @class ConcreteIterator
+ * @brief Concrete implementation of the Iterator for CityUnit objects.
+ */
 class ConcreteIterator : public Iterator {
 private:
-	const std::vector<CityUnit*>& cityUnits;
-	size_t index;
+    const std::vector<CityUnit*>& cityUnits; /**< Collection of CityUnit pointers to iterate over */
+    size_t index; /**< Current index in the iteration */
 
 public:
-	ConcreteIterator(const std::vector<CityUnit*>& cityUnitsParam);
+    /**
+     * @brief Constructs a ConcreteIterator with the given collection of CityUnits.
+     * @param cityUnitsParam The collection of CityUnit pointers to iterate over.
+     */
+    ConcreteIterator(const std::vector<CityUnit*>& cityUnitsParam);
 
-	~ConcreteIterator();
+    /**
+     * @brief Destructor for ConcreteIterator.
+     */
+    ~ConcreteIterator();
 
-	void first();
+    /**
+     * @brief Moves the iterator to the first CityUnit.
+     */
+    void first() override;
 
-	void next();
-	void previous();
+    /**
+     * @brief Advances the iterator to the next CityUnit.
+     */
+    void next() override;
 
-	bool isDone();
+    /**
+     * @brief Moves the iterator to the previous CityUnit.
+     */
+    void previous() override;
 
-	CityUnit* currentItem();
+    /**
+     * @brief Checks if the iteration has reached the end of the collection.
+     * @return True if all CityUnits have been iterated over, false otherwise.
+     */
+    bool isDone() override;
+
+    /**
+     * @brief Retrieves the current CityUnit.
+     * @return Pointer to the current CityUnit, or nullptr if iteration is done.
+     */
+    CityUnit* currentItem() override;
 };
 
-#endif
+#endif // CONCRETEITERATOR_H
