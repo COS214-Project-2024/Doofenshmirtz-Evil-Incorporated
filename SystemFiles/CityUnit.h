@@ -12,10 +12,10 @@ protected:
 	int totalCapacity;
 	int usedCapacity;
 	std::vector<Citizen*> resident;
-	double taxRate;
+	double taxRate = 0.1;
 
 	// Protected to prevent direct instantiation of CityUnit
-	CityUnit(int totalCap, int usedCap, double taxR);
+	CityUnit(int totalCap, int usedCap);
 
 public:
 
@@ -44,12 +44,12 @@ public:
 
 	virtual double getEmploymentRate() = 0;
 
-	inline void setTaxRate(double amount){this->taxRate = amount;};
+	inline void setTaxRate(double amount);
 
 	/**
 	 * Checks if the building type is residential. If it is then loop through the associated citizens and decrement their balance.
 	 */
-	virtual double payTaxes(double rate) = 0;
+	virtual double payTaxes() = 0;
 
 	virtual int evaluateHappiness() = 0;
 

@@ -7,7 +7,7 @@ class Landmark : public Building {
 
 
 public:
-	Landmark(int totalCap, int usedCap, double taxR);
+	Landmark(int totalCap, int usedCap);
 
 	~Landmark();
 

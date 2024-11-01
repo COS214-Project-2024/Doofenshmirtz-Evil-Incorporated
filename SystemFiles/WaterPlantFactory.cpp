@@ -58,5 +58,5 @@ std::map<std::string, int> WaterPlantFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* WaterPlantFactory::factoryMethod() {
-    return new Water(100, 0, 20.0);
+    return new Water(100, 0);
 }

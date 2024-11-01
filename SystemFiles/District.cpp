@@ -9,7 +9,7 @@
 /**
  * @brief Constructs a District object.
  */
-District::District() : CityUnit(0, 0, 0) {
+District::District() : CityUnit(0, 0) {
 }
 
 
@@ -134,17 +134,16 @@ double District::getEmploymentRate() {
 
 /**
  * @brief Collects taxes from residents in the district.
- * @param rate The tax rate as a decimal.
  * @return The total amount of tax collected.
  */
-double District::payTaxes(double rate) {
+double District::payTaxes() {
 
 	double totalTax = 0.0;
     for (auto unit : containedCityUnit) {
         if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
             for (auto person : residentialUnit->getResidents()) {  // Ensure `getResidents()` is correct
-                double tax = person->getBalance() * rate;
-                totalTax += tax;
+                double tax = (person->getBalance() * this->taxRate);
+                totalTax += (tax);
                 person->takeTax(tax);  // Deduct tax from citizen’s balance
             }
         }

@@ -1,6 +1,6 @@
 #include "Power.h"
 
-Power::Power(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+Power::Power(int totalCap, int usedCap) : Utility(totalCap, usedCap)
 {
 }
 

@@ -7,7 +7,7 @@ class Building : public CityUnit {
 
 
 public:
-	Building(int totalCap, int usedCap, double taxR);
+	Building(int totalCap, int usedCap);
 
 	virtual ~Building();
 
@@ -40,7 +40,7 @@ public:
 	double setTaxRate(double amount){
 		return 0;
 	};
-	double payTaxes(double rate){
+	double payTaxes(){
 		return 0;
 	};
 

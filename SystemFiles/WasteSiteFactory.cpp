@@ -58,5 +58,5 @@ std::map<std::string, int> WasteSiteFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* WasteSiteFactory::factoryMethod() {
-    return new Waste(100, 0, 20.0);
+    return new Waste(100, 0);
 }

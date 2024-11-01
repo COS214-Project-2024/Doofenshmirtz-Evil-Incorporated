@@ -1,6 +1,6 @@
 #include "Waste.h"
 
-Waste::Waste(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+Waste::Waste(int totalCap, int usedCap) : Utility(totalCap, usedCap)
 {
 }
 

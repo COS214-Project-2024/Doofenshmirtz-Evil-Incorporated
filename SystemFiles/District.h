@@ -28,7 +28,7 @@ public:
 
 	double getEmploymentRate();
 
-	double payTaxes(double s);
+	double payTaxes();
 
 	int evaluateHappiness();
 

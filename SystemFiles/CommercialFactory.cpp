@@ -25,7 +25,7 @@ CommercialFactory::CommercialFactory() {
  * @return A pointer to a newly created Commercial building object.
  */
 Building* CommercialFactory::factoryMethod() {
-    return new Commercial(100,0,20.0);
+    return new Commercial(100,0);
 }
 
 /**

@@ -6,7 +6,7 @@ class Sewage : public Utility {
 
 
 public:
-	Sewage(int totalCap, int usedCap, double taxR);
+	Sewage(int totalCap, int usedCap);
 
 	~Sewage();
 

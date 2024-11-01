@@ -31,7 +31,7 @@ IndustrialFactory::IndustrialFactory() {
  *         initial used capacity, and tax rate.
  */
 Building* IndustrialFactory::factoryMethod() {
-    return new Industrial(100, 0, 20.0);
+    return new Industrial(100, 0);
 }
 
 /**

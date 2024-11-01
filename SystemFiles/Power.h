@@ -7,7 +7,7 @@ class Power : public Utility {
 
 
 public:
-	Power(int totalCap, int usedCap, double taxR);
+	Power(int totalCap, int usedCap);
 
 	~Power();
 

@@ -1,6 +1,6 @@
 #include "Building.h"
 
-Building::Building(int totalCap, int usedCap, double taxR) : CityUnit(totalCap, usedCap, taxR) {
+Building::Building(int totalCap, int usedCap) : CityUnit(totalCap, usedCap) {
 }
 
 Building::~Building()
@@ -72,11 +72,16 @@ int Building::countCitizens() {
 	return resident.size();
 }
 
+void Building::updateEducationMultiplier(float mult)
+{
+
+}
+
+void Building::updateWeekMultiplier(float mult)
+{
+}
+
 std::vector<Citizen*>& Building::getResidents(){
 	return resident;
 }
 
-void updateEducationMultiplier(float mult)
-{return;};
-void updateWeekMultiplier(float mult)
-{return;};

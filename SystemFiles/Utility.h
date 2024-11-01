@@ -6,7 +6,7 @@ class Utility : public Building {
 
 
 public:
-	Utility(int totalCap, int usedCap, double taxR);
+	Utility(int totalCap, int usedCap);
 
 	virtual ~Utility();
 

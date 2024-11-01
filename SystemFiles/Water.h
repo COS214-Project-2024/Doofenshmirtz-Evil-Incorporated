@@ -6,7 +6,7 @@ class Water : public Utility {
 
 
 public:
-	Water(int totalCap, int usedCap, double taxR);
+	Water(int totalCap, int usedCap);
 
 	~Water();
 

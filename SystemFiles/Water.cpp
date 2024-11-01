@@ -1,6 +1,6 @@
 #include "Water.h"
 
-Water::Water(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+Water::Water(int totalCap, int usedCap) : Utility(totalCap, usedCap)
 {
 }
 
