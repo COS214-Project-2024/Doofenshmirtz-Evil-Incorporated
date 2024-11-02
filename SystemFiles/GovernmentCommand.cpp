@@ -11,9 +11,7 @@
  * @throws std::invalid_argument if district is null.
  */
 GovernmentCommand::GovernmentCommand(CityUnit* district) : reciever(district) {
-    if (!reciever) {
-        throw std::invalid_argument("District (reciever) cannot be null");
-    }
+
 }
 
 /**
