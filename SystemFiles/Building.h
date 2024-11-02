@@ -34,6 +34,7 @@ public:
 	void add(CityUnit* newUnit){};
 	void remove(CityUnit* unit){};
 	void employResidents(){};
+	void partyResidents(){};
 	Iterator* createIterator(){
 		return nullptr;
 	};

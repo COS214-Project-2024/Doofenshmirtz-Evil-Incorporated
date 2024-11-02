@@ -23,6 +23,7 @@ public:
 	void update();
 
 	void employResidents();
+	void partyResidents();
 
 	Iterator* createIterator();
 

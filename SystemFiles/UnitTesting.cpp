@@ -56,6 +56,7 @@ public:
     int countCitizens() override { return 0; }
     // Implement the additional pure virtual methods
     void employResidents() override {}
+    void partyResidents() override {}
     void setTaxRate(double amount)  { }
     double payTaxes() override { return 0.0; }
     void updateEducationMultiplier(float mult){};
@@ -529,13 +530,6 @@ TEST_CASE("Command testing")
     Residential* residentialUnit1 = new Residential(100, 50);
     temp->add(residentialUnit1);
 
-    int tempo = 50;
-    std::map<std::string, int> resources; 
-    resources["Wood"] = 100;
-    resources["Steel"] = 100;
-    resources["Concrete"] = 100;
-    resources["Bricks"] = 100;
-
     SUBCASE("SPEND_RESOURCES")
     {
         // 	SpendResources(CityUnit* district,double employmentRate, std::map<std::string, int> resources, int& balance,double citizenSatisfaction,std::map<std::string, double> utilities);
@@ -544,19 +538,47 @@ TEST_CASE("Command testing")
         utilities["WaterPlant"] = 0.2;
         utilities["WasteSite"] = 0.8;
         utilities["SewageSystem"] = 1.0;
+        int tempo = 50;
+        std::map<std::string, int> resources; 
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
         //check values before command is executed
         CHECK(temp->getEmploymentRate() == 0.0);
         CHECK(tempo == 50);
         CHECK(resources["Wood"] == 100);
 
-        GovernmentCommand* sale = new SpendResources(temp,temp->getEmploymentRate(),resources,tempo,0.7,utilities);
-        sale->executeCommand();
+        GovernmentCommand* CommercialSale = new SpendResources(temp,temp->getEmploymentRate(),resources,tempo,0.7,utilities);
+        CommercialSale->executeCommand();
         //check values after command is executed
         CHECK(tempo == 0);
         
         CHECK(resources["Wood"] == 50);
         CHECK(temp->getEmploymentRate() == 0.5);
-        delete sale;
+        delete CommercialSale;
+        // std::cout << "==\n";
+        // Reset parameters
+        tempo = 50;
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        //to check if it works
+        Citizen* citizen1 = new Citizen(residentialUnit1, nullptr, nullptr);
+        residentialUnit1->getResidents().push_back(citizen1);
+        //pre command checks
+        CHECK(citizen1->getLeisure() == nullptr);
+        CHECK(tempo == 50);
+        CHECK(resources["Wood"] == 100);
+        //actual command
+        GovernmentCommand* LandmarkSale = new SpendResources(temp,1,resources,tempo,0.0,utilities);
+        LandmarkSale->executeCommand();
+        //post checks
+        CHECK(citizen1->getLeisure() != nullptr);
+        CHECK(tempo == 0);
+        CHECK(resources["Wood"] == 50);
+        delete LandmarkSale;
     }
     delete temp;
 }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Residential.h"
 #include "Commercial.h"
+#include "Landmark.h"
 
 
 /**
@@ -75,7 +76,7 @@ void District::update() {
  * that have open employment slots.
  */
 void District::employResidents(){
-    // Step 1: Collect available commercial units with open employment slots
+// Step 1: Collect available commercial units with open employment slots
     std::vector<Commercial*> availableCommercialUnits;
     for (auto unit : containedCityUnit) {
         if (Commercial* commercialUnit = dynamic_cast<Commercial*>(unit)) {
@@ -95,6 +96,34 @@ void District::employResidents(){
                         if (commercialUnit->getEmploymentRate() < 1) {
                             person->employCitizen(commercialUnit);
                             break;  // Exit loop after employment to avoid extra iterations
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+void District::partyResidents()
+{
+    std::vector<Landmark*> availableLandmarkUnits;
+    for (auto unit : containedCityUnit) {
+        if (Landmark* LandmarkUnit = dynamic_cast<Landmark*>(unit)) {
+            if (LandmarkUnit->getRemainingCapacity()>0) {
+                availableLandmarkUnits.push_back(LandmarkUnit);
+            }
+        }
+    }
+
+    for (auto unit : containedCityUnit) {
+        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+            for (auto person : residentialUnit->getResidents()) {
+                if (person->getLeisure() == nullptr) {
+
+                    for (auto LandmarkUnit : availableLandmarkUnits) {
+                        if (LandmarkUnit->getRemainingCapacity()>0) {
+                            person->relaxCitizen(LandmarkUnit);
+                            break;  
                         }
                     }
                 }

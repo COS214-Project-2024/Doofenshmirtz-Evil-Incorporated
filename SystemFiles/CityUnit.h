@@ -39,6 +39,7 @@ public:
 	virtual void update() = 0;
 
 	virtual void employResidents() = 0;
+	virtual void partyResidents() = 0;
 
 	virtual Iterator* createIterator() = 0;
 

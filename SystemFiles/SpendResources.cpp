@@ -51,16 +51,19 @@ void SpendResources::executeCommand() {
 
 	//find smallest priority value, if there are values that are the same, which can only happen for utilities, it doesn't matter. They have the same priority so either one can be built
 	int roulette[6] = {EmploymentPriority,citizenSatisfactionPriority,PowerPriority,WaterPriority,WastePriority,SewagePriority};
-	int decisionVal =999;
-
+	int decisionVal =0;
+	int highNum = 999;
 	for(int i =0; i <6;i++ )
 	{
-		if(roulette[i] < decisionVal)
+		// std::cout << "PRI " << roulette[i] << std::endl;
+		if(roulette[i] < highNum)
 		{
 			decisionVal = i;
+			highNum = roulette[i];
 		}
 	}
 
+	// std::cout <<"DEC " << decisionVal << std::endl;
 	//actually build the buildings
 	//Check if you have enough money to build a new building.
 	//Use a helper function to check if you have enough resources to build the building.
@@ -81,6 +84,8 @@ void SpendResources::executeCommand() {
 			balance -= LandmarkFact->getCost();
 			CityUnit* temp = this->LandmarkFact->build();
 			this->reciever->add(temp);
+			this->reciever->partyResidents();
+			std::cout << "Part time\n";
 		}
 		break;
 	case 2:
