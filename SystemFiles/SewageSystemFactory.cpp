@@ -58,5 +58,5 @@ std::map<std::string, int> SewageSystemFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* SewageSystemFactory::factoryMethod() {
-    return new Sewage(100, 0, 20.0);
+    return new Sewage(100, 0);
 }

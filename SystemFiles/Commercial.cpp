@@ -1,6 +1,6 @@
 #include "Commercial.h"
 
-Commercial::Commercial(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
+Commercial::Commercial(int totalCap, int usedCap) : Building(totalCap, usedCap) {
 }
 
 Commercial::~Commercial()

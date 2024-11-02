@@ -14,7 +14,7 @@
  * @param usedCap The initial used capacity.
  * @param taxR The tax rate applied to the industrial building.
  */
-Industrial::Industrial(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
+Industrial::Industrial(int totalCap, int usedCap) : Building(totalCap, usedCap) {
 }
 
 /**

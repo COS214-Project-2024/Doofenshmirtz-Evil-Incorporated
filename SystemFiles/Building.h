@@ -7,7 +7,7 @@ class Building : public CityUnit {
 
 
 public:
-	Building(int totalCap, int usedCap, double taxR);
+	Building(int totalCap, int usedCap);
 
 	virtual ~Building();
 
@@ -34,19 +34,20 @@ public:
 	void add(CityUnit* newUnit){};
 	void remove(CityUnit* unit){};
 	void employResidents(){};
+	void partyResidents(){};
 	Iterator* createIterator(){
 		return nullptr;
 	};
-	double setTaxRate(double amount){
-		return 0;
+	void setTaxRate(double amount){
 	};
-	double payTaxes(double rate){
+	double payTaxes(){
 		return 0;
 	};
 
-	void pushBackResident(Citizen* newCitizen){
-		resident.push_back(newCitizen);
-	};
+	void pushBackResident(Citizen* newCitizen);
+
+	 void updateEducationMultiplier(float mult);
+     void updateWeekMultiplier(float mult);
 };
 
 #endif

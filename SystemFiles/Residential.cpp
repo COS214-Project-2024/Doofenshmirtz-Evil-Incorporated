@@ -9,7 +9,7 @@
  * sets the used capacity to the total capacity, and populates the `resident` vector
  * with dynamically allocated `Citizen` objects.
  */
-Residential::Residential(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
+Residential::Residential(int totalCap, int usedCap) : Building(totalCap, usedCap) {
     for (int i = 0; i < usedCap && i < totalCap; i++) {
         Citizen* newCitizen = new Citizen(this, nullptr, nullptr);
         pushBackResident(newCitizen);

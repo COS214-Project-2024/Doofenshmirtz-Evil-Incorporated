@@ -4,10 +4,13 @@
 #include "CityUnit.h"
 #include "ConcreteIterator.h"
 
+
 class District : public CityUnit {
 
 private:
 	std::vector<CityUnit*> containedCityUnit;
+	float educationPolicyMultiplier = 1;
+	float shortweekPolicyMultiplier = 1;
 
 public:
 	District();
@@ -21,16 +24,19 @@ public:
 	void update();
 
 	void employResidents();
+	void partyResidents();
 
 	Iterator* createIterator();
 
 	double getEmploymentRate();
 
-	double payTaxes(double s);
+	double payTaxes();
 
 	int evaluateHappiness();
 
 	int countCitizens();
+
+	void setTaxRate(double amount);
 
 	int calculateDistanceTo(CityUnit* other) override {
         // Placeholder implementation
@@ -47,10 +53,8 @@ public:
         return 0;
     }
 
-    double setTaxRate(double amount) override {
-        // Placeholder implementation
-        return amount;
-    }
+	void updateEducationMultiplier(float mult);
+    void updateWeekMultiplier(float mult);
 };
 
 #endif

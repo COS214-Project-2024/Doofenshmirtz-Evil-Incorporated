@@ -1,10 +1,21 @@
+/**
+ * @file GovernmentCommand.cpp
+ * @brief Implements the GovernmentCommand class.
+ */
+
 #include "GovernmentCommand.h"
 
-GovernmentCommand::GovernmentCommand() {
-	// TODO - implement GovernmentCommand::GovernmentCommand
-	throw "Not yet implemented";
+/**
+ * @brief Constructs a GovernmentCommand with a specified receiver.
+ * @param district Pointer to the CityUnit (receiver) on which the command operates.
+ * @throws std::invalid_argument if district is null.
+ */
+GovernmentCommand::GovernmentCommand(CityUnit* district) : reciever(district) {
+
 }
 
-GovernmentCommand::~GovernmentCommand()
-{
+/**
+ * @brief Destructor for GovernmentCommand.
+ */
+GovernmentCommand::~GovernmentCommand() {
 }

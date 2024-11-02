@@ -17,8 +17,7 @@ Government::~Government() {
 
 void Government::collectTaxes() {
 	for (CityUnit* unit : observerList) {
-		unit->payTaxes(TAX_RATE);
-		this->governmentBalance += unit->getUsedCapacity() * TAX_RATE;
+		this->governmentBalance += unit->payTaxes();;
 	}
 }
 

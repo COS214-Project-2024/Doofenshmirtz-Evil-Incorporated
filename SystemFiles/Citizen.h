@@ -87,6 +87,8 @@ public:
       */
      bool employCitizen(CityUnit* job);
 
+     bool relaxCitizen(CityUnit* stripclub);
+
 	/**
      * @brief Make citizen travel to next location in their natural routine i.e. home => leisure => job
 	 * Furthermore, slighlty influences satisfaction based on current state of citizen

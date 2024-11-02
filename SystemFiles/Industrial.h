@@ -21,7 +21,7 @@ public:
      * @param usedCap The initial amount of used capacity.
      * @param taxR The tax rate applicable to the industrial building.
      */
-    Industrial(int totalCap, int usedCap, double taxR);
+    Industrial(int totalCap, int usedCap);
 
     /**
      * @brief Destructor for the Industrial class.

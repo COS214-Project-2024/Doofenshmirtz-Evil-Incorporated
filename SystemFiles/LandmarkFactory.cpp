@@ -31,7 +31,7 @@ LandmarkFactory::LandmarkFactory() {
  *         initial used capacity, and tax rate.
  */
 Building* LandmarkFactory::factoryMethod() {
-    return new Landmark(100, 0, 20.0);
+    return new Landmark(100, 0);
 }
 
 /**

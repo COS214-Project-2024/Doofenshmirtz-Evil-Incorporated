@@ -1,6 +1,6 @@
 #include "Building.h"
 
-Building::Building(int totalCap, int usedCap, double taxR) : CityUnit(totalCap, usedCap, taxR) {
+Building::Building(int totalCap, int usedCap) : CityUnit(totalCap, usedCap) {
 }
 
 Building::~Building()
@@ -39,6 +39,10 @@ double Building::getEmploymentRate() {
 	int employed_citizens = 0;
 	int total_citizens = resident.size();
 
+	if(total_citizens == 0)
+	{
+		return 0;
+	}
 	for (auto res:resident){
 		if (res->getJob() != nullptr)
 		{
@@ -52,7 +56,10 @@ double Building::getEmploymentRate() {
 
 int Building::evaluateHappiness() {
 	int totalSitisfaction = 0;
-
+	if(this->usedCapacity ==0)
+	{
+		return 0;//sit checks in julle weenies
+	}
 	for (auto citizen:resident)
 	{
 		totalSitisfaction += citizen->getSatisfaction();
@@ -72,6 +79,21 @@ int Building::countCitizens() {
 	return resident.size();
 }
 
+void Building::pushBackResident(Citizen *newCitizen)
+{
+	resident.push_back(newCitizen);
+}
+
+void Building::updateEducationMultiplier(float mult)
+{
+
+}
+
+void Building::updateWeekMultiplier(float mult)
+{
+}
+
 std::vector<Citizen*>& Building::getResidents(){
 	return resident;
 }
+

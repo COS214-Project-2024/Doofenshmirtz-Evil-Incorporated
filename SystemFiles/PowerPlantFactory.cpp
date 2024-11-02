@@ -56,5 +56,5 @@ std::map<std::string, int> PowerPlantFactory::getResourceCost() {
  *         initial used capacity, and tax rate.
  */
 Building* PowerPlantFactory::factoryMethod() {
-    return new Power(100, 0, 20.0);
+    return new Power(100, 0);
 }

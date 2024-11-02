@@ -1,6 +1,6 @@
 #include "Sewage.h"
 
-Sewage::Sewage(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+Sewage::Sewage(int totalCap, int usedCap) : Utility(totalCap, usedCap)
 {
 }
 

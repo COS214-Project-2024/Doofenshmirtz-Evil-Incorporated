@@ -1,10 +1,19 @@
+/**
+ * @file ImplementPolicy.cpp
+ * @brief Implements the ImplementPolicy class, an abstract command for implementing policies.
+ */
+
 #include "ImplementPolicy.h"
 
-ImplementPolicy::ImplementPolicy() {
-	// TODO - implement ImplementPolicy::ImplementPolicy
-	throw "Not yet implemented";
+/**
+ * @brief Constructs an ImplementPolicy command with a specified balance reference.
+ */
+ImplementPolicy::ImplementPolicy(CityUnit* district, int& balance) 
+    : GovernmentCommand(district), balance(balance) {
 }
 
-ImplementPolicy::~ImplementPolicy()
-{
+/**
+ * @brief Destructor for ImplementPolicy.
+ */
+ImplementPolicy::~ImplementPolicy() {
 }
