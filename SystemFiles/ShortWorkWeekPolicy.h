@@ -4,15 +4,13 @@
 #include "ImplementPolicy.h"
 #include "CityUnit.h"
 class ShortWorkWeekPolicy : public ImplementPolicy {
-private:
-	CityUnit* Reciever;
 
 public:
-	ShortWorkWeekPolicy(CityUnit* district);
+	ShortWorkWeekPolicy(CityUnit* district,int& balance);
 
 	~ShortWorkWeekPolicy();
 
-	void executeCommand(int& balance);
+	void executeCommand();
 };
 
 #endif

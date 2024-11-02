@@ -29,6 +29,10 @@
 #include "IndustrialFactory.h"
 #include "GovernmentCommand.h"
 #include "SpendResources.h"
+#include "SetTax.h"
+#include "ImplementPolicy.h"
+#include "ShortWorkWeekPolicy.h"
+#include "BetterEducationPolicy.h"
 
 TEST_CASE("Example Test")
 {
@@ -579,6 +583,137 @@ TEST_CASE("Command testing")
         CHECK(tempo == 0);
         CHECK(resources["Wood"] == 50);
         delete LandmarkSale;
+
+        //sewage check
+
+        utilities["PowerPlant"] = 0.5;
+        utilities["WaterPlant"] = 0.2;
+        utilities["WasteSite"] = 0.8;
+        utilities["SewageSystem"] = 1.0;
+
+        tempo = 50;
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        
+        //pre command checks
+        CHECK(tempo == 50);
+        CHECK(resources["Wood"] == 100);
+        //actual command
+        GovernmentCommand* SewageSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
+        SewageSale->executeCommand();
+        //post checks
+        CHECK(tempo == 0);
+        CHECK(resources["Wood"] == 50);
+        delete SewageSale;
+
+        //WasteSale checks
+
+        utilities["PowerPlant"] = 0.5;
+        utilities["WaterPlant"] = 0.2;
+        utilities["WasteSite"] = 1.0;
+        utilities["SewageSystem"] = 0.0;
+
+        tempo = 50;
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        
+        //pre command checks
+        CHECK(tempo == 50);
+        CHECK(resources["Wood"] == 100);
+        //actual command
+        GovernmentCommand* WasteSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
+        WasteSale->executeCommand();
+        //post checks
+        CHECK(tempo == 0);
+        CHECK(resources["Wood"] == 50);
+        delete WasteSale;
+
+        //WaterSale check
+
+        utilities["PowerPlant"] = 0.5;
+        utilities["WaterPlant"] = 1.0;
+        utilities["WasteSite"] = 0.0;
+        utilities["SewageSystem"] = 0.0;
+
+        tempo = 50;
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        
+        //pre command checks
+        CHECK(tempo == 50);
+        CHECK(resources["Wood"] == 100);
+        //actual command
+        GovernmentCommand* WaterSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
+        WaterSale->executeCommand();
+        //post checks
+        CHECK(tempo == 0);
+        CHECK(resources["Wood"] == 50);
+        delete WaterSale;
+
+        //power check
+
+        utilities["PowerPlant"] = 1.0;
+        utilities["WaterPlant"] = 0.2;
+        utilities["WasteSite"] = 0.8;
+        utilities["SewageSystem"] = 1.0;
+
+        tempo = 50;
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        
+        //pre command checks
+        CHECK(tempo == 50);
+        CHECK(resources["Wood"] == 100);
+        //actual command
+        GovernmentCommand* PowerSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
+        PowerSale->executeCommand();
+        //post checks
+        CHECK(tempo == 0);
+        CHECK(resources["Wood"] == 50);
+        delete PowerSale;
+    }
+
+    SUBCASE("set tax")
+    {
+        GovernmentCommand* setter = new SetTax(temp,0.3);
+        int before = temp->payTaxes();
+        setter->executeCommand();
+        int after = temp->payTaxes();
+        CHECK(before < after);
+        delete setter;
+    }
+
+    SUBCASE("Implement policy")
+    {
+        int tempo = 210000;
+        MESSAGE("Not sure if randomness can make this test fail");
+        int before = temp->payTaxes();
+
+        GovernmentCommand* education = new BetterEducationPolicy(temp,tempo);
+        education->executeCommand();
+
+        int after = temp->payTaxes();
+        CHECK(before < after);
+        delete education;
+
+        int beforeH = temp->evaluateHappiness();
+
+        GovernmentCommand* shortWorkWeek = new ShortWorkWeekPolicy(temp,tempo);
+        shortWorkWeek->executeCommand();
+
+        int afterH = temp->evaluateHappiness();
+        CHECK(beforeH < afterH);
+        delete shortWorkWeek;
+
+
     }
     delete temp;
 }

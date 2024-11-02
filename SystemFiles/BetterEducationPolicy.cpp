@@ -1,17 +1,17 @@
 #include "BetterEducationPolicy.h"
 
-BetterEducationPolicy::BetterEducationPolicy(CityUnit* district) :ImplementPolicy(district){
+BetterEducationPolicy::BetterEducationPolicy(CityUnit* district,int& balance) :ImplementPolicy(district,balance){
 }
 
 BetterEducationPolicy::~BetterEducationPolicy()
 {
 }
 
-void BetterEducationPolicy::executeCommand(int& balance) {
+void BetterEducationPolicy::executeCommand() {
 
 	if(balance >= 100000)
 	{
 		balance -= 100000;
-		this->Reciever->updateEducationMultiplier(1.2);
+		this->reciever->updateEducationMultiplier(1.2);
 	}
 }

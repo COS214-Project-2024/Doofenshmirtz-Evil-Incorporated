@@ -85,7 +85,6 @@ void SpendResources::executeCommand() {
 			CityUnit* temp = this->LandmarkFact->build();
 			this->reciever->add(temp);
 			this->reciever->partyResidents();
-			std::cout << "Part time\n";
 		}
 		break;
 	case 2:

@@ -4,14 +4,15 @@
 #include "GovernmentCommand.h"
 
 class ImplementPolicy : public GovernmentCommand {
-
+protected:
+	int& balance;
 
 public:
-	ImplementPolicy(CityUnit* district);
+	ImplementPolicy(CityUnit* district,int& balance);
 
 	virtual ~ImplementPolicy();
 
-	virtual void executeCommand(int& balance) = 0;
+	virtual void executeCommand() = 0;
 };
 
 #endif

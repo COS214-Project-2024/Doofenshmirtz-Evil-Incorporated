@@ -56,7 +56,10 @@ double Building::getEmploymentRate() {
 
 int Building::evaluateHappiness() {
 	int totalSitisfaction = 0;
-
+	if(this->usedCapacity ==0)
+	{
+		return 0;//sit checks in julle weenies
+	}
 	for (auto citizen:resident)
 	{
 		totalSitisfaction += citizen->getSatisfaction();

@@ -177,7 +177,8 @@ double District::payTaxes() {
             }
         }
     }
-    return totalTax*educationPolicyMultiplier;
+    double returnval = (totalTax*this->educationPolicyMultiplier);
+    return returnval;
 }
 
 
@@ -197,7 +198,8 @@ int District::evaluateHappiness() {
 	{
 		throw "Negative happiness";
 	}
-	return (totalHappiness/containedCityUnit.size())*shortweekPolicyMultiplier;
+    double returnval = ((totalHappiness/containedCityUnit.size())*this->shortweekPolicyMultiplier);
+	return returnval;
 }
 
 

@@ -4,15 +4,13 @@
 #include "ImplementPolicy.h"
 #include "CityUnit.h"
 class BetterEducationPolicy : public ImplementPolicy {
-private:
-	CityUnit* Reciever;
 
 public:
-	BetterEducationPolicy(CityUnit* district);
+	BetterEducationPolicy(CityUnit* district,int& balance);
 
 	~BetterEducationPolicy();
 
-	void executeCommand(int& balance);
+	void executeCommand();
 };
 
 #endif

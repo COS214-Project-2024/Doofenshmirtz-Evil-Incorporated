@@ -1,13 +1,14 @@
 #include "SetTax.h"
 
-SetTax::SetTax(CityUnit* district) : GovernmentCommand(district)
+SetTax::SetTax(CityUnit* district,double newTaxRatePercentage) : GovernmentCommand(district)
 {
+	this->taxRate = newTaxRatePercentage;
 }
 
 SetTax::~SetTax()
 {
 }
 
-void SetTax::executeCommand(double newTaxRatePercentage) {
-	this->reciever->setTaxRate(newTaxRatePercentage);
+void SetTax::executeCommand() {
+	this->reciever->setTaxRate(taxRate);
 }
