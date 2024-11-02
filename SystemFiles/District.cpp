@@ -134,8 +134,8 @@ void District::partyResidents() {
  * @return A pointer to the created Iterator.
  */
 Iterator* District::createIterator() {
-    Iterator* it = new ConcreteIterator();
-    return it;
+	Iterator* it = new ConcreteIterator(this->containedCityUnit);
+	return it;
 }
 
 /**
