@@ -45,8 +45,8 @@ public:
     int id; // Unique identifier for testing
 
     // Constructor with default parameters
-    MockCityUnit(int id_ = 0, int totalCap = 100, int usedCap = 0, double taxR = 0.1)
-        : CityUnit(totalCap, usedCap, taxR), id(id_) {}
+    MockCityUnit(int id_ = 0, int totalCap = 100, int usedCap = 0)
+        : CityUnit(totalCap, usedCap), id(id_) {}
 
     // Implement pure virtual functions with minimal behavior
 
@@ -74,9 +74,6 @@ public:
         // Minimal implementation: Do nothing
     }
 
-    void employResidents() override {
-        // Minimal implementation: Do nothing
-    }
 
     Iterator* createIterator() override {
         return nullptr; // No iteration support in mock
@@ -90,7 +87,7 @@ public:
     void partyResidents() override {}
     void setTaxRate(double amount)  { }
 
-    double payTaxes(double rate) override {
+    double payTaxes() override {
         return 0.0; // Mock tax payment
     }
 
@@ -581,7 +578,7 @@ TEST_CASE("Government") {
         government.collectTaxes();
 
         CHECK(government.getGovernmentBalance() == 52000);
-
+    
     }
 
     SUBCASE("Collect Resources") {
