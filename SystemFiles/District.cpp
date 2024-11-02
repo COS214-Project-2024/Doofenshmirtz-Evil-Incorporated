@@ -108,7 +108,7 @@ void District::employResidents(){
  * @return A pointer to the created Iterator.
  */
 Iterator* District::createIterator() {
-	Iterator* it = new ConcreteIterator();
+	Iterator* it = new ConcreteIterator(this->containedCityUnit);
 	return it;
 }
 
