@@ -13,7 +13,6 @@
 #include "AirportStrategy.h"
 #include "PublicTransportStrategy.h"
 #include "District.h"
-#include "CityUnit.h"
 #include "Building.h"
 #include "Residential.h"
 #include "Government.h"
@@ -27,260 +26,103 @@
 #include "CommercialFactory.h"
 #include "LandmarkFactory.h"
 #include "IndustrialFactory.h"
+#include "ConcreteIterator.h"   // Include your ConcreteIterator implementation
+#include "Iterator.h"           // Include the Iterator class
+#include <vector>
+#include <map>
 
-// TEST_CASE("Example Test")
-// {
-//     CHECK(1 == 1);
-// }
-
-// // Create mock CityUnits
-// class MockCityUnit : public CityUnit {
-// public:
-//     // We can mock this distance method to return a value before cityunit is implemented
-//     int calculateDistanceTo(CityUnit* other) override {
-//         return 10; //don't worry lol
-//     }
-
-//     // Necessary Stubs so MockCityUnit is not an abstract class
-//     void add(CityUnit* newUnit) {};
-// 	void remove(CityUnit* unit) {};
-// 	int getRemainingCapacity() {};
-// 	int getUsedCapacity() {};
-// 	void update() {};
-// 	Iterator* createIterator() {};
-// 	double getEmploymentRate() {};
-//     int payTaxes(int amount) {};
-// 	int evaluateHappiness() {};
-// 	int countCitizens() {};
-// };
-
-// TEST_CASE("CitizenUnitTesting") {
-
-//     CityUnit* residential = new MockCityUnit();
-//     CityUnit* commercial = new MockCityUnit();
-//     CityUnit* leisure = new MockCityUnit();
-
-//     SUBCASE("Citizen with job is initialized correctly") {
-//         Citizen citizen(residential, commercial, leisure);
-
-//         CHECK(citizen.getHome() == residential);
-//         CHECK(citizen.getJob() == commercial);
-//         CHECK(citizen.getLeisure() == leisure);
-//         CHECK(citizen.getJob() != nullptr); // Citizen is employed
-//     }
-
-//     SUBCASE("Citizen without job is initialized correctly") {
-//         Citizen citizen(residential, nullptr, leisure);
-
-//         CHECK(citizen.getHome() == residential);
-//         CHECK(citizen.getJob() == nullptr); // Citizen is unemployed
-//         CHECK(citizen.getLeisure() == leisure);
-//     }
-
-//     SUBCASE("Citizen without job is employed")
-//     {
-//         Citizen citizen(residential, nullptr, leisure);
-//         CityUnit* mockJob = new MockCityUnit();
-
-//         // Employ the citizen
-//         CHECK(citizen.employCitizen(mockJob) == true);
-//         CHECK(citizen.getJob() == mockJob);
-
-//         // Attempt to employ again (should fail)
-//         CHECK(citizen.employCitizen(mockJob) == false);
-//         CHECK(citizen.getJob() == mockJob); // Job did not change
-
-//         delete mockJob;
-//     }
-
-//     SUBCASE("Citizen member functions working as expected")
-//     {
-//         Citizen citizen(residential, commercial, leisure);  
-
-//         // Satisfaction initialized in range [40, 70]
-//         CHECK(citizen.getSatisfaction() >= 40);
-//         CHECK(citizen.getSatisfaction() <= 70);
-//         MESSAGE("Citizen satisfaction score: " << citizen.getSatisfaction());
-
-//         // Bank balance initialized in range [20 000, 100 000]
-//         CHECK(citizen.getBalance() >= 20000);
-//         CHECK(citizen.getBalance() <= 100000);
-//         MESSAGE("Citizen balance: " << citizen.getBalance());
-//     }
-
-//     SUBCASE("Routine affects satisfaction") {
-
-//         Citizen citizen(residential, commercial, leisure);
-//         MESSAGE("Citizen satisfaction before routine: " << citizen.getSatisfaction());  
-
-//         int prevSatisfaction = citizen.getSatisfaction();
-//         citizen.followRoutine();
-//         int satisfactionDiff = prevSatisfaction - citizen.getSatisfaction();
-//         CHECK(satisfactionDiff >= 0);    // Satisfaction should not increase at Work
-//         CHECK(satisfactionDiff <= 10);   // Satisfaction should decrease by no more than 10
-//         MESSAGE("Citizen satisfaction after followRoutine (AtHomeState => AtWorkState): " << citizen.getSatisfaction());
-
-//         prevSatisfaction = citizen.getSatisfaction();
-//         citizen.followRoutine();
-//         satisfactionDiff = citizen.getSatisfaction() - prevSatisfaction;
-//         CHECK(satisfactionDiff >= 0); // Satisfaction should increase at leisure
-//         CHECK(satisfactionDiff <= 20); // Satisfaction should increase by no more than 20
-//         MESSAGE("Citizen satisfaction after followRoutine (AtWorkState => AtLeisureState): " << citizen.getSatisfaction());
-
-//         prevSatisfaction = citizen.getSatisfaction();
-//         citizen.followRoutine();
-//         satisfactionDiff = prevSatisfaction - citizen.getSatisfaction();
-//         CHECK(satisfactionDiff >= -10); 
-//         CHECK(satisfactionDiff <= 10); // Satisfaction should change at home
-//         MESSAGE("Citizen satisfaction after followRoutine (AtLeisureState => AtHomeState): " << citizen.getSatisfaction());
-        
-//     }
-    
-
-//     delete residential;
-//     delete commercial;
-//     delete leisure;
-// }
-
-// TEST_CASE("CitizenLocationStateUnitTesting")
-// {
-//     SUBCASE("getStateName")
-//     {
-//         AtHomeState home;
-//         AtWorkState work;
-//         AtLeisureState leisure;
-
-//         CHECK(home.getStateName() == "AtHomeState");
-//         CHECK(work.getStateName() == "AtWorkState");
-//         CHECK(leisure.getStateName() == "AtLeisureState");
-//     }
-
-//     SUBCASE("travelTesting")
-//     {
-//         // Create a citizen to use
-//         CityUnit* residential = new MockCityUnit();
-//         CityUnit* commercial = new MockCityUnit();
-//         CityUnit* leisure = new MockCityUnit();
-
-//         Citizen* citizen = new Citizen(residential, commercial, leisure);
-
-//         // Travel from home to work
-//         AtHomeState home;
-//         home.travel(citizen);
-//         CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtWorkState");
-        
-//         // Travel from work to leisure
-//         AtWorkState work;
-//         work.travel(citizen);
-//         CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtLeisureState");
-
-//         // Travel from leisure to home
-//         AtLeisureState leisureState;
-//         leisureState.travel(citizen);
-//         CHECK(citizen->getCitzenLocationSate()->getStateName() == "AtHomeState");
-
-
-//         delete citizen; delete residential; delete commercial; delete leisure;
-//     }
-// }
-
-// TEST_CASE("TransportStrategyUnitTesting")
-// {   
-//     //create all four concrete strategies
-//     CommuteStrategy* roadTest = new RoadStrategy();
-//     CommuteStrategy* railTest = new RailwayStrategy();
-//     CommuteStrategy* AirTest = new AirportStrategy();
-//     CommuteStrategy* publicTest = new PublicTransportStrategy();
-
-//     SUBCASE("returnStrategyNameTesting")
-//     {
-//         CHECK(roadTest->getTravelStrategyName() == "RoadStrategy");
-//         CHECK(railTest->getTravelStrategyName() == "RailwayStrategy");
-//         CHECK(AirTest->getTravelStrategyName() == "AirportStrategy");
-//         CHECK(publicTest->getTravelStrategyName() == "PublicTransportStrategy");
-
-//         MESSAGE("roadTest: " << roadTest->getTravelStrategyName());
-//         MESSAGE("railTest: " << railTest->getTravelStrategyName());
-//         MESSAGE("AirTest: " << AirTest->getTravelStrategyName());
-//         MESSAGE("publicTest: " << publicTest->getTravelStrategyName());
-//     }
-
-//     SUBCASE("returnStrategyNameTesting")
-//     {
-//         CHECK(roadTest->handleCommuteState() == 8);
-//         CHECK(railTest->handleCommuteState() == 10);
-//         CHECK(AirTest->handleCommuteState() == 15);
-//         CHECK(publicTest->handleCommuteState() == 4);
-
-//     }
-
-//     delete publicTest;
-//     delete AirTest;
-//     delete railTest;
-//     delete roadTest;
-
-//     //note these subcases can fail due to random factor 
-//     SUBCASE("CorrectStrategyChosen")
-//     {
-//         AtHomeState home;
-//         home.chooseStrategy(5);
-//         CHECK(home.getTravelMethod() == "RoadStrategy");
-//         home.chooseStrategy(10);
-//         CHECK(home.getTravelMethod() == "PublicTransportStrategy");
-//         home.chooseStrategy(15);
-//         CHECK(home.getTravelMethod() == "RailwayStrategy");
-//         home.chooseStrategy(30);
-//         CHECK(home.getTravelMethod() == "AirportStrategy");
-//     }
-//     SUBCASE("RandomCommuteTesting")
-//     {
-//         //this is a very very small chance, hence the amount of times I test it
-//         AtHomeState home;
-//         for(int i = 0; i < 100; i++)
-//         {
-//             home.chooseStrategy(5);
-//             MESSAGE("5: " << home.getTravelMethod());
-//         }
-//     }
-// }
-
-
-
-#include "Iterator.h"
-#include "ConcreteIterator.h"
-
-// Define a DummyCityUnit class for testing purposes
-class DummyCityUnit : public CityUnit {
+// Define MockCityUnit class for testing purposes
+class MockCityUnit : public CityUnit {
 public:
-
     int id; // Unique identifier for testing
 
-    // Constructor
-    DummyCityUnit(int id_) : CityUnit(), id(id_) {}
+    // Constructor with default parameters
+    MockCityUnit(int id_ = 0, int totalCap = 100, int usedCap = 0, double taxR = 0.1)
+        : CityUnit(totalCap, usedCap, taxR), id(id_) {}
 
     // Implement pure virtual functions with minimal behavior
-    void add(CityUnit* newUnit) override {}
 
-    void remove(CityUnit* unit) override {}
+    void add(CityUnit* newUnit) override {
+        // Minimal implementation: Do nothing
+    }
 
-    int calculateDistanceTo(CityUnit* destination) override { return 0; }
+    void remove(CityUnit* unit) override {
+        // Minimal implementation: Do nothing
+    }
 
-    int getRemainingCapacity() override { return totalCapacity - usedCapacity; }
+    int calculateDistanceTo(CityUnit* destination) override {
+        return 10; // Arbitrary mock value
+    }
 
-    int getUsedCapacity() override { return usedCapacity; }
+    int getRemainingCapacity() override {
+        return totalCapacity - usedCapacity;
+    }
 
-    void update() override {}
+    int getUsedCapacity() override {
+        return usedCapacity;
+    }
 
-    Iterator* createIterator() override { return nullptr; }
+    void update() override {
+        // Minimal implementation: Do nothing
+    }
 
-    double getEmploymentRate() override { return 0.0; }
+    void employResidents() override {
+        // Minimal implementation: Do nothing
+    }
 
-    int payTaxes(int amount) override { return 0; }
+    Iterator* createIterator() override {
+        return nullptr; // No iteration support in mock
+    }
 
-    int evaluateHappiness() override { return 0; }
+    double getEmploymentRate() override {
+        return 0.0; // Mock employment rate
+    }
 
-    int countCitizens() override { return resident.size(); }
+    double setTaxRate(double amount) override {
+        taxRate = amount;
+        return taxRate;
+    }
+
+    double payTaxes(double rate) override {
+        return 0.0; // Mock tax payment
+    }
+
+    int evaluateHappiness() override {
+        return 0; // Mock happiness evaluation
+    }
+
+    int countCitizens() override {
+        return resident.size();
+    }
+
+    // Override getResidents to return the resident list
+    std::vector<Citizen*>& getResidents() override {
+        return resident;
+    }
+
+    // Additional helper methods for testing
+
+    // Method to add a mock resident for testing purposes
+    void addMockResident(Citizen* citizen) {
+        resident.push_back(citizen);
+    }
+
+    // Destructor to clean up dynamically allocated mock residents
+    ~MockCityUnit() override {
+        for (auto citizen : resident) {
+            delete citizen; // Free each dynamically allocated Citizen
+        }
+        resident.clear(); // Clear the vector to avoid dangling pointers
+    }
+
+private:
+    // If you prefer using a separate mockResidents vector, uncomment the following line:
+    // std::vector<Citizen*> mockResidents; // Mock list of residents
 };
+
+//////////////////////
+// Test Cases Below //
+//////////////////////
 
 // Test case: ConcreteIterator with an empty collection
 TEST_CASE("ConcreteIterator with Empty Collection") {
@@ -298,51 +140,7 @@ TEST_CASE("ConcreteIterator with Empty Collection") {
     CHECK(iterator.isDone() == true);
 }
 
-    MockCityUnit(int totalCap = 100, int usedCap = 0, double taxR = 0.1) : CityUnit(totalCap, usedCap, taxR) {}
-    // Mock implementation for distance calculation
-    int calculateDistanceTo(CityUnit* other) override {
-        return 10; // Arbitrary mock value
-    }
-
-    // Stubs to satisfy pure virtual functions
-    void add(CityUnit* newUnit) override {}
-    void remove(CityUnit* unit) override {}
-    int getRemainingCapacity() override { return 0; }
-    int getUsedCapacity() override { return 0; }
-    void update() override {}
-    Iterator* createIterator() override { return nullptr; }
-    double getEmploymentRate() override { return 0.0; }
-    int evaluateHappiness() override { return 0; }
-    int countCitizens() override { return 0; }
-    // Implement the additional pure virtual methods
-    void employResidents() override {}
-    double setTaxRate(double amount) override { return amount; }
-    double payTaxes(double rate) override { return 0.0; }
-
-    // Implement the getResidents method to return the list of mock residents
-    std::vector<Citizen*>& getResidents() override {
-        return mockResidents;
-    }
-
-    // Method to add a mock resident for testing purposes
-    void addMockResident(Citizen* citizen) {
-        mockResidents.push_back(citizen);
-    }
-
-    // Destructor to clean up dynamically allocated mock residents
-    ~MockCityUnit() {
-        for (auto resident : mockResidents) {
-            delete resident;  // Free each dynamically allocated Citizen
-        }
-        mockResidents.clear();  // Clear the vector to avoid dangling pointers
-    }
-
-    private:
-        std::vector<Citizen*> mockResidents;  // Mock list of residents
-};
-
-
-
+// Test case: CitizenUnitTesting
 TEST_CASE("CitizenUnitTesting") {
 
     CityUnit* residential = new MockCityUnit();
@@ -424,10 +222,15 @@ TEST_CASE("CitizenUnitTesting") {
         MESSAGE("Citizen satisfaction after followRoutine (AtLeisureState => AtHomeState): " << citizen.getSatisfaction());
     }
 
+    // Clean up dynamically allocated CityUnits
+    delete residential;
+    delete commercial;
+    delete leisure;
+}
 
 // Test case: ConcreteIterator with a single element
 TEST_CASE("ConcreteIterator with Single Element") {
-    DummyCityUnit unit1(1);
+    MockCityUnit unit1(1);
     std::vector<CityUnit*> cityUnits = { &unit1 };
     ConcreteIterator iterator(cityUnits);
     
@@ -449,9 +252,9 @@ TEST_CASE("ConcreteIterator with Single Element") {
 
 // Test case: ConcreteIterator with multiple elements
 TEST_CASE("ConcreteIterator with Multiple Elements") {
-    DummyCityUnit unit1(1);
-    DummyCityUnit unit2(2);
-    DummyCityUnit unit3(3);
+    MockCityUnit unit1(1);
+    MockCityUnit unit2(2);
+    MockCityUnit unit3(3);
     std::vector<CityUnit*> cityUnits = { &unit1, &unit2, &unit3 };
     ConcreteIterator iterator(cityUnits);
     
@@ -498,8 +301,8 @@ TEST_CASE("ConcreteIterator with Multiple Elements") {
 
 // Test case: ConcreteIterator navigation beyond bounds
 TEST_CASE("ConcreteIterator Navigation Beyond Bounds") {
-    DummyCityUnit unit1(1);
-    DummyCityUnit unit2(2);
+    MockCityUnit unit1(1);
+    MockCityUnit unit2(2);
     std::vector<CityUnit*> cityUnits = { &unit1, &unit2 };
     ConcreteIterator iterator(cityUnits);
     
@@ -539,9 +342,9 @@ TEST_CASE("ConcreteIterator Navigation Beyond Bounds") {
 
 // Test case: ConcreteIterator first() method
 TEST_CASE("ConcreteIterator First Method") {
-    DummyCityUnit unit1(1);
-    DummyCityUnit unit2(2);
-    DummyCityUnit unit3(3);
+    MockCityUnit unit1(1);
+    MockCityUnit unit2(2);
+    MockCityUnit unit3(3);
     std::vector<CityUnit*> cityUnits = { &unit1, &unit2, &unit3 };
     ConcreteIterator iterator(cityUnits);
     
@@ -557,7 +360,7 @@ TEST_CASE("ConcreteIterator First Method") {
 
 // Test case: ConcreteIterator isDone() method
 TEST_CASE("ConcreteIterator IsDone Method") {
-    DummyCityUnit unit1(1);
+    MockCityUnit unit1(1);
     std::vector<CityUnit*> cityUnits = { &unit1 };
     ConcreteIterator iterator(cityUnits);
     
@@ -574,11 +377,10 @@ TEST_CASE("ConcreteIterator IsDone Method") {
     CHECK(iterator.isDone() == false);
 }
 
-
 // Test case: ConcreteIterator currentItem() method
 TEST_CASE("ConcreteIterator CurrentItem Method") {
-    DummyCityUnit unit1(1);
-    DummyCityUnit unit2(2);
+    MockCityUnit unit1(1);
+    MockCityUnit unit2(2);
     std::vector<CityUnit*> cityUnits = { &unit1, &unit2 };
     ConcreteIterator iterator(cityUnits);
     
@@ -593,9 +395,10 @@ TEST_CASE("ConcreteIterator CurrentItem Method") {
     // After next (done)
     iterator.next();
     CHECK(iterator.currentItem() == nullptr);
+}
 
 TEST_CASE("TransportStrategyUnitTesting")
-{
+{   
     //create all four concrete strategies
     CommuteStrategy* roadTest = new RoadStrategy();
     CommuteStrategy* railTest = new RailwayStrategy();
@@ -654,7 +457,6 @@ TEST_CASE("TransportStrategyUnitTesting")
     }
 
 }
-
 
 TEST_CASE("District Tests") {
     District district;
@@ -747,7 +549,6 @@ TEST_CASE("District Tests") {
     }
 }
 
-
 TEST_CASE("Government") {
     Government government(50000);
 
@@ -768,7 +569,6 @@ TEST_CASE("Government") {
         // Collect taxes and check the government balance
         government.collectTaxes();
         CHECK(government.getGovernmentBalance() == 2000);
-
     }
 
     SUBCASE("Collect Resources") {
@@ -786,12 +586,8 @@ TEST_CASE("Government") {
         CHECK(resources["Bricks"] == 50);
     }
 
-        // No manual deletion needed if Government manages the memory
-
-    
-
+    // No manual deletion needed if Government manages the memory
 }
-
 
 TEST_CASE("FactoryTesting")
 {
@@ -879,7 +675,6 @@ TEST_CASE("FactoryTesting")
         CHECK(landmarkFactory->getCost() == 50);
         CHECK(industrialFactory->getCost() == 50);
     }
-    
 
     delete sewageSystem;
     delete wasteSite;
@@ -890,8 +685,6 @@ TEST_CASE("FactoryTesting")
     delete landmark;
     delete industrial;
 
-
-
     delete sewageSystemFactory;
     delete wasteSiteFactory;
     delete waterPlantFactory;
@@ -900,8 +693,4 @@ TEST_CASE("FactoryTesting")
     delete commercialFactory;
     delete landmarkFactory;
     delete industrialFactory;   
-
-    
-
 }
-
