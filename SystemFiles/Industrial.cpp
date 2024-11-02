@@ -1,4 +1,5 @@
 #include "Industrial.h"
+#include "WebSocketNotifier.h"
 
 /**
  * @class Industrial
@@ -15,6 +16,15 @@
  * @param taxR The tax rate applied to the industrial building.
  */
 Industrial::Industrial(int totalCap, int usedCap) : Building(totalCap, usedCap) {
+    // Front end update
+    nlohmann::json message = {
+	{"type", "valueUpdate"},
+	{"data", 	{
+					{"id", "industrial"},
+					{"value", "1++"}
+				}
+				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
 }
 
 /**

@@ -11,6 +11,7 @@ public:
 	~Residential();
 
 	void update();
+	
 };
 
 #endif

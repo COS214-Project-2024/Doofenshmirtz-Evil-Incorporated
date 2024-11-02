@@ -59,7 +59,10 @@ public:
 	virtual std::map<std::string, int> collectResources();
 
 	virtual void updateEducationMultiplier(float mult)=0;
+
     virtual void updateWeekMultiplier(float mult)=0;
+
+	virtual void evaluateTrafficConditions() = 0;
 };
 
 #endif

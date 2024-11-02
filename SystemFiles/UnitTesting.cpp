@@ -74,6 +74,8 @@ public:
         // Minimal implementation: Do nothing
     }
 
+    void evaluateTrafficConditions() {};
+
 
     Iterator* createIterator() override {
         return nullptr; // No iteration support in mock

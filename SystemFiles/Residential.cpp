@@ -1,4 +1,5 @@
 #include "Residential.h"
+#include "WebSocketNotifier.h"
 #include <iostream>
 
 
@@ -14,7 +15,25 @@ Residential::Residential(int totalCap, int usedCap) : Building(totalCap, usedCap
         Citizen* newCitizen = new Citizen(this, nullptr, nullptr);
         pushBackResident(newCitizen);
     }
-    // Debug output
+    // Front end update
+    nlohmann::json message = {
+	{"type", "valueUpdate"},
+	{"data", 	{
+					{"id", "residential"},
+					{"value", "1++"}
+				}
+				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
+
+    std::string citizensCreated = (std::to_string(totalCap) + "++");
+    message = {
+	{"type", "valueUpdate"},
+	{"data", 	{
+					{"id", "citizens"},
+					{"value", citizensCreated}
+				}
+				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
 }
 
 

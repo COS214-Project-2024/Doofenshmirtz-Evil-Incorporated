@@ -37,6 +37,8 @@ Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
 
     // Bank balance between 20 000 and 100 000
     this->bankBalance = 20000 + (rand() % 80000);
+    
+    this->lastUsedStrategyName = "none";
 }
 
 /**

@@ -23,6 +23,8 @@ private:
 
 public:
 
+     std::string lastUsedStrategyName;
+
     /**
      * @brief Constructor for Citizen class.
      * @param home Pointer to the citizen's home CityUnit.

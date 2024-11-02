@@ -23,7 +23,7 @@ public:
 
 	virtual void update() = 0;
 
-	int evaluateHappiness();
+	virtual int evaluateHappiness();
 
 	int countCitizens();
 
@@ -46,8 +46,11 @@ public:
 
 	void pushBackResident(Citizen* newCitizen);
 
-	 void updateEducationMultiplier(float mult);
-     void updateWeekMultiplier(float mult);
+	void updateEducationMultiplier(float mult);
+
+    void updateWeekMultiplier(float mult);
+
+	void evaluateTrafficConditions();
 };
 
 #endif

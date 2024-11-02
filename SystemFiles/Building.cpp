@@ -1,4 +1,5 @@
 #include "Building.h"
+#include <iostream>
 
 Building::Building(int totalCap, int usedCap) : CityUnit(totalCap, usedCap) {
 }
@@ -54,23 +55,29 @@ double Building::getEmploymentRate() {
 	return employment_rate;
 }
 
+
 int Building::evaluateHappiness() {
-	int totalSitisfaction = 0;
-	if(this->usedCapacity ==0)
+
+	// Check for resident size of 0 which implies it is not a residential building and should be ignored for the happiness stat
+	if(resident.size() == 0)
 	{
-		return 0;//sit checks in julle weenies
-	}
-	for (auto citizen:resident)
-	{
-		totalSitisfaction += citizen->getSatisfaction();
+		return 0;
 	}
 
-	if (totalSitisfaction < 0)
+	int totalSatisfaction = 0;
+
+	for (auto citizen:resident)
+	{
+		totalSatisfaction += citizen->getSatisfaction();
+	}
+
+	if (totalSatisfaction < 0)
 	{
 		throw "Value Error: Satisfaction < 0";
 	}
-	return totalSitisfaction/resident.size();
+	return totalSatisfaction / resident.size();
 }
+
 /**
  * @brief Gets the amount of citezens in the building
  * Counts the items in the resident vector
@@ -90,6 +97,10 @@ void Building::updateEducationMultiplier(float mult)
 }
 
 void Building::updateWeekMultiplier(float mult)
+{
+}
+
+void Building::evaluateTrafficConditions()
 {
 }
 

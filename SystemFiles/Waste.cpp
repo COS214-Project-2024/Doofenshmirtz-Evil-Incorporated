@@ -9,6 +9,9 @@ Waste::~Waste()
 }
 
 void Waste::update() {
-	// TODO - implement Waste::update
-	throw "Not yet implemented";
+    this->usedCapacity += 10;
+    if(usedCapacity > totalCapacity)
+    {
+        usedCapacity = totalCapacity;
+    }
 }

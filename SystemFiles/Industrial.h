@@ -35,7 +35,7 @@ public:
      * resets the used capacity after collection.
      * @return A map of resources with types as keys and quantities as values.
      */
-    virtual std::map<std::string, int> collectResources();
+    std::map<std::string, int> collectResources() override;
 
     /**
      * @brief Updates the building's used capacity.

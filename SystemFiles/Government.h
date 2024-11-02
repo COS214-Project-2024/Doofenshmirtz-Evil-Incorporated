@@ -71,6 +71,16 @@ public:
 	std::map<std::string, int> getResources() {return resources;}
 
 	/**
+	 * @brief Returns info to the front end on how busy each method of transportation is
+	 */
+	void evaluateTrafficConditions();
+
+	/**
+	 * @brief Returns info to the front end on the average happiness of all the citizens
+	 */
+	void evaluateHappiness();
+
+	/**
 	 * @brief Destructor for the Government class.
 	 */
 	~Government();
