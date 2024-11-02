@@ -1,8 +1,7 @@
 #include "Power.h"
 
-Power::Power() {
-	// TODO - implement Power::Power
-	throw "Not yet implemented";
+Power::Power(int totalCap, int usedCap, double taxR) : Utility(totalCap, usedCap, taxR)
+{
 }
 
 Power::~Power()

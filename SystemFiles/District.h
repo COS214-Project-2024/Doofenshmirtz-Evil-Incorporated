@@ -1,7 +1,8 @@
 #ifndef DISTRICT_H
 #define DISTRICT_H
 
-#include "CityUnit.h";
+#include "CityUnit.h"
+#include "ConcreteIterator.h"
 
 class District : public CityUnit {
 
@@ -19,15 +20,37 @@ public:
 
 	void update();
 
+	void employResidents();
+
 	Iterator* createIterator();
 
 	double getEmploymentRate();
 
-	int payTaxes(int s);
+	double payTaxes(double s);
 
 	int evaluateHappiness();
 
 	int countCitizens();
+
+	int calculateDistanceTo(CityUnit* other) override {
+        // Placeholder implementation
+        return 0;
+    }
+
+    int getRemainingCapacity() override {
+        // Placeholder implementation
+        return 0;
+    }
+
+    int getUsedCapacity() override {
+        // Placeholder implementation
+        return 0;
+    }
+
+    double setTaxRate(double amount) override {
+        // Placeholder implementation
+        return amount;
+    }
 };
 
 #endif

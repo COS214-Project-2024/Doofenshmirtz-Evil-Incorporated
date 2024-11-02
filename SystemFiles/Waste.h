@@ -6,7 +6,7 @@ class Waste : public Utility {
 
 
 public:
-	Waste();
+	Waste(int totalCap, int usedCap, double taxR);
 
 	~Waste();
 
