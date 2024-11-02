@@ -5,55 +5,97 @@
 #include "ConcreteIterator.h"
 
 class District : public CityUnit {
-
 private:
-	std::vector<CityUnit*> containedCityUnit;
-	float educationPolicyMultiplier = 1;
-	float shortweekPolicyMultiplier = 1;
+    std::vector<CityUnit*> containedCityUnit; ///< Vector holding contained CityUnits.
+    float educationPolicyMultiplier = 1; ///< Multiplier for education policy effects.
+    float shortweekPolicyMultiplier = 1; ///< Multiplier for short workweek policy effects.
 
 public:
-	District();
+    District();
 
-	void add(CityUnit* newUnit);
+    /**
+     * @brief Adds a new CityUnit to the district.
+     * @param newUnit The CityUnit to be added.
+     */
+    void add(CityUnit* newUnit);
 
-	void remove(CityUnit* unit);
+    /**
+     * @brief Removes a specified CityUnit from the district.
+     * @param unit The CityUnit to be removed.
+     * @throws std::exception if the unit is not found in the district.
+     */
+    void remove(CityUnit* unit);
 
-	~District();
+    /**
+     * @brief Destructor for the District class.
+     *
+     * Cleans up dynamically allocated CityUnits and clears the containedCityUnit vector.
+     */
+    ~District();
 
-	void update();
+    /**
+     * @brief Updates all CityUnits within the district and employs residents.
+     */
+    void update();
 
-	void employResidents();
-	void partyResidents();
+    /**
+     * @brief Employs residents from residential units in available commercial units.
+     */
+    void employResidents();
 
-	Iterator* createIterator();
+    /**
+     * @brief Allows residents to relax at available landmarks.
+     */
+    void partyResidents();
 
-	double getEmploymentRate();
+    /**
+     * @brief Creates an iterator for the district.
+     * @return A pointer to the created Iterator.
+     */
+    Iterator* createIterator();
 
-	double payTaxes();
+    /**
+     * @brief Calculates the average employment rate for the district.
+     * @return The average employment rate as a double.
+     */
+    double getEmploymentRate();
 
-	int evaluateHappiness();
+    /**
+     * @brief Collects taxes from residents in the district.
+     * @return The total amount of tax collected.
+     */
+    double payTaxes();
 
-	int countCitizens();
+    /**
+     * @brief Evaluates the average happiness level of the district.
+     * @return The average happiness as an integer.
+     * @throws std::exception if total happiness is negative.
+     */
+    int evaluateHappiness();
 
-	void setTaxRate(double amount);
+    /**
+     * @brief Counts the total number of citizens in all residential units within the district.
+     * @return The total number of citizens.
+     */
+    int countCitizens();
 
-	int calculateDistanceTo(CityUnit* other) override {
-        // Placeholder implementation
-        return 0;
-    }
+    /**
+     * @brief Sets the tax rate for the district.
+     * @param amount The new tax rate to be set.
+     */
+    void setTaxRate(double amount);
 
-    int getRemainingCapacity() override {
-        // Placeholder implementation
-        return 0;
-    }
+    /**
+     * @brief Updates the education policy multiplier.
+     * @param mult The new multiplier to set for the education policy.
+     */
+    void updateEducationMultiplier(float mult);
 
-    int getUsedCapacity() override {
-        // Placeholder implementation
-        return 0;
-    }
-
-	void updateEducationMultiplier(float mult);
+    /**
+     * @brief Updates the short week policy multiplier.
+     * @param mult The new multiplier to set for the short week policy.
+     */
     void updateWeekMultiplier(float mult);
 };
 
-#endif
+#endif // DISTRICT_H
