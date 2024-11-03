@@ -17,7 +17,7 @@
  */
 ResidentialFactory::ResidentialFactory() {
    // std::cout << "Type: Residential factory" << std::endl;
-    cost = 50; 
+    cost = 150000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;
@@ -31,7 +31,7 @@ ResidentialFactory::ResidentialFactory() {
  *         initial used capacity, and tax rate.
  */
 Building* ResidentialFactory::factoryMethod() {
-    return new Residential(100, 0, 20.0);
+    return new Residential(100, 100);
 }
 
 /**

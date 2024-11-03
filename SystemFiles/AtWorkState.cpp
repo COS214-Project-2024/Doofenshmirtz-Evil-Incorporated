@@ -33,8 +33,13 @@ void AtWorkState::travel(Citizen *citizen)
 		this->chooseStrategy(travelDistance);
 		int temp = this->strategy->handleCommuteState();
 		citizen->updateSatisfaction("+",temp);
+
+		// Set the strategy used to get to this state so that traffic can be evaluated
+		citizen->lastUsedStrategyName = this->getTravelMethod();
+
 		// Set state of citizen to AtLeisureState
 		citizen->setState(new AtLeisureState());
+
 }
 
 /**

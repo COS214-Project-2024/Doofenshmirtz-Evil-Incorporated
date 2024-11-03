@@ -5,6 +5,7 @@
 #include <map>
 #include "Citizen.h"
 #include "Iterator.h"
+#include <nlohmann/json.hpp>
 
 class CityUnit {
 
@@ -12,10 +13,10 @@ protected:
 	int totalCapacity;
 	int usedCapacity;
 	std::vector<Citizen*> resident;
-	double taxRate;
+	double taxRate = 0.1;
 
 	// Protected to prevent direct instantiation of CityUnit
-	CityUnit(int totalCap, int usedCap, double taxR);
+	CityUnit(int totalCap, int usedCap);
 
 public:
 
@@ -39,24 +40,34 @@ public:
 	virtual void update() = 0;
 
 	virtual void employResidents() = 0;
+	virtual void partyResidents() = 0;
 
 	virtual Iterator* createIterator() = 0;
 
 	virtual double getEmploymentRate() = 0;
 
-	virtual double setTaxRate(double amount)=0;
+	virtual void setTaxRate(double amount);
 
 	/**
 	 * Checks if the building type is residential. If it is then loop through the associated citizens and decrement their balance.
 	 */
-	virtual double payTaxes(double rate) = 0;
+	virtual double payTaxes() = 0;
 
 	virtual int evaluateHappiness() = 0;
 
 	virtual int countCitizens() = 0;
 
-	virtual std::map<std::string, int> collectResources();
+	virtual std::map<std::string, int> collectResources() = 0;
 
+	virtual std::map<std::string, double> collectUtilities() = 0;
+
+	virtual void updateEducationMultiplier(float mult)=0;
+
+    virtual void updateWeekMultiplier(float mult)=0;
+
+	virtual void evaluateTrafficConditions() = 0;
+
+	virtual nlohmann::json getJSONrepresentation() = 0;
 };
 
 #endif

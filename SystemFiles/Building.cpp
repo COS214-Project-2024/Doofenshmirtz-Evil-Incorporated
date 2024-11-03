@@ -1,6 +1,8 @@
 #include "Building.h"
+#include "Residential.h"
+#include <iostream>
 
-Building::Building(int totalCap, int usedCap, double taxR) : CityUnit(totalCap, usedCap, taxR) {
+Building::Building(int totalCap, int usedCap) : CityUnit(totalCap, usedCap) {
 }
 
 Building::~Building()
@@ -32,38 +34,70 @@ int Building::getUsedCapacity() {
 	return usedCapacity;
 }
 
+int Building::getTotalCapacity() const {
+    return totalCapacity;  // Returns the totalCapacity member inherited from CityUnit
+}
+
 /**
  * @brief Calculate the employment and resturns a decimal value betwen 0 and 1
  */
 double Building::getEmploymentRate() {
-	int employed_citizens = 0;
-	int total_citizens = resident.size();
 
-	for (auto res:resident){
-		if (res->getJob() != nullptr)
-		{
-			employed_citizens += 1;
-		}
-	}
+	/*
+    // Check if this building is a Residential type
+    Building* residentialBuilding = dynamic_cast<Residential*>(this);
+    if (!residentialBuilding) {
+        // If not residential, return 0 as employment rate
+        return 0.0;
+    }
 
-	double employment_rate = (employed_citizens/total_citizens);
-	return employment_rate;
+	std::cout << "Residence found\n";
+    int employed_citizens = 0;
+    int total_citizens = resident.size();
+	std::cout << "Residence size: " << total_citizens << "\n";
+
+    if (total_citizens == 0) {
+        return 0.0;
+    }
+
+    // Count employed citizens only if they have a job
+    for (auto res : resident) {
+        if (res->getJob() != nullptr) {
+            employed_citizens += 1;
+        }
+    }
+
+    // Calculate employment rate as a double
+    double employment_rate = static_cast<double>(employed_citizens) / total_citizens;
+    return employment_rate;
+	*/
+	return 0.5;
 }
 
+
+
 int Building::evaluateHappiness() {
-	int totalSitisfaction = 0;
+
+	// Check for resident size of 0 which implies it is not a residential building and should be ignored for the happiness stat
+	if(resident.size() == 0)
+	{
+		return 0;
+	}
+
+	int totalSatisfaction = 0;
 
 	for (auto citizen:resident)
 	{
-		totalSitisfaction += citizen->getSatisfaction();
+		totalSatisfaction += citizen->getSatisfaction();
 	}
 
-	if (totalSitisfaction < 0)
+	if (totalSatisfaction < 0)
 	{
 		throw "Value Error: Satisfaction < 0";
 	}
-	return totalSitisfaction/resident.size();
+	return totalSatisfaction / resident.size();
 }
+
 /**
  * @brief Gets the amount of citezens in the building
  * Counts the items in the resident vector
@@ -72,6 +106,25 @@ int Building::countCitizens() {
 	return resident.size();
 }
 
+void Building::pushBackResident(Citizen *newCitizen)
+{
+	resident.push_back(newCitizen);
+}
+
+void Building::updateEducationMultiplier(float mult)
+{
+
+}
+
+void Building::updateWeekMultiplier(float mult)
+{
+}
+
+void Building::evaluateTrafficConditions()
+{
+}
+
 std::vector<Citizen*>& Building::getResidents(){
 	return resident;
 }
+

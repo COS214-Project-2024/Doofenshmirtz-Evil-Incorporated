@@ -1,4 +1,5 @@
 #include "Residential.h"
+#include "WebSocketNotifier.h"
 #include <iostream>
 
 
@@ -9,12 +10,30 @@
  * sets the used capacity to the total capacity, and populates the `resident` vector
  * with dynamically allocated `Citizen` objects.
  */
-Residential::Residential(int totalCap, int usedCap, double taxR) : Building(totalCap, usedCap, taxR) {
+Residential::Residential(int totalCap, int usedCap) : Building(totalCap, usedCap) {
     for (int i = 0; i < usedCap && i < totalCap; i++) {
         Citizen* newCitizen = new Citizen(this, nullptr, nullptr);
         pushBackResident(newCitizen);
     }
-    // Debug output
+    // Front end update
+    nlohmann::json message = {
+	{"type", "valueUpdate"},
+	{"data", 	{
+					{"id", "residential"},
+					{"value", "1++"}
+				}
+				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
+
+    std::string citizensCreated = (std::to_string(totalCap) + "++");
+    message = {
+	{"type", "valueUpdate"},
+	{"data", 	{
+					{"id", "citizens"},
+					{"value", citizensCreated}
+				}
+				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
 }
 
 
@@ -47,4 +66,24 @@ void Residential::update() {
 	{
 		person->followRoutine();
 	}
+}
+
+std::map<std::string, int> Residential::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+nlohmann::json Residential::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Residential"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
+}
+
+std::map<std::string, double> Residential::collectUtilities()
+{
+    return std::map<std::string, double>();
 }

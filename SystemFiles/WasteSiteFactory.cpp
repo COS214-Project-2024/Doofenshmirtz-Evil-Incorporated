@@ -17,7 +17,7 @@
  */
 WasteSiteFactory::WasteSiteFactory() {
    // std::cout << "Type: WasteSite factory" << std::endl;
-    cost = 50; 
+    cost = 120000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;
@@ -58,5 +58,5 @@ std::map<std::string, int> WasteSiteFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* WasteSiteFactory::factoryMethod() {
-    return new Waste(100, 0, 20.0);
+    return new Waste(100, 0);
 }

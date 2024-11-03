@@ -1,15 +1,26 @@
+/**
+ * @file SetTax.cpp
+ * @brief Implements the SetTax class, which sets the tax rate for a CityUnit.
+ */
+
 #include "SetTax.h"
 
-SetTax::SetTax(float newTaxRatePercentage) {
-	// TODO - implement SetTax::SetTax
-	throw "Not yet implemented";
+/**
+ * @brief Constructs a SetTax command with the specified tax rate.
+ */
+SetTax::SetTax(CityUnit* district, double newTaxRatePercentage) : GovernmentCommand(district) {
+    this->taxRate = newTaxRatePercentage;
 }
 
-SetTax::~SetTax()
-{
+/**
+ * @brief Destructor for SetTax.
+ */
+SetTax::~SetTax() {
 }
 
-void SetTax::excecuteCommand() {
-	// TODO - implement SetTax::excecuteCommand
-	throw "Not yet implemented";
+/**
+ * @brief Executes the command to set the tax rate for the associated CityUnit.
+ */
+void SetTax::executeCommand() {
+    this->receiver->setTaxRate(taxRate);
 }

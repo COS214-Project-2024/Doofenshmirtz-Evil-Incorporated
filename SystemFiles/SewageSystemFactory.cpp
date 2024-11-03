@@ -17,7 +17,7 @@
  */
 SewageSystemFactory::SewageSystemFactory() {
    // std::cout << "Type: SewageSystem factory" << std::endl;
-    cost = 50; 
+    cost = 220000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;
@@ -58,5 +58,5 @@ std::map<std::string, int> SewageSystemFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* SewageSystemFactory::factoryMethod() {
-    return new Sewage(100, 0, 20.0);
+    return new Sewage(100, 0);
 }

@@ -43,35 +43,35 @@
       <div class="resources">
         <div>
           <img src="img/5.png" alt="Residential" id="residentialImg" />
-          <p id="residential">Residential: 3</p>
+          <p id="residential">Residential: 0</p>
         </div>
         <div>
           <img src="img/6.png" alt="Commercial" id="commercialImg" />
-          <p id="commercial">Commercial: 2</p>
+          <p id="commercial">Commercial: 0</p>
         </div>
         <div>
           <img src="img/7.png" alt="Industrial" id="industrialImg" />
-          <p id="industrial">Industrial: 4</p>
+          <p id="industrial">Industrial: 0</p>
         </div>
         <div>
           <img src="img/8.png" alt="Landmarks" id="landmarksImg" />
-          <p id="landmarks">Landmarks: 3</p>
+          <p id="landmarks">Landmarks: 0</p>
         </div>
         <div>
           <img src="img/9.png" alt="Wood" id="woodImg" />
-          <p id="wood">Wood: 4</p>
+          <p id="wood">Wood: 0</p>
         </div>
         <div>
           <img src="img/10.png" alt="Concrete" id="concreteImg" />
-          <p id="concrete">Concrete: 6</p>
+          <p id="concrete">Concrete: 0</p>
         </div>
         <div>
           <img src="img/11.png" alt="Steel" id="steelImg" />
-          <p id="steel">Steel: 8</p>
+          <p id="steel">Steel: 0</p>
         </div>
         <div>
           <img src="img/12.png" alt="Bricks" id="bricksImg" />
-          <p id="bricks">Bricks: 10</p>
+          <p id="bricks">Bricks: 0</p>
         </div>
       </div>
 
@@ -85,19 +85,19 @@
       <div class="utilities">
         <div data-tooltip="Power Supply">
           <img src="img/18.png" alt="Power" id="powerImg" />
-          <p id="power">Power: 90%</p>
+          <p id="powerplant">Power: 0%</p>
         </div>
         <div data-tooltip="Water Supply">
           <img src="img/19.png" alt="Water" id="waterImg" />
-          <p id="water">Water: 75%</p>
+          <p id="waterplant">Water: 0%</p>
         </div>
         <div data-tooltip="Waste Management">
           <img src="img/20.png" alt="Waste" id="wasteImg" />
-          <p id="waste">Waste: 80%</p>
+          <p id="wastesite">Waste: 0%</p>
         </div>
         <div data-tooltip="Sewage Systems">
           <img src="img/21.png" alt="Sewage" id="sewageImg" />
-          <p id="sewage">Sewage: 65%</p>
+          <p id="sewagesystem">Sewage: 0%</p>
         </div>
       </div>
 
@@ -117,7 +117,7 @@
             <span
               class="progress-percent progress-public"
               id="progress-public-value"
-              >70%</span
+              >0%</span
             >
           </div>
         </div>
@@ -129,7 +129,7 @@
               <div id="progress-car" class="progress" data-progress="90"></div>
             </div>
             <span class="progress-percent progress-car" id="progress-car-value"
-              >90%</span
+              >0%</span
             >
           </div>
         </div>
@@ -147,7 +147,7 @@
             <span
               class="progress-percent progress-train"
               id="progress-train-value"
-              >50%</span
+              >0%</span
             >
           </div>
         </div>
@@ -165,7 +165,7 @@
             <span
               class="progress-percent progress-plane"
               id="progress-plane-value"
-              >40%</span
+              >0%</span
             >
           </div>
         </div>
@@ -296,7 +296,27 @@
         work.setAttribute("disabled", true);
         education.removeAttribute("disabled");
       });
+
+      const newsDiv = document.querySelector('.breaking-news-tv');
+
+    // Function to scroll the div to the bottom
+    function scrollToBottom() {
+      newsDiv.scrollTop = newsDiv.scrollHeight;
+    }
+
+    // Set up a MutationObserver to watch for new child elements
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+          if (mutation.addedNodes.length > 0) {
+              // Scroll to bottom when new content is added
+              scrollToBottom();
+          }
+      });
+  });
+
+  // Start observing for changes in the child elements of newsDiv
+  observer.observe(newsDiv, { childList: true });
     </script>
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
   </body>
 </html>

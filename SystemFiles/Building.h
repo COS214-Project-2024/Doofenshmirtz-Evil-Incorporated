@@ -2,12 +2,13 @@
 #define BUILDING_H
 
 #include "CityUnit.h"
+#include <nlohmann/json.hpp>
 
 class Building : public CityUnit {
 
 
 public:
-	Building(int totalCap, int usedCap, double taxR);
+	Building(int totalCap, int usedCap);
 
 	virtual ~Building();
 
@@ -19,11 +20,13 @@ public:
 
 	int getUsedCapacity();
 
+	int getTotalCapacity() const;
+
 	double getEmploymentRate();
 
 	virtual void update() = 0;
 
-	int evaluateHappiness();
+	virtual int evaluateHappiness();
 
 	int countCitizens();
 
@@ -34,19 +37,30 @@ public:
 	void add(CityUnit* newUnit){};
 	void remove(CityUnit* unit){};
 	void employResidents(){};
+	void partyResidents(){};
 	Iterator* createIterator(){
 		return nullptr;
 	};
-	double setTaxRate(double amount){
-		return 0;
+	void setTaxRate(double amount){
 	};
-	double payTaxes(double rate){
+	double payTaxes(){
 		return 0;
 	};
 
-	void pushBackResident(Citizen* newCitizen){
-		resident.push_back(newCitizen);
-	};
+	void pushBackResident(Citizen* newCitizen);
+
+	void updateEducationMultiplier(float mult);
+
+    void updateWeekMultiplier(float mult);
+
+	void evaluateTrafficConditions();
+
+	virtual std::map<std::string, int> collectResources() = 0;
+
+	virtual std::map<std::string, double> collectUtilities() = 0;
+
+	virtual nlohmann::json getJSONrepresentation() = 0;
+
 };
 
 #endif

@@ -17,7 +17,7 @@
  */
 WaterPlantFactory::WaterPlantFactory() {
     //std::cout << "Type: Waterplant factory" << std::endl;
-    cost = 50; 
+    cost = 380000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;
@@ -58,5 +58,5 @@ std::map<std::string, int> WaterPlantFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* WaterPlantFactory::factoryMethod() {
-    return new Water(100, 0, 20.0);
+    return new Water(100, 0);
 }

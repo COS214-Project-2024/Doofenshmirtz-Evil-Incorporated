@@ -17,11 +17,11 @@
  */
 IndustrialFactory::IndustrialFactory() {
    // std::cout << "Type: Industrial factory" << std::endl;
-    cost = 50; 
-    resourceCost["Wood"] = 50;
-    resourceCost["Steel"] = 50;
-    resourceCost["Concrete"] = 50;
-    resourceCost["Bricks"] = 50;
+    cost = 400000; 
+    resourceCost["Wood"] = 0;
+    resourceCost["Steel"] = 0;
+    resourceCost["Concrete"] = 0;
+    resourceCost["Bricks"] = 0;
 }
 
 /**
@@ -31,7 +31,7 @@ IndustrialFactory::IndustrialFactory() {
  *         initial used capacity, and tax rate.
  */
 Building* IndustrialFactory::factoryMethod() {
-    return new Industrial(100, 0, 20.0);
+    return new Industrial(100, 0);
 }
 
 /**

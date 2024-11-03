@@ -1,10 +1,9 @@
 #include "Iterator.h"
 
-Iterator::Iterator() {
-	// TODO - implement Iterator::Iterator
-	throw "Not yet implemented";
+Iterator::Iterator(){
+
 }
 
-Iterator::~Iterator()
-{
+Iterator::~Iterator(){
+    
 }

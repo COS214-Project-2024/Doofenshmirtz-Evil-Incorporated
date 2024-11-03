@@ -17,7 +17,7 @@
  */
 PowerPlantFactory::PowerPlantFactory() {
  //   std::cout << "Type: Powerplant factory" << std::endl;
-    cost = 50; 
+    cost = 400000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;
@@ -56,5 +56,5 @@ std::map<std::string, int> PowerPlantFactory::getResourceCost() {
  *         initial used capacity, and tax rate.
  */
 Building* PowerPlantFactory::factoryMethod() {
-    return new Power(100, 0, 20.0);
+    return new Power(100, 0);
 }
