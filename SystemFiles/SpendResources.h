@@ -26,6 +26,8 @@ private:
     BuildingFactory* PowerFact;        ///< Factory for building power plants.
     BuildingFactory* CommercialFact;   ///< Factory for building commercial units.
     BuildingFactory* LandmarkFact;     ///< Factory for building landmarks.
+    BuildingFactory* IndustFact;
+    BuildingFactory* ResedentialFact;
     int& balance;                      ///< Reference to the current financial balance.
     double employmentRate;             ///< Current employment rate in the district.
     std::map<std::string, int>& resources; ///< Map of available resources and their quantities.
@@ -75,6 +77,10 @@ public:
      * @return Priority value based on utility level.
      */
     int utilPriority(double dk);
+
+    int resourcePriority(std::map<std::string, int> resources);
+
+    int resedentialPriority(double satisfaction);
 
     /**
      * @brief Checks if enough resources are available for construction.
