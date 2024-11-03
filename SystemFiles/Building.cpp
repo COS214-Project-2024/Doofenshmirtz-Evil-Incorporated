@@ -43,7 +43,6 @@ int Building::getTotalCapacity() const {
  */
 double Building::getEmploymentRate() {
 
-	/*
     // Check if this building is a Residential type
     Building* residentialBuilding = dynamic_cast<Residential*>(this);
     if (!residentialBuilding) {
@@ -51,10 +50,10 @@ double Building::getEmploymentRate() {
         return 0.0;
     }
 
-	std::cout << "Residence found\n";
+	// std::cout << "Residence found\n";
     int employed_citizens = 0;
     int total_citizens = resident.size();
-	std::cout << "Residence size: " << total_citizens << "\n";
+	// std::cout << "Residence size: " << total_citizens << "\n";
 
     if (total_citizens == 0) {
         return 0.0;
@@ -70,8 +69,6 @@ double Building::getEmploymentRate() {
     // Calculate employment rate as a double
     double employment_rate = static_cast<double>(employed_citizens) / total_citizens;
     return employment_rate;
-	*/
-	return 0.5;
 }
 
 
