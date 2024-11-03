@@ -17,7 +17,7 @@
  */
 class GovernmentCommand {
 protected:
-    CityUnit* reciever;  ///< Pointer to the CityUnit that the command affects.
+    CityUnit* receiver;  ///< Pointer to the CityUnit that the command affects.
 
 public:
     /**

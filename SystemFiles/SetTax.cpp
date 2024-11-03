@@ -22,5 +22,5 @@ SetTax::~SetTax() {
  * @brief Executes the command to set the tax rate for the associated CityUnit.
  */
 void SetTax::executeCommand() {
-    this->reciever->setTaxRate(taxRate);
+    this->receiver->setTaxRate(taxRate);
 }
