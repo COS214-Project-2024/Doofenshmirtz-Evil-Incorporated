@@ -182,9 +182,11 @@ double District::getEmploymentRate()
     for (const auto &unit : containedCityUnit)
     {   
         double unitEmploymentRate = unit->getEmploymentRate();
-        std::cout << "\n\nBuilding employment rate " << unitEmploymentRate << "\n";
-        if(unitEmploymentRate != 0)
-        {   
+        // std::cout << "\n\nBuilding employment rate " << unitEmploymentRate << "\n";
+
+        // Check if unit is of type Residential
+        Residential* residentialCityUnit = dynamic_cast<Residential*>(unit);
+        if (residentialCityUnit) {
             totalEmploymentRate += unitEmploymentRate;   
             divisionCounter++;         
         }
