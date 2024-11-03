@@ -121,7 +121,7 @@ When make run_demo is called:
 	<tr>
       <td align="center">
 	  	Jack Bawden<br> u23529068 <br>
-		<img src="https://i.etsystatic.com/34732889/r/il/b08942/3768265623/il_794xN.3768265623_sji1.jpg" alt="your pfp" width="200" height="200">
+		<img src="https://s3-alpha.figma.com/hub/file/2944732189/b47472b8-4e17-477e-a0a8-d5fcbed6a374-cover.png" alt="your pfp" width="200" height="200">
 	  </td>
 	  <td align="center">
 	  	Composite <br> Iterator <br> skillz <br> etc<br><br>
