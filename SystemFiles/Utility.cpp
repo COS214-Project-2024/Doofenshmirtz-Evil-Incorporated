@@ -7,3 +7,17 @@ Utility::Utility(int totalCap, int usedCap) : Building(totalCap, usedCap) {
 Utility::~Utility()
 {
 }
+
+std::map<std::string, int> Utility::collectResources() {
+    return {}; // Returns an empty map as required
+}
+
+std::map<std::string, double> Utility::collectUtilities()
+{
+return {};
+}
+
+nlohmann::json Utility::getJSONrepresentation()
+{
+    return nlohmann::json();
+}

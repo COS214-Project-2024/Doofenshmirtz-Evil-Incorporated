@@ -12,6 +12,11 @@ public:
 
 	void update();
 	
+	std::map<std::string, int> collectResources() override;
+
+	nlohmann::json getJSONrepresentation();
+
+	std::map<std::string, double> collectUtilities() override;
 };
 
 #endif

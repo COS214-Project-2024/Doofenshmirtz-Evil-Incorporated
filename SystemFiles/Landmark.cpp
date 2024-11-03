@@ -24,3 +24,23 @@ void Landmark::update() {
 		person->updateSatisfaction("Visit landmark", 20);
 	}
 }
+
+std::map<std::string, int> Landmark::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+std::map<std::string, double> Landmark::collectUtilities()
+{
+	return std::map<std::string, double>();
+}
+
+nlohmann::json Landmark::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Landmark"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
+}

@@ -178,13 +178,23 @@ double District::getEmploymentRate()
     }
 
     double totalEmploymentRate = 0.0;
+    int divisionCounter = 0;
     for (const auto &unit : containedCityUnit)
-    {
-        totalEmploymentRate += unit->getEmploymentRate();
+    {   
+        double unitEmploymentRate = unit->getEmploymentRate();
+        std::cout << "\n\nBuilding employment rate " << unitEmploymentRate << "\n";
+        if(unitEmploymentRate != 0)
+        {   
+            totalEmploymentRate += unitEmploymentRate;   
+            divisionCounter++;         
+        }
+
     }
 
     // Return average employment rate
-    return totalEmploymentRate / containedCityUnit.size();
+    if(divisionCounter != 0) { return totalEmploymentRate / divisionCounter;}
+    else {return  0.0;}
+   
 }
 
 /**
@@ -315,8 +325,6 @@ void District::evaluateTrafficConditions()
         double dblRatio = travelPair.second / totalCitizenCount;
         int ratioPercentageInt = (int)(dblRatio * 100);
 
-        std::cout << "Travel Strategy " << travelPair.first << " had " << travelPair.second << " users\n";
-
         nlohmann::json message = {
             {"type", "valueUpdate"},
             {"data", {{"id", helperMap[travelPair.first]}, {"value", std::to_string(ratioPercentageInt)}}}};
@@ -325,3 +333,54 @@ void District::evaluateTrafficConditions()
         WebSocketNotifier::get_mutable_instance().log(message);
     }
 }
+
+nlohmann::json District::getJSONrepresentation()
+{
+    nlohmann::json district = {
+            {"name" , "district_x"},
+            {"children", nlohmann::json::array()}
+        };
+
+        for (size_t i = 0; i < containedCityUnit.size(); ++i)
+        {   
+            district["children"].emplace_back(containedCityUnit[i]->getJSONrepresentation());
+        }
+
+     return district;
+}
+
+// Collect resources from all nested resources
+std::map<std::string, int> District::collectResources()
+{   
+    std::map<std::string, int> allResources; // Collector for resourcss
+
+    for(CityUnit* nestedUnit : this->containedCityUnit)
+    {   
+        // Get contained city unit resources
+        std::map<std::string, int> nestedResources = nestedUnit->collectResources();
+
+        // Add contained resources to collector
+        for (const auto& resourcePair : nestedResources)
+        {
+            allResources[resourcePair.first] += resourcePair.second;
+        }
+    }
+
+    return allResources;
+}
+
+std::map<std::string, double> District::collectUtilities() {
+    std::map<std::string, double> allUtilities;
+
+    for (CityUnit* nestedUnit : this->containedCityUnit) {
+        std::map<std::string, double> nestedUtilities = nestedUnit->collectUtilities();
+
+        for (const auto& utilityPair : nestedUtilities) {
+            allUtilities[utilityPair.first] += utilityPair.second;
+
+        }
+    }
+
+    return allUtilities;
+}
+

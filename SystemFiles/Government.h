@@ -19,8 +19,10 @@ private:
 	std::map<std::string, int> resources; /**< The resources managed by the government. */
 	std::vector<GovernmentCommand*> myCommand; /**< The commands issued by the government. */
 	std::vector<CityUnit*> observerList; /**< The list of city units observing the government. */
-
 	static constexpr int TAX_RATE = 1000; /**< The tax rate applied by the government. */
+	std::map<std::string, double> utilities;
+	int averageHappiness;
+
 
 public:
 	
@@ -65,10 +67,17 @@ public:
 	void collectResources();
 
 	/**
+	 * @brief Updates the usage of the utilities in the city.
+	 */
+	void updateUtilitiesUsage();
+
+	/**
 	 * @brief Gets the resources managed by the government.
 	 * @return The resources managed by the government.
 	 */
-	std::map<std::string, int> getResources() {return resources;}
+	std::map<std::string, int>& getResources() {return resources;}
+
+	std::map<std::string, double>& getUtilities() {return utilities;}
 
 	/**
 	 * @brief Returns info to the front end on how busy each method of transportation is
@@ -79,6 +88,19 @@ public:
 	 * @brief Returns info to the front end on the average happiness of all the citizens
 	 */
 	void evaluateHappiness();
+
+	void renderCity();
+
+
+	void executeEductation();
+
+	void executeShortWorkWeek();
+
+	void executeNewTax(double tax);
+
+	void executeSpendResources();
+
+	void findEmployment();
 
 	/**
 	 * @brief Destructor for the Government class.

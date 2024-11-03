@@ -25,3 +25,23 @@ void Commercial::update() {
 		person->recieveSalary(salary);
 	}
 }
+
+std::map<std::string, int> Commercial::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+std::map<std::string, double> Commercial::collectUtilities()
+{
+    return std::map<std::string, double>();
+}
+
+nlohmann::json Commercial::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Commercial"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
+}

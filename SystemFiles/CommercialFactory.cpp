@@ -12,7 +12,7 @@
  */
 CommercialFactory::CommercialFactory() {
    // std::cout << "Type: Commercial factory" << std::endl;
-    cost = 50; 
+    cost = 200000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;

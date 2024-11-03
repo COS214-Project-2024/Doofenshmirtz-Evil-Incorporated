@@ -69,10 +69,11 @@ function updateValue(id, newValue) {
       element.innerText = `${newValue}`;
       break;
 
-    case "power":
-    case "water":
-    case "waste":
-    case "sewage":
+    case "powerplant":
+    case "waterplant":
+    case "wastesite":
+    case "sewagesystem":
+      newValue = parseFloat(newValue);
       element.innerText = `${capitalize(id.toLowerCase())}: ${newValue}%`;
       break;
 

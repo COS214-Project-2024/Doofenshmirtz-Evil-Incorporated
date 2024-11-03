@@ -2,6 +2,7 @@
 #define BUILDING_H
 
 #include "CityUnit.h"
+#include <nlohmann/json.hpp>
 
 class Building : public CityUnit {
 
@@ -18,6 +19,8 @@ public:
 	int getRemainingCapacity();
 
 	int getUsedCapacity();
+
+	int getTotalCapacity() const;
 
 	double getEmploymentRate();
 
@@ -51,6 +54,13 @@ public:
     void updateWeekMultiplier(float mult);
 
 	void evaluateTrafficConditions();
+
+	virtual std::map<std::string, int> collectResources() = 0;
+
+	virtual std::map<std::string, double> collectUtilities() = 0;
+
+	virtual nlohmann::json getJSONrepresentation() = 0;
+
 };
 
 #endif

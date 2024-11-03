@@ -18,7 +18,7 @@
 IndustrialFactory::IndustrialFactory() {
    // std::cout << "Type: Industrial factory" << std::endl;
     cost = 50; 
-    resourceCost["Wood"] = 50;
+    resourceCost["Wood"] = 300000;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;
     resourceCost["Bricks"] = 50;

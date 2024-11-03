@@ -53,8 +53,16 @@ void SimulationRunnerFacade::runSimulation()
 	WebSocketNotifier::get_mutable_instance().log(message);
 
 	while (!(*stopFlag_))
-	{
-		std::this_thread::sleep_for(std::chrono::seconds(2));
+	{	
+		// Employ Citizens
+		myGov.findEmployment();
+
+		// Render city
+		std::cout << "Called renderCity()\n";
+		myGov.renderCity();
+		std::cout << "render city done\n";
+
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 		// Update all city units
 		myGov.notify();
 
@@ -64,7 +72,7 @@ void SimulationRunnerFacade::runSimulation()
 			{"type", "news"},
 			{"data", "Collected taxes from city!"}};
 		WebSocketNotifier::get_mutable_instance().log(message);
-		std::this_thread::sleep_for(std::chrono::seconds(2));
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 
 		// Collect resources
 		myGov.collectResources();
@@ -72,7 +80,14 @@ void SimulationRunnerFacade::runSimulation()
 			{"type", "news"},
 			{"data", "Collected resources from industrial buildings!"}};
 		WebSocketNotifier::get_mutable_instance().log(message);
-		std::this_thread::sleep_for(std::chrono::seconds(2));
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+
+		myGov.updateUtilitiesUsage();
+		message = {
+			{"type", "news"},
+			{"data", "Updated Utilities usage"}};
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+
 
 		// Evaulate Traffic condtions
 		myGov.evaluateTrafficConditions();
@@ -80,7 +95,7 @@ void SimulationRunnerFacade::runSimulation()
 			{"type", "news"},
 			{"data", "Traffic conditions evaluated!"}};
 		WebSocketNotifier::get_mutable_instance().log(message);
-		std::this_thread::sleep_for(std::chrono::seconds(2));
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 
 		// Evaluate Happiness of citizens
 		myGov.evaluateHappiness();
@@ -88,22 +103,35 @@ void SimulationRunnerFacade::runSimulation()
 			{"type", "news"},
 			{"data", "City happiness evaluated!"}};
 		WebSocketNotifier::get_mutable_instance().log(message);
-		std::this_thread::sleep_for(std::chrono::seconds(2));
+
+		myGov.executeSpendResources();
 
 		if (*EducationFlag_)
 		{
-			std::cout << "Education policy is set" << std::endl;
-			std::cout << "Short Work Week policy is removed" << std::endl;
+			myGov.executeEductation();
+			message = {
+			{"type", "news"},
+			{"data", "Education Policy is active"}};
+			WebSocketNotifier::get_mutable_instance().log(message);
 		}
 		if (*ShortWorkFlag_)
 		{
-			std::cout << "Short Work Week policy is set" << std::endl;
-			std::cout << "Education policy is removed" << std::endl;
+			myGov.executeShortWorkWeek();
+			message = {
+			{"type", "news"},
+			{"data", "Short Work Week Policy is active"}};
+			WebSocketNotifier::get_mutable_instance().log(message);
 		}
 		if (*TaxFlag_)
 		{
-			std::cout << "Tax rate is set to " << taxRate_ << std::endl;
+			double taxRateDouble = static_cast<double>(taxRate_);
+			myGov.executeNewTax(taxRateDouble/100);
+			message = {
+                {"type", "news"},
+                {"data", "Tax rate updated"}};
+            WebSocketNotifier::get_mutable_instance().log(message);
 			*TaxFlag_ = false;
 		}
 	}
+	delete myCity;
 }

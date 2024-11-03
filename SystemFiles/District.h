@@ -57,6 +57,12 @@ public:
     void updateWeekMultiplier(float mult);
 
 	void evaluateTrafficConditions();
+
+	nlohmann::json getJSONrepresentation();
+
+	std::map<std::string, int> collectResources() override;
+
+	std::map<std::string, double> collectUtilities() override;
 };
 
 #endif

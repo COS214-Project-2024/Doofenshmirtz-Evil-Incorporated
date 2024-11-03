@@ -84,5 +84,4 @@ public:
      */
     bool checkResources(std::map<std::string, int>& haveResources, std::map<std::string, int> needResources);
 };
-
 #endif

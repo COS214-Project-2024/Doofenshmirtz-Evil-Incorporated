@@ -1,4 +1,5 @@
 #include "Building.h"
+#include "Residential.h"
 #include <iostream>
 
 Building::Building(int totalCap, int usedCap) : CityUnit(totalCap, usedCap) {
@@ -33,27 +34,46 @@ int Building::getUsedCapacity() {
 	return usedCapacity;
 }
 
+int Building::getTotalCapacity() const {
+    return totalCapacity;  // Returns the totalCapacity member inherited from CityUnit
+}
+
 /**
  * @brief Calculate the employment and resturns a decimal value betwen 0 and 1
  */
 double Building::getEmploymentRate() {
-	int employed_citizens = 0;
-	int total_citizens = resident.size();
 
-	if(total_citizens == 0)
-	{
-		return 0;
-	}
-	for (auto res:resident){
-		if (res->getJob() != nullptr)
-		{
-			employed_citizens += 1;
-		}
-	}
+	/*
+    // Check if this building is a Residential type
+    Building* residentialBuilding = dynamic_cast<Residential*>(this);
+    if (!residentialBuilding) {
+        // If not residential, return 0 as employment rate
+        return 0.0;
+    }
 
-	double employment_rate = (employed_citizens/total_citizens);
-	return employment_rate;
+	std::cout << "Residence found\n";
+    int employed_citizens = 0;
+    int total_citizens = resident.size();
+	std::cout << "Residence size: " << total_citizens << "\n";
+
+    if (total_citizens == 0) {
+        return 0.0;
+    }
+
+    // Count employed citizens only if they have a job
+    for (auto res : resident) {
+        if (res->getJob() != nullptr) {
+            employed_citizens += 1;
+        }
+    }
+
+    // Calculate employment rate as a double
+    double employment_rate = static_cast<double>(employed_citizens) / total_citizens;
+    return employment_rate;
+	*/
+	return 0.5;
 }
+
 
 
 int Building::evaluateHappiness() {

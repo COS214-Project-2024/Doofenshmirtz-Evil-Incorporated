@@ -11,6 +11,7 @@
 #include "ResidentialFactory.h"
 #include "CommercialFactory.h"
 #include "LandmarkFactory.h"
+#include "WebSocketNotifier.h"
 
 /**
  * @brief Constructs a SpendResources command with specified parameters.
@@ -35,6 +36,18 @@ SpendResources::SpendResources(
     this->PowerFact = new PowerPlantFactory();
     this->CommercialFact = new CommercialFactory();
     this->LandmarkFact = new LandmarkFactory();
+
+
+    std::cout << "\n\n\nINFO\n:";
+    std::cout << "EmploymentRate: " << employmentRate << "\n";
+    std::cout << "balance: " << balance << "\n";
+    std::cout << "citizenSatisfaction: " << citizenSatisfaction << "\n";
+    std::cout << "Utilities: " << "\n";
+    for (const auto& util : utilities)
+    {
+        std::cout << util.first << " | " << util.second << "\n";
+    }
+    std::cout << "\n\n\n";
 }
 
 /**
@@ -63,6 +76,14 @@ void SpendResources::executeCommand() {
 
     // Identify the highest priority item to build
     int roulette[6] = {EmploymentPriority, citizenSatisfactionPriority, PowerPriority, WaterPriority, WastePriority, SewagePriority};
+    std::cout << "++++++++++++++++++++++++++++" << std::endl;
+    for (int i = 0; i < 6; i++)
+    {
+        std::cout << roulette[i] << " " ;
+    }
+    std::cout << "++++++++++++++++++++++++++++" << std::endl;
+
+
     int decisionVal = 0;
     int highNum = 999;
     for (int i = 0; i < 6; i++) {
@@ -121,6 +142,16 @@ void SpendResources::executeCommand() {
         default:
             break;
     }
+
+    // Reflect update to bank balance
+    nlohmann::json message = {
+        {"type", "valueUpdate"},
+        {"data", {
+                    {"id", "money"},
+                    {"value", std::to_string(balance)}
+                    }
+        }};
+    WebSocketNotifier::get_mutable_instance().log(message);
 }
 
 /**
@@ -149,9 +180,10 @@ int SpendResources::citizenPriority(double citizenSatisfaction) {
 int SpendResources::utilPriority(double dk) {
     double tmp = (dk * 10);
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0, 3}, {1, 6}, {2, 9}, {3, 12}, {4, 15}, {5, 18}, {6, 21}, {7, 24}, {8, 27}, {9, 30}, {10, 30}};
+    std::map<int, int> value = {{0, 30}, {1, 30}, {2, 27}, {3, 24}, {4, 21}, {5, 18}, {6, 15}, {7, 12}, {8, 9}, {9, 6}, {10, 3}};
+            
     return value[bucket];
-}
+} 
 
 /**
  * @brief Checks if sufficient resources are available.
@@ -164,6 +196,20 @@ bool SpendResources::checkResources(std::map<std::string, int>& haveResources, s
     }
     for (const auto& resource : needResources) {
         haveResources[resource.first] -= resource.second;
+
+        // Notify frontend of resource update
+        nlohmann::json message = {
+            {"type", "valueUpdate"},
+            {"data", {
+                        {"id", resource.first},
+                        {"value", std::to_string((resource.second)) + "--"}
+                    }
+            }};
+        
+        WebSocketNotifier::get_mutable_instance().log(message);
     }
     return true;
 }
+
+
+

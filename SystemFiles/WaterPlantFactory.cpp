@@ -17,7 +17,7 @@
  */
 WaterPlantFactory::WaterPlantFactory() {
     //std::cout << "Type: Waterplant factory" << std::endl;
-    cost = 50; 
+    cost = 380000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;

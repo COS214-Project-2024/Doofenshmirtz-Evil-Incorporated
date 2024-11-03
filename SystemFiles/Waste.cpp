@@ -15,3 +15,25 @@ void Waste::update() {
         usedCapacity = totalCapacity;
     }
 }
+
+std::map<std::string, int> Waste::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+std::map<std::string, double> Waste::collectUtilities()
+{
+	std::map<std::string, double> utilities;
+    utilities["WasteSite"] = usedCapacity ;
+    return utilities;
+}
+
+nlohmann::json Waste::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Waste"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
+}

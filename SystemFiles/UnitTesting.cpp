@@ -104,6 +104,8 @@ public:
     void updateEducationMultiplier(float mult){};
     void updateWeekMultiplier(float mult){};
 
+    std::map<std::string, int> collectResources() {return std::map<std::string, int>();}
+
     // Override getResidents to return the resident list
 
     std::vector<Citizen*>& getResidents() override {
@@ -116,6 +118,10 @@ public:
     void addMockResident(Citizen* citizen) {
         resident.push_back(citizen);
     }
+
+    nlohmann::json getJSONrepresentation() {return nlohmann::json();}
+
+    std::map<std::string, double> collectUtilities() {return std::map<std::string, double>();}
 
     // Destructor to clean up dynamically allocated mock residents
     ~MockCityUnit() override {

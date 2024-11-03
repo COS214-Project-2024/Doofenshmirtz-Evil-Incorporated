@@ -15,3 +15,25 @@ void Power::update() {
         usedCapacity = totalCapacity;
     }
 }
+
+std::map<std::string, int> Power::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+std::map<std::string, double> Power::collectUtilities()
+{
+	std::map<std::string, double> utilities;
+    utilities["PowerPlant"] = usedCapacity ;
+    return utilities;
+}
+
+nlohmann::json Power::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Power"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
+}

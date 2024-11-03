@@ -67,3 +67,23 @@ void Residential::update() {
 		person->followRoutine();
 	}
 }
+
+std::map<std::string, int> Residential::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+nlohmann::json Residential::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Residential"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
+}
+
+std::map<std::string, double> Residential::collectUtilities()
+{
+    return std::map<std::string, double>();
+}

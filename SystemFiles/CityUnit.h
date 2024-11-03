@@ -5,6 +5,7 @@
 #include <map>
 #include "Citizen.h"
 #include "Iterator.h"
+#include <nlohmann/json.hpp>
 
 class CityUnit {
 
@@ -56,13 +57,17 @@ public:
 
 	virtual int countCitizens() = 0;
 
-	virtual std::map<std::string, int> collectResources();
+	virtual std::map<std::string, int> collectResources() = 0;
+
+	virtual std::map<std::string, double> collectUtilities() = 0;
 
 	virtual void updateEducationMultiplier(float mult)=0;
 
     virtual void updateWeekMultiplier(float mult)=0;
 
 	virtual void evaluateTrafficConditions() = 0;
+
+	virtual nlohmann::json getJSONrepresentation() = 0;
 };
 
 #endif
