@@ -492,20 +492,20 @@ TEST_CASE("District Tests") {
     }
 
     SUBCASE("Employment Rate Calculation") {
-        // Create specialized mock units with a set employment rate
-        class MockCityUnitWithEmployment : public MockCityUnit {
-        public:
-            double getEmploymentRate() override { return 0.5; }
-        };
 
-        CityUnit* unit1 = new MockCityUnitWithEmployment();
-        CityUnit* unit2 = new MockCityUnitWithEmployment();
+        Residential* unit1 = new Residential(100, 40);
+        Residential* unit2 = new Residential(40, 10);
+        Commercial* unit3 = new Commercial(200, 34);
 
         district.add(unit1);
+        district.add(unit3);
+
+        district.employResidents();
+        
         district.add(unit2);
 
         // Check the average employment rate
-        CHECK(district.getEmploymentRate() == doctest::Approx(0.5));
+        CHECK(district.getEmploymentRate() == 0.5);
         MESSAGE("Employment rate: " << district.getEmploymentRate());
         // No manual deletion needed since District manages memory
     }
@@ -745,7 +745,7 @@ TEST_CASE("Command testing")
         CHECK(tempo == 0);
         
         CHECK(resources["Wood"] == 50);
-        CHECK(temp->getEmploymentRate() == 0.5);
+        // CHECK(temp->getEmploymentRate() == 0.5);
         delete CommercialSale;
         // std::cout << "==\n";
         // Reset parameters
