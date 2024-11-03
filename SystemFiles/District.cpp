@@ -107,11 +107,12 @@ void District::employResidents()
                     // Step 3: Try to employ the person in an available commercial unit
                     for (auto commercialUnit : availableCommercialUnits)
                     {
-                        if (commercialUnit->getEmploymentRate() < 1)
+                        if (commercialUnit->getRemainingCapacity() > 0)
                         {
                             person->employCitizen(commercialUnit);
                             break; // Exit loop after employment to avoid extra iterations
                         }
+
                     }
                 }
             }

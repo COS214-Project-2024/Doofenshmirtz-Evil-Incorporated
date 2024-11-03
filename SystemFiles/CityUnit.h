@@ -67,6 +67,10 @@ public:
 
 	virtual void evaluateTrafficConditions() = 0;
 
+	void setUsedCapacity(int val){
+		this->usedCapacity = val;
+	}
+
 	virtual nlohmann::json getJSONrepresentation() = 0;
 };
 

@@ -1,7 +1,7 @@
 #include "Citizen.h"
 #include <random>
 #include <ctime>
-
+#include "Commercial.h"
 /**
  * @brief Constructs a Citizen with a given home, job and leisure.
  * Initializes satisfaction score and bank balance randomly.
@@ -186,10 +186,12 @@ void Citizen::setState(CitizenLocationState *newState)
  */
 bool Citizen::employCitizen(CityUnit *job)
 {
-    if (!this->isEmployed)
+
+    if (!this->isEmployed && job != nullptr)
     {
         this->isEmployed = true;
         this->citizenJob = job;
+        job->setUsedCapacity(job->getUsedCapacity()+1);
         return true;
     }
 

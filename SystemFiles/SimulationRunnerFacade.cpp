@@ -56,7 +56,7 @@ void SimulationRunnerFacade::runSimulation()
 	{	
 		// Employ Citizens
 		myGov.findEmployment();
-
+		std::cout << "EMPLOYMENT RATE: " << myCity->getEmploymentRate() << std::endl;
 		// Render city
 		std::cout << "Called renderCity()\n";
 		myGov.renderCity();
