@@ -9,6 +9,7 @@
 #include "WasteSiteFactory.h"
 #include "PowerPlantFactory.h"
 #include "ResidentialFactory.h"
+#include "IndustrialFactory.h"
 #include "CommercialFactory.h"
 #include "LandmarkFactory.h"
 #include "WebSocketNotifier.h"
@@ -36,6 +37,8 @@ SpendResources::SpendResources(
     this->PowerFact = new PowerPlantFactory();
     this->CommercialFact = new CommercialFactory();
     this->LandmarkFact = new LandmarkFactory();
+    this->IndustFact = new IndustrialFactory();
+    this->ResedentialFact = new ResidentialFactory();
 
 
     std::cout << "\n\n\nINFO\n:";
@@ -60,6 +63,8 @@ SpendResources::~SpendResources() {
     delete this->PowerFact;
     delete this->CommercialFact;
     delete this->LandmarkFact;
+    delete this->IndustFact;
+    delete this->ResedentialFact;
 }
 
 /**
@@ -73,11 +78,13 @@ void SpendResources::executeCommand() {
     int WaterPriority = utilPriority(utilities["WaterPlant"]);
     int WastePriority = utilPriority(utilities["WasteSite"]);
     int SewagePriority = utilPriority(utilities["SewageSystem"]);
+    int ResidentialPriority = resedentialPriority(citizenSatisfaction);
+    int IndustrielPriority = resourcePriority(resources);
 
     // Identify the highest priority item to build
-    int roulette[6] = {EmploymentPriority, citizenSatisfactionPriority, PowerPriority, WaterPriority, WastePriority, SewagePriority};
+    int roulette[8] = {EmploymentPriority, citizenSatisfactionPriority, PowerPriority, WaterPriority, WastePriority, SewagePriority,ResidentialPriority,IndustrielPriority};
     std::cout << "++++++++++++++++++++++++++++" << std::endl;
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 8; i++)
     {
         std::cout << roulette[i] << " " ;
     }
@@ -86,7 +93,7 @@ void SpendResources::executeCommand() {
 
     int decisionVal = 0;
     int highNum = 999;
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 8; i++) {
         if (roulette[i] < highNum) {
             decisionVal = i;
             highNum = roulette[i];
@@ -99,44 +106,58 @@ void SpendResources::executeCommand() {
             if (balance >= CommercialFact->getCost() && checkResources(resources, CommercialFact->getResourceCost())) {
                 balance -= CommercialFact->getCost();
                 CityUnit* temp = this->CommercialFact->build();
-                this->reciever->add(temp);
-                this->reciever->employResidents();
+                this->receiver->add(temp);
+                this->receiver->employResidents();
             }
             break;
         case 1:
             if (balance >= LandmarkFact->getCost() && checkResources(resources, LandmarkFact->getResourceCost())) {
                 balance -= LandmarkFact->getCost();
                 CityUnit* temp = this->LandmarkFact->build();
-                this->reciever->add(temp);
-                this->reciever->partyResidents();
+                this->receiver->add(temp);
+                this->receiver->partyResidents();
             }
             break;
         case 2:
             if (balance >= PowerFact->getCost() && checkResources(resources, PowerFact->getResourceCost())) {
                 balance -= PowerFact->getCost();
                 CityUnit* temp = this->PowerFact->build();
-                this->reciever->add(temp);
+                this->receiver->add(temp);
             }
             break;
         case 3:
             if (balance >= WaterFact->getCost() && checkResources(resources, WaterFact->getResourceCost())) {
                 balance -= WaterFact->getCost();
                 CityUnit* temp = this->WaterFact->build();
-                this->reciever->add(temp);
+                this->receiver->add(temp);
             }
             break;
         case 4:
             if (balance >= WasteFact->getCost() && checkResources(resources, WasteFact->getResourceCost())) {
                 balance -= WasteFact->getCost();
                 CityUnit* temp = this->WasteFact->build();
-                this->reciever->add(temp);
+                this->receiver->add(temp);
             }
             break;
         case 5:
             if (balance >= SewageFact->getCost() && checkResources(resources, SewageFact->getResourceCost())) {
                 balance -= SewageFact->getCost();
                 CityUnit* temp = this->SewageFact->build();
-                this->reciever->add(temp);
+                this->receiver->add(temp);
+            }
+            break;
+        case 6:
+            if (balance >= ResedentialFact->getCost() && checkResources(resources, ResedentialFact->getResourceCost())) {
+                balance -= ResedentialFact->getCost();
+                CityUnit* temp = this->ResedentialFact->build();
+                this->receiver->add(temp);
+            }
+            break;
+        case 7:
+            if (balance >= IndustFact->getCost()) {
+                balance -= IndustFact->getCost();
+                CityUnit* temp = this->IndustFact->build();
+                this->receiver->add(temp);
             }
             break;
         default:
@@ -160,7 +181,7 @@ void SpendResources::executeCommand() {
 int SpendResources::employmentPriority(double employmentRate) {
     double tmp = (employmentRate * 10);
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0, 1}, {1, 4}, {2, 7}, {3, 10}, {4, 13}, {5, 16}, {6, 19}, {7, 22}, {8, 25}, {9, 28}, {10, 28}};
+    std::map<int, int> value = {{0,1},{1,6},{2,11},{3,16},{4,21},{5,26},{6,31},{7,36},{8,41},{9,46},{10,51}};
     return value[bucket];
 }
 
@@ -170,7 +191,7 @@ int SpendResources::employmentPriority(double employmentRate) {
 int SpendResources::citizenPriority(double citizenSatisfaction) {
     double tmp = citizenSatisfaction * 10;
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0, 2}, {1, 5}, {2, 8}, {3, 11}, {4, 14}, {5, 17}, {6, 20}, {7, 23}, {8, 26}, {9, 29}, {10, 29}};
+    std::map<int, int> value = {{0,2},{1,7},{2,12},{3,17},{4,22},{5,27},{6,32},{7,37},{8,42},{9,47},{10,52}};
     return value[bucket];
 }
 
@@ -180,10 +201,42 @@ int SpendResources::citizenPriority(double citizenSatisfaction) {
 int SpendResources::utilPriority(double dk) {
     double tmp = (dk * 10);
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0, 30}, {1, 30}, {2, 27}, {3, 24}, {4, 21}, {5, 18}, {6, 15}, {7, 12}, {8, 9}, {9, 6}, {10, 3}};
+    std::map<int, int> value = {{0, 54},{1, 49},{2, 44},{3,39},{4,34}, {5,29}, {6,24}, {7,19}, {8,14}, {9,9}, {10,4}};
             
     return value[bucket];
-} 
+}
+
+int SpendResources::resourcePriority(std::map<std::string, int> resources)
+{
+    int temp =0;
+    for (const auto& resource : resources)
+    {
+        temp += resource.second;
+    }
+    double percentage = temp/200;//because every resource for a normal building costs 50
+    double tmp = (percentage * 10);
+    int bucket = static_cast<int>(tmp);
+
+    std::map<int, int> value = {{0, 3}, {1,8}, {2,13}, {3,18}, {4,23}, {5,28}, {6,33}, {7,38}, {8,43}, {9,48}, {10,53}};
+
+    if(percentage > 1)
+    {
+        return 53;
+    }
+    else
+    {
+        return value[bucket];
+    }
+    
+}
+
+int SpendResources::resedentialPriority(double satisfaction)
+{
+    double tmp = (satisfaction * 10);
+    int bucket = static_cast<int>(tmp);
+    std::map<int, int> value = {{0,55},{1,50},{2,45},{3,40},{4,35},{5,30},{6,25},{7,20},{8,15},{9,10},{10,5}};
+    return value[bucket];
+}
 
 /**
  * @brief Checks if sufficient resources are available.

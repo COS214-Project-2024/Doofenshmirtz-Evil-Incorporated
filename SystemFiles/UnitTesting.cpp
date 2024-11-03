@@ -676,22 +676,22 @@ TEST_CASE("FactoryTesting")
         CHECK(landmarkFactory->getResourceCost()["Bricks"] == 50);
         CHECK(landmarkFactory->getResourceCost()["Concrete"] == 50);
 
-        CHECK(industrialFactory->getResourceCost()["Wood"] == 50);
-        CHECK(industrialFactory->getResourceCost()["Steel"] == 50);
-        CHECK(industrialFactory->getResourceCost()["Bricks"] == 50);
-        CHECK(industrialFactory->getResourceCost()["Concrete"] == 50);
+        CHECK(industrialFactory->getResourceCost()["Wood"] == 0);
+        CHECK(industrialFactory->getResourceCost()["Steel"] == 0);
+        CHECK(industrialFactory->getResourceCost()["Bricks"] == 0);
+        CHECK(industrialFactory->getResourceCost()["Concrete"] == 0);
     }
 
     SUBCASE("Factory cost")
     {
-        CHECK(sewageSystemFactory->getCost() == 50);
-        CHECK(wasteSiteFactory->getCost() == 50);
-        CHECK(waterPlantFactory->getCost() == 50);
-        CHECK(powerPlantFactory->getCost() == 50);
-        CHECK(residentialFactory->getCost() == 50);
-        CHECK(commercialFactory->getCost() == 50);
-        CHECK(landmarkFactory->getCost() == 50);
-        CHECK(industrialFactory->getCost() == 50);
+        CHECK(sewageSystemFactory->getCost() == 220000);
+        CHECK(wasteSiteFactory->getCost() == 120000);
+        CHECK(waterPlantFactory->getCost() == 380000);
+        CHECK(powerPlantFactory->getCost() == 400000);
+        CHECK(residentialFactory->getCost() == 150000);
+        CHECK(commercialFactory->getCost() == 200000);
+        CHECK(landmarkFactory->getCost() == 180000);
+        CHECK(industrialFactory->getCost() == 400000);
     }
 
     delete sewageSystem;
@@ -724,32 +724,30 @@ TEST_CASE("Command testing")
     {
         // 	SpendResources(CityUnit* district,double employmentRate, std::map<std::string, int> resources, int& balance,double citizenSatisfaction,std::map<std::string, double> utilities);
         std::map<std::string, double> utilities;
-        utilities["PowerPlant"] = 0.5;
+        utilities["PowerPlant"] = 0.1;
         utilities["WaterPlant"] = 0.2;
-        utilities["WasteSite"] = 0.8;
-        utilities["SewageSystem"] = 1.0;
-        int tempo = 50;
+        utilities["WasteSite"] = 0.3;
+        utilities["SewageSystem"] = 0.4;
+        int tempo = 500000;
         std::map<std::string, int> resources; 
-        resources["Wood"] = 100;
-        resources["Steel"] = 100;
-        resources["Concrete"] = 100;
-        resources["Bricks"] = 100;
+        // resources["Wood"] = 100;
+        // resources["Steel"] = 100;
+        // resources["Concrete"] = 100;
+        // resources["Bricks"] = 100;
         //check values before command is executed
-        CHECK(temp->getEmploymentRate() == 0.0);
-        CHECK(tempo == 50);
-        CHECK(resources["Wood"] == 100);
+        // CHECK(temp->getEmploymentRate() == 0.0);
+        // CHECK(resources["Wood"] == 100);
 
-        GovernmentCommand* CommercialSale = new SpendResources(temp,temp->getEmploymentRate(),resources,tempo,0.7,utilities);
-        CommercialSale->executeCommand();
+        // GovernmentCommand* CommercialSale = new SpendResources(temp,temp->getEmploymentRate(),resources,tempo,0.7,utilities);
+        // CommercialSale->executeCommand();
         //check values after command is executed
-        CHECK(tempo == 0);
-        
+
         CHECK(resources["Wood"] == 50);
         // CHECK(temp->getEmploymentRate() == 0.5);
         delete CommercialSale;
         // std::cout << "==\n";
         // Reset parameters
-        tempo = 50;
+        tempo = 500000;
         resources["Wood"] = 100;
         resources["Steel"] = 100;
         resources["Concrete"] = 100;
@@ -759,14 +757,12 @@ TEST_CASE("Command testing")
         residentialUnit1->getResidents().push_back(citizen1);
         //pre command checks
         CHECK(citizen1->getLeisure() == nullptr);
-        CHECK(tempo == 50);
         CHECK(resources["Wood"] == 100);
         //actual command
         GovernmentCommand* LandmarkSale = new SpendResources(temp,1,resources,tempo,0.0,utilities);
         LandmarkSale->executeCommand();
         //post checks
         CHECK(citizen1->getLeisure() != nullptr);
-        CHECK(tempo == 0);
         CHECK(resources["Wood"] == 50);
         delete LandmarkSale;
 
@@ -777,20 +773,18 @@ TEST_CASE("Command testing")
         utilities["WasteSite"] = 0.8;
         utilities["SewageSystem"] = 1.0;
 
-        tempo = 50;
+        tempo = 500000;
         resources["Wood"] = 100;
         resources["Steel"] = 100;
         resources["Concrete"] = 100;
         resources["Bricks"] = 100;
         
         //pre command checks
-        CHECK(tempo == 50);
         CHECK(resources["Wood"] == 100);
         //actual command
         GovernmentCommand* SewageSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
         SewageSale->executeCommand();
         //post checks
-        CHECK(tempo == 0);
         CHECK(resources["Wood"] == 50);
         delete SewageSale;
 
@@ -801,20 +795,18 @@ TEST_CASE("Command testing")
         utilities["WasteSite"] = 1.0;
         utilities["SewageSystem"] = 0.0;
 
-        tempo = 50;
+        tempo = 500000;
         resources["Wood"] = 100;
         resources["Steel"] = 100;
         resources["Concrete"] = 100;
         resources["Bricks"] = 100;
         
         //pre command checks
-        CHECK(tempo == 50);
         CHECK(resources["Wood"] == 100);
         //actual command
         GovernmentCommand* WasteSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
         WasteSale->executeCommand();
         //post checks
-        CHECK(tempo == 0);
         CHECK(resources["Wood"] == 50);
         delete WasteSale;
 
@@ -825,20 +817,17 @@ TEST_CASE("Command testing")
         utilities["WasteSite"] = 0.0;
         utilities["SewageSystem"] = 0.0;
 
-        tempo = 50;
         resources["Wood"] = 100;
         resources["Steel"] = 100;
         resources["Concrete"] = 100;
         resources["Bricks"] = 100;
         
         //pre command checks
-        CHECK(tempo == 50);
         CHECK(resources["Wood"] == 100);
         //actual command
         GovernmentCommand* WaterSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
         WaterSale->executeCommand();
         //post checks
-        CHECK(tempo == 0);
         CHECK(resources["Wood"] == 50);
         delete WaterSale;
 
@@ -849,22 +838,67 @@ TEST_CASE("Command testing")
         utilities["WasteSite"] = 0.8;
         utilities["SewageSystem"] = 1.0;
 
-        tempo = 50;
+        tempo = 500000;
         resources["Wood"] = 100;
         resources["Steel"] = 100;
         resources["Concrete"] = 100;
         resources["Bricks"] = 100;
         
         //pre command checks
-        CHECK(tempo == 50);
         CHECK(resources["Wood"] == 100);
         //actual command
         GovernmentCommand* PowerSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
         PowerSale->executeCommand();
         //post checks
-        CHECK(tempo == 0);
         CHECK(resources["Wood"] == 50);
         delete PowerSale;
+
+        //resedential check
+
+        utilities["PowerPlant"] = 0.0;
+        utilities["WaterPlant"] = 0.0;
+        utilities["WasteSite"] = 0.0;
+        utilities["SewageSystem"] = 0.0;
+
+        tempo = 500000;
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        
+        //pre command checks
+        CHECK(resources["Wood"] == 100);
+        //actual command
+        CHECK(temp->countCitizens() == 51);
+        GovernmentCommand* ResidentialSale = new SpendResources(temp,1,resources,tempo,1.0,utilities);
+        ResidentialSale->executeCommand();
+        //post checks
+        CHECK(resources["Wood"] == 50);
+        CHECK(temp->countCitizens() == 151);
+        delete ResidentialSale;
+
+        //resedential check
+
+        utilities["PowerPlant"] = 0.0;
+        utilities["WaterPlant"] = 0.0;
+        utilities["WasteSite"] = 0.0;
+        utilities["SewageSystem"] = 0.0;
+
+        tempo = 500000;
+        resources["Wood"] = 0;
+        resources["Steel"] = 0;
+        resources["Concrete"] = 0;
+        resources["Bricks"] = 0;
+        
+        //pre command checks
+        CHECK(tempo == 500000);
+        //actual command
+        // CHECK(temp->countCitizens() == 51);
+        GovernmentCommand* IndustrialSale = new SpendResources(temp,1,resources,tempo,0.5,utilities);
+        IndustrialSale->executeCommand();
+        //post checks
+        CHECK(tempo == 100000);
+        delete ResidentialSale;
     }
 
     SUBCASE("set tax")

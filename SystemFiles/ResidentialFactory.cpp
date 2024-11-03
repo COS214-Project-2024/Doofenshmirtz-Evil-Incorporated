@@ -31,7 +31,7 @@ ResidentialFactory::ResidentialFactory() {
  *         initial used capacity, and tax rate.
  */
 Building* ResidentialFactory::factoryMethod() {
-    return new Residential(100, 0);
+    return new Residential(100, 100);
 }
 
 /**

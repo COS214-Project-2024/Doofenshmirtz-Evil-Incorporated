@@ -219,7 +219,8 @@ double District::payTaxes()
             }
         }
     }
-    return totalTax * educationPolicyMultiplier;
+    // std::cout << "HERE: " << educationPolicyMultiplier << std::endl;
+    return totalTax * this->educationPolicyMultiplier;
 }
 
 /**
@@ -250,7 +251,8 @@ int District::evaluateHappiness()
     int averageHappiness = (unitCounter > 0) ? (totalHappiness / unitCounter) : 0;
 
     // Apply policy multiplier and clamp
-    float adjustedHappiness = averageHappiness * shortweekPolicyMultiplier;
+    float adjustedHappiness = averageHappiness * this->shortweekPolicyMultiplier;
+    // std::cout << "HERE: " << this->shortweekPolicyMultiplier << std::endl;
     return std::max(0, std::min(100, static_cast<int>(adjustedHappiness)));
 }
 
@@ -283,13 +285,11 @@ void District::setTaxRate(double amount)
 void District::updateEducationMultiplier(float mult)
 {
     this->educationPolicyMultiplier = mult;
-    this->shortweekPolicyMultiplier = 1;
 }
 
 void District::updateWeekMultiplier(float mult)
 {
     this->shortweekPolicyMultiplier = mult;
-    this->educationPolicyMultiplier = 1;
 }
 
 void District::evaluateTrafficConditions()

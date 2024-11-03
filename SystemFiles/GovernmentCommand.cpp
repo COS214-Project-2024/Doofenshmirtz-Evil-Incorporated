@@ -10,7 +10,7 @@
  * @param district Pointer to the CityUnit (receiver) on which the command operates.
  * @throws std::invalid_argument if district is null.
  */
-GovernmentCommand::GovernmentCommand(CityUnit* district) : reciever(district) {
+GovernmentCommand::GovernmentCommand(CityUnit* district) : receiver(district) {
 
 }
 

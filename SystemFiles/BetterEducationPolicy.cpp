@@ -27,7 +27,7 @@ BetterEducationPolicy::~BetterEducationPolicy() {
 void BetterEducationPolicy::executeCommand() {
     if (balance >= 100000) {
         balance -= 100000;
-        this->reciever->updateEducationMultiplier(1.2);
-        this->reciever->updateWeekMultiplier(1);
+        this->receiver->updateEducationMultiplier(1.4);
+        this->receiver->updateWeekMultiplier(1);
     }
 }
