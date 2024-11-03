@@ -30,10 +30,10 @@
  * @see WebSocketNotifier::log() for message transmission details
  */
 void SimulationRunnerFacade::runSimulation()
-{	
+{
 
 	// Create a basic starter city
-	CityUnit* myCity = new District();
+	CityUnit *myCity = new District();
 	myCity->add(new Residential(30, 30));
 	myCity->add(new Commercial(20, 0));
 	myCity->add(new Industrial(50, 0));
@@ -46,28 +46,49 @@ void SimulationRunnerFacade::runSimulation()
 	Government myGov(20000);
 	myGov.attach(myCity);
 
-	while (!(*stopFlag_))
-	{	
-		// Core simulation loop logic
-		nlohmann::json message = {
-			{"type", "news"},
-			{"data", "Simulation is running..."}};
-		WebSocketNotifier::get_mutable_instance().log(message);
+	// Core simulation loop logic
+	nlohmann::json message = {
+		{"type", "news"},
+		{"data", "Basic Starter city created, lets build!"}};
+	WebSocketNotifier::get_mutable_instance().log(message);
 
-		// Update all city units 
+	while (!(*stopFlag_))
+	{
+		std::this_thread::sleep_for(std::chrono::seconds(2));
+		// Update all city units
 		myGov.notify();
 
 		// Collect taxes
 		myGov.collectTaxes();
+		message = {
+			{"type", "news"},
+			{"data", "Collected taxes from city!"}};
+		WebSocketNotifier::get_mutable_instance().log(message);
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 
 		// Collect resources
 		myGov.collectResources();
+		message = {
+			{"type", "news"},
+			{"data", "Collected resources from industrial buildings!"}};
+		WebSocketNotifier::get_mutable_instance().log(message);
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 
 		// Evaulate Traffic condtions
 		myGov.evaluateTrafficConditions();
+		message = {
+			{"type", "news"},
+			{"data", "Traffic conditions evaluated!"}};
+		WebSocketNotifier::get_mutable_instance().log(message);
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 
 		// Evaluate Happiness of citizens
 		myGov.evaluateHappiness();
+		message = {
+			{"type", "news"},
+			{"data", "City happiness evaluated!"}};
+		WebSocketNotifier::get_mutable_instance().log(message);
+		std::this_thread::sleep_for(std::chrono::seconds(2));
 
 		if (*EducationFlag_)
 		{
@@ -84,7 +105,5 @@ void SimulationRunnerFacade::runSimulation()
 			std::cout << "Tax rate is set to " << taxRate_ << std::endl;
 			*TaxFlag_ = false;
 		}
-		
-		std::this_thread::sleep_for(std::chrono::seconds(3));
 	}
 }
