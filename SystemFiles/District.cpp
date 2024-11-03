@@ -7,20 +7,20 @@
 #include "Landmark.h"
 #include "WebSocketNotifier.h"
 
-
 /**
  * @brief Constructs a District object.
  */
-District::District() : CityUnit(0, 0) {
+District::District() : CityUnit(0, 0)
+{
 }
-
 
 /**
  * @brief Adds a new CityUnit to the district.
  * @param newUnit The CityUnit to be added.
  */
-void District::add(CityUnit* newUnit) {
-	containedCityUnit.push_back(newUnit);
+void District::add(CityUnit *newUnit)
+{
+    containedCityUnit.push_back(newUnit);
 }
 
 /**
@@ -28,19 +28,21 @@ void District::add(CityUnit* newUnit) {
  * @param unit The CityUnit to be removed.
  * @throws std::exception if the unit is not found in the district.
  */
-void District::remove(CityUnit* unit) {
-	CityUnit* itemToRemove = unit;
+void District::remove(CityUnit *unit)
+{
+    CityUnit *itemToRemove = unit;
 
-	auto it = std::find(containedCityUnit.begin(),containedCityUnit.end(),itemToRemove);
+    auto it = std::find(containedCityUnit.begin(), containedCityUnit.end(), itemToRemove);
 
-	if (it != containedCityUnit.end())
-	{
-		containedCityUnit.erase(it);
-	}else{
-		throw "Item to remove not found";
-	}
+    if (it != containedCityUnit.end())
+    {
+        containedCityUnit.erase(it);
+    }
+    else
+    {
+        throw "Item to remove not found";
+    }
 }
-
 
 /**
  * @brief Destructor for the District class.
@@ -49,26 +51,28 @@ void District::remove(CityUnit* unit) {
  */
 District::~District()
 {
-	for (auto unit : containedCityUnit) {
-        if (unit != nullptr) {
-            delete unit;  // Ensure each unit is only deleted once
-            unit = nullptr;  // Avoid dangling pointers
+    for (auto unit : containedCityUnit)
+    {
+        if (unit != nullptr)
+        {
+            delete unit;    // Ensure each unit is only deleted once
+            unit = nullptr; // Avoid dangling pointers
         }
     }
     containedCityUnit.clear();
 }
 
-
 /**
  * @brief Updates all CityUnits within the district and employs residents.
  */
-void District::update() {
-	for (auto unit:containedCityUnit){
-		unit->update();
-	}
-	this->employResidents();
+void District::update()
+{
+    for (auto unit : containedCityUnit)
+    {
+        unit->update();
+    }
+    this->employResidents();
 }
-
 
 /**
  * @brief Employs residents from residential units in available commercial units.
@@ -76,27 +80,37 @@ void District::update() {
  * The method ensures that residents without jobs are employed in commercial units
  * that have open employment slots.
  */
-void District::employResidents(){
-// Step 1: Collect available commercial units with open employment slots
-    std::vector<Commercial*> availableCommercialUnits;
-    for (auto unit : containedCityUnit) {
-        if (Commercial* commercialUnit = dynamic_cast<Commercial*>(unit)) {
-            if (commercialUnit->getEmploymentRate() < 1) {
+void District::employResidents()
+{
+    // Step 1: Collect available commercial units with open employment slots
+    std::vector<Commercial *> availableCommercialUnits;
+    for (auto unit : containedCityUnit)
+    {
+        if (Commercial *commercialUnit = dynamic_cast<Commercial *>(unit))
+        {
+            if (commercialUnit->getEmploymentRate() < 1)
+            {
                 availableCommercialUnits.push_back(commercialUnit);
             }
         }
     }
 
     // Step 2: Iterate over all residential units and employ residents if they don't have a job
-    for (auto unit : containedCityUnit) {
-        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-            for (auto person : residentialUnit->getResidents()) {
-                if (person->getJob() == nullptr) {
+    for (auto unit : containedCityUnit)
+    {
+        if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
+        {
+            for (auto person : residentialUnit->getResidents())
+            {
+                if (person->getJob() == nullptr)
+                {
                     // Step 3: Try to employ the person in an available commercial unit
-                    for (auto commercialUnit : availableCommercialUnits) {
-                        if (commercialUnit->getEmploymentRate() < 1) {
+                    for (auto commercialUnit : availableCommercialUnits)
+                    {
+                        if (commercialUnit->getEmploymentRate() < 1)
+                        {
                             person->employCitizen(commercialUnit);
-                            break;  // Exit loop after employment to avoid extra iterations
+                            break; // Exit loop after employment to avoid extra iterations
                         }
                     }
                 }
@@ -107,24 +121,33 @@ void District::employResidents(){
 
 void District::partyResidents()
 {
-    std::vector<Landmark*> availableLandmarkUnits;
-    for (auto unit : containedCityUnit) {
-        if (Landmark* LandmarkUnit = dynamic_cast<Landmark*>(unit)) {
-            if (LandmarkUnit->getRemainingCapacity()>0) {
+    std::vector<Landmark *> availableLandmarkUnits;
+    for (auto unit : containedCityUnit)
+    {
+        if (Landmark *LandmarkUnit = dynamic_cast<Landmark *>(unit))
+        {
+            if (LandmarkUnit->getRemainingCapacity() > 0)
+            {
                 availableLandmarkUnits.push_back(LandmarkUnit);
             }
         }
     }
 
-    for (auto unit : containedCityUnit) {
-        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-            for (auto person : residentialUnit->getResidents()) {
-                if (person->getLeisure() == nullptr) {
+    for (auto unit : containedCityUnit)
+    {
+        if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
+        {
+            for (auto person : residentialUnit->getResidents())
+            {
+                if (person->getLeisure() == nullptr)
+                {
 
-                    for (auto LandmarkUnit : availableLandmarkUnits) {
-                        if (LandmarkUnit->getRemainingCapacity()>0) {
+                    for (auto LandmarkUnit : availableLandmarkUnits)
+                    {
+                        if (LandmarkUnit->getRemainingCapacity() > 0)
+                        {
                             person->relaxCitizen(LandmarkUnit);
-                            break;  
+                            break;
                         }
                     }
                 }
@@ -137,93 +160,107 @@ void District::partyResidents()
  * @brief Creates an iterator for the district.
  * @return A pointer to the created Iterator.
  */
-Iterator* District::createIterator() {
-	Iterator* it = new ConcreteIterator(this->containedCityUnit);
-	return it;
+Iterator *District::createIterator()
+{
+    Iterator *it = new ConcreteIterator(this->containedCityUnit);
+    return it;
 }
-
 
 /**
  * @brief Calculates the average employment rate for the district.
  * @return The average employment rate as a double.
  */
-double District::getEmploymentRate() {
-	if (containedCityUnit.empty()) {
+double District::getEmploymentRate()
+{
+    if (containedCityUnit.empty())
+    {
         return 0.0; // Avoid division by zero if no units are present
     }
 
     double totalEmploymentRate = 0.0;
-    for (const auto& unit : containedCityUnit) {
+    for (const auto &unit : containedCityUnit)
+    {
         totalEmploymentRate += unit->getEmploymentRate();
     }
 
     // Return average employment rate
     return totalEmploymentRate / containedCityUnit.size();
-
 }
 
 /**
  * @brief Collects taxes from residents in the district.
  * @return The total amount of tax collected.
  */
-double District::payTaxes() {
+double District::payTaxes()
+{
 
-	double totalTax = 0.0;
-    for (auto unit : containedCityUnit) {
-        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
-            for (auto person : residentialUnit->getResidents()) {  // Ensure `getResidents()` is correct
+    double totalTax = 0.0;
+    for (auto unit : containedCityUnit)
+    {
+        if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
+        {
+            for (auto person : residentialUnit->getResidents())
+            { // Ensure `getResidents()` is correct
                 double tax = (person->getBalance() * this->taxRate);
                 totalTax += (tax);
-                person->takeTax(tax);  // Deduct tax from citizen’s balance
+                person->takeTax(tax); // Deduct tax from citizen’s balance
             }
         }
     }
-    return totalTax*educationPolicyMultiplier;
+    return totalTax * educationPolicyMultiplier;
 }
-
 
 /**
  * @brief Evaluates the average happiness level of the district.
  * @return The average happiness as an integer.
  * @throws std::exception if total happiness is negative.
  */
-int District::evaluateHappiness() {
-	int totalHappiness = 0;
+int District::evaluateHappiness()
+{
+    int totalHappiness = 0;
     int unitCounter = 0;
-	for (auto unit:containedCityUnit)
-	{   
+    for (auto unit : containedCityUnit)
+    {
         int evaluatedHappinessForUnit = unit->evaluateHappiness();
-		if(evaluatedHappinessForUnit != 0)
+        if (evaluatedHappinessForUnit != 0)
         {
             unitCounter++;
             totalHappiness += evaluatedHappinessForUnit;
         }
-	}
+    }
 
-	if (totalHappiness<0)
-	{
-		throw "Negative happiness";
-	}
-	return (totalHappiness/unitCounter)*shortweekPolicyMultiplier;
+    if (totalHappiness < 0)
+    {
+        throw "Negative happiness";
+    }
+
+    // Calculate base happiness
+    int averageHappiness = (unitCounter > 0) ? (totalHappiness / unitCounter) : 0;
+
+    // Apply policy multiplier and clamp
+    float adjustedHappiness = averageHappiness * shortweekPolicyMultiplier;
+    return std::max(0, std::min(100, static_cast<int>(adjustedHappiness)));
 }
-
 
 /**
  * @brief Counts the total number of citizens in all residential units within the district.
  * @return The total number of citizens.
  */
-int District::countCitizens() {
-		int totalCitizens = 0;
+int District::countCitizens()
+{
+    int totalCitizens = 0;
 
-    for (auto unit : containedCityUnit) {
-        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) {
+    for (auto unit : containedCityUnit)
+    {
+        if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
+        {
             // Count citizens in each Residential unit's residents list
             totalCitizens += residentialUnit->getResidents().size();
         }
     }
 
     return totalCitizens;
-;
+    ;
 }
 
 void District::setTaxRate(double amount)
@@ -258,12 +295,12 @@ void District::evaluateTrafficConditions()
     helperMap["RoadStrategy"] = "progress-car";
     helperMap["AirportStrategy"] = "progress-plane";
 
-    for (auto unit : containedCityUnit) 
-    {   
-        if (Residential* residentialUnit = dynamic_cast<Residential*>(unit)) 
-        {   
-            for (auto person : residentialUnit->getResidents()) 
-            {  
+    for (auto unit : containedCityUnit)
+    {
+        if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
+        {
+            for (auto person : residentialUnit->getResidents())
+            {
                 std::string travelMethod = person->lastUsedStrategyName;
                 travelStrategyMap[travelMethod]++;
             }
@@ -273,24 +310,18 @@ void District::evaluateTrafficConditions()
     // Take ratio of strategy used per citizen and send info to socket
     int totalCitizenCount = this->countCitizens();
 
-	for (const auto& travelPair : travelStrategyMap) 
-    {   
+    for (const auto &travelPair : travelStrategyMap)
+    {
         double dblRatio = travelPair.second / totalCitizenCount;
         int ratioPercentageInt = (int)(dblRatio * 100);
 
         std::cout << "Travel Strategy " << travelPair.first << " had " << travelPair.second << " users\n";
 
         nlohmann::json message = {
-			{"type", "valueUpdate"},
-			{"data", {
-						{"id", helperMap[travelPair.first]},
-						{"value", std::to_string(ratioPercentageInt)}
-					}
-			}};
+            {"type", "valueUpdate"},
+            {"data", {{"id", helperMap[travelPair.first]}, {"value", std::to_string(ratioPercentageInt)}}}};
 
-		std::cout << message << std::endl;
-		WebSocketNotifier::get_mutable_instance().log(message);
+        std::cout << message << std::endl;
+        WebSocketNotifier::get_mutable_instance().log(message);
     }
-    
-
 }
