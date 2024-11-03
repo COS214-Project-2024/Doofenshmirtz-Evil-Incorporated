@@ -2,12 +2,11 @@
 #include <random>
 #include <ctime>
 
-
 /**
  * @brief Constructs a Citizen with a given home, job and leisure.
  * Initializes satisfaction score and bank balance randomly.
  */
-Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
+Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit *leisure)
 {
     // Satisfaction between 40 and 70
     srand(time(0));
@@ -18,7 +17,7 @@ Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
     this->setState(new AtHomeState());
 
     // Give citizen a job association if parameter is not a nullptr
-    if(job != nullptr)
+    if (job != nullptr)
     {
         this->citizenJob = job;
         this->isEmployed = true;
@@ -37,6 +36,16 @@ Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
 
     // Bank balance between 20 000 and 100 000
     this->bankBalance = 20000 + (rand() % 80000);
+
+    this->lastUsedStrategyName = "none";
+}
+
+/**
+ * @brief Clamping the satisfaction between 0 and 100
+ */
+void Citizen::clampSatisfaction()
+{
+    satisfactionScore = std::max(0, std::min(100, satisfactionScore));
 }
 
 /**
@@ -44,7 +53,10 @@ Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit* leisure)
  */
 Citizen::~Citizen()
 {
-    if(this->citizenLocation != nullptr) { delete this->citizenLocation; }
+    if (this->citizenLocation != nullptr)
+    {
+        delete this->citizenLocation;
+    }
     this->citizenLocation = nullptr;
     this->citizenHome = nullptr;
     this->citizenJob = nullptr;
@@ -58,11 +70,11 @@ CityUnit *Citizen::getLeisure() const
     return this->citizenLeisure;
 }
 /**
-* @brief updates the citizen'z satisfaction level according to an operator and a value passed in
-*/
+ * @brief updates the citizen'z satisfaction level according to an operator and a value passed in
+ */
 void Citizen::updateSatisfaction(std::string op, int value)
 {
-    if(op == "+")
+    if (op == "+")
     {
         this->satisfactionScore += value;
     }
@@ -70,6 +82,7 @@ void Citizen::updateSatisfaction(std::string op, int value)
     {
         this->satisfactionScore -= value;
     }
+    clampSatisfaction();
 }
 
 /**
@@ -98,15 +111,15 @@ int Citizen::getSatisfaction() const
 
 /**
  * @brief Getter for citizen's current bank account balance
- */	
+ */
 int Citizen::getBalance() const
 {
     return this->bankBalance;
 }
 
 /**
-* @brief Getter for citizen's state
-*/	
+ * @brief Getter for citizen's state
+ */
 CitizenLocationState *Citizen::getCitzenLocationSate()
 {
     return this->citizenLocation;
@@ -117,44 +130,44 @@ CitizenLocationState *Citizen::getCitzenLocationSate()
  * FFurthermore, slighlty influences satisfaction based on current state of citizen
  */
 void Citizen::followRoutine()
-{   
+{
     srand(time(0));
     this->citizenLocation->travel(this);
 
-    // Check for leisure state and increase satisfaction by [0-20] 
-    if(this->citizenLocation->getStateName() == "AtLeisureState")
-    {   
+    // Check for leisure state and increase satisfaction by [0-20]
+    if (this->citizenLocation->getStateName() == "AtLeisureState")
+    {
         this->satisfactionScore += (rand() % 20);
     }
 
     // Checks for work state and decrease satisfaction by [0-10]
-    if(this->citizenLocation->getStateName() == "AtWorkState")
-    {   
+    if (this->citizenLocation->getStateName() == "AtWorkState")
+    {
         this->satisfactionScore -= (rand() % 10);
     }
 
     // Checks for home state and either increase or decreases satisfaction by [0-10]
-    if(this->citizenLocation->getStateName() == "AtHomeState")
-    {   
+    if (this->citizenLocation->getStateName() == "AtHomeState")
+    {
         int satisfactionInfluence = rand() % 10;
 
         (satisfactionInfluence % 2 == 0) ? this->satisfactionScore += satisfactionInfluence : this->satisfactionScore -= satisfactionInfluence;
     }
-    
+    clampSatisfaction();
 }
-
 
 /**
  * @brief Traverses citizen state in a memory safe manner
  */
 void Citizen::setState(CitizenLocationState *newState)
 {
-    
-    if(newState == this->citizenLocation){
+
+    if (newState == this->citizenLocation)
+    {
         return;
     }
 
-    if(this->citizenLocation != nullptr)
+    if (this->citizenLocation != nullptr)
     {
         delete this->citizenLocation;
     }
@@ -165,7 +178,7 @@ void Citizen::setState(CitizenLocationState *newState)
 /**
  * @brief Attempts to employ the citizen at the given job location.
  *
- * This method sets the `citizenJob` pointer for the citizen if they are currently unemployed. 
+ * This method sets the `citizenJob` pointer for the citizen if they are currently unemployed.
  * If the citizen is already employed (i.e., `citizenJob` is not nullptr), the method will do nothing.
  *
  * @param job A pointer to the CityUnit (building) where the citizen will be employed if the operation is successful.
@@ -173,7 +186,7 @@ void Citizen::setState(CitizenLocationState *newState)
  */
 bool Citizen::employCitizen(CityUnit *job)
 {
-    if(!this->isEmployed)
+    if (!this->isEmployed)
     {
         this->isEmployed = true;
         this->citizenJob = job;
@@ -185,7 +198,7 @@ bool Citizen::employCitizen(CityUnit *job)
 
 bool Citizen::relaxCitizen(CityUnit *stripclub)
 {
-    if(this->getLeisure()==nullptr)
+    if (this->getLeisure() == nullptr)
     {
         this->citizenLeisure = stripclub;
         return true;
@@ -194,10 +207,11 @@ bool Citizen::relaxCitizen(CityUnit *stripclub)
 }
 
 /**
-  * @brief Used in district to collect tax
-  * This method subtracts the tax amount from the bank account of the citizen
-  */
-void Citizen::takeTax(double amount){
+ * @brief Used in district to collect tax
+ * This method subtracts the tax amount from the bank account of the citizen
+ */
+void Citizen::takeTax(double amount)
+{
     this->bankBalance -= amount;
 }
 
@@ -205,6 +219,7 @@ void Citizen::takeTax(double amount){
  *@brief Used in comercial to recieve salary for employed citizens
  *It takes in an amount and adds it to the bank balance
  */
-void Citizen::recieveSalary(double amount){
+void Citizen::recieveSalary(double amount)
+{
     this->bankBalance += amount;
 }

@@ -4,13 +4,12 @@
 #include "CityUnit.h"
 #include "ConcreteIterator.h"
 
-
 class District : public CityUnit {
 
 private:
 	std::vector<CityUnit*> containedCityUnit;
-	float educationPolicyMultiplier = 1;
-	float shortweekPolicyMultiplier = 1;
+	int educationPolicyMultiplier = 1;
+	int shortweekPolicyMultiplier = 1;
 
 public:
 	District();
@@ -54,7 +53,16 @@ public:
     }
 
 	void updateEducationMultiplier(float mult);
+
     void updateWeekMultiplier(float mult);
+
+	void evaluateTrafficConditions();
+
+	nlohmann::json getJSONrepresentation();
+
+	std::map<std::string, int> collectResources() override;
+
+	std::map<std::string, double> collectUtilities() override;
 };
 
 #endif

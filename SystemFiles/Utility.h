@@ -11,6 +11,16 @@ public:
 	virtual ~Utility();
 
 	virtual void update() = 0;
+
+	virtual std::string getUtilityType() const = 0;
+
+	std::map<std::string, int> collectResources() override;
+
+	std::map<std::string, double> collectUtilities() override;
+
+	nlohmann::json getJSONrepresentation() override;
 };
+
+
 
 #endif

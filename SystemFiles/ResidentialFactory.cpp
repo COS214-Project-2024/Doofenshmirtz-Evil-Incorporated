@@ -17,7 +17,7 @@
  */
 ResidentialFactory::ResidentialFactory() {
    // std::cout << "Type: Residential factory" << std::endl;
-    cost = 50; 
+    cost = 150000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;

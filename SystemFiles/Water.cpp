@@ -9,6 +9,33 @@ Water::~Water()
 }
 
 void Water::update() {
-	// TODO - implement Water::update
-	throw "Not yet implemented";
+    this->usedCapacity += 10;
+    if(usedCapacity > totalCapacity)
+    {
+        usedCapacity = totalCapacity;
+    }
+
+}
+
+std::map<std::string,int> Water::collectResources()
+{
+return std::map<std::string,int>();
+}
+
+std::map<std::string, double> Water::collectUtilities()
+{
+	std::map<std::string, double> utilities;
+    utilities["WaterPlant"] = usedCapacity ;
+    return utilities;
+}
+
+
+nlohmann::json Water::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Water"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
 }

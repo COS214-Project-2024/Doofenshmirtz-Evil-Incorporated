@@ -17,7 +17,7 @@
  */
 PowerPlantFactory::PowerPlantFactory() {
  //   std::cout << "Type: Powerplant factory" << std::endl;
-    cost = 50; 
+    cost = 400000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;

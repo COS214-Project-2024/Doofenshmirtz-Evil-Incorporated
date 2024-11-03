@@ -1,4 +1,5 @@
 #include "Industrial.h"
+#include "WebSocketNotifier.h"
 
 /**
  * @class Industrial
@@ -15,6 +16,15 @@
  * @param taxR The tax rate applied to the industrial building.
  */
 Industrial::Industrial(int totalCap, int usedCap) : Building(totalCap, usedCap) {
+    // Front end update
+    nlohmann::json message = {
+	{"type", "valueUpdate"},
+	{"data", 	{
+					{"id", "industrial"},
+					{"value", "1++"}
+				}
+				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
 }
 
 /**
@@ -32,7 +42,7 @@ Industrial::~Industrial()
  * @return A map containing the types and quantities of resources collected.
  */
 std::map<std::string, int> Industrial::collectResources()
-{
+{   
     std::map<std::string, int> resources;
     resources["Wood"] = usedCapacity;
     resources["Steel"] = usedCapacity;
@@ -40,6 +50,11 @@ std::map<std::string, int> Industrial::collectResources()
     resources["Bricks"] = usedCapacity;
     this->usedCapacity = 0;
     return resources;
+}
+
+std::map<std::string, double> Industrial::collectUtilities()
+{
+	    return std::map<std::string, double>();
 }
 
 /**
@@ -54,4 +69,14 @@ void Industrial::update() {
     {
         usedCapacity = totalCapacity;
     }
+}
+
+nlohmann::json Industrial::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Industrial"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
 }

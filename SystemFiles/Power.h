@@ -12,6 +12,16 @@ public:
 	~Power();
 
 	void update();
+
+	std::string getUtilityType() const override {
+        return "PowerPlant";
+    }
+
+	std::map<std::string, int> collectResources() override;
+	std::map<std::string, double> collectUtilities() override;
+
+
+	nlohmann::json getJSONrepresentation() override;
 };
 
 #endif

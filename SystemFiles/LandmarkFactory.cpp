@@ -17,7 +17,7 @@
  */
 LandmarkFactory::LandmarkFactory() {
  //   std::cout << "Type: Landmark factory" << std::endl;
-    cost = 50; 
+    cost = 180000; 
     resourceCost["Wood"] = 50;
     resourceCost["Steel"] = 50;
     resourceCost["Concrete"] = 50;

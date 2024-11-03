@@ -9,6 +9,31 @@ Waste::~Waste()
 }
 
 void Waste::update() {
-	// TODO - implement Waste::update
-	throw "Not yet implemented";
+    this->usedCapacity += 10;
+    if(usedCapacity > totalCapacity)
+    {
+        usedCapacity = totalCapacity;
+    }
+}
+
+std::map<std::string, int> Waste::collectResources()
+{
+    return std::map<std::string, int>();
+}
+
+std::map<std::string, double> Waste::collectUtilities()
+{
+	std::map<std::string, double> utilities;
+    utilities["WasteSite"] = usedCapacity ;
+    return utilities;
+}
+
+nlohmann::json Waste::getJSONrepresentation()
+{
+    nlohmann::json building = {
+        {"name" , "Waste"},
+        {"value", this->totalCapacity}
+    };    
+
+    return building;
 }

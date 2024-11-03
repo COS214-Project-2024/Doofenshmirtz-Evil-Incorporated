@@ -35,7 +35,11 @@ public:
      * resets the used capacity after collection.
      * @return A map of resources with types as keys and quantities as values.
      */
-    virtual std::map<std::string, int> collectResources();
+    std::map<std::string, int> collectResources() override;
+
+
+    std::map<std::string, double> collectUtilities() override;
+
 
     /**
      * @brief Updates the building's used capacity.
@@ -44,6 +48,8 @@ public:
      * the total capacity, it is capped at the total capacity.
      */
     virtual void update() override;
+
+    nlohmann::json getJSONrepresentation();
 };
 
 #endif // INDUSTRIAL_H
