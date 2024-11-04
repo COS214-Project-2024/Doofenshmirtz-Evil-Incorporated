@@ -1,5 +1,6 @@
 #include "Landmark.h"
 #include "WebSocketNotifier.h"
+#include <iostream>
 
 // Note: This currently calls the parent constructor with a set number. Whoever is implementing this, it should be a random number [10,100]
 Landmark::Landmark(int totalCap, int usedCap) : Building(totalCap, usedCap) {
@@ -21,9 +22,8 @@ Landmark::~Landmark()
 
 void Landmark::update() {
 	for (auto person:resident){
-		std::cout << "Person satisfaction updated\n";
-		person->payFine(1000);
 		person->updateSatisfaction("+", 40);
+		person->payFine(1000);
 	}
 }
 

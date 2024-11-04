@@ -21,6 +21,7 @@ private:
      CityUnit *citizenJob;                  ///< Pointer to the citizen's job.
      CityUnit *citizenLeisure;              ///< Pointer to the citizen's prevered lesiure location
      int bankBalance;   
+     double salary;
      void clampSatisfaction();
 
 public:
@@ -112,6 +113,8 @@ public:
      void recieveSalary(double amount);
 
      void payFine(double amount);
+
+     double getSalary();
 };
 
 #endif
