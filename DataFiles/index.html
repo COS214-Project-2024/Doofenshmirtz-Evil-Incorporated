@@ -10,6 +10,27 @@
     <title>City Simulation</title>
   </head>
   <body>
+
+    <!-- Game Over Screen initially hidden -->
+  <div id="gameOverScreen" class="App" style="display: none;">
+    <h1 class="lost">GAME OVER</h1>
+    <div class="container">
+      <h2 class="note">You lose</h2>
+      <section>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+        <div class='blooddrop'></div>
+      </section>
+    </div>
+  </div>
+
     <!-- Header Section -->
     <div class="header">
       <div>
@@ -25,7 +46,7 @@
       </div>
       <div>
         <img src="img/3.png" alt="satisfaction icon" id="satisfactionImg" />
-        <span id="satisfaction">0%</span>
+        <span id="satisfaction">0</span>
       </div>
       <div>
         <img
@@ -177,7 +198,7 @@
       <button id="education">Better Education Policy</button>
       <button id="short-work">Short Work Week Policy</button>
       <div class="input-tax">
-        <input type="text" placeholder="Update Tax %" id="taxInput" />
+        <input type="text" placeholder="Current tax: 10%" id="taxInput" />
       </div>
     </div>
 
@@ -240,6 +261,25 @@
         });
       });
 
+    var snd4 = new Audio("revolution.mp3");
+    function showGameOverScreen() {
+      snd4.play();
+      document.getElementById("gameOverScreen").style.display = "block";
+      snd4.currentTime = 0;
+    }
+
+    const satisfactionElement = document.getElementById("satisfaction");
+    const observer2 = new MutationObserver(() => {
+    const satisfactionValue = satisfactionElement.textContent;
+
+            if (satisfactionValue == "0%") {
+        showGameOverScreen();
+        socket.send("stop");
+        observer2.disconnect(); 
+      }
+    });
+    observer2.observe(satisfactionElement, { childList: true, characterData: true, subtree: true });
+
       // Close Modal with "Esc"...
       document.addEventListener("keydown", (event) => {
         if (
@@ -256,6 +296,7 @@
           if (event.key === "Enter") {
             event.preventDefault();
             const taxValue = parseFloat(event.target.value);
+            document.getElementById("taxInput").placeholder = "Current tax: " + taxValue + "%";
             if (!isNaN(taxValue) && taxValue >= 0 && taxValue <= 100) {
               alert("Tax value entered: " + taxValue + "%");
               event.target.value = "";

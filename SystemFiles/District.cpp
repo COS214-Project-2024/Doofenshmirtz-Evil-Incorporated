@@ -336,7 +336,7 @@ void District::evaluateTrafficConditions()
     for (const auto &travelPair : travelStrategyMap)
     {   
         std::cout << "\n\ntravelPair.second: " << travelPair.second << "\n";
-        double dblRatio = static_cast<double>(travelPair.second) / totalCitizenCount;
+        double dblRatio = static_cast<double>(travelPair.second) / (totalCitizenCount * this->getEmploymentRate());
         int ratioPercentageInt = static_cast<int>(dblRatio * 100);
 
         

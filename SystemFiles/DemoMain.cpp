@@ -19,7 +19,6 @@ int main()
     std::atomic<bool> WorkFlag(false);      // Set to true when simulation recieve short work week policy
     std::atomic<bool> TaxFlag(false);       // Set to true when simulation changes tax rate
     int taxRate = 0;
-    srand(time(0));  
 
     // Initialize server component
     // The server handles WebSocket connections from clients and

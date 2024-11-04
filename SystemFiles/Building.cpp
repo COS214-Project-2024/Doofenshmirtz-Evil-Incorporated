@@ -1,6 +1,7 @@
 #include "Building.h"
 #include "Residential.h"
 #include <iostream>
+#include <random>
 
 Building::Building(int totalCap, int usedCap) : CityUnit(totalCap, usedCap) {
 }
@@ -13,12 +14,16 @@ Building::~Building()
     resident.clear();  // Clear the vector to avoid dangling pointers
 }
 
-int Building::calculateDistanceTo(CityUnit* destination) {
 
-	int randomDistance = rand() % 30;
-	std::cout << "random: " << randomDistance << "\n";
-	return randomDistance;
+int Building::calculateDistanceTo(CityUnit* destination) {
+    // Static engine and distribution to initialize only once
+    static std::mt19937 randomEngine(static_cast<unsigned>(std::time(nullptr)));
+    static std::uniform_int_distribution<int> dist(0, 35); // Range [0, 35]
+    
+    return dist(randomEngine); // Generate a random number in the range
 }
+
+
 
 int Building::getRemainingCapacity() {
 	int remaining_capacity;

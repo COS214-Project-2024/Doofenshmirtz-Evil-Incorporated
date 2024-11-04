@@ -215,28 +215,32 @@ bool Citizen::relaxCitizen(CityUnit *stripclub)
  */
 void Citizen::takeTax(double amount)
 {   
-    double ratioOfCitizenBalanceTaken = amount / bankBalance;
-
-    this->bankBalance -= amount;
-
-    // For every 10 percent above 30% tax rate ==> decrease satisfaction by 10
-    if(ratioOfCitizenBalanceTaken >= 0.3)
+    if(bankBalance > 0)
     {
-        int satisfactionDecrease = (ratioOfCitizenBalanceTaken * 100) - 30;
+        double ratioOfCitizenBalanceTaken = amount / bankBalance;
 
-        if(this->satisfactionScore - satisfactionDecrease < 0)
-        {
-            this->satisfactionScore = 0;
-        }
-        else
-        {
-            this->satisfactionScore -= satisfactionDecrease;
-        }
+        this->bankBalance -= amount;
 
+        // For every 10 percent above 30% tax rate ==> decrease satisfaction by 10
+        if(ratioOfCitizenBalanceTaken >= 0.3)
+        {
+            int satisfactionDecrease = (ratioOfCitizenBalanceTaken * 100) - 30;
+
+            if(this->satisfactionScore - satisfactionDecrease < 0)
+            {
+                this->satisfactionScore = 0;
+            }
+            else
+            {
+                this->satisfactionScore -= satisfactionDecrease;
+            }
+
+        }        
     }
-
-
-
+    else
+    {
+        this->satisfactionScore = 0;
+    }
 
 }
 
