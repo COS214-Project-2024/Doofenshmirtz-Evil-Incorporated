@@ -1,5 +1,5 @@
 /**
- * @file WebSocketNotifier.h
+ * @file WebSocketNotifier.cpp
  * @brief Implements the WebSocketNotifier class.
  */
 

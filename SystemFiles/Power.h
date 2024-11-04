@@ -1,5 +1,5 @@
 /**
- * @file Power.cpp
+ * @file Power.h
  * @brief Implements the Power class for Power building objects.
  */
 
