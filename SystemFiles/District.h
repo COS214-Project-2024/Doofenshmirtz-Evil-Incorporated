@@ -37,10 +37,7 @@ public:
 
 	void setTaxRate(double amount);
 
-	int calculateDistanceTo(CityUnit* other) override {
-        // Placeholder implementation
-        return 0;
-    }
+	int calculateDistanceTo(CityUnit* other) override;
 
     int getRemainingCapacity() override {
         // Placeholder implementation

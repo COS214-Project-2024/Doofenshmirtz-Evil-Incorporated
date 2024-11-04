@@ -11,7 +11,6 @@
 CitizenLocationState::CitizenLocationState() {
 
 	this->strategy = nullptr;
-	srand(time(0));  
 }
 
 
@@ -30,45 +29,45 @@ void CitizenLocationState::chooseStrategy(int travelDistance)
 
 	// For random aspect to make simulation more simulation-y
 	
-	int chance = rand() % 100;
+	// int chance = rand() % 100;
 
-	// Choose random strategy with a 12% chance
-	if (chance < 12)
-	{
-		// Evenly distribute chances across 4 strategies
-		int randomChoice = chance % 4;
-		switch (randomChoice)
-		{
-			case 0:
-				this->strategy = new RoadStrategy();
-				break;
-			case 1:
-				this->strategy = new PublicTransportStrategy();
-				break;
-			case 2:
-				this->strategy = new RailwayStrategy();
-				break;
-			case 3:
-				this->strategy = new AirportStrategy();
-				break;
-		}
-		return;
-	}
+	// // Choose random strategy with a 12% chance
+	// if (chance < 12)
+	// {
+	// 	// Evenly distribute chances across 4 strategies
+	// 	int randomChoice = chance % 4;
+	// 	switch (randomChoice)
+	// 	{
+	// 		case 0:
+	// 			this->strategy = new RoadStrategy();
+	// 			break;
+	// 		case 1:
+	// 			this->strategy = new PublicTransportStrategy();
+	// 			break;
+	// 		case 2:
+	// 			this->strategy = new RailwayStrategy();
+	// 			break;
+	// 		case 3:
+	// 			this->strategy = new AirportStrategy();
+	// 			break;
+	// 	}
+	// 	return;
+	// }
 
 	// If not random, choose based on travel distance
-	if (travelDistance <= 5)
+	if (travelDistance <= 15)
 	{
 		this->strategy = new RoadStrategy();
 	}
-	else if (travelDistance <= 10)
+	else if (travelDistance <= 20)
 	{
 		this->strategy = new PublicTransportStrategy();
 	}
-	else if (travelDistance <= 15)
+	else if (travelDistance <= 30)
 	{
 		this->strategy = new RailwayStrategy();
 	}
-	else if (travelDistance <= 30)
+	else if (travelDistance <= 35)
 	{
 		this->strategy = new AirportStrategy();
 	}

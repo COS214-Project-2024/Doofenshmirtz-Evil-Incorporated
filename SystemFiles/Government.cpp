@@ -94,8 +94,9 @@ Government::~Government()
 }
 
 void Government::collectTaxes() {
+	int currentBalance = this->governmentBalance;
 	for (CityUnit* unit : observerList) {
-		this->governmentBalance += unit->payTaxes();;
+		this->governmentBalance += unit->payTaxes();
 	}
 
 	// Front end update
@@ -106,6 +107,13 @@ void Government::collectTaxes() {
 					{"value", std::to_string(governmentBalance)}
 				}
 				}};
+	WebSocketNotifier::get_mutable_instance().log(message);
+
+	int afterTaxBalance = this->governmentBalance - currentBalance;
+
+	message = {
+		{"type", "news"},
+		{"data", "Tax has been collected: 🪙" + std::to_string(afterTaxBalance)}};
 	WebSocketNotifier::get_mutable_instance().log(message);
 }
 
