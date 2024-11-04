@@ -1,0 +1,96 @@
+\hypertarget{classRailwayStrategy}{}\doxysection{Railway\+Strategy Class Reference}
+\label{classRailwayStrategy}\index{RailwayStrategy@{RailwayStrategy}}
+
+
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for railway-\/based transportation.  
+
+
+
+
+{\ttfamily \#include $<$Railway\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Railway\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classRailwayStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Railway\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classRailwayStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRailwayStrategy_af549288bc10dca2f76a31721a2c4b7be}\label{classRailwayStrategy_af549288bc10dca2f76a31721a2c4b7be}} 
+\mbox{\hyperlink{classRailwayStrategy_af549288bc10dca2f76a31721a2c4b7be}{Railway\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classRailwayStrategy}{Railway\+Strategy}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRailwayStrategy_ade6b2703e95ca3599897c7023836b836}\label{classRailwayStrategy_ade6b2703e95ca3599897c7023836b836}} 
+\mbox{\hyperlink{classRailwayStrategy_ade6b2703e95ca3599897c7023836b836}{$\sim$\+Railway\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classRailwayStrategy}{Railway\+Strategy}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRailwayStrategy_ab929af709a52f2a1c343017ea79556cb}{get\+Travel\+Strategy\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the travel strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRailwayStrategy_aebab84279572b6f1ea718f6d1f6119ce}{handle\+Commute\+State}} ()
+\begin{DoxyCompactList}\small\item\em Handles the state of the commute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for railway-\/based transportation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRailwayStrategy_ab929af709a52f2a1c343017ea79556cb}\label{classRailwayStrategy_ab929af709a52f2a1c343017ea79556cb}} 
+\index{RailwayStrategy@{RailwayStrategy}!getTravelStrategyName@{getTravelStrategyName}}
+\index{getTravelStrategyName@{getTravelStrategyName}!RailwayStrategy@{RailwayStrategy}}
+\doxysubsubsection{\texorpdfstring{getTravelStrategyName()}{getTravelStrategyName()}}
+{\footnotesize\ttfamily std\+::string Railway\+Strategy\+::get\+Travel\+Strategy\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the travel strategy. 
+
+Returns the name of the travel strategy.
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the travel strategy.
+
+A string representing \char`\"{}\+Railway\+Strategy\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}{Commute\+Strategy}}.
+
+\mbox{\Hypertarget{classRailwayStrategy_aebab84279572b6f1ea718f6d1f6119ce}\label{classRailwayStrategy_aebab84279572b6f1ea718f6d1f6119ce}} 
+\index{RailwayStrategy@{RailwayStrategy}!handleCommuteState@{handleCommuteState}}
+\index{handleCommuteState@{handleCommuteState}!RailwayStrategy@{RailwayStrategy}}
+\doxysubsubsection{\texorpdfstring{handleCommuteState()}{handleCommuteState()}}
+{\footnotesize\ttfamily int Railway\+Strategy\+::handle\+Commute\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the state of the commute. 
+
+This function is responsible for processing and managing the current commute state within the system. It may include logic for evaluating traffic conditions, adjusting routes, or updating the status of commuters.
+
+\begin{DoxyReturn}{Returns}
+int The result of the commute state handling, which may indicate success or failure, or provide a specific status code relevant to the commute operation. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}{Commute\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RailwayStrategy_8h}{Railway\+Strategy.\+h}}\item 
+\mbox{\hyperlink{RailwayStrategy_8cpp}{Railway\+Strategy.\+cpp}}\end{DoxyCompactItemize}

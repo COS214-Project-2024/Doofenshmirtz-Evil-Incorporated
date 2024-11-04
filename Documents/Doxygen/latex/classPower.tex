@@ -1,0 +1,174 @@
+\hypertarget{classPower}{}\doxysection{Power Class Reference}
+\label{classPower}\index{Power@{Power}}
+
+
+Represents a power plant utility in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Power.\+h$>$}
+
+
+
+Inheritance diagram for Power\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classPower__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Power\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classPower__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPower_ae442ee5949616f7ec515b36f16f15563}{Power}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPower}{Power}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPower_a02fbe8faaab8776a6a43e979ad2c9a44}\label{classPower_a02fbe8faaab8776a6a43e979ad2c9a44}} 
+\mbox{\hyperlink{classPower_a02fbe8faaab8776a6a43e979ad2c9a44}{$\sim$\+Power}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classPower}{Power}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPower_a6c1abf705bc2d0b83155b2202120834e}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the power plant. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPower_a45035940e3ddd60f26d348517b5b724f}{get\+Utility\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the type of utility. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classPower_a510da4347473e27b909a7f977f2e3fd3}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from the power plant. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classPower_ae164986be17b0d80a5a3f4091d410c88}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utility data from the power plant. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classPower_a623eb8feddbc0f8a582623fdc272c755}{get\+JSONrepresentation}} () override
+\begin{DoxyCompactList}\small\item\em Generates a JSON representation of the power plant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a power plant utility in the city simulation. 
+
+The \mbox{\hyperlink{classPower}{Power}} class inherits from the \mbox{\hyperlink{classUtility}{Utility}} class and provides functionality to manage its total and used capacity, collect resources, and provide utility data specific to power plants. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPower_ae442ee5949616f7ec515b36f16f15563}\label{classPower_ae442ee5949616f7ec515b36f16f15563}} 
+\index{Power@{Power}!Power@{Power}}
+\index{Power@{Power}!Power@{Power}}
+\doxysubsubsection{\texorpdfstring{Power()}{Power()}}
+{\footnotesize\ttfamily Power\+::\+Power (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classPower}{Power}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the power plant. \\
+\hline
+{\em used\+Cap} & The currently used capacity of the power plant. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPower_a510da4347473e27b909a7f977f2e3fd3}\label{classPower_a510da4347473e27b909a7f977f2e3fd3}} 
+\index{Power@{Power}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Power@{Power}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Power\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the power plant. 
+
+This function overrides the collect\+Resources function in the \mbox{\hyperlink{classUtility}{Utility}} class and returns a map of resources collected from the power plant.
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, int$>$ A map containing the collected resources with their corresponding quantities. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a08bb7856672566e1a1cd43f0c6b00fd9}{Building}}.
+
+\mbox{\Hypertarget{classPower_ae164986be17b0d80a5a3f4091d410c88}\label{classPower_ae164986be17b0d80a5a3f4091d410c88}} 
+\index{Power@{Power}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Power@{Power}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Power\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility data from the power plant. 
+
+This function overrides the collect\+Utilities function in the \mbox{\hyperlink{classUtility}{Utility}} class and returns a map of utility data associated with the power plant.
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, double$>$ A map containing the collected utility data with their corresponding values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a67fc4e531f932a80bbf389b35947f59c}{Building}}.
+
+\mbox{\Hypertarget{classPower_a623eb8feddbc0f8a582623fdc272c755}\label{classPower_a623eb8feddbc0f8a582623fdc272c755}} 
+\index{Power@{Power}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Power@{Power}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Power\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generates a JSON representation of the power plant. 
+
+This function creates a JSON object containing relevant information about the power plant, which can be used for visualization purposes in the frontend.
+
+\begin{DoxyReturn}{Returns}
+nlohmann\+::json A JSON object representing the power plant and its properties. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a080db9fe4a9a2ce05b9ac276e54bac17}{Building}}.
+
+\mbox{\Hypertarget{classPower_a45035940e3ddd60f26d348517b5b724f}\label{classPower_a45035940e3ddd60f26d348517b5b724f}} 
+\index{Power@{Power}!getUtilityType@{getUtilityType}}
+\index{getUtilityType@{getUtilityType}!Power@{Power}}
+\doxysubsubsection{\texorpdfstring{getUtilityType()}{getUtilityType()}}
+{\footnotesize\ttfamily std\+::string Power\+::get\+Utility\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the type of utility. 
+
+This function overrides the get\+Utility\+Type function in the \mbox{\hyperlink{classUtility}{Utility}} class and returns the type of this utility.
+
+\begin{DoxyReturn}{Returns}
+std\+::string The type of the utility as a string (\char`\"{}\+Power\+Plant\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtility_a278b4cc8de2a7e9f97a57f4f02809a82}{Utility}}.
+
+\mbox{\Hypertarget{classPower_a6c1abf705bc2d0b83155b2202120834e}\label{classPower_a6c1abf705bc2d0b83155b2202120834e}} 
+\index{Power@{Power}!update@{update}}
+\index{update@{update}!Power@{Power}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Power\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state of the power plant. 
+
+This function is called to perform any necessary updates on the power plant, such as recalculating resources or utilities. 
+
+Implements \mbox{\hyperlink{classUtility_a564409491cdd9e4e6c429e0919603b00}{Utility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Power_8h}{Power.\+h}}\item 
+\mbox{\hyperlink{Power_8cpp}{Power.\+cpp}}\end{DoxyCompactItemize}

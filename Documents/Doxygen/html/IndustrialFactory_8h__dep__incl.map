@@ -1,0 +1,5 @@
+<map id="IndustrialFactory.h" name="IndustrialFactory.h">
+<area shape="rect" id="node1" title="Defines of the IndustrialFactory class for Industrial building creation." alt="" coords="102,5,242,32"/>
+<area shape="rect" id="node2" href="$IndustrialFactory_8cpp.html" title="Implementation of the IndustrialFactory class for Industrial building creation." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node3" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="185,80,341,107"/>
+</map>

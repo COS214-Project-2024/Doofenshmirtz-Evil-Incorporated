@@ -1,0 +1,13 @@
+<map id="Industrial.h" name="Industrial.h">
+<area shape="rect" id="node1" title="Defines the Industrial class for creating Industrial building objects." alt="" coords="169,5,263,32"/>
+<area shape="rect" id="node2" href="$Building_8h.html" title="Defines the Building class, which represents a building within a city unit." alt="" coords="173,80,259,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,229,56,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="485,453,544,480"/>
+<area shape="rect" id="node3" href="$CityUnit_8h.html" title="Defines the CityUnit class, which represents a unit in the city with various properties and functiona..." alt="" coords="221,155,307,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="80,229,227,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="357,229,419,256"/>
+<area shape="rect" id="node6" href="$Citizen_8h.html" title="Defines the Citizen class for managing citizen objects in the city simulation." alt="" coords="443,229,522,256"/>
+<area shape="rect" id="node10" href="$Iterator_8h.html" title="Defines the Iterator class for creating Iterator objects." alt="" coords="251,229,333,256"/>
+<area shape="rect" id="node7" href="$AtHomeState_8h.html" title="Defines the AtHomeState class." alt="" coords="406,304,527,331"/>
+<area shape="rect" id="node8" href="$CitizenLocationState_8h.html" title="Defines the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="371,379,539,405"/>
+</map>

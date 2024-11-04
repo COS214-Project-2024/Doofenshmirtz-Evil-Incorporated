@@ -1,0 +1,73 @@
+\hypertarget{Government_8cpp}{}\doxysection{Government.\+cpp File Reference}
+\label{Government_8cpp}\index{Government.cpp@{Government.cpp}}
+
+
+Implements the \mbox{\hyperlink{classGovernment}{Government}} class for creating \mbox{\hyperlink{classGovernment}{Government}} objects. \mbox{\hyperlink{classGovernment}{Government}} acts as a central command for interacting with the city. It forms the Subject for the Observer Design Pattern, the Invoker for the Command Design Pattern, and is used by the Facade Implements methods such as\+: Collecting tax, Collecting resources, execute\+Command (for the different commands), and notifies the city to update.  
+
+
+{\ttfamily \#include \char`\"{}Government.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Industrial.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Web\+Socket\+Notifier.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Residential.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Power.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Water.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sewage.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Waste.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Better\+Education\+Policy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Short\+Work\+Week\+Policy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Set\+Tax.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Spend\+Resources.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}District.\+h\char`\"{}}\newline
+Include dependency graph for Government.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Government_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{Government_8cpp_a6457ba19cb9cfb28f242267ad0cf6ceb}{POWER\+\_\+\+PER\+\_\+\+CITIZEN}} = 0.\+2
+\item 
+const double \mbox{\hyperlink{Government_8cpp_a8ffa0b58808a3cb0774e564d5fb85d56}{WATER\+\_\+\+PER\+\_\+\+CITIZEN}} = 0.\+15
+\item 
+const double \mbox{\hyperlink{Government_8cpp_a79b186a2aedfe9cb32293c1dfdede0bb}{WASTE\+\_\+\+PER\+\_\+\+CITIZEN}} = 0.\+3
+\item 
+const double \mbox{\hyperlink{Government_8cpp_a7fb4800af4b946b9447211963209e8b7}{SEWAGE\+\_\+\+PER\+\_\+\+CITIZEN}} = 0.\+25
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the \mbox{\hyperlink{classGovernment}{Government}} class for creating \mbox{\hyperlink{classGovernment}{Government}} objects. \mbox{\hyperlink{classGovernment}{Government}} acts as a central command for interacting with the city. It forms the Subject for the Observer Design Pattern, the Invoker for the Command Design Pattern, and is used by the Facade Implements methods such as\+: Collecting tax, Collecting resources, execute\+Command (for the different commands), and notifies the city to update. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Government_8cpp_a6457ba19cb9cfb28f242267ad0cf6ceb}\label{Government_8cpp_a6457ba19cb9cfb28f242267ad0cf6ceb}} 
+\index{Government.cpp@{Government.cpp}!POWER\_PER\_CITIZEN@{POWER\_PER\_CITIZEN}}
+\index{POWER\_PER\_CITIZEN@{POWER\_PER\_CITIZEN}!Government.cpp@{Government.cpp}}
+\doxysubsubsection{\texorpdfstring{POWER\_PER\_CITIZEN}{POWER\_PER\_CITIZEN}}
+{\footnotesize\ttfamily const double POWER\+\_\+\+PER\+\_\+\+CITIZEN = 0.\+2}
+
+\mbox{\hyperlink{classPower}{Power}} usage per citizen \mbox{\Hypertarget{Government_8cpp_a7fb4800af4b946b9447211963209e8b7}\label{Government_8cpp_a7fb4800af4b946b9447211963209e8b7}} 
+\index{Government.cpp@{Government.cpp}!SEWAGE\_PER\_CITIZEN@{SEWAGE\_PER\_CITIZEN}}
+\index{SEWAGE\_PER\_CITIZEN@{SEWAGE\_PER\_CITIZEN}!Government.cpp@{Government.cpp}}
+\doxysubsubsection{\texorpdfstring{SEWAGE\_PER\_CITIZEN}{SEWAGE\_PER\_CITIZEN}}
+{\footnotesize\ttfamily const double SEWAGE\+\_\+\+PER\+\_\+\+CITIZEN = 0.\+25}
+
+\mbox{\hyperlink{classSewage}{Sewage}} generation per citizen \mbox{\Hypertarget{Government_8cpp_a79b186a2aedfe9cb32293c1dfdede0bb}\label{Government_8cpp_a79b186a2aedfe9cb32293c1dfdede0bb}} 
+\index{Government.cpp@{Government.cpp}!WASTE\_PER\_CITIZEN@{WASTE\_PER\_CITIZEN}}
+\index{WASTE\_PER\_CITIZEN@{WASTE\_PER\_CITIZEN}!Government.cpp@{Government.cpp}}
+\doxysubsubsection{\texorpdfstring{WASTE\_PER\_CITIZEN}{WASTE\_PER\_CITIZEN}}
+{\footnotesize\ttfamily const double WASTE\+\_\+\+PER\+\_\+\+CITIZEN = 0.\+3}
+
+\mbox{\hyperlink{classWaste}{Waste}} generation per citizen \mbox{\Hypertarget{Government_8cpp_a8ffa0b58808a3cb0774e564d5fb85d56}\label{Government_8cpp_a8ffa0b58808a3cb0774e564d5fb85d56}} 
+\index{Government.cpp@{Government.cpp}!WATER\_PER\_CITIZEN@{WATER\_PER\_CITIZEN}}
+\index{WATER\_PER\_CITIZEN@{WATER\_PER\_CITIZEN}!Government.cpp@{Government.cpp}}
+\doxysubsubsection{\texorpdfstring{WATER\_PER\_CITIZEN}{WATER\_PER\_CITIZEN}}
+{\footnotesize\ttfamily const double WATER\+\_\+\+PER\+\_\+\+CITIZEN = 0.\+15}
+
+\mbox{\hyperlink{classWater}{Water}} usage per citizen 

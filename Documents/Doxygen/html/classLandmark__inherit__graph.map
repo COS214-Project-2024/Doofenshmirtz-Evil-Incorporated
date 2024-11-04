@@ -1,0 +1,5 @@
+<map id="Landmark" name="Landmark">
+<area shape="rect" id="node1" title="Represents a landmark building in the city simulation." alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node2" href="$classBuilding.html" title="Represents a building within a city unit." alt="" coords="11,80,86,107"/>
+<area shape="rect" id="node3" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="11,5,86,32"/>
+</map>

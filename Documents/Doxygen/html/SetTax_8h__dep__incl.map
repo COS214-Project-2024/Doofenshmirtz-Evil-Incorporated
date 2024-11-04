@@ -1,0 +1,5 @@
+<map id="SetTax.h" name="SetTax.h">
+<area shape="rect" id="node1" title="Declares the SetTax class, which is responsible for setting the tax rate in a CityUnit." alt="" coords="100,5,177,32"/>
+<area shape="rect" id="node2" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$SetTax_8cpp.html" title="Implements the SetTax class, which sets the tax rate for a CityUnit." alt="" coords="161,80,253,107"/>
+</map>

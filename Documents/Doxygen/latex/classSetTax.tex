@@ -1,0 +1,92 @@
+\hypertarget{classSetTax}{}\doxysection{Set\+Tax Class Reference}
+\label{classSetTax}\index{SetTax@{SetTax}}
+
+
+Command to set the tax rate for a specific \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Set\+Tax.\+h$>$}
+
+
+
+Inheritance diagram for Set\+Tax\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classSetTax__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Set\+Tax\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classSetTax__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSetTax_ad067d58dd295afd0e19e289186b0f2c3}{Set\+Tax}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district, double new\+Tax\+Rate\+Percentage)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSetTax}{Set\+Tax}} command with a specified tax rate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSetTax_a63dcf055ce7ca2c7b5bb636e1629e384}\label{classSetTax_a63dcf055ce7ca2c7b5bb636e1629e384}} 
+\mbox{\hyperlink{classSetTax_a63dcf055ce7ca2c7b5bb636e1629e384}{$\sim$\+Set\+Tax}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classSetTax}{Set\+Tax}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSetTax_afd12403a361d4da12034ad788c8cac45}{execute\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Executes the command by applying the new tax rate to the \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to set the tax rate for a specific \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This command encapsulates the action of changing the tax rate for the associated \mbox{\hyperlink{classCityUnit}{City\+Unit}}, which can influence its financial state and operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSetTax_ad067d58dd295afd0e19e289186b0f2c3}\label{classSetTax_ad067d58dd295afd0e19e289186b0f2c3}} 
+\index{SetTax@{SetTax}!SetTax@{SetTax}}
+\index{SetTax@{SetTax}!SetTax@{SetTax}}
+\doxysubsubsection{\texorpdfstring{SetTax()}{SetTax()}}
+{\footnotesize\ttfamily Set\+Tax\+::\+Set\+Tax (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district,  }\item[{double}]{new\+Tax\+Rate\+Percentage }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classSetTax}{Set\+Tax}} command with a specified tax rate. 
+
+Constructs a \mbox{\hyperlink{classSetTax}{Set\+Tax}} command with the specified tax rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} where the tax rate will be set. \\
+\hline
+{\em new\+Tax\+Rate\+Percentage} & The new tax rate percentage to be applied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSetTax_afd12403a361d4da12034ad788c8cac45}\label{classSetTax_afd12403a361d4da12034ad788c8cac45}} 
+\index{SetTax@{SetTax}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!SetTax@{SetTax}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Set\+Tax\+::execute\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the command by applying the new tax rate to the \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Executes the command to set the tax rate for the associated \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Implements \mbox{\hyperlink{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}{Government\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SetTax_8h}{Set\+Tax.\+h}}\item 
+\mbox{\hyperlink{SetTax_8cpp}{Set\+Tax.\+cpp}}\end{DoxyCompactItemize}

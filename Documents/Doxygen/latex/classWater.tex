@@ -1,0 +1,172 @@
+\hypertarget{classWater}{}\doxysection{Water Class Reference}
+\label{classWater}\index{Water@{Water}}
+
+
+Represents a water utility building.  
+
+
+
+
+{\ttfamily \#include $<$Water.\+h$>$}
+
+
+
+Inheritance diagram for Water\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classWater__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Water\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classWater__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWater_ab851237744654e5fe524345dd21a83ad}{Water}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWater}{Water}} object with the specified total and used capacity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWater_aa613ad181694d2d0e18059f3822415fe}\label{classWater_aa613ad181694d2d0e18059f3822415fe}} 
+\mbox{\hyperlink{classWater_aa613ad181694d2d0e18059f3822415fe}{$\sim$\+Water}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classWater}{Water}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWater_a18fce2c0b2c45ee4ea8e413fcb4bdafa}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the water utility plant. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classWater_a78945ea2f7c524186118d072c59c2e6e}{get\+Utility\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the type of utility represented by this water utility plant. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classWater_a5a179132da137bd46266c5d4bf9a4cbd}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from the water utility plant. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classWater_ae861ddbbc0b7a9e7032219c4b21b986b}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utility usage data from the water utility plant. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classWater_a6b4e3e34836ad0ea960656fcfb37d0b6}{get\+JSONrepresentation}} () override
+\begin{DoxyCompactList}\small\item\em Gets a JSON representation of the water utility plant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a water utility building. 
+
+This class inherits from the \mbox{\hyperlink{classUtility}{Utility}} class and implements the functionality specific to water resource management, including methods to update the water plant\textquotesingle{}s status and collect relevant resources. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWater_ab851237744654e5fe524345dd21a83ad}\label{classWater_ab851237744654e5fe524345dd21a83ad}} 
+\index{Water@{Water}!Water@{Water}}
+\index{Water@{Water}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{Water()}{Water()}}
+{\footnotesize\ttfamily Water\+::\+Water (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWater}{Water}} object with the specified total and used capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the water utility plant. \\
+\hline
+{\em used\+Cap} & The amount of capacity currently in use. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWater_a5a179132da137bd46266c5d4bf9a4cbd}\label{classWater_a5a179132da137bd46266c5d4bf9a4cbd}} 
+\index{Water@{Water}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Water\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the water utility plant. 
+
+This method overrides the collect\+Resources method from the \mbox{\hyperlink{classUtility}{Utility}} class.
+
+\begin{DoxyReturn}{Returns}
+A map containing the names and quantities of water resources collected. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUtility_a9b0f35f26cbc854bfa6c1ccb384e973f}{Utility}}.
+
+\mbox{\Hypertarget{classWater_ae861ddbbc0b7a9e7032219c4b21b986b}\label{classWater_ae861ddbbc0b7a9e7032219c4b21b986b}} 
+\index{Water@{Water}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Water\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility usage data from the water utility plant. 
+
+This method overrides the collect\+Utilities method from the \mbox{\hyperlink{classUtility}{Utility}} class.
+
+\begin{DoxyReturn}{Returns}
+A map containing the types of utilities and their respective quantities related to water management. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUtility_a7d1c3e565a57e47644015c1617693df6}{Utility}}.
+
+\mbox{\Hypertarget{classWater_a6b4e3e34836ad0ea960656fcfb37d0b6}\label{classWater_a6b4e3e34836ad0ea960656fcfb37d0b6}} 
+\index{Water@{Water}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Water\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a JSON representation of the water utility plant. 
+
+This method overrides the get\+JSONrepresentation method from the \mbox{\hyperlink{classUtility}{Utility}} class.
+
+\begin{DoxyReturn}{Returns}
+A JSON object representing the current state of the water utility plant. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUtility_ad295893d2570de919f66fc735697c059}{Utility}}.
+
+\mbox{\Hypertarget{classWater_a78945ea2f7c524186118d072c59c2e6e}\label{classWater_a78945ea2f7c524186118d072c59c2e6e}} 
+\index{Water@{Water}!getUtilityType@{getUtilityType}}
+\index{getUtilityType@{getUtilityType}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{getUtilityType()}{getUtilityType()}}
+{\footnotesize\ttfamily std\+::string Water\+::get\+Utility\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the type of utility represented by this water utility plant. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the type of utility, which is \char`\"{}\+Water\+Plant\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtility_a278b4cc8de2a7e9f97a57f4f02809a82}{Utility}}.
+
+\mbox{\Hypertarget{classWater_a18fce2c0b2c45ee4ea8e413fcb4bdafa}\label{classWater_a18fce2c0b2c45ee4ea8e413fcb4bdafa}} 
+\index{Water@{Water}!update@{update}}
+\index{update@{update}!Water@{Water}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Water\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state of the water utility plant. 
+
+This method provides the logic for updating the water plant\textquotesingle{}s operational status, such as processing and distributing water. 
+
+Implements \mbox{\hyperlink{classUtility_a564409491cdd9e4e6c429e0919603b00}{Utility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Water_8h}{Water.\+h}}\item 
+\mbox{\hyperlink{Water_8cpp}{Water.\+cpp}}\end{DoxyCompactItemize}

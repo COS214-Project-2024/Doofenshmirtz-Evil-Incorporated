@@ -1,0 +1,7 @@
+<map id="CommuteStrategy" name="CommuteStrategy">
+<area shape="rect" id="node1" title="Represents a strategy for commuting." alt="" coords="257,5,398,32"/>
+<area shape="rect" id="node2" href="$classAirportStrategy.html" title="A concrete implementation of the CommuteStrategy class for airport&#45;based travel." alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node3" href="$classPublicTransportStrategy.html" title="A concrete implementation of the CommuteStrategy class for public transport&#45;based travel." alt="" coords="151,80,327,107"/>
+<area shape="rect" id="node4" href="$classRailwayStrategy.html" title="A concrete implementation of the CommuteStrategy class for railway&#45;based transportation." alt="" coords="352,80,481,107"/>
+<area shape="rect" id="node5" href="$classRoadStrategy.html" title="A concrete implementation of the CommuteStrategy class for road&#45;based travel." alt="" coords="505,80,616,107"/>
+</map>

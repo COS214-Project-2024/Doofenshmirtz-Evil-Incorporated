@@ -1,0 +1,5 @@
+<map id="Commercial" name="Commercial">
+<area shape="rect" id="node1" title="Represents a commercial building in the city simulation." alt="" coords="5,155,107,181"/>
+<area shape="rect" id="node2" href="$classBuilding.html" title="Represents a building within a city unit." alt="" coords="19,80,93,107"/>
+<area shape="rect" id="node3" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="19,5,93,32"/>
+</map>

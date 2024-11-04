@@ -1,0 +1,101 @@
+\hypertarget{classAirportStrategy}{}\doxysection{Airport\+Strategy Class Reference}
+\label{classAirportStrategy}\index{AirportStrategy@{AirportStrategy}}
+
+
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for airport-\/based travel.  
+
+
+
+
+{\ttfamily \#include $<$Airport\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Airport\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classAirportStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Airport\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classAirportStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAirportStrategy_a89dd180778144e5b0378540e23e67a9f}\label{classAirportStrategy_a89dd180778144e5b0378540e23e67a9f}} 
+\mbox{\hyperlink{classAirportStrategy_a89dd180778144e5b0378540e23e67a9f}{Airport\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAirportStrategy}{Airport\+Strategy}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAirportStrategy_ad8789c5776e0f1a55e165ba000c1dfba}\label{classAirportStrategy_ad8789c5776e0f1a55e165ba000c1dfba}} 
+\mbox{\hyperlink{classAirportStrategy_ad8789c5776e0f1a55e165ba000c1dfba}{$\sim$\+Airport\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classAirportStrategy}{Airport\+Strategy}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAirportStrategy_a49ffe72dfe35cc923eb7ffda72c2517b}{get\+Travel\+Strategy\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the travel strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAirportStrategy_a13a3d18d0ee6768d63241e049c2da839}{handle\+Commute\+State}} ()
+\begin{DoxyCompactList}\small\item\em Handles the commute state for the airport strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for airport-\/based travel. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAirportStrategy_a49ffe72dfe35cc923eb7ffda72c2517b}\label{classAirportStrategy_a49ffe72dfe35cc923eb7ffda72c2517b}} 
+\index{AirportStrategy@{AirportStrategy}!getTravelStrategyName@{getTravelStrategyName}}
+\index{getTravelStrategyName@{getTravelStrategyName}!AirportStrategy@{AirportStrategy}}
+\doxysubsubsection{\texorpdfstring{getTravelStrategyName()}{getTravelStrategyName()}}
+{\footnotesize\ttfamily std\+::string Airport\+Strategy\+::get\+Travel\+Strategy\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the travel strategy. 
+
+Returns the name of the travel strategy.
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the travel strategy.
+
+A string representing \char`\"{}\+Airport\+Strategy\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}{Commute\+Strategy}}.
+
+\mbox{\Hypertarget{classAirportStrategy_a13a3d18d0ee6768d63241e049c2da839}\label{classAirportStrategy_a13a3d18d0ee6768d63241e049c2da839}} 
+\index{AirportStrategy@{AirportStrategy}!handleCommuteState@{handleCommuteState}}
+\index{handleCommuteState@{handleCommuteState}!AirportStrategy@{AirportStrategy}}
+\doxysubsubsection{\texorpdfstring{handleCommuteState()}{handleCommuteState()}}
+{\footnotesize\ttfamily int Airport\+Strategy\+::handle\+Commute\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the commute state for the airport strategy. 
+
+Manages and returns the specific state value associated with the airport commuting strategy.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the commute state.
+\end{DoxyReturn}
+This function manages the specific state related to commuting in the context of the airport travel strategy.
+
+\begin{DoxyReturn}{Returns}
+An integer value associated with the commute state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}{Commute\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AirportStrategy_8h}{Airport\+Strategy.\+h}}\item 
+\mbox{\hyperlink{AirportStrategy_8cpp}{Airport\+Strategy.\+cpp}}\end{DoxyCompactItemize}

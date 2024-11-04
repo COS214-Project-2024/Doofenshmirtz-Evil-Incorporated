@@ -1,0 +1,143 @@
+\hypertarget{classCommercialFactory}{}\doxysection{Commercial\+Factory Class Reference}
+\label{classCommercialFactory}\index{CommercialFactory@{CommercialFactory}}
+
+
+Factory class for creating commercial buildings.  
+
+
+
+
+{\ttfamily \#include $<$Commercial\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Commercial\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classCommercialFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Commercial\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classCommercialFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classCommercialFactory_a4c18fc3f1861873cb8cc0f4100862aea}{get\+Resource\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Gets the resource cost required to construct a commercial building. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommercialFactory_a92372a1fe5c2350830fb2865530267f4}{Commercial\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCommercialFactory_a4b67d2dfec26098c28f125d9cd8ff9fc}\label{classCommercialFactory_a4b67d2dfec26098c28f125d9cd8ff9fc}} 
+\mbox{\hyperlink{classCommercialFactory_a4b67d2dfec26098c28f125d9cd8ff9fc}{$\sim$\+Commercial\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCommercialFactory_a21ca828eca79d13cda65a4a42140a1bc}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Gets the cost of constructing a commercial building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classCommercialFactory_a52b094345d33035ff8b6984afb0ddb52}{factory\+Method}} () override
+\begin{DoxyCompactList}\small\item\em Factory method to create a new \mbox{\hyperlink{classCommercial}{Commercial}} building object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating commercial buildings. 
+
+The \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} class is responsible for defining the specific type of building as a commercial building and setting the associated cost and resource requirements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommercialFactory_a92372a1fe5c2350830fb2865530267f4}\label{classCommercialFactory_a92372a1fe5c2350830fb2865530267f4}} 
+\index{CommercialFactory@{CommercialFactory}!CommercialFactory@{CommercialFactory}}
+\index{CommercialFactory@{CommercialFactory}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{CommercialFactory()}{CommercialFactory()}}
+{\footnotesize\ttfamily Commercial\+Factory\+::\+Commercial\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classCommercialFactory}{Commercial\+Factory}} instance. 
+
+Initializes the resource and cost values specific to commercial buildings.
+
+Initializes the cost and resource requirements specific to commercial buildings. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommercialFactory_a52b094345d33035ff8b6984afb0ddb52}\label{classCommercialFactory_a52b094345d33035ff8b6984afb0ddb52}} 
+\index{CommercialFactory@{CommercialFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Commercial\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Factory method to create a new \mbox{\hyperlink{classCommercial}{Commercial}} building object. 
+
+Factory method for creating a new commercial building.
+
+This method is overridden to produce an instance of \mbox{\hyperlink{classCommercial}{Commercial}}.
+
+\begin{DoxyReturn}{Returns}
+A pointer to a new \mbox{\hyperlink{classCommercial}{Commercial}} building.
+
+A pointer to a newly created \mbox{\hyperlink{classCommercial}{Commercial}} building object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classCommercialFactory_a21ca828eca79d13cda65a4a42140a1bc}\label{classCommercialFactory_a21ca828eca79d13cda65a4a42140a1bc}} 
+\index{CommercialFactory@{CommercialFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily int Commercial\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the cost of constructing a commercial building. 
+
+Gets the cost of creating a commercial building.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the cost.
+
+The integer cost for building construction. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classCommercialFactory_a4c18fc3f1861873cb8cc0f4100862aea}\label{classCommercialFactory_a4c18fc3f1861873cb8cc0f4100862aea}} 
+\index{CommercialFactory@{CommercialFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!CommercialFactory@{CommercialFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Commercial\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the resource cost required to construct a commercial building. 
+
+Gets the resource cost for creating a commercial building.
+
+\begin{DoxyReturn}{Returns}
+A map with resource names as keys and their required quantities as values.
+
+A map containing resource types as keys and their required quantities as values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CommercialFactory_8h}{Commercial\+Factory.\+h}}\item 
+\mbox{\hyperlink{CommercialFactory_8cpp}{Commercial\+Factory.\+cpp}}\end{DoxyCompactItemize}

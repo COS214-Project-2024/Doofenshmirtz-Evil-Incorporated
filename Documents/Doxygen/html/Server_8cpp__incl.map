@@ -1,0 +1,13 @@
+<map id="Server.cpp" name="Server.cpp">
+<area shape="rect" id="node1" title="Implements the Server class for Server objects. Handles creation/deletion of a local web server." alt="" coords="633,5,723,32"/>
+<area shape="rect" id="node2" href="$Server_8h.html" title="Defines the Server class for Server objects. Handles creation/deletion of a local web server." alt="" coords="641,80,715,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,164,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="188,155,387,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="410,155,527,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="505,237,582,263"/>
+<area shape="rect" id="node7" title=" " alt="" coords="829,155,895,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="774,237,921,263"/>
+<area shape="rect" id="node9" title=" " alt="" coords="919,155,999,181"/>
+<area shape="rect" id="node10" href="$WebSocketNotifier_8h.html" title="Defines the WebSocketNotifier class." alt="" coords="602,155,754,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="607,229,749,271"/>
+</map>

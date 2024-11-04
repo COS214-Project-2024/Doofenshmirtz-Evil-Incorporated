@@ -1,0 +1,188 @@
+\hypertarget{classUtility}{}\doxysection{Utility Class Reference}
+\label{classUtility}\index{Utility@{Utility}}
+
+
+Abstract base class for utility buildings.  
+
+
+
+
+{\ttfamily \#include $<$Utility.\+h$>$}
+
+
+
+Inheritance diagram for Utility\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classUtility__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Utility\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classUtility__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUtility_a60d06488fdfc4bcf6ae94b45b18b41b6}{Utility}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classUtility}{Utility}} object with the specified capacity. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUtility_aecfe4b31e39b00555158a2d8288b874a}\label{classUtility_aecfe4b31e39b00555158a2d8288b874a}} 
+virtual \mbox{\hyperlink{classUtility_aecfe4b31e39b00555158a2d8288b874a}{$\sim$\+Utility}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classUtility}{Utility}} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classUtility_a564409491cdd9e4e6c429e0919603b00}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em Updates the state of the utility building. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classUtility_a278b4cc8de2a7e9f97a57f4f02809a82}{get\+Utility\+Type}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the type of utility represented by this building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classUtility_a9b0f35f26cbc854bfa6c1ccb384e973f}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from the utility building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classUtility_a7d1c3e565a57e47644015c1617693df6}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utility usage data from the utility building. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classUtility_ad295893d2570de919f66fc735697c059}{get\+JSONrepresentation}} () override
+\begin{DoxyCompactList}\small\item\em Gets a JSON representation of the utility building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for utility buildings. 
+
+This class serves as a base for different types of utility buildings, requiring derived classes to implement specific utility types and their associated behaviors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUtility_a60d06488fdfc4bcf6ae94b45b18b41b6}\label{classUtility_a60d06488fdfc4bcf6ae94b45b18b41b6}} 
+\index{Utility@{Utility}!Utility@{Utility}}
+\index{Utility@{Utility}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{Utility()}{Utility()}}
+{\footnotesize\ttfamily Utility\+::\+Utility (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classUtility}{Utility}} object with the specified capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the utility building. \\
+\hline
+{\em used\+Cap} & The amount of capacity currently in use. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUtility_a9b0f35f26cbc854bfa6c1ccb384e973f}\label{classUtility_a9b0f35f26cbc854bfa6c1ccb384e973f}} 
+\index{Utility@{Utility}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Utility\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the utility building. 
+
+This method overrides the collect\+Resources method from the \mbox{\hyperlink{classBuilding}{Building}} class.
+
+\begin{DoxyReturn}{Returns}
+A map containing the names and quantities of resources collected. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a08bb7856672566e1a1cd43f0c6b00fd9}{Building}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classWater_a5a179132da137bd46266c5d4bf9a4cbd}{Water}}, and \mbox{\hyperlink{classWaste_a4e3d73ca427a94964ce8d18fba18fbd0}{Waste}}.
+
+\mbox{\Hypertarget{classUtility_a7d1c3e565a57e47644015c1617693df6}\label{classUtility_a7d1c3e565a57e47644015c1617693df6}} 
+\index{Utility@{Utility}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Utility\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility usage data from the utility building. 
+
+This method overrides the collect\+Utilities method from the \mbox{\hyperlink{classBuilding}{Building}} class.
+
+\begin{DoxyReturn}{Returns}
+A map containing the types of utilities and their respective quantities. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a67fc4e531f932a80bbf389b35947f59c}{Building}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classWater_ae861ddbbc0b7a9e7032219c4b21b986b}{Water}}, and \mbox{\hyperlink{classWaste_a6c5639582d2f94cf327addebd92ef12d}{Waste}}.
+
+\mbox{\Hypertarget{classUtility_ad295893d2570de919f66fc735697c059}\label{classUtility_ad295893d2570de919f66fc735697c059}} 
+\index{Utility@{Utility}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Utility\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets a JSON representation of the utility building. 
+
+This method overrides the get\+JSONrepresentation method from the \mbox{\hyperlink{classBuilding}{Building}} class.
+
+\begin{DoxyReturn}{Returns}
+A JSON object representing the current state of the utility building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a080db9fe4a9a2ce05b9ac276e54bac17}{Building}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classWater_a6b4e3e34836ad0ea960656fcfb37d0b6}{Water}}, and \mbox{\hyperlink{classWaste_aac91ebfb338a0b549d9cb5cfbc521768}{Waste}}.
+
+\mbox{\Hypertarget{classUtility_a278b4cc8de2a7e9f97a57f4f02809a82}\label{classUtility_a278b4cc8de2a7e9f97a57f4f02809a82}} 
+\index{Utility@{Utility}!getUtilityType@{getUtilityType}}
+\index{getUtilityType@{getUtilityType}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{getUtilityType()}{getUtilityType()}}
+{\footnotesize\ttfamily virtual std\+::string Utility\+::get\+Utility\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the type of utility represented by this building. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of utility (e.\+g., \char`\"{}\+Power\+Plant\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWater_a78945ea2f7c524186118d072c59c2e6e}{Water}}, \mbox{\hyperlink{classWaste_a0a5ffcff752fe0e6345c3398edef140d}{Waste}}, \mbox{\hyperlink{classSewage_a63f7ec3d9457b6b0a5f02d2f789a8c57}{Sewage}}, and \mbox{\hyperlink{classPower_a45035940e3ddd60f26d348517b5b724f}{Power}}.
+
+\mbox{\Hypertarget{classUtility_a564409491cdd9e4e6c429e0919603b00}\label{classUtility_a564409491cdd9e4e6c429e0919603b00}} 
+\index{Utility@{Utility}!update@{update}}
+\index{update@{update}!Utility@{Utility}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Utility\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Updates the state of the utility building. 
+
+This is a pure virtual function, meaning derived classes must provide an implementation for this method. 
+
+Implements \mbox{\hyperlink{classBuilding_aa230e4820308440c15cf1688bbed91d1}{Building}}.
+
+
+
+Implemented in \mbox{\hyperlink{classWater_a18fce2c0b2c45ee4ea8e413fcb4bdafa}{Water}}, \mbox{\hyperlink{classWaste_abdbb6fda7b3fe53673f8b18801895304}{Waste}}, \mbox{\hyperlink{classSewage_aaaddd755f27c51f2f2904dc047695012}{Sewage}}, and \mbox{\hyperlink{classPower_a6c1abf705bc2d0b83155b2202120834e}{Power}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Utility_8h}{Utility.\+h}}\item 
+\mbox{\hyperlink{Utility_8cpp}{Utility.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="GovernmentCommand" name="GovernmentCommand">
+<area shape="rect" id="node1" title="Base class for commands that can be executed on a CityUnit." alt="" coords="193,5,363,32"/>
+<area shape="rect" id="node2" href="$classAllocateBudget.html" title="A class that represents a command for allocating budgets to a CityUnit." alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node3" href="$classImplementPolicy.html" title="Abstract command to implement a policy in a CityUnit." alt="" coords="151,80,283,107"/>
+<area shape="rect" id="node6" href="$classSetTax.html" title="Command to set the tax rate for a specific CityUnit." alt="" coords="307,80,372,107"/>
+<area shape="rect" id="node7" href="$classSpendResources.html" title="Command that controls resource spending and construction within a CityUnit." alt="" coords="396,80,525,107"/>
+<area shape="rect" id="node4" href="$classBetterEducationPolicy.html" title="Command to implement a better education policy in a CityUnit." alt="" coords="39,155,205,181"/>
+<area shape="rect" id="node5" href="$classShortWorkWeekPolicy.html" title="Command to implement a short workweek policy in a CityUnit." alt="" coords="229,155,393,181"/>
+</map>

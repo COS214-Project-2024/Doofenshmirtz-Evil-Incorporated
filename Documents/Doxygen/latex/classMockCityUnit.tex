@@ -1,0 +1,378 @@
+\hypertarget{classMockCityUnit}{}\doxysection{Mock\+City\+Unit Class Reference}
+\label{classMockCityUnit}\index{MockCityUnit@{MockCityUnit}}
+
+
+Inheritance diagram for Mock\+City\+Unit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classMockCityUnit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mock\+City\+Unit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classMockCityUnit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMockCityUnit_a7f3d79515278fc13fa6719c77ba5d0c0}\label{classMockCityUnit_a7f3d79515278fc13fa6719c77ba5d0c0}} 
+{\bfseries Mock\+City\+Unit} (int id\+\_\+=0, int total\+Cap=100, int used\+Cap=0)
+\item 
+void \mbox{\hyperlink{classMockCityUnit_a8064c9ca1a4cadff15992076ce6d3ead}{add}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$new\+Unit) override
+\begin{DoxyCompactList}\small\item\em Adds a new city unit to this unit (pure virtual function). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockCityUnit_af28dea612bdbffbe8807f5ab836cdb55}{remove}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$unit) override
+\begin{DoxyCompactList}\small\item\em Removes a city unit from this unit (pure virtual function). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMockCityUnit_aa27c45ea508c0cd95792699d263881ca}{calculate\+Distance\+To}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$destination) override
+\begin{DoxyCompactList}\small\item\em Calculates the distance to another city unit (pure virtual function). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMockCityUnit_a0b1f850fd609d5a63130a29160ae7269}{get\+Remaining\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the remaining capacity of the city unit (pure virtual function). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMockCityUnit_a6b761ec6aebb02c2d34a17cb8218d9fb}{get\+Used\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the used capacity of the city unit (pure virtual function). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMockCityUnit_a9fc80ffd2363e7c98d949831bb027760}\label{classMockCityUnit_a9fc80ffd2363e7c98d949831bb027760}} 
+void \mbox{\hyperlink{classMockCityUnit_a9fc80ffd2363e7c98d949831bb027760}{update}} () override
+\begin{DoxyCompactList}\small\item\em Updates the state or status of the city unit (pure virtual function). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMockCityUnit_ace7ac746653edc7c75b741918b38c8c6}\label{classMockCityUnit_ace7ac746653edc7c75b741918b38c8c6}} 
+void \mbox{\hyperlink{classMockCityUnit_ace7ac746653edc7c75b741918b38c8c6}{evaluate\+Traffic\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Evaluates traffic conditions around the city unit (pure virtual function). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}} $\ast$ \mbox{\hyperlink{classMockCityUnit_a7104e95a97fa9b3a7ad1aa7a602f87c2}{create\+Iterator}} () override
+\begin{DoxyCompactList}\small\item\em Creates an iterator for the city unit (pure virtual function). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMockCityUnit_a0baa76cf08f7c5f656019e531bf9dc81}{get\+Employment\+Rate}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the employment rate of the residents (pure virtual function). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMockCityUnit_a6d29f827fadad0737fb8690786667e83}\label{classMockCityUnit_a6d29f827fadad0737fb8690786667e83}} 
+void \mbox{\hyperlink{classMockCityUnit_a6d29f827fadad0737fb8690786667e83}{employ\+Residents}} () override
+\begin{DoxyCompactList}\small\item\em Employs residents of the city unit (pure virtual function). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMockCityUnit_a9291ba6af64d75d6736e9480399d3d26}\label{classMockCityUnit_a9291ba6af64d75d6736e9480399d3d26}} 
+void \mbox{\hyperlink{classMockCityUnit_a9291ba6af64d75d6736e9480399d3d26}{party\+Residents}} () override
+\begin{DoxyCompactList}\small\item\em Organizes a party for the residents of the city unit (pure virtual function). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMockCityUnit_abd91127e963c22143c1a83466db46481}\label{classMockCityUnit_abd91127e963c22143c1a83466db46481}} 
+void {\bfseries set\+Tax\+Rate} (double amount)
+\item 
+double \mbox{\hyperlink{classMockCityUnit_a9a9ebded776b01d0fb261fe4046f9629}{pay\+Taxes}} () override
+\begin{DoxyCompactList}\small\item\em Collects taxes from residents (pure virtual function). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMockCityUnit_a11c4ff3cdbf24bbe3b256755a0a7d0b8}{evaluate\+Happiness}} () override
+\begin{DoxyCompactList}\small\item\em Evaluates the happiness of the residents (pure virtual function). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMockCityUnit_acd50a34a094cb1093d210c09dbd02111}{count\+Citizens}} () override
+\begin{DoxyCompactList}\small\item\em Counts the number of citizens residing in the city unit (pure virtual function). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockCityUnit_a5002d1b1f42782e81608569854dc158b}{update\+Education\+Multiplier}} (float mult)
+\begin{DoxyCompactList}\small\item\em Updates the education multiplier for the city unit (pure virtual function). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMockCityUnit_aa2643a3dbed8533e4f391fbb8b1f2d34}{update\+Week\+Multiplier}} (float mult)
+\begin{DoxyCompactList}\small\item\em Updates the weekly multiplier for the city unit (pure virtual function). \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classMockCityUnit_ab1c9440491b6d505603f0fdda9e3c620}{collect\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Collects resources from the city unit (pure virtual function). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classCitizen}{Citizen}} $\ast$ $>$ \& \mbox{\hyperlink{classMockCityUnit_ac96a22642ad3a949247289a6445bee5b}{get\+Residents}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves a list of residents living in this city unit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMockCityUnit_ad82484bb98e2a58a6f4f3a5623b170ee}\label{classMockCityUnit_ad82484bb98e2a58a6f4f3a5623b170ee}} 
+void {\bfseries add\+Mock\+Resident} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$citizen)
+\item 
+nlohmann\+::json \mbox{\hyperlink{classMockCityUnit_a24e01665c8affafd7ab20d8e910b8eba}{get\+JSONrepresentation}} ()
+\begin{DoxyCompactList}\small\item\em Gets the JSON representation of the city unit (pure virtual function). \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classMockCityUnit_ac9cfd8d443ca08429c61046f73bc2f38}{collect\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Collects utility usage data from the city unit (pure virtual function). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMockCityUnit_aca223bf84272aa43d191d2f406d1d968}\label{classMockCityUnit_aca223bf84272aa43d191d2f406d1d968}} 
+int {\bfseries id}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMockCityUnit_a8064c9ca1a4cadff15992076ce6d3ead}\label{classMockCityUnit_a8064c9ca1a4cadff15992076ce6d3ead}} 
+\index{MockCityUnit@{MockCityUnit}!add@{add}}
+\index{add@{add}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Mock\+City\+Unit\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{new\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a new city unit to this unit (pure virtual function). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Unit} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a645ddfee1aecddd38dadc3ad23521262}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_aa27c45ea508c0cd95792699d263881ca}\label{classMockCityUnit_aa27c45ea508c0cd95792699d263881ca}} 
+\index{MockCityUnit@{MockCityUnit}!calculateDistanceTo@{calculateDistanceTo}}
+\index{calculateDistanceTo@{calculateDistanceTo}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{calculateDistanceTo()}{calculateDistanceTo()}}
+{\footnotesize\ttfamily int Mock\+City\+Unit\+::calculate\+Distance\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the distance to another city unit (pure virtual function). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em destination} & Pointer to the destination \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the destination. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a9461ce479d5562148039b01d7f49cff1}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_ab1c9440491b6d505603f0fdda9e3c620}\label{classMockCityUnit_ab1c9440491b6d505603f0fdda9e3c620}} 
+\index{MockCityUnit@{MockCityUnit}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$ Mock\+City\+Unit\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+A map of resource names and their respective quantities. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_ac697574ac6ba26fecae0cb02f7f6ebc7}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_ac9cfd8d443ca08429c61046f73bc2f38}\label{classMockCityUnit_ac9cfd8d443ca08429c61046f73bc2f38}} 
+\index{MockCityUnit@{MockCityUnit}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$ Mock\+City\+Unit\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility usage data from the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+A map of utility types and their respective usage as doubles. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a9e6a8cb8990a66fb18d78d9b79ce59ac}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_acd50a34a094cb1093d210c09dbd02111}\label{classMockCityUnit_acd50a34a094cb1093d210c09dbd02111}} 
+\index{MockCityUnit@{MockCityUnit}!countCitizens@{countCitizens}}
+\index{countCitizens@{countCitizens}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{countCitizens()}{countCitizens()}}
+{\footnotesize\ttfamily int Mock\+City\+Unit\+::count\+Citizens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Counts the number of citizens residing in the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+The number of citizens. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a080ffc816ee587ec7c3049c90c8f5ead}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a7104e95a97fa9b3a7ad1aa7a602f87c2}\label{classMockCityUnit_a7104e95a97fa9b3a7ad1aa7a602f87c2}} 
+\index{MockCityUnit@{MockCityUnit}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIterator}{Iterator}}$\ast$ Mock\+City\+Unit\+::create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates an iterator for the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classIterator}{Iterator}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a3d533726d9453d1f6da1b63bc4dc2d9b}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a11c4ff3cdbf24bbe3b256755a0a7d0b8}\label{classMockCityUnit_a11c4ff3cdbf24bbe3b256755a0a7d0b8}} 
+\index{MockCityUnit@{MockCityUnit}!evaluateHappiness@{evaluateHappiness}}
+\index{evaluateHappiness@{evaluateHappiness}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{evaluateHappiness()}{evaluateHappiness()}}
+{\footnotesize\ttfamily int Mock\+City\+Unit\+::evaluate\+Happiness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates the happiness of the residents (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+The average happiness score of the residents. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_ab1f90399ee30fe38decda436deaa013f}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a0baa76cf08f7c5f656019e531bf9dc81}\label{classMockCityUnit_a0baa76cf08f7c5f656019e531bf9dc81}} 
+\index{MockCityUnit@{MockCityUnit}!getEmploymentRate@{getEmploymentRate}}
+\index{getEmploymentRate@{getEmploymentRate}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{getEmploymentRate()}{getEmploymentRate()}}
+{\footnotesize\ttfamily double Mock\+City\+Unit\+::get\+Employment\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the employment rate of the residents (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+The employment rate as a double. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a70942ef15dc7f96ab833fb6ea88450bf}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a24e01665c8affafd7ab20d8e910b8eba}\label{classMockCityUnit_a24e01665c8affafd7ab20d8e910b8eba}} 
+\index{MockCityUnit@{MockCityUnit}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Mock\+City\+Unit\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the JSON representation of the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+A nlohmann\+::json object representing the city unit. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a3417db4445685913b7ed5cc956165578}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a0b1f850fd609d5a63130a29160ae7269}\label{classMockCityUnit_a0b1f850fd609d5a63130a29160ae7269}} 
+\index{MockCityUnit@{MockCityUnit}!getRemainingCapacity@{getRemainingCapacity}}
+\index{getRemainingCapacity@{getRemainingCapacity}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{getRemainingCapacity()}{getRemainingCapacity()}}
+{\footnotesize\ttfamily int Mock\+City\+Unit\+::get\+Remaining\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the remaining capacity of the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+The remaining capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a57eff7c765ccaddb23ddc7b42da9fe98}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_ac96a22642ad3a949247289a6445bee5b}\label{classMockCityUnit_ac96a22642ad3a949247289a6445bee5b}} 
+\index{MockCityUnit@{MockCityUnit}!getResidents@{getResidents}}
+\index{getResidents@{getResidents}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{getResidents()}{getResidents()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classCitizen}{Citizen}}$\ast$$>$\& Mock\+City\+Unit\+::get\+Residents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves a list of residents living in this city unit. 
+
+\begin{DoxyReturn}{Returns}
+A reference to a vector containing pointers to the residents. 
+\end{DoxyReturn}
+$<$ An empty list for units without residents
+
+Reimplemented from \mbox{\hyperlink{classCityUnit_accd6dee1b526ef637754c48ec37241a5}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a6b761ec6aebb02c2d34a17cb8218d9fb}\label{classMockCityUnit_a6b761ec6aebb02c2d34a17cb8218d9fb}} 
+\index{MockCityUnit@{MockCityUnit}!getUsedCapacity@{getUsedCapacity}}
+\index{getUsedCapacity@{getUsedCapacity}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{getUsedCapacity()}{getUsedCapacity()}}
+{\footnotesize\ttfamily int Mock\+City\+Unit\+::get\+Used\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the used capacity of the city unit (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+The currently used capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_aa2fd03384b156895bb98e97265973279}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a9a9ebded776b01d0fb261fe4046f9629}\label{classMockCityUnit_a9a9ebded776b01d0fb261fe4046f9629}} 
+\index{MockCityUnit@{MockCityUnit}!payTaxes@{payTaxes}}
+\index{payTaxes@{payTaxes}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{payTaxes()}{payTaxes()}}
+{\footnotesize\ttfamily double Mock\+City\+Unit\+::pay\+Taxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects taxes from residents (pure virtual function). 
+
+\begin{DoxyReturn}{Returns}
+The total taxes collected as a double. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a7c074d4388baad910a6d7bb4676710bf}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_af28dea612bdbffbe8807f5ab836cdb55}\label{classMockCityUnit_af28dea612bdbffbe8807f5ab836cdb55}} 
+\index{MockCityUnit@{MockCityUnit}!remove@{remove}}
+\index{remove@{remove}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Mock\+City\+Unit\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes a city unit from this unit (pure virtual function). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_ad3def50c99276e1db26b494ba0cc3e4a}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_a5002d1b1f42782e81608569854dc158b}\label{classMockCityUnit_a5002d1b1f42782e81608569854dc158b}} 
+\index{MockCityUnit@{MockCityUnit}!updateEducationMultiplier@{updateEducationMultiplier}}
+\index{updateEducationMultiplier@{updateEducationMultiplier}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{updateEducationMultiplier()}{updateEducationMultiplier()}}
+{\footnotesize\ttfamily void Mock\+City\+Unit\+::update\+Education\+Multiplier (\begin{DoxyParamCaption}\item[{float}]{mult }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates the education multiplier for the city unit (pure virtual function). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mult} & The multiplier value to be applied. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_abbc78c2b65d0fd69e482d26ad4482030}{City\+Unit}}.
+
+\mbox{\Hypertarget{classMockCityUnit_aa2643a3dbed8533e4f391fbb8b1f2d34}\label{classMockCityUnit_aa2643a3dbed8533e4f391fbb8b1f2d34}} 
+\index{MockCityUnit@{MockCityUnit}!updateWeekMultiplier@{updateWeekMultiplier}}
+\index{updateWeekMultiplier@{updateWeekMultiplier}!MockCityUnit@{MockCityUnit}}
+\doxysubsubsection{\texorpdfstring{updateWeekMultiplier()}{updateWeekMultiplier()}}
+{\footnotesize\ttfamily void Mock\+City\+Unit\+::update\+Week\+Multiplier (\begin{DoxyParamCaption}\item[{float}]{mult }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates the weekly multiplier for the city unit (pure virtual function). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mult} & The multiplier value to be applied. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a613584620438225c1b99f0ba8379b8e8}{City\+Unit}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Unit\+Testing.\+cpp\end{DoxyCompactItemize}

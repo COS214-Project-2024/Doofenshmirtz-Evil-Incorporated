@@ -1,0 +1,96 @@
+\hypertarget{classPublicTransportStrategy}{}\doxysection{Public\+Transport\+Strategy Class Reference}
+\label{classPublicTransportStrategy}\index{PublicTransportStrategy@{PublicTransportStrategy}}
+
+
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for public transport-\/based travel.  
+
+
+
+
+{\ttfamily \#include $<$Public\+Transport\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Public\+Transport\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classPublicTransportStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Public\+Transport\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classPublicTransportStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPublicTransportStrategy_a5eebe164371d3e940a14821ea310410c}\label{classPublicTransportStrategy_a5eebe164371d3e940a14821ea310410c}} 
+\mbox{\hyperlink{classPublicTransportStrategy_a5eebe164371d3e940a14821ea310410c}{Public\+Transport\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPublicTransportStrategy}{Public\+Transport\+Strategy}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPublicTransportStrategy_a8f3c713626bf7d46c3016e573e142162}\label{classPublicTransportStrategy_a8f3c713626bf7d46c3016e573e142162}} 
+\mbox{\hyperlink{classPublicTransportStrategy_a8f3c713626bf7d46c3016e573e142162}{$\sim$\+Public\+Transport\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classPublicTransportStrategy}{Public\+Transport\+Strategy}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPublicTransportStrategy_a8260e76877b28ad1d00cdddda4bb9142}{get\+Travel\+Strategy\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the travel strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPublicTransportStrategy_aadb41590e1d5416db30f06ec8f827674}{handle\+Commute\+State}} ()
+\begin{DoxyCompactList}\small\item\em Handles the state of the commute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for public transport-\/based travel. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPublicTransportStrategy_a8260e76877b28ad1d00cdddda4bb9142}\label{classPublicTransportStrategy_a8260e76877b28ad1d00cdddda4bb9142}} 
+\index{PublicTransportStrategy@{PublicTransportStrategy}!getTravelStrategyName@{getTravelStrategyName}}
+\index{getTravelStrategyName@{getTravelStrategyName}!PublicTransportStrategy@{PublicTransportStrategy}}
+\doxysubsubsection{\texorpdfstring{getTravelStrategyName()}{getTravelStrategyName()}}
+{\footnotesize\ttfamily std\+::string Public\+Transport\+Strategy\+::get\+Travel\+Strategy\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the travel strategy. 
+
+Returns the name of the travel strategy.
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the travel strategy.
+
+A string representing \char`\"{}\+Public\+Transport\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}{Commute\+Strategy}}.
+
+\mbox{\Hypertarget{classPublicTransportStrategy_aadb41590e1d5416db30f06ec8f827674}\label{classPublicTransportStrategy_aadb41590e1d5416db30f06ec8f827674}} 
+\index{PublicTransportStrategy@{PublicTransportStrategy}!handleCommuteState@{handleCommuteState}}
+\index{handleCommuteState@{handleCommuteState}!PublicTransportStrategy@{PublicTransportStrategy}}
+\doxysubsubsection{\texorpdfstring{handleCommuteState()}{handleCommuteState()}}
+{\footnotesize\ttfamily int Public\+Transport\+Strategy\+::handle\+Commute\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the state of the commute. 
+
+This function is responsible for processing and managing the current commute state within the system. It may include logic for evaluating traffic conditions, adjusting routes, or updating the status of commuters.
+
+\begin{DoxyReturn}{Returns}
+int The result of the commute state handling, which may indicate success or failure, or provide a specific status code relevant to the commute operation. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}{Commute\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PublicTransportStrategy_8h}{Public\+Transport\+Strategy.\+h}}\item 
+\mbox{\hyperlink{PublicTransportStrategy_8cpp}{Public\+Transport\+Strategy.\+cpp}}\end{DoxyCompactItemize}

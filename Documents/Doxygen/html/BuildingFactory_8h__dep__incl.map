@@ -1,0 +1,23 @@
+<map id="BuildingFactory.h" name="BuildingFactory.h">
+<area shape="rect" id="node1" title="Defines the BuildingFactory class for creating building objects." alt="" coords="790,5,922,32"/>
+<area shape="rect" id="node2" href="$BuildingFactory_8cpp.html" title="Implementation of the BuildingFactory class for building creation." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$CommercialFactory_8h.html" title="Defines the CommercialFactory class for creating commercial building objects." alt="" coords="177,80,335,107"/>
+<area shape="rect" id="node6" href="$IndustrialFactory_8h.html" title="Defines of the IndustrialFactory class for Industrial building creation." alt="" coords="359,80,499,107"/>
+<area shape="rect" id="node8" href="$LandmarkFactory_8h.html" title="Defines the LandmarkFactory class for creating Landmark building objects." alt="" coords="524,80,668,107"/>
+<area shape="rect" id="node10" href="$PowerPlantFactory_8h.html" title="Defines the PowerPlantFactory class for creating PowerPlant building objects." alt="" coords="692,80,844,107"/>
+<area shape="rect" id="node12" href="$ResidentialFactory_8h.html" title="Defines the ResidentialFactory class for creating Residential building objects." alt="" coords="868,80,1020,107"/>
+<area shape="rect" id="node14" href="$SewageSystemFactory_8h.html" title="Defines the SewageSystemFactory class for creating SewageSystemFactory objects." alt="" coords="1044,80,1223,107"/>
+<area shape="rect" id="node16" href="$SpendResources_8h.html" title="Declares the SpendResources class, which manages the spending of resources and construction of buildi..." alt="" coords="1247,80,1388,107"/>
+<area shape="rect" id="node18" href="$WasteSiteFactory_8h.html" title="Defines the WasteSiteFactory class for creating Waste building objects." alt="" coords="1412,80,1556,107"/>
+<area shape="rect" id="node20" href="$WaterPlantFactory_8h.html" title="Defines the WaterPlantFactory class for creating Water building objects." alt="" coords="1581,80,1731,107"/>
+<area shape="rect" id="node4" href="$CommercialFactory_8cpp.html" title="Implementation of the CommercialFactory class, responsible for creating commercial buildings." alt="" coords="28,155,201,181"/>
+<area shape="rect" id="node5" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="778,155,934,181"/>
+<area shape="rect" id="node7" href="$IndustrialFactory_8cpp.html" title="Implementation of the IndustrialFactory class for Industrial building creation." alt="" coords="225,155,380,181"/>
+<area shape="rect" id="node9" href="$LandmarkFactory_8cpp.html" title="Implements the LandmarkFactory class for creating Landmark building objects." alt="" coords="405,155,563,181"/>
+<area shape="rect" id="node11" href="$PowerPlantFactory_8cpp.html" title="Implements the PowerPlantFactory class for creating PowerPlant building objects." alt="" coords="587,155,754,181"/>
+<area shape="rect" id="node13" href="$ResidentialFactory_8cpp.html" title="Implements the ResidentialFactory class for creating Residential building objects." alt="" coords="958,155,1125,181"/>
+<area shape="rect" id="node15" href="$SewageSystemFactory_8cpp.html" title="Implements the SewageSystemFactory class for creating SewageSystemFactory objects." alt="" coords="1149,155,1344,181"/>
+<area shape="rect" id="node17" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="1368,155,1499,181"/>
+<area shape="rect" id="node19" href="$WasteSiteFactory_8cpp.html" title="Implements the WasteSiteFactory class for creating Waste building objects." alt="" coords="1523,155,1682,181"/>
+<area shape="rect" id="node21" href="$WaterPlantFactory_8cpp.html" title="Implements the WaterPlantFactory class for creating Water building objects." alt="" coords="1707,155,1872,181"/>
+</map>

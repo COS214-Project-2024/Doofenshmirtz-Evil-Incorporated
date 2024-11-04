@@ -1,0 +1,12 @@
+<map id="Server.h" name="Server.h">
+<area shape="rect" id="node1" title="Defines the Server class for Server objects. Handles creation/deletion of a local web server." alt="" coords="641,5,715,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="188,80,387,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="410,80,527,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="505,162,582,189"/>
+<area shape="rect" id="node6" title=" " alt="" coords="829,80,895,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="774,162,921,189"/>
+<area shape="rect" id="node8" title=" " alt="" coords="919,80,999,107"/>
+<area shape="rect" id="node9" href="$WebSocketNotifier_8h.html" title="Defines the WebSocketNotifier class." alt="" coords="602,80,754,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="607,155,749,196"/>
+</map>

@@ -1,0 +1,158 @@
+\hypertarget{classCitizenLocationState}{}\doxysection{Citizen\+Location\+State Class Reference}
+\label{classCitizenLocationState}\index{CitizenLocationState@{CitizenLocationState}}
+
+
+Abstract class representing a state for a \mbox{\hyperlink{classCitizen}{Citizen}}\textquotesingle{}s location.  
+
+
+
+
+{\ttfamily \#include $<$Citizen\+Location\+State.\+h$>$}
+
+
+
+Inheritance diagram for Citizen\+Location\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCitizenLocationState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Citizen\+Location\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classCitizenLocationState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizenLocationState_a001725c0550192f6f9e1fc5fe268b47f}{Citizen\+Location\+State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizenLocationState_acc1fcde6e3ef64bd83e6a6f32ab119f3}{choose\+Strategy}} (int travel\+Distance)
+\begin{DoxyCompactList}\small\item\em Chooses a commute strategy based on travel distance. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCitizenLocationState_abe3702d6884178f0dfc57b148491bd8e}{get\+Travel\+Method}} ()
+\begin{DoxyCompactList}\small\item\em Gets the travel method of the citizen. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCitizenLocationState_a49a39c29f5a4867f9d9af4aed8ddb9e2}{$\sim$\+Citizen\+Location\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCitizenLocationState_a80d1bab4e71ac7eb884a546b31dab648}{travel}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$citizen)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to handle travel behavior. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCitizenLocationState_a01bcc506c8cf02decfd9830207b68a9c}{get\+State\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to return a string representing the state name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCitizenLocationState_abde5129df24c812dc5a609ff6b0daf56}\label{classCitizenLocationState_abde5129df24c812dc5a609ff6b0daf56}} 
+\mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} $\ast$ \mbox{\hyperlink{classCitizenLocationState_abde5129df24c812dc5a609ff6b0daf56}{strategy}}
+\begin{DoxyCompactList}\small\item\em The strategy for determining commute behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a state for a \mbox{\hyperlink{classCitizen}{Citizen}}\textquotesingle{}s location. 
+
+This class defines the interface for different location states (e.\+g., \mbox{\hyperlink{classAtHomeState}{At\+Home\+State}}, \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}}, etc.) of a citizen in the simulation. The travel function is virtual and must be implemented by derived classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCitizenLocationState_a001725c0550192f6f9e1fc5fe268b47f}\label{classCitizenLocationState_a001725c0550192f6f9e1fc5fe268b47f}} 
+\index{CitizenLocationState@{CitizenLocationState}!CitizenLocationState@{CitizenLocationState}}
+\index{CitizenLocationState@{CitizenLocationState}!CitizenLocationState@{CitizenLocationState}}
+\doxysubsubsection{\texorpdfstring{CitizenLocationState()}{CitizenLocationState()}}
+{\footnotesize\ttfamily Citizen\+Location\+State\+::\+Citizen\+Location\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}}. 
+
+Initializes the \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} with default values. \mbox{\Hypertarget{classCitizenLocationState_a49a39c29f5a4867f9d9af4aed8ddb9e2}\label{classCitizenLocationState_a49a39c29f5a4867f9d9af4aed8ddb9e2}} 
+\index{CitizenLocationState@{CitizenLocationState}!````~CitizenLocationState@{$\sim$CitizenLocationState}}
+\index{````~CitizenLocationState@{$\sim$CitizenLocationState}!CitizenLocationState@{CitizenLocationState}}
+\doxysubsubsection{\texorpdfstring{$\sim$CitizenLocationState()}{~CitizenLocationState()}}
+{\footnotesize\ttfamily Citizen\+Location\+State\+::$\sim$\+Citizen\+Location\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}}. 
+
+Destructor for \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCitizenLocationState_acc1fcde6e3ef64bd83e6a6f32ab119f3}\label{classCitizenLocationState_acc1fcde6e3ef64bd83e6a6f32ab119f3}} 
+\index{CitizenLocationState@{CitizenLocationState}!chooseStrategy@{chooseStrategy}}
+\index{chooseStrategy@{chooseStrategy}!CitizenLocationState@{CitizenLocationState}}
+\doxysubsubsection{\texorpdfstring{chooseStrategy()}{chooseStrategy()}}
+{\footnotesize\ttfamily void Citizen\+Location\+State\+::choose\+Strategy (\begin{DoxyParamCaption}\item[{int}]{travel\+Distance }\end{DoxyParamCaption})}
+
+
+
+Chooses a commute strategy based on travel distance. 
+
+This function selects a commuting strategy for the citizen based on the distance they need to travel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em travel\+Distance} & The distance the citizen needs to travel.\\
+\hline
+{\em travel\+Distance} & The distance the citizen needs to travel. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizenLocationState_a01bcc506c8cf02decfd9830207b68a9c}\label{classCitizenLocationState_a01bcc506c8cf02decfd9830207b68a9c}} 
+\index{CitizenLocationState@{CitizenLocationState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!CitizenLocationState@{CitizenLocationState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily virtual std\+::string Citizen\+Location\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to return a string representing the state name. 
+
+This function is overridden by concrete location states to define what string is returned 
+
+Implemented in \mbox{\hyperlink{classAtWorkState_aad653d8e54dbe710644268ff5ffec76e}{At\+Work\+State}}, \mbox{\hyperlink{classAtLeisureState_a014fc92aceb16a829722f4a4d67ded4d}{At\+Leisure\+State}}, and \mbox{\hyperlink{classAtHomeState_a1bda6ae513c952d3fa2e00fb4e0ab076}{At\+Home\+State}}.
+
+\mbox{\Hypertarget{classCitizenLocationState_abe3702d6884178f0dfc57b148491bd8e}\label{classCitizenLocationState_abe3702d6884178f0dfc57b148491bd8e}} 
+\index{CitizenLocationState@{CitizenLocationState}!getTravelMethod@{getTravelMethod}}
+\index{getTravelMethod@{getTravelMethod}!CitizenLocationState@{CitizenLocationState}}
+\doxysubsubsection{\texorpdfstring{getTravelMethod()}{getTravelMethod()}}
+{\footnotesize\ttfamily std\+::string Citizen\+Location\+State\+::get\+Travel\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the travel method of the citizen. 
+
+This method returns a string that indicates the current method of travel that the citizen employs to move between locations (home, leisure, job).
+
+\begin{DoxyReturn}{Returns}
+A string representing the travel method (e.\+g., \char`\"{}walking\char`\"{}, \char`\"{}driving\char`\"{}). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizenLocationState_a80d1bab4e71ac7eb884a546b31dab648}\label{classCitizenLocationState_a80d1bab4e71ac7eb884a546b31dab648}} 
+\index{CitizenLocationState@{CitizenLocationState}!travel@{travel}}
+\index{travel@{travel}!CitizenLocationState@{CitizenLocationState}}
+\doxysubsubsection{\texorpdfstring{travel()}{travel()}}
+{\footnotesize\ttfamily virtual void Citizen\+Location\+State\+::travel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{citizen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to handle travel behavior. 
+
+This function is overridden by concrete location states to define how a citizen moves between locations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The citizen whose travel behavior is being defined. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classAtWorkState_a565b1ca5596a0432d6a1eeb443c8ef63}{At\+Work\+State}}, \mbox{\hyperlink{classAtLeisureState_acab6ceb349e9cbb82456d76dcb762b3d}{At\+Leisure\+State}}, and \mbox{\hyperlink{classAtHomeState_adb5222e1ceefda9e4489abfddb34e8bf}{At\+Home\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CitizenLocationState_8h}{Citizen\+Location\+State.\+h}}\item 
+\mbox{\hyperlink{CitizenLocationState_8cpp}{Citizen\+Location\+State.\+cpp}}\end{DoxyCompactItemize}

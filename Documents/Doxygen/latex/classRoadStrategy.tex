@@ -1,0 +1,96 @@
+\hypertarget{classRoadStrategy}{}\doxysection{Road\+Strategy Class Reference}
+\label{classRoadStrategy}\index{RoadStrategy@{RoadStrategy}}
+
+
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for road-\/based travel.  
+
+
+
+
+{\ttfamily \#include $<$Road\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Road\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classRoadStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Road\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classRoadStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRoadStrategy_a08b138049c2b40b309228c4db42124f1}\label{classRoadStrategy_a08b138049c2b40b309228c4db42124f1}} 
+\mbox{\hyperlink{classRoadStrategy_a08b138049c2b40b309228c4db42124f1}{Road\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classRoadStrategy}{Road\+Strategy}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRoadStrategy_a3744ce9bab1e85fc14833d9861ef6d1a}\label{classRoadStrategy_a3744ce9bab1e85fc14833d9861ef6d1a}} 
+\mbox{\hyperlink{classRoadStrategy_a3744ce9bab1e85fc14833d9861ef6d1a}{$\sim$\+Road\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classRoadStrategy}{Road\+Strategy}} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRoadStrategy_a8befe0db2ff58124788373c027dcac59}{get\+Travel\+Strategy\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the travel strategy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRoadStrategy_a9ccd4823b455ad45aa66f8be10bc87e0}{handle\+Commute\+State}} ()
+\begin{DoxyCompactList}\small\item\em Handles the state of the commute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A concrete implementation of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class for road-\/based travel. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoadStrategy_a8befe0db2ff58124788373c027dcac59}\label{classRoadStrategy_a8befe0db2ff58124788373c027dcac59}} 
+\index{RoadStrategy@{RoadStrategy}!getTravelStrategyName@{getTravelStrategyName}}
+\index{getTravelStrategyName@{getTravelStrategyName}!RoadStrategy@{RoadStrategy}}
+\doxysubsubsection{\texorpdfstring{getTravelStrategyName()}{getTravelStrategyName()}}
+{\footnotesize\ttfamily std\+::string Road\+Strategy\+::get\+Travel\+Strategy\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the travel strategy. 
+
+Returns the name of the travel strategy.
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the travel strategy.
+
+A string representing \char`\"{}\+Road\+Strategy\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}{Commute\+Strategy}}.
+
+\mbox{\Hypertarget{classRoadStrategy_a9ccd4823b455ad45aa66f8be10bc87e0}\label{classRoadStrategy_a9ccd4823b455ad45aa66f8be10bc87e0}} 
+\index{RoadStrategy@{RoadStrategy}!handleCommuteState@{handleCommuteState}}
+\index{handleCommuteState@{handleCommuteState}!RoadStrategy@{RoadStrategy}}
+\doxysubsubsection{\texorpdfstring{handleCommuteState()}{handleCommuteState()}}
+{\footnotesize\ttfamily int Road\+Strategy\+::handle\+Commute\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the state of the commute. 
+
+This function is responsible for processing and managing the current commute state within the system. It may include logic for evaluating traffic conditions, adjusting routes, or updating the status of commuters.
+
+\begin{DoxyReturn}{Returns}
+int The result of the commute state handling, which may indicate success or failure, or provide a specific status code relevant to the commute operation. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}{Commute\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RoadStrategy_8h}{Road\+Strategy.\+h}}\item 
+\mbox{\hyperlink{RoadStrategy_8cpp}{Road\+Strategy.\+cpp}}\end{DoxyCompactItemize}

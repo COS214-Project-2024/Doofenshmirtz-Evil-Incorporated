@@ -1,0 +1,101 @@
+\hypertarget{classImplementPolicy}{}\doxysection{Implement\+Policy Class Reference}
+\label{classImplementPolicy}\index{ImplementPolicy@{ImplementPolicy}}
+
+
+Abstract command to implement a policy in a \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Implement\+Policy.\+h$>$}
+
+
+
+Inheritance diagram for Implement\+Policy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classImplementPolicy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Implement\+Policy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classImplementPolicy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classImplementPolicy_a147b95e65a4bcdfe4c0df93c19a19a14}{Implement\+Policy}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district, int \&\mbox{\hyperlink{classImplementPolicy_a99feee4304fb5678754212944672eab3}{balance}})
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classImplementPolicy}{Implement\+Policy}} command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImplementPolicy_a3e81ecedf35c449dc3091c3818eb975d}\label{classImplementPolicy_a3e81ecedf35c449dc3091c3818eb975d}} 
+virtual \mbox{\hyperlink{classImplementPolicy_a3e81ecedf35c449dc3091c3818eb975d}{$\sim$\+Implement\+Policy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classImplementPolicy}{Implement\+Policy}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classImplementPolicy_ab85d6d5f1289b830f775f844415b4d0a}{execute\+Command}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the command to implement the policy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImplementPolicy_a99feee4304fb5678754212944672eab3}\label{classImplementPolicy_a99feee4304fb5678754212944672eab3}} 
+int \& \mbox{\hyperlink{classImplementPolicy_a99feee4304fb5678754212944672eab3}{balance}}
+\begin{DoxyCompactList}\small\item\em Reference to the balance that may be modified by the policy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract command to implement a policy in a \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This class serves as a base for specific policy implementation commands, holding a reference to the balance that can be affected by the policy. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classImplementPolicy_a147b95e65a4bcdfe4c0df93c19a19a14}\label{classImplementPolicy_a147b95e65a4bcdfe4c0df93c19a19a14}} 
+\index{ImplementPolicy@{ImplementPolicy}!ImplementPolicy@{ImplementPolicy}}
+\index{ImplementPolicy@{ImplementPolicy}!ImplementPolicy@{ImplementPolicy}}
+\doxysubsubsection{\texorpdfstring{ImplementPolicy()}{ImplementPolicy()}}
+{\footnotesize\ttfamily Implement\+Policy\+::\+Implement\+Policy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district,  }\item[{int \&}]{balance }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classImplementPolicy}{Implement\+Policy}} command. 
+
+Constructs an \mbox{\hyperlink{classImplementPolicy}{Implement\+Policy}} command with a specified balance reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} where the policy will be implemented. \\
+\hline
+{\em balance} & Reference to the balance to be modified. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classImplementPolicy_ab85d6d5f1289b830f775f844415b4d0a}\label{classImplementPolicy_ab85d6d5f1289b830f775f844415b4d0a}} 
+\index{ImplementPolicy@{ImplementPolicy}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!ImplementPolicy@{ImplementPolicy}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily virtual void Implement\+Policy\+::execute\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Executes the command to implement the policy. 
+
+This method is pure virtual and must be overridden in derived classes. 
+
+Implements \mbox{\hyperlink{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}{Government\+Command}}.
+
+
+
+Implemented in \mbox{\hyperlink{classShortWorkWeekPolicy_aa30eb0af94a724c7ff3c9953f7071a8f}{Short\+Work\+Week\+Policy}}, and \mbox{\hyperlink{classBetterEducationPolicy_aa0d6690dd97ccf3b23d78217eaee0dae}{Better\+Education\+Policy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ImplementPolicy_8h}{Implement\+Policy.\+h}}\item 
+\mbox{\hyperlink{ImplementPolicy_8cpp}{Implement\+Policy.\+cpp}}\end{DoxyCompactItemize}

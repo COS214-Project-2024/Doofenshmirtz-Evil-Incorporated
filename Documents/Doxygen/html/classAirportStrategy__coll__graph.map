@@ -1,0 +1,4 @@
+<map id="AirportStrategy" name="AirportStrategy">
+<area shape="rect" id="node1" title="A concrete implementation of the CommuteStrategy class for airport&#45;based travel." alt="" coords="15,80,137,107"/>
+<area shape="rect" id="node2" href="$classCommuteStrategy.html" title="Represents a strategy for commuting." alt="" coords="5,5,147,32"/>
+</map>

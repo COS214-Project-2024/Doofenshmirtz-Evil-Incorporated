@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classCitizenLocationState.html" title="Abstract class representing a state for a Citizen&#39;s location." alt="" coords="5,56,161,83"/>
+<area shape="rect" id="node2" href="$classAtHomeState.html" title="Concrete state representing a citizen&#39;s location when they are at home." alt="" coords="213,5,323,32"/>
+<area shape="rect" id="node3" href="$classAtLeisureState.html" title="Concrete state representing a citizen&#39;s location when they are at leisure." alt="" coords="209,56,327,83"/>
+<area shape="rect" id="node4" href="$classAtWorkState.html" title="Concrete state representing a citizen&#39;s location when they are at work." alt="" coords="217,107,319,133"/>
+</map>

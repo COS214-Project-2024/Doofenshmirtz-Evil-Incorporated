@@ -1,0 +1,537 @@
+\hypertarget{classDistrict}{}\doxysection{District Class Reference}
+\label{classDistrict}\index{District@{District}}
+
+
+A class that represents a district composed of multiple City\+Units.  
+
+
+
+
+{\ttfamily \#include $<$District.\+h$>$}
+
+
+
+Inheritance diagram for District\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classDistrict__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for District\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classDistrict__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDistrict_a819fb7d67d505fa81659754cfc6ed011}{District}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \mbox{\hyperlink{classDistrict}{District}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a5261923d9f140c48b228a652aacb39dc}{add}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$new\+Unit)
+\begin{DoxyCompactList}\small\item\em Adds a new \mbox{\hyperlink{classCityUnit}{City\+Unit}} to the district. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a490cbad4702906c5438526e40d5794aa}{remove}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em Removes a specified \mbox{\hyperlink{classCityUnit}{City\+Unit}} from the district. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDistrict_ae878a43356d47e0c4710bdfc9e552be2}{$\sim$\+District}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDistrict}{District}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a47776f32c99ce3bb657b6c48275f63eb}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates all City\+Units in the district. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_aab2b7532527a763a74dd9d08a6a45193}{employ\+Residents}} ()
+\begin{DoxyCompactList}\small\item\em Employs residents from residential units in commercial units with available jobs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a1c3b266f36481e7851fb8f06faa568da}{party\+Residents}} ()
+\begin{DoxyCompactList}\small\item\em Allows residents to relax at available landmark units. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIterator}{Iterator}} $\ast$ \mbox{\hyperlink{classDistrict_aa47853953e190884b494df4507c897c6}{create\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates an iterator for the district. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDistrict_aa99dc9b29410ec3e895dadaf240d51b3}{get\+Employment\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the average employment rate for the district. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDistrict_a5cfcd10666f0fb26b3f54d3f81386c0a}{pay\+Taxes}} ()
+\begin{DoxyCompactList}\small\item\em Collects taxes from all residents in the district. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDistrict_ab702567a8a659cef0723e4a4fb9e2a6c}{evaluate\+Happiness}} ()
+\begin{DoxyCompactList}\small\item\em Evaluates the average happiness level of the district. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDistrict_ae14e355c56dff3db1df951b92b20d6f0}{count\+Citizens}} ()
+\begin{DoxyCompactList}\small\item\em Counts the total number of citizens in all residential units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_ab393643c4f160732bba6fbf636bb130e}{set\+Tax\+Rate}} (double amount)
+\begin{DoxyCompactList}\small\item\em Sets the tax rate for the district. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDistrict_a2f8f5c180cda8a474415e932a13b8996}{calculate\+Distance\+To}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$other) override
+\begin{DoxyCompactList}\small\item\em Calculates the distance to another \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDistrict_a4b2e82af68e7befe8a18ae9d814dc904}{get\+Remaining\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the remaining capacity of the district. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDistrict_a67489081d18fb1b2f460378e40a09ec9}{get\+Used\+Capacity}} () override
+\begin{DoxyCompactList}\small\item\em Gets the used capacity of the district. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a7172afb68015913fae823212697b859a}{update\+Education\+Multiplier}} (float mult)
+\begin{DoxyCompactList}\small\item\em Updates the education policy multiplier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a6fda40013fb57021941923a6379e5e31}{update\+Week\+Multiplier}} (float mult)
+\begin{DoxyCompactList}\small\item\em Updates the short workweek policy multiplier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDistrict_a399c9df0c8ae810a731a8e517bea2ad5}{evaluate\+Traffic\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Evaluates the traffic conditions based on residents\textquotesingle{} travel strategies. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classDistrict_a7b06754255bc7c592994e9d661e574aa}{get\+JSONrepresentation}} ()
+\begin{DoxyCompactList}\small\item\em Generates a JSON representation of the district. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classDistrict_a21db9f184a2a55471bf3f22a1baeac20}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from all City\+Units within the district. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classDistrict_a583366debf8894108c127e55fe00695e}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utilities from all City\+Units within the district. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a district composed of multiple City\+Units. 
+
+Inherits from \mbox{\hyperlink{classCityUnit}{City\+Unit}} and manages a collection of nested city units. The class provides functionality for adding, removing, and managing City\+Units, as well as policy-\/based updates and resource collection. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDistrict_a819fb7d67d505fa81659754cfc6ed011}\label{classDistrict_a819fb7d67d505fa81659754cfc6ed011}} 
+\index{District@{District}!District@{District}}
+\index{District@{District}!District@{District}}
+\doxysubsubsection{\texorpdfstring{District()}{District()}}
+{\footnotesize\ttfamily District\+::\+District (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \mbox{\hyperlink{classDistrict}{District}} object. 
+
+Constructs a \mbox{\hyperlink{classDistrict}{District}} object. \mbox{\Hypertarget{classDistrict_ae878a43356d47e0c4710bdfc9e552be2}\label{classDistrict_ae878a43356d47e0c4710bdfc9e552be2}} 
+\index{District@{District}!````~District@{$\sim$District}}
+\index{````~District@{$\sim$District}!District@{District}}
+\doxysubsubsection{\texorpdfstring{$\sim$District()}{~District()}}
+{\footnotesize\ttfamily District\+::$\sim$\+District (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classDistrict}{District}} class. 
+
+Cleans up dynamically allocated City\+Units and clears the contained\+City\+Unit vector. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDistrict_a5261923d9f140c48b228a652aacb39dc}\label{classDistrict_a5261923d9f140c48b228a652aacb39dc}} 
+\index{District@{District}!add@{add}}
+\index{add@{add}!District@{District}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void District\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{new\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a new \mbox{\hyperlink{classCityUnit}{City\+Unit}} to the district. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Unit} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be added.\\
+\hline
+{\em new\+Unit} & The \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a645ddfee1aecddd38dadc3ad23521262}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a2f8f5c180cda8a474415e932a13b8996}\label{classDistrict_a2f8f5c180cda8a474415e932a13b8996}} 
+\index{District@{District}!calculateDistanceTo@{calculateDistanceTo}}
+\index{calculateDistanceTo@{calculateDistanceTo}!District@{District}}
+\doxysubsubsection{\texorpdfstring{calculateDistanceTo()}{calculateDistanceTo()}}
+{\footnotesize\ttfamily int District\+::calculate\+Distance\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the distance to another \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Calculates the distance from this \mbox{\hyperlink{classDistrict}{District}} to another \mbox{\hyperlink{classCityUnit}{City\+Unit}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Pointer to the other \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance as an integer. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is a placeholder implementation.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & A pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to calculate the distance to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer representing the distance to the other \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is a placeholder implementation that currently returns 0. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a9461ce479d5562148039b01d7f49cff1}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a21db9f184a2a55471bf3f22a1baeac20}\label{classDistrict_a21db9f184a2a55471bf3f22a1baeac20}} 
+\index{District@{District}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!District@{District}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ District\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from all City\+Units within the district. 
+
+Collects resources from all nested \mbox{\hyperlink{classCityUnit}{City\+Unit}} objects within the district.
+
+\begin{DoxyReturn}{Returns}
+A map of resource names to their respective quantities.
+\end{DoxyReturn}
+This method iterates through all \mbox{\hyperlink{classCityUnit}{City\+Unit}} objects contained in the district, retrieves their resources, and aggregates them into a single collection.
+
+\begin{DoxyReturn}{Returns}
+A map containing the aggregated resources, where the keys are resource names and the values are the total amounts of each resource. 
+\end{DoxyReturn}
+$<$ Collector for resources
+
+Implements \mbox{\hyperlink{classCityUnit_ac697574ac6ba26fecae0cb02f7f6ebc7}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a583366debf8894108c127e55fe00695e}\label{classDistrict_a583366debf8894108c127e55fe00695e}} 
+\index{District@{District}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!District@{District}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ District\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utilities from all City\+Units within the district. 
+
+Collects utility usage from all nested \mbox{\hyperlink{classCityUnit}{City\+Unit}} objects within the district.
+
+\begin{DoxyReturn}{Returns}
+A map of utility names to their respective quantities.
+\end{DoxyReturn}
+This method aggregates utility data from all contained \mbox{\hyperlink{classCityUnit}{City\+Unit}} objects, combining the utility usage into a comprehensive report for the entire district.
+
+\begin{DoxyReturn}{Returns}
+A map containing the aggregated utilities, where the keys are utility names and the values are the total usage of each utility. 
+\end{DoxyReturn}
+$<$ Collector for utilities
+
+Implements \mbox{\hyperlink{classCityUnit_a9e6a8cb8990a66fb18d78d9b79ce59ac}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_ae14e355c56dff3db1df951b92b20d6f0}\label{classDistrict_ae14e355c56dff3db1df951b92b20d6f0}} 
+\index{District@{District}!countCitizens@{countCitizens}}
+\index{countCitizens@{countCitizens}!District@{District}}
+\doxysubsubsection{\texorpdfstring{countCitizens()}{countCitizens()}}
+{\footnotesize\ttfamily int District\+::count\+Citizens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Counts the total number of citizens in all residential units. 
+
+Counts the total number of citizens in all residential units within the district.
+
+\begin{DoxyReturn}{Returns}
+The total number of citizens. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a080ffc816ee587ec7c3049c90c8f5ead}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_aa47853953e190884b494df4507c897c6}\label{classDistrict_aa47853953e190884b494df4507c897c6}} 
+\index{District@{District}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!District@{District}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIterator}{Iterator}} $\ast$ District\+::create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates an iterator for the district. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classIterator}{Iterator}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a3d533726d9453d1f6da1b63bc4dc2d9b}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_aab2b7532527a763a74dd9d08a6a45193}\label{classDistrict_aab2b7532527a763a74dd9d08a6a45193}} 
+\index{District@{District}!employResidents@{employResidents}}
+\index{employResidents@{employResidents}!District@{District}}
+\doxysubsubsection{\texorpdfstring{employResidents()}{employResidents()}}
+{\footnotesize\ttfamily void District\+::employ\+Residents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Employs residents from residential units in commercial units with available jobs. 
+
+Employs residents from residential units in available commercial units.
+
+Ensures residents without jobs are employed in commercial units with open slots. 
+
+Implements \mbox{\hyperlink{classCityUnit_ac039b61e7189e276b1fd344323a8e1c7}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_ab702567a8a659cef0723e4a4fb9e2a6c}\label{classDistrict_ab702567a8a659cef0723e4a4fb9e2a6c}} 
+\index{District@{District}!evaluateHappiness@{evaluateHappiness}}
+\index{evaluateHappiness@{evaluateHappiness}!District@{District}}
+\doxysubsubsection{\texorpdfstring{evaluateHappiness()}{evaluateHappiness()}}
+{\footnotesize\ttfamily int District\+::evaluate\+Happiness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluates the average happiness level of the district. 
+
+\begin{DoxyReturn}{Returns}
+The average happiness as an integer. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the total happiness is negative.\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+The average happiness as an integer. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if total happiness is negative. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classCityUnit_ab1f90399ee30fe38decda436deaa013f}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a399c9df0c8ae810a731a8e517bea2ad5}\label{classDistrict_a399c9df0c8ae810a731a8e517bea2ad5}} 
+\index{District@{District}!evaluateTrafficConditions@{evaluateTrafficConditions}}
+\index{evaluateTrafficConditions@{evaluateTrafficConditions}!District@{District}}
+\doxysubsubsection{\texorpdfstring{evaluateTrafficConditions()}{evaluateTrafficConditions()}}
+{\footnotesize\ttfamily void District\+::evaluate\+Traffic\+Conditions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluates the traffic conditions based on residents\textquotesingle{} travel strategies. 
+
+Evaluates traffic conditions based on residents\textquotesingle{} travel strategies. 
+
+Implements \mbox{\hyperlink{classCityUnit_a74b8bd50f6af1478653b3108139842cc}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_aa99dc9b29410ec3e895dadaf240d51b3}\label{classDistrict_aa99dc9b29410ec3e895dadaf240d51b3}} 
+\index{District@{District}!getEmploymentRate@{getEmploymentRate}}
+\index{getEmploymentRate@{getEmploymentRate}!District@{District}}
+\doxysubsubsection{\texorpdfstring{getEmploymentRate()}{getEmploymentRate()}}
+{\footnotesize\ttfamily double District\+::get\+Employment\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the average employment rate for the district. 
+
+\begin{DoxyReturn}{Returns}
+The average employment rate as a double. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a70942ef15dc7f96ab833fb6ea88450bf}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a7b06754255bc7c592994e9d661e574aa}\label{classDistrict_a7b06754255bc7c592994e9d661e574aa}} 
+\index{District@{District}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!District@{District}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json District\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generates a JSON representation of the district. 
+
+\begin{DoxyReturn}{Returns}
+A JSON object representing the district and its City\+Units.
+
+A JSON object representing the district. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a3417db4445685913b7ed5cc956165578}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a4b2e82af68e7befe8a18ae9d814dc904}\label{classDistrict_a4b2e82af68e7befe8a18ae9d814dc904}} 
+\index{District@{District}!getRemainingCapacity@{getRemainingCapacity}}
+\index{getRemainingCapacity@{getRemainingCapacity}!District@{District}}
+\doxysubsubsection{\texorpdfstring{getRemainingCapacity()}{getRemainingCapacity()}}
+{\footnotesize\ttfamily int District\+::get\+Remaining\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the remaining capacity of the district. 
+
+\begin{DoxyReturn}{Returns}
+The remaining capacity as an integer. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is a placeholder implementation. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a57eff7c765ccaddb23ddc7b42da9fe98}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a67489081d18fb1b2f460378e40a09ec9}\label{classDistrict_a67489081d18fb1b2f460378e40a09ec9}} 
+\index{District@{District}!getUsedCapacity@{getUsedCapacity}}
+\index{getUsedCapacity@{getUsedCapacity}!District@{District}}
+\doxysubsubsection{\texorpdfstring{getUsedCapacity()}{getUsedCapacity()}}
+{\footnotesize\ttfamily int District\+::get\+Used\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the used capacity of the district. 
+
+\begin{DoxyReturn}{Returns}
+The used capacity as an integer. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This is a placeholder implementation. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classCityUnit_aa2fd03384b156895bb98e97265973279}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a1c3b266f36481e7851fb8f06faa568da}\label{classDistrict_a1c3b266f36481e7851fb8f06faa568da}} 
+\index{District@{District}!partyResidents@{partyResidents}}
+\index{partyResidents@{partyResidents}!District@{District}}
+\doxysubsubsection{\texorpdfstring{partyResidents()}{partyResidents()}}
+{\footnotesize\ttfamily void District\+::party\+Residents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Allows residents to relax at available landmark units. 
+
+Sends residents to available landmark units for leisure activities. 
+
+Implements \mbox{\hyperlink{classCityUnit_a0ae3de674106b174632952dcde5763ed}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a5cfcd10666f0fb26b3f54d3f81386c0a}\label{classDistrict_a5cfcd10666f0fb26b3f54d3f81386c0a}} 
+\index{District@{District}!payTaxes@{payTaxes}}
+\index{payTaxes@{payTaxes}!District@{District}}
+\doxysubsubsection{\texorpdfstring{payTaxes()}{payTaxes()}}
+{\footnotesize\ttfamily double District\+::pay\+Taxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collects taxes from all residents in the district. 
+
+Collects taxes from residents in the district.
+
+\begin{DoxyReturn}{Returns}
+The total amount of tax collected. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a7c074d4388baad910a6d7bb4676710bf}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a490cbad4702906c5438526e40d5794aa}\label{classDistrict_a490cbad4702906c5438526e40d5794aa}} 
+\index{District@{District}!remove@{remove}}
+\index{remove@{remove}!District@{District}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void District\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a specified \mbox{\hyperlink{classCityUnit}{City\+Unit}} from the district. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the unit is not found in the district.\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be removed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if the unit is not found in the district. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classCityUnit_ad3def50c99276e1db26b494ba0cc3e4a}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_ab393643c4f160732bba6fbf636bb130e}\label{classDistrict_ab393643c4f160732bba6fbf636bb130e}} 
+\index{District@{District}!setTaxRate@{setTaxRate}}
+\index{setTaxRate@{setTaxRate}!District@{District}}
+\doxysubsubsection{\texorpdfstring{setTaxRate()}{setTaxRate()}}
+{\footnotesize\ttfamily void District\+::set\+Tax\+Rate (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Sets the tax rate for the district. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The tax rate to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDistrict_a47776f32c99ce3bb657b6c48275f63eb}\label{classDistrict_a47776f32c99ce3bb657b6c48275f63eb}} 
+\index{District@{District}!update@{update}}
+\index{update@{update}!District@{District}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void District\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates all City\+Units in the district. 
+
+Updates all City\+Units within the district and employs residents.
+
+Also employs residents based on available employment slots. 
+
+Implements \mbox{\hyperlink{classCityUnit_a47f6cfe92cc08e4eee6ea46e789025f8}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a7172afb68015913fae823212697b859a}\label{classDistrict_a7172afb68015913fae823212697b859a}} 
+\index{District@{District}!updateEducationMultiplier@{updateEducationMultiplier}}
+\index{updateEducationMultiplier@{updateEducationMultiplier}!District@{District}}
+\doxysubsubsection{\texorpdfstring{updateEducationMultiplier()}{updateEducationMultiplier()}}
+{\footnotesize\ttfamily void District\+::update\+Education\+Multiplier (\begin{DoxyParamCaption}\item[{float}]{mult }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the education policy multiplier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mult} & The new multiplier value.\\
+\hline
+{\em mult} & The new multiplier for education policy. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_abbc78c2b65d0fd69e482d26ad4482030}{City\+Unit}}.
+
+\mbox{\Hypertarget{classDistrict_a6fda40013fb57021941923a6379e5e31}\label{classDistrict_a6fda40013fb57021941923a6379e5e31}} 
+\index{District@{District}!updateWeekMultiplier@{updateWeekMultiplier}}
+\index{updateWeekMultiplier@{updateWeekMultiplier}!District@{District}}
+\doxysubsubsection{\texorpdfstring{updateWeekMultiplier()}{updateWeekMultiplier()}}
+{\footnotesize\ttfamily void District\+::update\+Week\+Multiplier (\begin{DoxyParamCaption}\item[{float}]{mult }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the short workweek policy multiplier. 
+
+Updates the short week policy multiplier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mult} & The new multiplier value.\\
+\hline
+{\em mult} & The new multiplier for the short week policy. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCityUnit_a613584620438225c1b99f0ba8379b8e8}{City\+Unit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{District_8h}{District.\+h}}\item 
+\mbox{\hyperlink{District_8cpp}{District.\+cpp}}\end{DoxyCompactItemize}

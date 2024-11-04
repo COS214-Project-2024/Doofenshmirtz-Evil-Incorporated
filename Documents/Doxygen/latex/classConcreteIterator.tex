@@ -1,0 +1,164 @@
+\hypertarget{classConcreteIterator}{}\doxysection{Concrete\+Iterator Class Reference}
+\label{classConcreteIterator}\index{ConcreteIterator@{ConcreteIterator}}
+
+
+Concrete implementation of the \mbox{\hyperlink{classIterator}{Iterator}} for \mbox{\hyperlink{classCityUnit}{City\+Unit}} objects.  
+
+
+
+
+{\ttfamily \#include $<$Concrete\+Iterator.\+h$>$}
+
+
+
+Inheritance diagram for Concrete\+Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classConcreteIterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Concrete\+Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classConcreteIterator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConcreteIterator_a0175e54f8b3baa163f56ae52ea4c2e89}{Concrete\+Iterator}} (const std\+::vector$<$ \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ $>$ \&city\+Units\+Param)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classConcreteIterator}{Concrete\+Iterator}} with the given collection of City\+Units. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConcreteIterator_ab57274d3adba642b42ee49eaec881bcc}\label{classConcreteIterator_ab57274d3adba642b42ee49eaec881bcc}} 
+\mbox{\hyperlink{classConcreteIterator_ab57274d3adba642b42ee49eaec881bcc}{$\sim$\+Concrete\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classConcreteIterator}{Concrete\+Iterator}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteIterator_a303ad105e584fefef73dc79ad035b977}{first}} () override
+\begin{DoxyCompactList}\small\item\em Moves the iterator to the first \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteIterator_a2e56faff24d640be4890e8e5f0e2b884}{next}} () override
+\begin{DoxyCompactList}\small\item\em Advances the iterator to the next \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConcreteIterator_aff0950a37ecc623040783e44f1fd2245}{previous}} () override
+\begin{DoxyCompactList}\small\item\em Moves the iterator to the previous \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConcreteIterator_a1d036f3e19b2cdbfd059627303392163}{is\+Done}} () override
+\begin{DoxyCompactList}\small\item\em Checks if the iteration has reached the end of the collection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ \mbox{\hyperlink{classConcreteIterator_ac4919d1e719a9b1bc3c826e02be4e290}{current\+Item}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the current \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete implementation of the \mbox{\hyperlink{classIterator}{Iterator}} for \mbox{\hyperlink{classCityUnit}{City\+Unit}} objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConcreteIterator_a0175e54f8b3baa163f56ae52ea4c2e89}\label{classConcreteIterator_a0175e54f8b3baa163f56ae52ea4c2e89}} 
+\index{ConcreteIterator@{ConcreteIterator}!ConcreteIterator@{ConcreteIterator}}
+\index{ConcreteIterator@{ConcreteIterator}!ConcreteIterator@{ConcreteIterator}}
+\doxysubsubsection{\texorpdfstring{ConcreteIterator()}{ConcreteIterator()}}
+{\footnotesize\ttfamily Concrete\+Iterator\+::\+Concrete\+Iterator (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ $>$ \&}]{city\+Units\+Param }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classConcreteIterator}{Concrete\+Iterator}} with the given collection of City\+Units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Units\+Param} & The collection of \mbox{\hyperlink{classCityUnit}{City\+Unit}} pointers to iterate over. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConcreteIterator_ac4919d1e719a9b1bc3c826e02be4e290}\label{classConcreteIterator_ac4919d1e719a9b1bc3c826e02be4e290}} 
+\index{ConcreteIterator@{ConcreteIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!ConcreteIterator@{ConcreteIterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ Concrete\+Iterator\+::current\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the current \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current \mbox{\hyperlink{classCityUnit}{City\+Unit}}, or nullptr if iteration is done.
+
+Pointer to the current \mbox{\hyperlink{classCityUnit}{City\+Unit}}, or nullptr if the iteration is done.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The check {\ttfamily index $<$ 0} is unnecessary since {\ttfamily index} is of type {\ttfamily size\+\_\+t} (unsigned). 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classIterator_a9193f6489015201164cf511c56f28ea9}{Iterator}}.
+
+\mbox{\Hypertarget{classConcreteIterator_a303ad105e584fefef73dc79ad035b977}\label{classConcreteIterator_a303ad105e584fefef73dc79ad035b977}} 
+\index{ConcreteIterator@{ConcreteIterator}!first@{first}}
+\index{first@{first}!ConcreteIterator@{ConcreteIterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily void Concrete\+Iterator\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Moves the iterator to the first \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Moves the iterator to the first \mbox{\hyperlink{classCityUnit}{City\+Unit}} in the collection. 
+
+Implements \mbox{\hyperlink{classIterator_aad56ef26673ea3c74b7ac964f24b8ef5}{Iterator}}.
+
+\mbox{\Hypertarget{classConcreteIterator_a1d036f3e19b2cdbfd059627303392163}\label{classConcreteIterator_a1d036f3e19b2cdbfd059627303392163}} 
+\index{ConcreteIterator@{ConcreteIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!ConcreteIterator@{ConcreteIterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool Concrete\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the iteration has reached the end of the collection. 
+
+Checks if the iteration has completed.
+
+\begin{DoxyReturn}{Returns}
+True if all City\+Units have been iterated over, false otherwise.
+
+True if the iterator has reached or surpassed the end of the collection, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_ac3f6409895d4701123a91ca528d61565}{Iterator}}.
+
+\mbox{\Hypertarget{classConcreteIterator_a2e56faff24d640be4890e8e5f0e2b884}\label{classConcreteIterator_a2e56faff24d640be4890e8e5f0e2b884}} 
+\index{ConcreteIterator@{ConcreteIterator}!next@{next}}
+\index{next@{next}!ConcreteIterator@{ConcreteIterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily void Concrete\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Advances the iterator to the next \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Advances the iterator to the next \mbox{\hyperlink{classCityUnit}{City\+Unit}}. If the iterator is already at the end, it remains unchanged. 
+
+Implements \mbox{\hyperlink{classIterator_ac639e96c519e2e78cff17bee372ad750}{Iterator}}.
+
+\mbox{\Hypertarget{classConcreteIterator_aff0950a37ecc623040783e44f1fd2245}\label{classConcreteIterator_aff0950a37ecc623040783e44f1fd2245}} 
+\index{ConcreteIterator@{ConcreteIterator}!previous@{previous}}
+\index{previous@{previous}!ConcreteIterator@{ConcreteIterator}}
+\doxysubsubsection{\texorpdfstring{previous()}{previous()}}
+{\footnotesize\ttfamily void Concrete\+Iterator\+::previous (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Moves the iterator to the previous \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Moves the iterator to the previous \mbox{\hyperlink{classCityUnit}{City\+Unit}}. If the iterator is already at the beginning, it remains unchanged. 
+
+Implements \mbox{\hyperlink{classIterator_aefb33dcc9c2f5a5b7346f46d779b1ede}{Iterator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ConcreteIterator_8h}{Concrete\+Iterator.\+h}}\item 
+\mbox{\hyperlink{ConcreteIterator_8cpp}{Concrete\+Iterator.\+cpp}}\end{DoxyCompactItemize}
