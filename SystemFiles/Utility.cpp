@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #include "Utility.h"
 
 // Note: This currently calls the parent constructor with a set number. Whoever is implementing this, it should be a random number [10,100]

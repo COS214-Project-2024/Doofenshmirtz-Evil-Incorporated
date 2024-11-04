@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #ifndef ATLEISURESTATE_H
 #define ATLEISURESTATE_H
 

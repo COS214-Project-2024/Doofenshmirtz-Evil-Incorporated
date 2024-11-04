@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #ifndef SEWAGE_H
 #define SEWAGE_H
 

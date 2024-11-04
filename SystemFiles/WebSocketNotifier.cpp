@@ -1,3 +1,8 @@
+/**
+ * @file WebSocketNotifier.h
+ * @brief Implements the WebSocketNotifier class.
+ */
+
 #include "WebSocketNotifier.h"
 
 /**

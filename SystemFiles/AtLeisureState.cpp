@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #include "AtLeisureState.h"
 #include "Citizen.h"
 #include "CityUnit.h"

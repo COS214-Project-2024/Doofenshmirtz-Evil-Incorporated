@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #include "Waste.h"
 
 Waste::Waste(int totalCap, int usedCap) : Utility(totalCap, usedCap)

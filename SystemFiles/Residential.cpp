@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #include "Residential.h"
 #include "WebSocketNotifier.h"
 #include <iostream>

@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #include "Water.h"
 
 Water::Water(int totalCap, int usedCap) : Utility(totalCap, usedCap)

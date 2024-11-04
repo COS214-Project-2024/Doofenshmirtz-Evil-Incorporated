@@ -1,3 +1,8 @@
+/**
+ * @file WebSocketNotifier.h
+ * @brief Defines the WebSocketNotifier class.
+ */
+
 #ifndef WEBSOCKETNOTIFIER_H
 #define WEBSOCKETNOTIFIER_H
 
@@ -56,7 +61,13 @@ public:
 	void setServer(std::shared_ptr<Server> server);
 
 private:
-	std::shared_ptr<Server> server_; ///< Shared pointer to the WebSocket server instance
+	/**
+ * @brief A shared pointer to a Server object.
+ * 
+ * This member manages the lifetime of the Server instance, ensuring 
+ * that the Server object is properly deallocated when no longer needed.
+ */
+std::shared_ptr<Server> server_; ///< Shared pointer to the WebSocket server instance
 };
 
 #endif

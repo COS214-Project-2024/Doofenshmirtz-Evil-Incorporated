@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #ifndef SERVER_H
 #define SERVER_H
 
@@ -110,16 +115,92 @@ public:
 	void setTaxFlag(std::atomic<bool> *flag);
 
 private:
-	net::io_context io_context_;								///< IO context for asynchronous operations
-	tcp::acceptor acceptor_;									///< Acceptor for incoming TCP connections
-	std::shared_ptr<websocket::stream<tcp::socket>> ws_stream_; ///< WebSocket stream for the connected client
-	std::atomic<bool> running_;									///< Flag indicating if the server is running
-	std::atomic<bool> *startFlag_;								///< Pointer to external start flag
-	std::atomic<bool> *stopFlag_;								///< Pointer to external stop flag
-	std::mutex mutex_;											///< Mutex for thread-safe operations
-	std::atomic<bool> *EducationFlag_;							///< Pointer to external education flag
-	std::atomic<bool> *ShortWorkFlag_;							///< Pointer to external Short work flag
-	std::atomic<bool> *TaxFlag_;								///< Pointer to external Tax flag
+	/**
+	 * @brief IO context for managing asynchronous operations.
+	 * 
+	 * This object is used to initiate and manage asynchronous I/O operations 
+	 * in a networked environment, serving as the main event loop for 
+	 * handling asynchronous tasks.
+	 */
+	net::io_context io_context_; ///< IO context for managing asynchronous operations.
+
+	/**
+	 * @brief Acceptor for handling incoming TCP connections.
+	 * 
+	 * Used to listen for and accept incoming TCP connection requests.
+	 */
+	tcp::acceptor acceptor_; ///< Acceptor for incoming TCP connections
+
+	/**
+	 * @brief WebSocket stream for communicating with the connected client.
+	 * 
+	 * A shared pointer to a WebSocket stream object, which facilitates WebSocket
+	 * communication over a TCP socket.
+	 */
+	std::shared_ptr<websocket::stream<tcp::socket>> ws_stream_;  ///< WebSocket stream for the connected client
+
+	/**
+	 * @brief Flag indicating if the server is running.
+	 * 
+	 * An atomic boolean used to track the running state of the server
+	 * in a thread-safe manner.
+	 */
+	std::atomic<bool> running_; ///< Flag indicating if the server is running
+
+	/**
+	 * @brief Pointer to an external start flag.
+	 * 
+	 * Used to check or modify the start status of the server from
+	 * an external source.
+	 */
+	std::atomic<bool> *startFlag_; ///< Pointer to external start flag
+
+	/**
+	 * @brief Pointer to an external stop flag.
+	 * 
+	 * Used to check or modify the stop status of the server from
+	 * an external source.
+	 */
+	std::atomic<bool> *stopFlag_; ///< Pointer to external stop flag
+
+	/**
+	 * @brief Mutex for ensuring thread-safe operations.
+	 * 
+	 * Used to lock critical sections of the code to prevent
+	 * data races and ensure thread safety.
+	 */
+	std::mutex mutex_; ///< Mutex for thread-safe operations
+
+	/**
+	 * @brief Pointer to an external education flag.
+	 * 
+	 * Represents an atomic boolean flag related to education, 
+	 * managed from an external source.
+	 */
+	std::atomic<bool> *EducationFlag_; ///< Pointer to external education flag
+
+	/**
+	 * @brief Pointer to an external short work flag.
+	 * 
+	 * Represents an atomic boolean flag related to short work, 
+	 * managed from an external source.
+	 */
+	std::atomic<bool> *ShortWorkFlag_; ///< Pointer to external Short work flag
+
+	/**
+	 * @brief Pointer to an external tax flag.
+	 * 
+	 * Represents an atomic boolean flag related to tax operations, 
+	 * managed from an external source.
+	 */
+	std::atomic<bool> *TaxFlag_; ///< Pointer to external Tax flag
+
+	/**
+	 * @brief Reference to the tax rate.
+	 * 
+	 * An integer reference representing the current tax rate, 
+	 * managed externally.
+	 */
 	int &taxRate_;
 };
 

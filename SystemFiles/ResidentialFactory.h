@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #ifndef RESIDENTIALFACTORY_H
 #define RESIDENTIALFACTORY_H
 

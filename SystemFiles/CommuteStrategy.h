@@ -1,3 +1,8 @@
+/**
+ * @file BuildingFactory.h
+ * @brief Defines the BuildingFactory class for creating building objects.
+ */
+
 #ifndef COMMUTESTRATEGY_H
 #define COMMUTESTRATEGY_H
 

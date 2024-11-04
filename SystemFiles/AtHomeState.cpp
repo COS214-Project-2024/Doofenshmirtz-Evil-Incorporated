@@ -1,3 +1,8 @@
+/**
+ * @file AtHomeState.h
+ * @brief Implements the AtHomeState class for creating building objects.
+ */
+
 #include "AtHomeState.h"
 #include "Citizen.h"
 #include "CityUnit.h"
