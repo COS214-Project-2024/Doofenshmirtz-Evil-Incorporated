@@ -169,10 +169,8 @@ When make run_demo is called:
 	  </td>
 	  <td align="center">
 	  	Factory <br> Moral support <br> Good ideas <br> Overall carry<br><br>
-
 		<a href="https://github.com/amJohnnyma">
-
-			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+	<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>
 	  <td>
