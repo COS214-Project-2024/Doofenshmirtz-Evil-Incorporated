@@ -11,7 +11,6 @@
 CitizenLocationState::CitizenLocationState() {
 
 	this->strategy = nullptr;
-	srand(time(0));  
 }
 
 

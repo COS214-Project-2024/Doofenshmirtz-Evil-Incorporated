@@ -40,7 +40,7 @@ SpendResources::SpendResources(
     this->IndustFact = new IndustrialFactory();
     this->ResedentialFact = new ResidentialFactory();
 
-
+    /*
     std::cout << "\n\n\nINFO\n:";
     std::cout << "EmploymentRate: " << employmentRate << "\n";
     std::cout << "balance: " << balance << "\n";
@@ -51,6 +51,7 @@ SpendResources::SpendResources(
         std::cout << util.first << " | " << util.second << "\n";
     }
     std::cout << "\n\n\n";
+    */
 }
 
 /**
@@ -83,13 +84,6 @@ void SpendResources::executeCommand() {
 
     // Identify the highest priority item to build
     int roulette[8] = {EmploymentPriority, citizenSatisfactionPriority, PowerPriority, WaterPriority, WastePriority, SewagePriority,ResidentialPriority,IndustrielPriority};
-    std::cout << "++++++++++++++++++++++++++++" << std::endl;
-    for (int i = 0; i < 8; i++)
-    {
-        std::cout << roulette[i] << " " ;
-    }
-    std::cout << "++++++++++++++++++++++++++++" << std::endl;
-
 
     int decisionVal = 0;
     int highNum = 999;

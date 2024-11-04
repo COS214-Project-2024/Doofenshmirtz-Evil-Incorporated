@@ -63,11 +63,14 @@ function updateValue(id, newValue) {
 
   // Update element text based on id
   switch (id.toLowerCase()) {
-    case "satisfaction":
     case "money":
     case "citizens":
       element.innerText = `${newValue}`;
       break;
+
+    case "satisfaction":
+          element.innerText = `${newValue}%`;
+          break;
 
     case "powerplant":
     case "waterplant":
@@ -233,29 +236,19 @@ function displayCityStructure(data) {
       tooltip.style("opacity", 0);
     });
 
-  leaf
+    leaf
     .append("rect")
-    .attr("fill", (d) => {
-      let parent = d.parent;
-      while (parent && parent.depth > 1) parent = parent.parent;
-      return color(parent.data.name);
-    })
+    .attr("fill", (d) => color(d.data.name))
     .attr("fill-opacity", 0.6)
     .attr("width", (d) => d.x1 - d.x0)
     .attr("height", (d) => d.y1 - d.y0);
-
-  const districts = svg
-    .selectAll("g.district")
-    .data(root.descendants().filter((d) => d.depth === 1))
-    .join("g")
-    .attr("transform", (d) => `translate(${d.x0},${d.y0})`);
-
-  districts
+  
+  leaf
     .append("text")
     .attr("x", (d) => (d.x1 - d.x0) / 2)
     .attr("y", (d) => (d.y1 - d.y0) / 2)
     .attr("text-anchor", "middle")
     .attr("fill", "black")
-    .attr("font-size", "14px")
+    .attr("font-size", "10px")
     .text((d) => d.data.name);
 }

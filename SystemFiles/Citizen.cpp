@@ -211,10 +211,33 @@ bool Citizen::relaxCitizen(CityUnit *stripclub)
 /**
  * @brief Used in district to collect tax
  * This method subtracts the tax amount from the bank account of the citizen
+ * Influences Happiness based on amount
  */
 void Citizen::takeTax(double amount)
-{
+{   
+    double ratioOfCitizenBalanceTaken = amount / bankBalance;
+
     this->bankBalance -= amount;
+
+    // For every 10 percent above 30% tax rate ==> decrease satisfaction by 10
+    if(ratioOfCitizenBalanceTaken >= 0.3)
+    {
+        int satisfactionDecrease = (ratioOfCitizenBalanceTaken * 100) - 30;
+
+        if(this->satisfactionScore - satisfactionDecrease < 0)
+        {
+            this->satisfactionScore = 0;
+        }
+        else
+        {
+            this->satisfactionScore -= satisfactionDecrease;
+        }
+
+    }
+
+
+
+
 }
 
 /**

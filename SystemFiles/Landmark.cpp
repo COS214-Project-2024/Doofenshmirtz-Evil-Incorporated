@@ -21,7 +21,8 @@ Landmark::~Landmark()
 
 void Landmark::update() {
 	for (auto person:resident){
-		person->updateSatisfaction("Visit landmark", 20);
+		std::cout << "Person satisfaction updated\n";
+		person->updateSatisfaction("+", 20);
 	}
 }
 

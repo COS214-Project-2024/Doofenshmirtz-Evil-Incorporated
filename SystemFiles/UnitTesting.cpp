@@ -488,6 +488,8 @@ TEST_CASE("District Tests") {
         CHECK_NOTHROW(district.remove(unit1));
         CHECK_NOTHROW(district.remove(unit2));
 
+        delete unit1; delete unit2;
+
         // Since District is managing memory, no manual deletion is necessary
     }
 
@@ -730,22 +732,22 @@ TEST_CASE("Command testing")
         utilities["SewageSystem"] = 0.4;
         int tempo = 500000;
         std::map<std::string, int> resources; 
-        // resources["Wood"] = 100;
-        // resources["Steel"] = 100;
-        // resources["Concrete"] = 100;
-        // resources["Bricks"] = 100;
-        //check values before command is executed
-        // CHECK(temp->getEmploymentRate() == 0.0);
-        // CHECK(resources["Wood"] == 100);
+        resources["Wood"] = 100;
+        resources["Steel"] = 100;
+        resources["Concrete"] = 100;
+        resources["Bricks"] = 100;
+        // check values before command is executed
+        CHECK(temp->getEmploymentRate() == 0.0);
+        CHECK(resources["Wood"] == 100);
 
-        // GovernmentCommand* CommercialSale = new SpendResources(temp,temp->getEmploymentRate(),resources,tempo,0.7,utilities);
-        // CommercialSale->executeCommand();
-        //check values after command is executed
+        GovernmentCommand* CommercialSale = new SpendResources(temp,temp->getEmploymentRate(),resources,tempo,0.7,utilities);
+        CommercialSale->executeCommand();
+        // check values after command is executed
 
-        // CHECK(resources["Wood"] == 50);
-        // CHECK(temp->getEmploymentRate() == 0.5);
-        // delete CommercialSale;
-        // std::cout << "==\n";
+        CHECK(resources["Wood"] == 50);
+        CHECK(temp->getEmploymentRate() == 1.0);
+        delete CommercialSale;
+        std::cout << "==\n";
         // Reset parameters
         tempo = 500000;
         resources["Wood"] = 100;
@@ -898,7 +900,7 @@ TEST_CASE("Command testing")
         IndustrialSale->executeCommand();
         //post checks
         CHECK(tempo == 100000);
-        delete ResidentialSale;
+        delete IndustrialSale;
     }
 
     SUBCASE("set tax")

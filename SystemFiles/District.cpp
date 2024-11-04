@@ -121,7 +121,10 @@ void District::employResidents()
 }
 
 void District::partyResidents()
-{
+{   
+
+    std::cout << "\n\n\npartyResident() called\n\n\n"; 
+
     std::vector<Landmark *> availableLandmarkUnits;
     for (auto unit : containedCityUnit)
     {
@@ -283,6 +286,11 @@ void District::setTaxRate(double amount)
     this->taxRate = amount;
 }
 
+int District::calculateDistanceTo(CityUnit *other)
+{
+    return 0;
+}
+
 void District::updateEducationMultiplier(float mult)
 {
     this->educationPolicyMultiplier = mult;
@@ -316,18 +324,22 @@ void District::evaluateTrafficConditions()
             {
                 std::string travelMethod = person->lastUsedStrategyName;
                 travelStrategyMap[travelMethod]++;
+                std::cout << "TRAVEL_METHOD: " << travelMethod << "\n";
             }
         }
     }
 
     // Take ratio of strategy used per citizen and send info to socket
     int totalCitizenCount = this->countCitizens();
+    std::cout << "\n\nTotal Citizens: " << totalCitizenCount << "\n\n\n";
 
     for (const auto &travelPair : travelStrategyMap)
-    {
-        double dblRatio = travelPair.second / totalCitizenCount;
-        int ratioPercentageInt = (int)(dblRatio * 100);
+    {   
+        std::cout << "\n\ntravelPair.second: " << travelPair.second << "\n";
+        double dblRatio = static_cast<double>(travelPair.second) / totalCitizenCount;
+        int ratioPercentageInt = static_cast<int>(dblRatio * 100);
 
+        
         nlohmann::json message = {
             {"type", "valueUpdate"},
             {"data", {{"id", helperMap[travelPair.first]}, {"value", std::to_string(ratioPercentageInt)}}}};

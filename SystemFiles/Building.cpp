@@ -14,7 +14,10 @@ Building::~Building()
 }
 
 int Building::calculateDistanceTo(CityUnit* destination) {
-	return 0;
+
+	int randomDistance = rand() % 30;
+	std::cout << "random: " << randomDistance << "\n";
+	return randomDistance;
 }
 
 int Building::getRemainingCapacity() {

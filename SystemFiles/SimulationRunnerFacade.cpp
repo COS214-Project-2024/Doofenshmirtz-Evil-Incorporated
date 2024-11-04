@@ -57,10 +57,9 @@ void SimulationRunnerFacade::runSimulation()
 		// Employ Citizens
 		myGov.findEmployment();
 		std::cout << "EMPLOYMENT RATE: " << myCity->getEmploymentRate() << std::endl;
+		
 		// Render city
-		std::cout << "Called renderCity()\n";
 		myGov.renderCity();
-		std::cout << "render city done\n";
 
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		// Update all city units
@@ -133,5 +132,6 @@ void SimulationRunnerFacade::runSimulation()
 			*TaxFlag_ = false;
 		}
 	}
+	myGov.detach(myCity);
 	delete myCity;
 }
