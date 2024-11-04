@@ -1,6 +1,6 @@
 /**
- * @file AtHomeState.h
- * @brief Implements the AtHomeState class for creating building objects.
+ * @file AtHomeState.cpp
+ * @brief Implements the AtHomeState class.
  */
 
 #include "AtHomeState.h"

@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file CitizenLocationState.cpp
+ * @brief Implements the CitizenLocationState class for creating objects and managing the state of a Citizen.
  */
 
 #include "CitizenLocationState.h"

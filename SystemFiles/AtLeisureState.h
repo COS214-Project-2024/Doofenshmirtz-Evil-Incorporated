@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file AtLeisureState.h
+ * @brief Defines the AtLeisureState class.
  */
 
 #ifndef ATLEISURESTATE_H
@@ -45,8 +45,13 @@ public:
 	void travel(Citizen* citizen);
 
 	/**
-     * @brief Returns "AtLeisureState"
-     */
+      * @brief Returns the name of the current state.
+      * 
+      * This function returns a string representing the name of the state,
+      * specifically "AtLeisureState".
+      * 
+      * @return A string indicating the name of the state.
+      */
 	std::string getStateName();
 };
 

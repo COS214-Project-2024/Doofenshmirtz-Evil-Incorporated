@@ -215,7 +215,7 @@ double District::payTaxes()
         if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
         {
             for (auto person : residentialUnit->getResidents())
-            { // Ensure `getResidents()` is correct
+            { // Ensure getResidents() is correct
                 double tax = (person->getBalance() * this->taxRate);
                 totalTax += (tax);
                 person->takeTax(tax); // Deduct tax from citizen’s balance
@@ -388,4 +388,3 @@ std::map<std::string, double> District::collectUtilities() {
 
     return allUtilities;
 }
-

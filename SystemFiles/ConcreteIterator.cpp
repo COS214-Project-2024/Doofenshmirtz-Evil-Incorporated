@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file ConcreteIterator.cpp
+ * @brief Implements the ConcreteIterator class for creating Iterator objects.
  */
 
 #include "ConcreteIterator.h"

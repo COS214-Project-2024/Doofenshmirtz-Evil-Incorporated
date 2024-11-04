@@ -1,8 +1,10 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Citizen.cpp
+ * @brief Implements the Citizen class for managing citizen objects in the city simulation.
+ *
+ * The Citizen class encapsulates the properties and behaviors of a citizen,
+ * including personal attributes, satisfaction, and job-related functionalities.
  */
-
 #include "Citizen.h"
 #include <random>
 #include <ctime>

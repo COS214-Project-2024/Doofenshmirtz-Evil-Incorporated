@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file AtLeisureState.cpp
+ * @brief Implements the AtLeisureState class.
  */
 
 #include "AtLeisureState.h"
