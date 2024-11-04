@@ -206,6 +206,18 @@ int SpendResources::utilPriority(double dk) {
     return value[bucket];
 }
 
+/**
+ * @brief Determines the priority of resources based on the provided resource map.
+ * 
+ * This method evaluates the given resources and assigns a priority level 
+ * based on predefined criteria. The higher the priority, the more critical 
+ * the resource is deemed for operations.
+ * 
+ * @param resources A map containing resource names as keys and their 
+ *                  corresponding quantities as values.
+ * @return An integer representing the priority level of the resources.
+ *         Lower values indicate higher priority.
+ */
 int SpendResources::resourcePriority(std::map<std::string, int> resources)
 {
     int temp =0;

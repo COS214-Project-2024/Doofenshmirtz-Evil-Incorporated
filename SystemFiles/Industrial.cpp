@@ -57,6 +57,11 @@ std::map<std::string, int> Industrial::collectResources()
     return resources;
 }
 
+/**
+ * @brief Returns utilities owned by the government.
+ * 
+ * @return A map containing the types and quantities of utilities.
+ */
 std::map<std::string, double> Industrial::collectUtilities()
 {
 	    return std::map<std::string, double>();
@@ -76,6 +81,15 @@ void Industrial::update() {
     }
 }
 
+/**
+ * @brief Generates a JSON representation of the Industrial building.
+ * 
+ * This function creates a JSON object containing the name of the building type
+ * and its total capacity. It is used for visual representation in the frontend.
+ * 
+ * @return nlohmann::json A JSON object representing the Industrial building 
+ * with its name and total capacity.
+ */
 nlohmann::json Industrial::getJSONrepresentation()
 {
     nlohmann::json building = {

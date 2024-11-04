@@ -19,11 +19,15 @@
 #include "District.h"
 
 // Intialize constants
-const double POWER_PER_CITIZEN = 0.2;
-const double WATER_PER_CITIZEN = 0.15;
-const double WASTE_PER_CITIZEN = 0.3;
-const double SEWAGE_PER_CITIZEN = 0.25;
+const double POWER_PER_CITIZEN = 0.2; /**< Power usage per citizen */
+const double WATER_PER_CITIZEN = 0.15; /**< Water usage per citizen */
+const double WASTE_PER_CITIZEN = 0.3; /**< Waste generation per citizen */
+const double SEWAGE_PER_CITIZEN = 0.25; /**< Sewage generation per citizen */
 
+/**
+     * @brief Constructs a Government instance with a specified balance.
+     * @param governmentBalance Initial balance for the government.
+     */
 Government::Government(int governmentBalance) {
 	this->governmentBalance = governmentBalance;
 
@@ -48,6 +52,9 @@ Government::Government(int governmentBalance) {
     utilities["SewageSystem"] = 0;
 }
 
+/**
+     * @brief Evaluates traffic conditions for all city units.
+     */
 void Government::evaluateTrafficConditions()
 {
 	for (CityUnit* unit : observerList) 
@@ -57,6 +64,9 @@ void Government::evaluateTrafficConditions()
 
 }
 
+/**
+     * @brief Evaluates the happiness of citizens in all city units.
+     */
 void Government::evaluateHappiness()
 {
 	for (CityUnit* unit : observerList) 
@@ -75,6 +85,9 @@ void Government::evaluateHappiness()
 
 }
 
+/**
+     * @brief Renders the city's visuals by updating the frontend with city unit representations.
+     */
 void Government::renderCity()
 {
 	for(CityUnit* unit : observerList)
@@ -88,6 +101,9 @@ void Government::renderCity()
 	}
 }
 
+/**
+     * @brief Destroys the Government instance, freeing allocated resources.
+     */
 Government::~Government()
 {
     for (auto it = observerList.begin(); it != observerList.end(); it++) {
@@ -98,6 +114,9 @@ Government::~Government()
 	}
 }
 
+/**
+     * @brief Collects taxes from all city units and updates the government balance.
+     */
 void Government::collectTaxes() {
 	for (CityUnit* unit : observerList) {
 		this->governmentBalance += unit->payTaxes();;
@@ -114,11 +133,18 @@ void Government::collectTaxes() {
 	WebSocketNotifier::get_mutable_instance().log(message);
 }
 
+/**
+     * @brief Attaches an observer (CityUnit) to the government for updates.
+     * @param myObserver Pointer to the CityUnit to be attached.
+     */
 void Government::attach(CityUnit * myObserver) {
 	observerList.push_back(myObserver);
 }
 
-
+ /**
+     * @brief Detaches an observer (CityUnit) from the government.
+     * @param myObserver Pointer to the CityUnit to be detached.
+     */
 void Government::detach(CityUnit* myObserver) {
 	for (auto it = observerList.begin(); it != observerList.end(); it++) {
 		if (*it == myObserver) {
@@ -128,13 +154,17 @@ void Government::detach(CityUnit* myObserver) {
 		}
 	}
 }
-
+/**
+     * @brief Notifies all attached city units to update their state.
+     */
 void Government::notify() {
 	for (CityUnit* unit : observerList) {
 		unit->update();
 	}
 }
-
+/**
+     * @brief Collects resources from all city units and updates the internal resource state.
+     */
 void Government::collectResources() {
 	for (CityUnit* unit : observerList) 
 	{
@@ -161,7 +191,9 @@ void Government::collectResources() {
     }
 }
 
-
+/**
+     * @brief Updates the utility usage based on citizen demands and available capacities.
+     */
 void Government::updateUtilitiesUsage() {
     // Track total demand
     std::map<std::string, double> totalDemand;
@@ -224,7 +256,9 @@ void Government::updateUtilitiesUsage() {
 }
 
 
-
+/**
+     * @brief Executes the Better Education policy for all city units.
+     */
 void Government::executeEductation(){
 
 	for(CityUnit* unit : this->observerList)
@@ -235,7 +269,9 @@ void Government::executeEductation(){
 	}
 
 }
-
+/**
+     * @brief Executes the Short Work Week policy for all city units.
+     */
 	void Government::executeShortWorkWeek()
 	{
 		for(CityUnit* unit : this->observerList)
@@ -246,7 +282,10 @@ void Government::executeEductation(){
 	}
 	}
 
-
+/**
+     * @brief Executes a new tax policy for all city units.
+     * @param tax The tax rate to be set.
+     */
 	void Government::executeNewTax(double tax)
 	{
 		for(CityUnit* unit : this->observerList)
@@ -256,7 +295,9 @@ void Government::executeEductation(){
         	delete taxPolicy;	
 		}
 	}
-
+ /**
+     * @brief Executes resource spending commands for all city units.
+     */
 	void Government::executeSpendResources(){
 
 		for(CityUnit* unit : this->observerList)
@@ -266,7 +307,9 @@ void Government::executeEductation(){
 			delete spendResourcesCommand;  // Clean up
 		}
 	}
-
+/**
+     * @brief Finds employment for residents in all city units.
+     */
     void Government::findEmployment()
     {
 		for(CityUnit* unit : this->observerList)
@@ -275,6 +318,10 @@ void Government::executeEductation(){
 		}
     }
 
+/**
+     * @brief Gets the current government balance.
+     * @return Current balance of the government.
+     */
 int Government::getGovernmentBalance() {
 	return this->governmentBalance;
 }

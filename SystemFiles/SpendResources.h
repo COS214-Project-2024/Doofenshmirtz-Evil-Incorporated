@@ -78,8 +78,31 @@ public:
      */
     int utilPriority(double dk);
 
+/**
+ * @brief Determines the priority of resources based on the provided resource map.
+ * 
+ * This method evaluates the given resources and assigns a priority level 
+ * based on predefined criteria. The higher the priority, the more critical 
+ * the resource is deemed for operations.
+ * 
+ * @param resources A map containing resource names as keys and their 
+ *                  corresponding quantities as values.
+ * @return An integer representing the priority level of the resources.
+ *         Lower values indicate higher priority.
+ */
     int resourcePriority(std::map<std::string, int> resources);
-
+/**
+ * @brief Calculates the priority of residential areas based on citizen satisfaction.
+ * 
+ * This method assesses the satisfaction level of residents and determines 
+ * the priority for residential developments or improvements. The priority 
+ * may influence resource allocation and urban planning decisions.
+ * 
+ * @param satisfaction A double value representing the average satisfaction 
+ *                     level of the residents, typically between 0.0 and 100.0.
+ * @return An integer representing the priority level for residential areas. 
+ *         Lower values indicate higher priority for attention or resources.
+ */
     int resedentialPriority(double satisfaction);
 
     /**

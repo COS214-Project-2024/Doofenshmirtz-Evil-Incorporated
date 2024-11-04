@@ -72,12 +72,19 @@ void Residential::update() {
 		person->followRoutine();
 	}
 }
-
+ /**
+     * @brief Collects resources from the residential building.
+     * @return A map containing the resources collected from the building.
+     */
 std::map<std::string, int> Residential::collectResources()
 {
     return std::map<std::string, int>();
 }
 
+    /**
+     * @brief Provides a JSON representation of the residential building.
+     * @return A JSON object representing the state of the building.
+     */
 nlohmann::json Residential::getJSONrepresentation()
 {
     nlohmann::json building = {
@@ -88,6 +95,10 @@ nlohmann::json Residential::getJSONrepresentation()
     return building;
 }
 
+/**
+     * @brief Collects utility data from the residential building.
+     * @return A map containing utility data collected from the building.
+     */
 std::map<std::string, double> Residential::collectUtilities()
 {
     return std::map<std::string, double>();
