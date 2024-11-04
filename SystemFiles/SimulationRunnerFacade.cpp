@@ -53,7 +53,7 @@ void SimulationRunnerFacade::runSimulation()
 	WebSocketNotifier::get_mutable_instance().log(message);
 
 	while (!(*stopFlag_))
-	{	
+	{
 
 		message = {
 			{"type", "news"},
@@ -64,11 +64,10 @@ void SimulationRunnerFacade::runSimulation()
 		myGov.findEmployment();
 		message = {
 			{"type", "news"},
-			{"data", "Employment Rate: " + std::to_string(static_cast<int>(std::trunc(myCity->getEmploymentRate() * 100))) + "%"}
-		};
+			{"data", "Employment Rate: " + std::to_string(static_cast<int>(std::trunc(myCity->getEmploymentRate() * 100))) + "%"}};
 		WebSocketNotifier::get_mutable_instance().log(message);
-		std::this_thread::sleep_for(std::chrono::seconds(1));			
-		
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+
 		// Render city
 		myGov.renderCity();
 
@@ -94,7 +93,6 @@ void SimulationRunnerFacade::runSimulation()
 			{"data", "Updated Utilities usage!"}};
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 
-
 		// Evaulate Traffic condtions
 		myGov.evaluateTrafficConditions();
 		message = {
@@ -109,6 +107,7 @@ void SimulationRunnerFacade::runSimulation()
 			{"type", "news"},
 			{"data", "City happiness evaluated!"}};
 		WebSocketNotifier::get_mutable_instance().log(message);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 
 		myGov.executeSpendResources();
 
@@ -116,29 +115,28 @@ void SimulationRunnerFacade::runSimulation()
 		{
 			myGov.executeEductation();
 			message = {
-			{"type", "news"},
-			{"data", "Education Policy is active🎓"}};
+				{"type", "news"},
+				{"data", "Education Policy is active🎓"}};
 			WebSocketNotifier::get_mutable_instance().log(message);
 		}
 		if (*ShortWorkFlag_)
 		{
 			myGov.executeShortWorkWeek();
 			message = {
-			{"type", "news"},
-			{"data", "Short Work Week Policy is active🎉"}};
+				{"type", "news"},
+				{"data", "Short Work Week Policy is active🎉"}};
 			WebSocketNotifier::get_mutable_instance().log(message);
 		}
 		if (*TaxFlag_)
 		{
 			double taxRateDouble = static_cast<double>(taxRate_);
-			myGov.executeNewTax(taxRateDouble/100);
+			myGov.executeNewTax(taxRateDouble / 100);
 			message = {
-                {"type", "news"},
-                {"data", "Tax rate updated💸"}};
-            WebSocketNotifier::get_mutable_instance().log(message);
+				{"type", "news"},
+				{"data", "Tax rate updated💸"}};
+			WebSocketNotifier::get_mutable_instance().log(message);
 			*TaxFlag_ = false;
 		}
 	}
 	myGov.detach(myCity);
-	delete myCity;
 }
