@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classGovernmentCommand.html" title="Base class for commands that can be executed on a CityUnit." alt="" coords="5,81,176,108"/>
+<area shape="rect" id="node2" href="$classAllocateBudget.html" title="A class that represents a command for allocating budgets to a CityUnit." alt="" coords="229,5,351,32"/>
+<area shape="rect" id="node3" href="$classImplementPolicy.html" title="Abstract command to implement a policy in a CityUnit." alt="" coords="224,56,356,83"/>
+<area shape="rect" id="node6" href="$classSetTax.html" title="Command to set the tax rate for a specific CityUnit." alt="" coords="257,107,323,133"/>
+<area shape="rect" id="node7" href="$classSpendResources.html" title="Command that controls resource spending and construction within a CityUnit." alt="" coords="225,157,355,184"/>
+<area shape="rect" id="node4" href="$classBetterEducationPolicy.html" title="Command to implement a better education policy in a CityUnit." alt="" coords="404,31,569,57"/>
+<area shape="rect" id="node5" href="$classShortWorkWeekPolicy.html" title="Command to implement a short workweek policy in a CityUnit." alt="" coords="405,81,569,108"/>
+</map>

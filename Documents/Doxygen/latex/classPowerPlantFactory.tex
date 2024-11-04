@@ -1,0 +1,147 @@
+\hypertarget{classPowerPlantFactory}{}\doxysection{Power\+Plant\+Factory Class Reference}
+\label{classPowerPlantFactory}\index{PowerPlantFactory@{PowerPlantFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classPower}{Power}} Plant buildings in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Power\+Plant\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Power\+Plant\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classPowerPlantFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Power\+Plant\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classPowerPlantFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPowerPlantFactory_aec8369f0502b62cca1d07782e7469484}{Power\+Plant\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPowerPlantFactory}{Power\+Plant\+Factory}} with predefined resource requirements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPowerPlantFactory_accb17b509f339739d1663fba540b2893}\label{classPowerPlantFactory_accb17b509f339739d1663fba540b2893}} 
+\mbox{\hyperlink{classPowerPlantFactory_accb17b509f339739d1663fba540b2893}{$\sim$\+Power\+Plant\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classPowerPlantFactory}{Power\+Plant\+Factory}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPowerPlantFactory_ad6cb7e72cd67b9c83092a7dd79213c5c}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost of constructing a \mbox{\hyperlink{classPower}{Power}} Plant building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classPowerPlantFactory_aabf5c35acfddf81ae75d07aae2a7fde3}{get\+Resource\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Provides the resource costs needed to build a \mbox{\hyperlink{classPower}{Power}} Plant building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classPowerPlantFactory_ac24f92a4ecb212e2ffb59b844da8b479}{factory\+Method}} () override
+\begin{DoxyCompactList}\small\item\em Factory method that creates a \mbox{\hyperlink{classPower}{Power}} Plant building instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classPower}{Power}} Plant buildings in the city simulation. 
+
+A factory class responsible for creating \mbox{\hyperlink{classPower}{Power}} Plant buildings.
+
+The \mbox{\hyperlink{classPowerPlantFactory}{Power\+Plant\+Factory}} class implements the factory method to create instances of the \mbox{\hyperlink{classPower}{Power}} Plant building type and provides resource cost details for building power plants.
+
+The \mbox{\hyperlink{classPowerPlantFactory}{Power\+Plant\+Factory}} class derives from \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} and provides the implementation details for creating a \mbox{\hyperlink{classPower}{Power}} Plant building, retrieving its construction cost, and specifying the resources required. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPowerPlantFactory_aec8369f0502b62cca1d07782e7469484}\label{classPowerPlantFactory_aec8369f0502b62cca1d07782e7469484}} 
+\index{PowerPlantFactory@{PowerPlantFactory}!PowerPlantFactory@{PowerPlantFactory}}
+\index{PowerPlantFactory@{PowerPlantFactory}!PowerPlantFactory@{PowerPlantFactory}}
+\doxysubsubsection{\texorpdfstring{PowerPlantFactory()}{PowerPlantFactory()}}
+{\footnotesize\ttfamily Power\+Plant\+Factory\+::\+Power\+Plant\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classPowerPlantFactory}{Power\+Plant\+Factory}} with predefined resource requirements. 
+
+Constructs a \mbox{\hyperlink{classPowerPlantFactory}{Power\+Plant\+Factory}} and initializes resource costs.
+
+Initializes the factory with the base cost and resource needs for constructing a \mbox{\hyperlink{classPower}{Power}} Plant building.
+
+Sets the base cost for a \mbox{\hyperlink{classPower}{Power}} Plant building and specifies resource requirements in terms of quantities for Wood, Steel, Concrete, and Brick. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPowerPlantFactory_ac24f92a4ecb212e2ffb59b844da8b479}\label{classPowerPlantFactory_ac24f92a4ecb212e2ffb59b844da8b479}} 
+\index{PowerPlantFactory@{PowerPlantFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!PowerPlantFactory@{PowerPlantFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Power\+Plant\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Factory method that creates a \mbox{\hyperlink{classPower}{Power}} Plant building instance. 
+
+Factory method to create a \mbox{\hyperlink{classPower}{Power}} Plant building.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} factory\+Method to return an instance of the \mbox{\hyperlink{classPower}{Power}} Plant building with predefined specifications. \begin{DoxyReturn}{Returns}
+A pointer to a newly created \mbox{\hyperlink{classPower}{Power}} Plant building.
+
+A pointer to a new \mbox{\hyperlink{classPower}{Power}} Plant building with preset total capacity, initial used capacity, and tax rate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classPowerPlantFactory_ad6cb7e72cd67b9c83092a7dd79213c5c}\label{classPowerPlantFactory_ad6cb7e72cd67b9c83092a7dd79213c5c}} 
+\index{PowerPlantFactory@{PowerPlantFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!PowerPlantFactory@{PowerPlantFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily int Power\+Plant\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost of constructing a \mbox{\hyperlink{classPower}{Power}} Plant building. 
+
+Gets the monetary cost to build a \mbox{\hyperlink{classPower}{Power}} Plant structure.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} get\+Cost method and returns the monetary cost for creating a \mbox{\hyperlink{classPower}{Power}} Plant structure. \begin{DoxyReturn}{Returns}
+The cost to construct a \mbox{\hyperlink{classPower}{Power}} Plant building.
+
+The construction cost of a \mbox{\hyperlink{classPower}{Power}} Plant building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classPowerPlantFactory_aabf5c35acfddf81ae75d07aae2a7fde3}\label{classPowerPlantFactory_aabf5c35acfddf81ae75d07aae2a7fde3}} 
+\index{PowerPlantFactory@{PowerPlantFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!PowerPlantFactory@{PowerPlantFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Power\+Plant\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides the resource costs needed to build a \mbox{\hyperlink{classPower}{Power}} Plant building. 
+
+Retrieves the resource cost for constructing a \mbox{\hyperlink{classPower}{Power}} Plant building.
+
+This method returns a map of resource types and their respective quantities required for the construction of a \mbox{\hyperlink{classPower}{Power}} Plant structure. \begin{DoxyReturn}{Returns}
+A map of resource costs where keys are resource names and values are quantities.
+
+A map containing the required resource types and their respective costs. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PowerPlantFactory_8h}{Power\+Plant\+Factory.\+h}}\item 
+\mbox{\hyperlink{PowerPlantFactory_8cpp}{Power\+Plant\+Factory.\+cpp}}\end{DoxyCompactItemize}

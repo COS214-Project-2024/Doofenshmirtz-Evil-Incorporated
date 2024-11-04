@@ -1,0 +1,10 @@
+<map id="Commercial.h" name="Commercial.h">
+<area shape="rect" id="node1" title="Defines the Commercial class for creating commercial building objects." alt="" coords="300,5,413,32"/>
+<area shape="rect" id="node2" href="$Citizen_8cpp.html" title="Implements the Citizen class for managing citizen objects in the city simulation." alt="" coords="5,80,100,107"/>
+<area shape="rect" id="node3" href="$Commercial_8cpp.html" title="Implements the Commercial class for creating commercial building objects." alt="" coords="125,80,253,107"/>
+<area shape="rect" id="node4" href="$CommercialFactory_8h.html" title="Defines the CommercialFactory class for creating commercial building objects." alt="" coords="277,80,436,107"/>
+<area shape="rect" id="node7" href="$District_8cpp.html" title="Implements the District class for managing a collection of CityUnit objects." alt="" coords="461,80,557,107"/>
+<area shape="rect" id="node8" href="$SimulationRunnerFacade_8cpp.html" title="Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of..." alt="" coords="581,80,791,107"/>
+<area shape="rect" id="node5" href="$CommercialFactory_8cpp.html" title="Implementation of the CommercialFactory class, responsible for creating commercial buildings." alt="" coords="175,155,349,181"/>
+<area shape="rect" id="node6" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="373,155,529,181"/>
+</map>

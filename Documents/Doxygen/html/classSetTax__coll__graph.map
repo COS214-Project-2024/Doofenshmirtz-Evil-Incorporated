@@ -1,0 +1,5 @@
+<map id="SetTax" name="SetTax">
+<area shape="rect" id="node1" title="Command to set the tax rate for a specific CityUnit." alt="" coords="58,171,123,197"/>
+<area shape="rect" id="node2" href="$classGovernmentCommand.html" title="Base class for commands that can be executed on a CityUnit." alt="" coords="5,95,176,121"/>
+<area shape="rect" id="node3" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="53,5,128,32"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Power.h" name="Power.h">
+<area shape="rect" id="node1" title="Implements the Power class for Power building objects." alt="" coords="239,5,313,32"/>
+<area shape="rect" id="node2" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$Power_8cpp.html" title="Implements the Power class for Power building objects." alt="" coords="160,80,248,107"/>
+<area shape="rect" id="node4" href="$PowerPlantFactory_8h.html" title="Defines the PowerPlantFactory class for creating PowerPlant building objects." alt="" coords="272,80,424,107"/>
+<area shape="rect" id="node7" href="$SimulationRunnerFacade_8cpp.html" title="Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of..." alt="" coords="448,80,659,107"/>
+<area shape="rect" id="node5" href="$PowerPlantFactory_8cpp.html" title="Implements the PowerPlantFactory class for creating PowerPlant building objects." alt="" coords="171,155,338,181"/>
+<area shape="rect" id="node6" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="362,155,518,181"/>
+</map>

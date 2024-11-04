@@ -1,0 +1,147 @@
+\hypertarget{classLandmarkFactory}{}\doxysection{Landmark\+Factory Class Reference}
+\label{classLandmarkFactory}\index{LandmarkFactory@{LandmarkFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classLandmark}{Landmark}} buildings in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Landmark\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Landmark\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classLandmarkFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Landmark\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classLandmarkFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandmarkFactory_a214d842b51ff2c6566f5a7a9fe1245b9}{Landmark\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classLandmarkFactory}{Landmark\+Factory}} with predefined resource requirements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLandmarkFactory_a15fa32ac47cdf98fca0fad8a912991a4}\label{classLandmarkFactory_a15fa32ac47cdf98fca0fad8a912991a4}} 
+\mbox{\hyperlink{classLandmarkFactory_a15fa32ac47cdf98fca0fad8a912991a4}{$\sim$\+Landmark\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classLandmarkFactory}{Landmark\+Factory}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLandmarkFactory_a0004c84e3cfe0cb92dba9c9fa52a4d09}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost of constructing a \mbox{\hyperlink{classLandmark}{Landmark}} building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classLandmarkFactory_a05ae3f07778f140007ebdbac6f26093b}{get\+Resource\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Provides the resource costs needed to build a \mbox{\hyperlink{classLandmark}{Landmark}} building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classLandmarkFactory_a9e6a02c14183c3647585728001b0ca48}{factory\+Method}} () override
+\begin{DoxyCompactList}\small\item\em Factory method that creates a \mbox{\hyperlink{classLandmark}{Landmark}} building instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classLandmark}{Landmark}} buildings in the city simulation. 
+
+A factory class responsible for creating \mbox{\hyperlink{classLandmark}{Landmark}} buildings.
+
+The \mbox{\hyperlink{classLandmarkFactory}{Landmark\+Factory}} class implements the factory method to create instances of the \mbox{\hyperlink{classLandmark}{Landmark}} building type and provides resource cost details for building landmark structures.
+
+The \mbox{\hyperlink{classLandmarkFactory}{Landmark\+Factory}} class derives from \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} and provides the implementation details for creating a \mbox{\hyperlink{classLandmark}{Landmark}} building, retrieving its construction cost, and specifying the resources required. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandmarkFactory_a214d842b51ff2c6566f5a7a9fe1245b9}\label{classLandmarkFactory_a214d842b51ff2c6566f5a7a9fe1245b9}} 
+\index{LandmarkFactory@{LandmarkFactory}!LandmarkFactory@{LandmarkFactory}}
+\index{LandmarkFactory@{LandmarkFactory}!LandmarkFactory@{LandmarkFactory}}
+\doxysubsubsection{\texorpdfstring{LandmarkFactory()}{LandmarkFactory()}}
+{\footnotesize\ttfamily Landmark\+Factory\+::\+Landmark\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classLandmarkFactory}{Landmark\+Factory}} with predefined resource requirements. 
+
+Constructs a \mbox{\hyperlink{classLandmarkFactory}{Landmark\+Factory}} and initializes resource costs.
+
+Initializes the factory with the base cost and resource needs for constructing a \mbox{\hyperlink{classLandmark}{Landmark}} building.
+
+Sets the base cost for a \mbox{\hyperlink{classLandmark}{Landmark}} building and specifies resource requirements in terms of quantities for Wood, Steel, Concrete, and Brick. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandmarkFactory_a9e6a02c14183c3647585728001b0ca48}\label{classLandmarkFactory_a9e6a02c14183c3647585728001b0ca48}} 
+\index{LandmarkFactory@{LandmarkFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!LandmarkFactory@{LandmarkFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Landmark\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Factory method that creates a \mbox{\hyperlink{classLandmark}{Landmark}} building instance. 
+
+Factory method to create a \mbox{\hyperlink{classLandmark}{Landmark}} building.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} factory\+Method to return an instance of the \mbox{\hyperlink{classLandmark}{Landmark}} building with predefined specifications. \begin{DoxyReturn}{Returns}
+A pointer to a newly created \mbox{\hyperlink{classLandmark}{Landmark}} building.
+
+A pointer to a new \mbox{\hyperlink{classLandmark}{Landmark}} building with preset total capacity, initial used capacity, and tax rate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classLandmarkFactory_a0004c84e3cfe0cb92dba9c9fa52a4d09}\label{classLandmarkFactory_a0004c84e3cfe0cb92dba9c9fa52a4d09}} 
+\index{LandmarkFactory@{LandmarkFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!LandmarkFactory@{LandmarkFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily int Landmark\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost of constructing a \mbox{\hyperlink{classLandmark}{Landmark}} building. 
+
+Gets the monetary cost to build a \mbox{\hyperlink{classLandmark}{Landmark}} structure.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} get\+Cost method and returns the monetary cost for creating a \mbox{\hyperlink{classLandmark}{Landmark}} structure. \begin{DoxyReturn}{Returns}
+The cost to construct a \mbox{\hyperlink{classLandmark}{Landmark}} building.
+
+The construction cost of a \mbox{\hyperlink{classLandmark}{Landmark}} building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classLandmarkFactory_a05ae3f07778f140007ebdbac6f26093b}\label{classLandmarkFactory_a05ae3f07778f140007ebdbac6f26093b}} 
+\index{LandmarkFactory@{LandmarkFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!LandmarkFactory@{LandmarkFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Landmark\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides the resource costs needed to build a \mbox{\hyperlink{classLandmark}{Landmark}} building. 
+
+Retrieves the resource cost for constructing a \mbox{\hyperlink{classLandmark}{Landmark}} building.
+
+This method returns a map of resource types and their respective quantities required for the construction of a \mbox{\hyperlink{classLandmark}{Landmark}} structure. \begin{DoxyReturn}{Returns}
+A map of resource costs where keys are resource names and values are quantities.
+
+A map containing the required resource types and their respective costs. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LandmarkFactory_8h}{Landmark\+Factory.\+h}}\item 
+\mbox{\hyperlink{LandmarkFactory_8cpp}{Landmark\+Factory.\+cpp}}\end{DoxyCompactItemize}

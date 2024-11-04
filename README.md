@@ -1,11 +1,11 @@
 # COS 214 Project - City Simulator
 
-<a href="https://drive.google.com/uc?export=view&id=1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9"><img src="https://drive.google.com/uc?export=view&id=1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+<a href="https://drive.google.com/uc?export=view&id=1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9"><img src="https://drive.google.com/uc?export=view&id=1OobIHf2l4Sx1AT8Zpl6-IFVqgv5Tjgp9" style="width: 300px; max-width: 100%; height: auto" title="Click to enlarge picture" /></a>
 
 # Contents
 
 - [Description](#description)
-- [Documentation](#documentation)
+- [Documentation and UML diagrams](#documentation)
 - [Setup](#setup)
 - [Team](#team)
 
@@ -15,43 +15,57 @@ The City Builder Simulation is a C++ project where users manage and develop vari
 
 # Documentation
 
-[Report]()
+[Report](Documents/City_Development_Report.pdf)
 
-[API Documentation]()
+[API Documentation](Documents/API_Documentation.pdf)
 
-[Doxygen Documentation]()
+[Functional Requirements](Documents/Function_Requirements.pdf)
+
+[Doxygen Documentation](Documents/Doxygen/)
+
+[UML Diagrams](UMLS/)
 
 # Setup
+
 ### Prerequisites
 
 ```
+(Assuming WSL)
 Boostbeast: sudo apt-get install libboost-all-dev
 Nlohmann JSON: sudo apt-get install nlohmann-json3-dev
-Doctest: sudo apt install doctest-dev (Assuming WSL)
+Doctest: sudo apt install doctest-dev
+
 ```
+
 ### Cloning
+
 ```
 git clone https://github.com/COS214-Project-2024/Doofenshmirtz-Evil-Incorporated.git
 ```
 
 ### Building
+
 This project can be built using Makefile:
+
 ```
 Compilation: make all (Ensure you are currently in the SystemFiles directory)
-Demo Main: make run_demo
+Demo Main: make run_demo (see below for more demo run info)
 Testing Main (Unit Tests): make run_tests
 ```
 
 ### Demo Running
+
 When make run_demo is called:
+
 1. Go to Project/DataFiles/
 2. Launch the web interface(index.html)
 3. Console should say client connected(if not refresh html page)
 4. Click play button to run the Simulation.
 5. Click stop button to stop Simulation.
-6. Refresh html to terminate program.
+6. Wait for simulation to stop sending data.
+7. Refresh html to terminate program.
 
-# Team 
+# Team
 
 <table>
     <tr><th>Member</th><th>Roles</th><th>Description</th></tr>
@@ -155,7 +169,9 @@ When make run_demo is called:
 	  </td>
 	  <td align="center">
 	  	Factory <br> Moral support <br> Good ideas <br> Overall carry<br><br>
-		<a href="">
+
+		<a href="https://github.com/amJohnnyma">
+
 			<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 		</a>
 	  </td>

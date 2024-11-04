@@ -1,0 +1,111 @@
+\hypertarget{classCommuteStrategy}{}\doxysection{Commute\+Strategy Class Reference}
+\label{classCommuteStrategy}\index{CommuteStrategy@{CommuteStrategy}}
+
+
+Represents a strategy for commuting.  
+
+
+
+
+{\ttfamily \#include $<$Commute\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Commute\+Strategy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCommuteStrategy__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommuteStrategy_a5e75291769dcfd555ae8561c6faab937}{Commute\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCommuteStrategy_a2451e8fbac13098818357aaed4eca29d}{$\sim$\+Commute\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}{handle\+Commute\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Handles the commute state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}{get\+Travel\+Strategy\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the travel strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a strategy for commuting. 
+
+Abstract base class for different commuting strategies.
+
+This class provides an interface for different commuting strategies that citizens can use to travel within the city.
+
+This class provides an interface for implementing various commuting strategies that citizens can use to travel within the city. Subclasses must define specific behaviors for commuting. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommuteStrategy_a5e75291769dcfd555ae8561c6faab937}\label{classCommuteStrategy_a5e75291769dcfd555ae8561c6faab937}} 
+\index{CommuteStrategy@{CommuteStrategy}!CommuteStrategy@{CommuteStrategy}}
+\index{CommuteStrategy@{CommuteStrategy}!CommuteStrategy@{CommuteStrategy}}
+\doxysubsubsection{\texorpdfstring{CommuteStrategy()}{CommuteStrategy()}}
+{\footnotesize\ttfamily Commute\+Strategy\+::\+Commute\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class. 
+
+Initializes a new instance of the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class. \mbox{\Hypertarget{classCommuteStrategy_a2451e8fbac13098818357aaed4eca29d}\label{classCommuteStrategy_a2451e8fbac13098818357aaed4eca29d}} 
+\index{CommuteStrategy@{CommuteStrategy}!````~CommuteStrategy@{$\sim$CommuteStrategy}}
+\index{````~CommuteStrategy@{$\sim$CommuteStrategy}!CommuteStrategy@{CommuteStrategy}}
+\doxysubsubsection{\texorpdfstring{$\sim$CommuteStrategy()}{~CommuteStrategy()}}
+{\footnotesize\ttfamily Commute\+Strategy\+::$\sim$\+Commute\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}} class. 
+
+Cleans up any resources allocated for the \mbox{\hyperlink{classCommuteStrategy}{Commute\+Strategy}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}\label{classCommuteStrategy_a445756a29e09ed8efd25bdf46264ce66}} 
+\index{CommuteStrategy@{CommuteStrategy}!getTravelStrategyName@{getTravelStrategyName}}
+\index{getTravelStrategyName@{getTravelStrategyName}!CommuteStrategy@{CommuteStrategy}}
+\doxysubsubsection{\texorpdfstring{getTravelStrategyName()}{getTravelStrategyName()}}
+{\footnotesize\ttfamily virtual std\+::string Commute\+Strategy\+::get\+Travel\+Strategy\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the name of the travel strategy. 
+
+This pure virtual function must be overridden in derived classes to provide the name of the specific travel strategy being used.
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the travel strategy. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRoadStrategy_a8befe0db2ff58124788373c027dcac59}{Road\+Strategy}}, \mbox{\hyperlink{classRailwayStrategy_ab929af709a52f2a1c343017ea79556cb}{Railway\+Strategy}}, \mbox{\hyperlink{classPublicTransportStrategy_a8260e76877b28ad1d00cdddda4bb9142}{Public\+Transport\+Strategy}}, and \mbox{\hyperlink{classAirportStrategy_a49ffe72dfe35cc923eb7ffda72c2517b}{Airport\+Strategy}}.
+
+\mbox{\Hypertarget{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}\label{classCommuteStrategy_a0f44cd811367a9a546dcece7032910e1}} 
+\index{CommuteStrategy@{CommuteStrategy}!handleCommuteState@{handleCommuteState}}
+\index{handleCommuteState@{handleCommuteState}!CommuteStrategy@{CommuteStrategy}}
+\doxysubsubsection{\texorpdfstring{handleCommuteState()}{handleCommuteState()}}
+{\footnotesize\ttfamily virtual int Commute\+Strategy\+::handle\+Commute\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handles the commute state. 
+
+This pure virtual function must be overridden in derived classes to implement specific behavior for handling the commute state.
+
+\begin{DoxyReturn}{Returns}
+An integer representing the result of handling the commute state. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRoadStrategy_a9ccd4823b455ad45aa66f8be10bc87e0}{Road\+Strategy}}, \mbox{\hyperlink{classRailwayStrategy_aebab84279572b6f1ea718f6d1f6119ce}{Railway\+Strategy}}, \mbox{\hyperlink{classPublicTransportStrategy_aadb41590e1d5416db30f06ec8f827674}{Public\+Transport\+Strategy}}, and \mbox{\hyperlink{classAirportStrategy_a13a3d18d0ee6768d63241e049c2da839}{Airport\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CommuteStrategy_8h}{Commute\+Strategy.\+h}}\item 
+\mbox{\hyperlink{CommuteStrategy_8cpp}{Commute\+Strategy.\+cpp}}\end{DoxyCompactItemize}

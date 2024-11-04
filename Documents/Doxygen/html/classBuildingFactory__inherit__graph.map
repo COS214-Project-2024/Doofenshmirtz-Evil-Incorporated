@@ -1,0 +1,11 @@
+<map id="BuildingFactory" name="BuildingFactory">
+<area shape="rect" id="node1" title="Abstract factory class for creating buildings." alt="" coords="5,183,128,209"/>
+<area shape="rect" id="node2" href="$classCommercialFactory.html" title="Factory class for creating commercial buildings." alt="" coords="187,5,335,32"/>
+<area shape="rect" id="node3" href="$classIndustrialFactory.html" title="Factory class for creating Industrial buildings in the city simulation." alt="" coords="195,56,326,83"/>
+<area shape="rect" id="node4" href="$classLandmarkFactory.html" title="Factory class for creating Landmark buildings in the city simulation." alt="" coords="193,107,328,133"/>
+<area shape="rect" id="node5" href="$classPowerPlantFactory.html" title="Factory class for creating Power Plant buildings in the city simulation." alt="" coords="189,157,332,184"/>
+<area shape="rect" id="node6" href="$classResidentialFactory.html" title="Factory class for creating Residential buildings in the city simulation." alt="" coords="189,208,332,235"/>
+<area shape="rect" id="node7" href="$classSewageSystemFactory.html" title="Factory class for creating Sewage System buildings in the city simulation." alt="" coords="176,259,345,285"/>
+<area shape="rect" id="node8" href="$classWasteSiteFactory.html" title="Factory class for creating Waste Site buildings in the city simulation." alt="" coords="193,309,328,336"/>
+<area shape="rect" id="node9" href="$classWaterPlantFactory.html" title="Factory class for creating Water Plant buildings in the city simulation." alt="" coords="191,360,331,387"/>
+</map>

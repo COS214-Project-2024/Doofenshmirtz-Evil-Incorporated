@@ -1,0 +1,16 @@
+<map id="CommuteStrategy.h" name="CommuteStrategy.h">
+<area shape="rect" id="node1" title="Defines the CommuteStrategy class for implementing commuting strategies." alt="" coords="741,5,891,32"/>
+<area shape="rect" id="node2" href="$AirportStrategy_8h.html" title="Defines the AirportStrategy class methods." alt="" coords="152,80,283,107"/>
+<area shape="rect" id="node5" href="$AtHomeState_8cpp.html" title="Implements the AtHomeState class." alt="" coords="824,80,960,107"/>
+<area shape="rect" id="node6" href="$AtLeisureState_8cpp.html" title="Implements the AtLeisureState class." alt="" coords="984,80,1128,107"/>
+<area shape="rect" id="node7" href="$AtWorkState_8cpp.html" title="Implements the AtWorkState class." alt="" coords="1152,80,1283,107"/>
+<area shape="rect" id="node8" href="$CommuteStrategy_8cpp.html" title="Implements the CommuteStrategy class for defining commuting strategies." alt="" coords="1307,80,1474,107"/>
+<area shape="rect" id="node9" href="$PublicTransportStrategy_8h.html" title="Defines the PublicTransportStrategy class for PublicTransportStrategy objects." alt="" coords="307,80,493,107"/>
+<area shape="rect" id="node11" href="$RailwayStrategy_8h.html" title="Defines the RailwayStrategy class for RailwayStrategy objects." alt="" coords="517,80,656,107"/>
+<area shape="rect" id="node13" href="$RoadStrategy_8h.html" title="Defines the RoadStrategy class for RoadStrategy objects." alt="" coords="680,80,800,107"/>
+<area shape="rect" id="node3" href="$AirportStrategy_8cpp.html" title="Implements the AirportStrategy class methods." alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node4" href="$CitizenLocationState_8cpp.html" title="Implements the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="402,155,585,181"/>
+<area shape="rect" id="node10" href="$PublicTransportStrategy_8cpp.html" title="Implements the PublicTransportStrategy class for PublicTransportStrategy objects." alt="" coords="177,155,378,181"/>
+<area shape="rect" id="node12" href="$RailwayStrategy_8cpp.html" title="Implements the RailwayStrategy class for RailwayStrategy objects." alt="" coords="609,155,764,181"/>
+<area shape="rect" id="node14" href="$RoadStrategy_8cpp.html" title="Implements the RoadStrategy class for RoadStrategy objects." alt="" coords="789,155,923,181"/>
+</map>

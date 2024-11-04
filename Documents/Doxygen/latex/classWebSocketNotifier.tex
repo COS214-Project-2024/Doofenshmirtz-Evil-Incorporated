@@ -1,0 +1,129 @@
+\hypertarget{classWebSocketNotifier}{}\doxysection{Web\+Socket\+Notifier Class Reference}
+\label{classWebSocketNotifier}\index{WebSocketNotifier@{WebSocketNotifier}}
+
+
+Singleton class for logging messages through Web\+Socket.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Socket\+Notifier.\+h$>$}
+
+
+
+Inheritance diagram for Web\+Socket\+Notifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classWebSocketNotifier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Web\+Socket\+Notifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classWebSocketNotifier__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWebSocketNotifier_a883544bc62ba5d708e898fc0daeb2a84}{log}} (const nlohmann\+::json \&message)
+\begin{DoxyCompactList}\small\item\em Log a JSON message through the Web\+Socket server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebSocketNotifier_a70baac7023d1de7031b75f079a6d85ad}{set\+Server}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classServer}{Server}} $>$ server)
+\begin{DoxyCompactList}\small\item\em Set the Web\+Socket server instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton class for logging messages through Web\+Socket. 
+
+This class implements the Singleton pattern using boost\+::serialization\+::singleton to provide a global point of access for sending messages through a Web\+Socket server. It acts as a bridge between various parts of the application and the Web\+Socket server, allowing components to send messages without direct coupling to the server.
+
+\begin{DoxyNote}{Note}
+This class is thread-\/safe as long as set\+Server is not called while log operations are in progress
+\end{DoxyNote}
+Usage example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{WebSocketNotifier::get\_mutable\_instance().log(\{\textcolor{stringliteral}{"{}type"{}}: \textcolor{stringliteral}{"{}status"{}}, \textcolor{stringliteral}{"{}data"{}}: \textcolor{stringliteral}{"{}message"{}}\});}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebSocketNotifier_a883544bc62ba5d708e898fc0daeb2a84}\label{classWebSocketNotifier_a883544bc62ba5d708e898fc0daeb2a84}} 
+\index{WebSocketNotifier@{WebSocketNotifier}!log@{log}}
+\index{log@{log}!WebSocketNotifier@{WebSocketNotifier}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Web\+Socket\+Notifier\+::log (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Log a JSON message through the Web\+Socket server. 
+
+Implementation of JSON message logging.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & JSON object to be sent through the Web\+Socket\\
+\hline
+\end{DoxyParams}
+If a server has been set, this method will forward the message to the server\textquotesingle{}s write method. If no server is set, the message will be silently dropped.
+
+\begin{DoxyNote}{Note}
+This method is thread-\/safe with respect to message sending, but not with respect to server configuration changes
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classServer_ad81573c94aca3996029ae9a7de064ee2}{Server\+::write()}} for details on message transmission
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The JSON message to be logged/sent through the Web\+Socket\\
+\hline
+\end{DoxyParams}
+Checks if a valid server instance exists and forwards the message to that server\textquotesingle{}s write method. If no server is configured, the message will be silently dropped.
+
+\begin{DoxyNote}{Note}
+This implementation maintains the strong exception guarantee -\/ if the server write fails, the \mbox{\hyperlink{classWebSocketNotifier}{Web\+Socket\+Notifier}} remains in its original state 
+\end{DoxyNote}
+\mbox{\Hypertarget{classWebSocketNotifier_a70baac7023d1de7031b75f079a6d85ad}\label{classWebSocketNotifier_a70baac7023d1de7031b75f079a6d85ad}} 
+\index{WebSocketNotifier@{WebSocketNotifier}!setServer@{setServer}}
+\index{setServer@{setServer}!WebSocketNotifier@{WebSocketNotifier}}
+\doxysubsubsection{\texorpdfstring{setServer()}{setServer()}}
+{\footnotesize\ttfamily void Web\+Socket\+Notifier\+::set\+Server (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classServer}{Server}} $>$}]{server }\end{DoxyParamCaption})}
+
+
+
+Set the Web\+Socket server instance. 
+
+Implementation of server configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em server} & Shared pointer to the \mbox{\hyperlink{classServer}{Server}} instance that will handle message transmission\\
+\hline
+\end{DoxyParams}
+Updates the internal server pointer to the provided instance. This allows the notifier to be configured with different server instances at runtime.
+
+\begin{DoxyWarning}{Warning}
+This method is not thread-\/safe with respect to concurrent log operations. Ensure proper synchronization when changing the server while the system is active.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em server} & Shared pointer to the \mbox{\hyperlink{classServer}{Server}} instance to be used for message transmission\\
+\hline
+\end{DoxyParams}
+Updates the internal server pointer with the provided instance. The shared\+\_\+ptr ensures proper memory management of the server instance.
+
+\begin{DoxyWarning}{Warning}
+This method should not be called while log operations are in progress as it\textquotesingle{}s not thread-\/safe with respect to logging 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WebSocketNotifier_8h}{Web\+Socket\+Notifier.\+h}}\item 
+\mbox{\hyperlink{WebSocketNotifier_8cpp}{Web\+Socket\+Notifier.\+cpp}}\end{DoxyCompactItemize}

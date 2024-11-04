@@ -1,0 +1,257 @@
+\hypertarget{classGovernment}{}\doxysection{Government Class Reference}
+\label{classGovernment}\index{Government@{Government}}
+
+
+Represents a government entity that manages resources and commands in a city.  
+
+
+
+
+{\ttfamily \#include $<$Government.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGovernment_a214eafccc40e54562729bc91fbb6096e}{Government}} (int government\+Balance)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classGovernment}{Government}} object with the specified initial balance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGovernment_a41e7b245bbc770d374ced2472ff9f044}{get\+Government\+Balance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the balance of the government\textquotesingle{}s funds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a9d433ba34b9e0739dcb211c41f38c8ec}{collect\+Taxes}} ()
+\begin{DoxyCompactList}\small\item\em Collects taxes from all citizens associated with residential buildings. This method uses the observer pattern to notify all citizens to pay their taxes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_af3cc13380f91df62ebb93fdb75be92ce}{attach}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$my\+Observer)
+\begin{DoxyCompactList}\small\item\em Attaches a city unit as an observer to the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_afc69efabf2d217f26067d4b31a2d86c2}{detach}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$my\+Observer)
+\begin{DoxyCompactList}\small\item\em Detaches a city unit from being an observer of the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_adf2258ede6292fa43349c97d70d72155}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all observers about changes in the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_acda7217ece74ce5641961e1fcfddae00}{collect\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Collects resources from various sources to be managed by the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a73da76d8f24e89df058fc3fa8ae120dc}{update\+Utilities\+Usage}} ()
+\begin{DoxyCompactList}\small\item\em Updates the usage of the utilities in the city. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \& \mbox{\hyperlink{classGovernment_af42523632a20e32d9c93e181441d5792}{get\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Gets the resources managed by the government. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \& \mbox{\hyperlink{classGovernment_a1ed2bf571dd0bad8724f3afdc1e7da5d}{get\+Utilities}} ()
+\begin{DoxyCompactList}\small\item\em Gets the utilities managed by the government. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a6dd81e0abbe02c83aa150c30e6d35fe5}{evaluate\+Traffic\+Conditions}} ()
+\begin{DoxyCompactList}\small\item\em Returns info to the front end on how busy each method of transportation is. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a7a66587683fe21d16654302727883fa0}{evaluate\+Happiness}} ()
+\begin{DoxyCompactList}\small\item\em Returns info to the front end on the average happiness of all the citizens. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGovernment_ad6f28d0ac692878576935b7e9dc92227}\label{classGovernment_ad6f28d0ac692878576935b7e9dc92227}} 
+void \mbox{\hyperlink{classGovernment_ad6f28d0ac692878576935b7e9dc92227}{render\+City}} ()
+\begin{DoxyCompactList}\small\item\em Renders the city\textquotesingle{}s visuals by updating the frontend with city unit representations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGovernment_afffa0f2c261b1e128d00024a2f1e4d4c}\label{classGovernment_afffa0f2c261b1e128d00024a2f1e4d4c}} 
+void \mbox{\hyperlink{classGovernment_afffa0f2c261b1e128d00024a2f1e4d4c}{execute\+Eductation}} ()
+\begin{DoxyCompactList}\small\item\em Executes the Better Education policy for all city units. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGovernment_ab956769c2e2427c4cda459d5fa5b3e43}\label{classGovernment_ab956769c2e2427c4cda459d5fa5b3e43}} 
+void \mbox{\hyperlink{classGovernment_ab956769c2e2427c4cda459d5fa5b3e43}{execute\+Short\+Work\+Week}} ()
+\begin{DoxyCompactList}\small\item\em Executes the Short Work Week policy for all city units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGovernment_a959c0040f843e61bc23b52c1755bec80}{execute\+New\+Tax}} (double tax)
+\begin{DoxyCompactList}\small\item\em Executes a new tax policy for all city units. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGovernment_a5956cf59b3f80ebfe127faddba6168c2}\label{classGovernment_a5956cf59b3f80ebfe127faddba6168c2}} 
+void \mbox{\hyperlink{classGovernment_a5956cf59b3f80ebfe127faddba6168c2}{execute\+Spend\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Executes resource spending commands for all city units. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGovernment_a98e17a1c73c74c872160c8d03a7a7f74}\label{classGovernment_a98e17a1c73c74c872160c8d03a7a7f74}} 
+void \mbox{\hyperlink{classGovernment_a98e17a1c73c74c872160c8d03a7a7f74}{find\+Employment}} ()
+\begin{DoxyCompactList}\small\item\em Finds employment for residents in all city units. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGovernment_ad4b00db6938ff1ed64b22e3326e0b19c}{$\sim$\+Government}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classGovernment}{Government}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a government entity that manages resources and commands in a city. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGovernment_a214eafccc40e54562729bc91fbb6096e}\label{classGovernment_a214eafccc40e54562729bc91fbb6096e}} 
+\index{Government@{Government}!Government@{Government}}
+\index{Government@{Government}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{Government()}{Government()}}
+{\footnotesize\ttfamily Government\+::\+Government (\begin{DoxyParamCaption}\item[{int}]{government\+Balance }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classGovernment}{Government}} object with the specified initial balance. 
+
+Constructs a \mbox{\hyperlink{classGovernment}{Government}} instance with a specified balance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em government\+Balance} & The initial balance of the government\textquotesingle{}s funds.\\
+\hline
+{\em government\+Balance} & Initial balance for the government. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_ad4b00db6938ff1ed64b22e3326e0b19c}\label{classGovernment_ad4b00db6938ff1ed64b22e3326e0b19c}} 
+\index{Government@{Government}!````~Government@{$\sim$Government}}
+\index{````~Government@{$\sim$Government}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{$\sim$Government()}{~Government()}}
+{\footnotesize\ttfamily Government\+::$\sim$\+Government (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classGovernment}{Government}} class. 
+
+Destroys the \mbox{\hyperlink{classGovernment}{Government}} instance, freeing allocated resources. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGovernment_af3cc13380f91df62ebb93fdb75be92ce}\label{classGovernment_af3cc13380f91df62ebb93fdb75be92ce}} 
+\index{Government@{Government}!attach@{attach}}
+\index{attach@{attach}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily void Government\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{my\+Observer }\end{DoxyParamCaption})}
+
+
+
+Attaches a city unit as an observer to the government. 
+
+Attaches an observer (\mbox{\hyperlink{classCityUnit}{City\+Unit}}) to the government for updates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Observer} & The city unit to be attached as an observer.\\
+\hline
+{\em my\+Observer} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be attached. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_acda7217ece74ce5641961e1fcfddae00}\label{classGovernment_acda7217ece74ce5641961e1fcfddae00}} 
+\index{Government@{Government}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily void Government\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collects resources from various sources to be managed by the government. 
+
+Collects resources from all city units and updates the internal resource state. \mbox{\Hypertarget{classGovernment_a9d433ba34b9e0739dcb211c41f38c8ec}\label{classGovernment_a9d433ba34b9e0739dcb211c41f38c8ec}} 
+\index{Government@{Government}!collectTaxes@{collectTaxes}}
+\index{collectTaxes@{collectTaxes}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{collectTaxes()}{collectTaxes()}}
+{\footnotesize\ttfamily void Government\+::collect\+Taxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collects taxes from all citizens associated with residential buildings. This method uses the observer pattern to notify all citizens to pay their taxes. 
+
+Collects taxes from all city units and updates the government balance. \mbox{\Hypertarget{classGovernment_afc69efabf2d217f26067d4b31a2d86c2}\label{classGovernment_afc69efabf2d217f26067d4b31a2d86c2}} 
+\index{Government@{Government}!detach@{detach}}
+\index{detach@{detach}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily void Government\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{my\+Observer }\end{DoxyParamCaption})}
+
+
+
+Detaches a city unit from being an observer of the government. 
+
+Detaches an observer (\mbox{\hyperlink{classCityUnit}{City\+Unit}}) from the government.
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Observer} & The city unit to be detached as an observer.\\
+\hline
+{\em my\+Observer} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} to be detached. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_a7a66587683fe21d16654302727883fa0}\label{classGovernment_a7a66587683fe21d16654302727883fa0}} 
+\index{Government@{Government}!evaluateHappiness@{evaluateHappiness}}
+\index{evaluateHappiness@{evaluateHappiness}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{evaluateHappiness()}{evaluateHappiness()}}
+{\footnotesize\ttfamily void Government\+::evaluate\+Happiness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns info to the front end on the average happiness of all the citizens. 
+
+Evaluates the happiness of citizens in all city units. \mbox{\Hypertarget{classGovernment_a6dd81e0abbe02c83aa150c30e6d35fe5}\label{classGovernment_a6dd81e0abbe02c83aa150c30e6d35fe5}} 
+\index{Government@{Government}!evaluateTrafficConditions@{evaluateTrafficConditions}}
+\index{evaluateTrafficConditions@{evaluateTrafficConditions}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{evaluateTrafficConditions()}{evaluateTrafficConditions()}}
+{\footnotesize\ttfamily void Government\+::evaluate\+Traffic\+Conditions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns info to the front end on how busy each method of transportation is. 
+
+Evaluates traffic conditions for all city units. \mbox{\Hypertarget{classGovernment_a959c0040f843e61bc23b52c1755bec80}\label{classGovernment_a959c0040f843e61bc23b52c1755bec80}} 
+\index{Government@{Government}!executeNewTax@{executeNewTax}}
+\index{executeNewTax@{executeNewTax}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{executeNewTax()}{executeNewTax()}}
+{\footnotesize\ttfamily void Government\+::execute\+New\+Tax (\begin{DoxyParamCaption}\item[{double}]{tax }\end{DoxyParamCaption})}
+
+
+
+Executes a new tax policy for all city units. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tax} & The tax rate to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGovernment_a41e7b245bbc770d374ced2472ff9f044}\label{classGovernment_a41e7b245bbc770d374ced2472ff9f044}} 
+\index{Government@{Government}!getGovernmentBalance@{getGovernmentBalance}}
+\index{getGovernmentBalance@{getGovernmentBalance}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getGovernmentBalance()}{getGovernmentBalance()}}
+{\footnotesize\ttfamily int Government\+::get\+Government\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the balance of the government\textquotesingle{}s funds. 
+
+Gets the current government balance.
+
+\begin{DoxyReturn}{Returns}
+The balance of the government\textquotesingle{}s funds.
+
+Current balance of the government. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGovernment_af42523632a20e32d9c93e181441d5792}\label{classGovernment_af42523632a20e32d9c93e181441d5792}} 
+\index{Government@{Government}!getResources@{getResources}}
+\index{getResources@{getResources}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getResources()}{getResources()}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$\& Government\+::get\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the resources managed by the government. 
+
+\begin{DoxyReturn}{Returns}
+The resources managed by the government. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGovernment_a1ed2bf571dd0bad8724f3afdc1e7da5d}\label{classGovernment_a1ed2bf571dd0bad8724f3afdc1e7da5d}} 
+\index{Government@{Government}!getUtilities@{getUtilities}}
+\index{getUtilities@{getUtilities}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{getUtilities()}{getUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, double$>$\& Government\+::get\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the utilities managed by the government. 
+
+\begin{DoxyReturn}{Returns}
+The utilities managed by the government. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGovernment_adf2258ede6292fa43349c97d70d72155}\label{classGovernment_adf2258ede6292fa43349c97d70d72155}} 
+\index{Government@{Government}!notify@{notify}}
+\index{notify@{notify}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void Government\+::notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifies all observers about changes in the government. 
+
+Notifies all attached city units to update their state. \mbox{\Hypertarget{classGovernment_a73da76d8f24e89df058fc3fa8ae120dc}\label{classGovernment_a73da76d8f24e89df058fc3fa8ae120dc}} 
+\index{Government@{Government}!updateUtilitiesUsage@{updateUtilitiesUsage}}
+\index{updateUtilitiesUsage@{updateUtilitiesUsage}!Government@{Government}}
+\doxysubsubsection{\texorpdfstring{updateUtilitiesUsage()}{updateUtilitiesUsage()}}
+{\footnotesize\ttfamily void Government\+::update\+Utilities\+Usage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the usage of the utilities in the city. 
+
+Updates the utility usage based on citizen demands and available capacities. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Government_8h}{Government.\+h}}\item 
+\mbox{\hyperlink{Government_8cpp}{Government.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+<map id="Server.h" name="Server.h">
+<area shape="rect" id="node1" title="Defines the Server class for Server objects. Handles creation/deletion of a local web server." alt="" coords="659,5,733,32"/>
+<area shape="rect" id="node2" href="$Server_8cpp.html" title="Implements the Server class for Server objects. Handles creation/deletion of a local web server." alt="" coords="505,80,596,107"/>
+<area shape="rect" id="node3" href="$WebSocketNotifier_8h.html" title="Defines the WebSocketNotifier class." alt="" coords="620,80,772,107"/>
+<area shape="rect" id="node4" href="$Commercial_8cpp.html" title="Implements the Commercial class for creating commercial building objects." alt="" coords="5,155,133,181"/>
+<area shape="rect" id="node5" href="$District_8cpp.html" title="Implements the District class for managing a collection of CityUnit objects." alt="" coords="157,155,253,181"/>
+<area shape="rect" id="node6" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="277,155,408,181"/>
+<area shape="rect" id="node7" href="$Industrial_8cpp.html" title="Implements the Industrial class for creating Industrial building objects." alt="" coords="433,155,543,181"/>
+<area shape="rect" id="node8" href="$Landmark_8cpp.html" title="Defines the Landmark class for creating landmark objects." alt="" coords="568,155,683,181"/>
+<area shape="rect" id="node9" href="$Residential_8cpp.html" title="Implements the Residential class for Residential building objects." alt="" coords="707,155,829,181"/>
+<area shape="rect" id="node10" href="$SimulationRunnerFacade_8cpp.html" title="Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of..." alt="" coords="828,229,1039,256"/>
+<area shape="rect" id="node11" href="$SimulationRunnerFacade_8h.html" title="Defines the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of th..." alt="" coords="904,155,1099,181"/>
+<area shape="rect" id="node12" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="1123,155,1279,181"/>
+<area shape="rect" id="node13" href="$WebSocketNotifier_8cpp.html" title="Implements the WebSocketNotifier class." alt="" coords="1303,155,1470,181"/>
+</map>

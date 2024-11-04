@@ -1,0 +1,161 @@
+\hypertarget{classSewage}{}\doxysection{Sewage Class Reference}
+\label{classSewage}\index{Sewage@{Sewage}}
+
+
+Inheritance diagram for Sewage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classSewage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sewage\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classSewage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSewage_ab2d0340138d0c60bee504a4d93a4a5db}{Sewage}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSewage}{Sewage}} object with specified total and used capacity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSewage_a3e787e2c65aff49d68247ce177b2d281}{$\sim$\+Sewage}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classSewage}{Sewage}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSewage_aaaddd755f27c51f2f2904dc047695012}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the sewage system. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSewage_a63f7ec3d9457b6b0a5f02d2f789a8c57}{get\+Utility\+Type}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the type of utility represented by this class. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classSewage_a14a1944209038eaa8ffb560b2087e174}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from the sewage system. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classSewage_aa45f151a8e06d354ae58d62927f7b5b9}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utility data from the sewage system. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classSewage_a8d8c22353327a6878268586877789153}{get\+JSONrepresentation}} () override
+\begin{DoxyCompactList}\small\item\em Provides a JSON representation of the sewage system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSewage_ab2d0340138d0c60bee504a4d93a4a5db}\label{classSewage_ab2d0340138d0c60bee504a4d93a4a5db}} 
+\index{Sewage@{Sewage}!Sewage@{Sewage}}
+\index{Sewage@{Sewage}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{Sewage()}{Sewage()}}
+{\footnotesize\ttfamily Sewage\+::\+Sewage (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classSewage}{Sewage}} object with specified total and used capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the sewage system. \\
+\hline
+{\em used\+Cap} & The current used capacity of the sewage system. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSewage_a3e787e2c65aff49d68247ce177b2d281}\label{classSewage_a3e787e2c65aff49d68247ce177b2d281}} 
+\index{Sewage@{Sewage}!````~Sewage@{$\sim$Sewage}}
+\index{````~Sewage@{$\sim$Sewage}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sewage()}{~Sewage()}}
+{\footnotesize\ttfamily Sewage\+::$\sim$\+Sewage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classSewage}{Sewage}} class. 
+
+Cleans up resources used by the \mbox{\hyperlink{classSewage}{Sewage}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSewage_a14a1944209038eaa8ffb560b2087e174}\label{classSewage_a14a1944209038eaa8ffb560b2087e174}} 
+\index{Sewage@{Sewage}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Sewage\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the sewage system. 
+
+\begin{DoxyReturn}{Returns}
+A map containing the resources collected from the system. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a08bb7856672566e1a1cd43f0c6b00fd9}{Building}}.
+
+\mbox{\Hypertarget{classSewage_aa45f151a8e06d354ae58d62927f7b5b9}\label{classSewage_aa45f151a8e06d354ae58d62927f7b5b9}} 
+\index{Sewage@{Sewage}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Sewage\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility data from the sewage system. 
+
+\begin{DoxyReturn}{Returns}
+A map containing utility data collected from the system. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a67fc4e531f932a80bbf389b35947f59c}{Building}}.
+
+\mbox{\Hypertarget{classSewage_a8d8c22353327a6878268586877789153}\label{classSewage_a8d8c22353327a6878268586877789153}} 
+\index{Sewage@{Sewage}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Sewage\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides a JSON representation of the sewage system. 
+
+\begin{DoxyReturn}{Returns}
+A JSON object representing the state of the sewage system. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a080db9fe4a9a2ce05b9ac276e54bac17}{Building}}.
+
+\mbox{\Hypertarget{classSewage_a63f7ec3d9457b6b0a5f02d2f789a8c57}\label{classSewage_a63f7ec3d9457b6b0a5f02d2f789a8c57}} 
+\index{Sewage@{Sewage}!getUtilityType@{getUtilityType}}
+\index{getUtilityType@{getUtilityType}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{getUtilityType()}{getUtilityType()}}
+{\footnotesize\ttfamily std\+::string Sewage\+::get\+Utility\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of utility represented by this class. 
+
+\begin{DoxyReturn}{Returns}
+A string indicating the utility type (\char`\"{}\+Sewage\+System\char`\"{}). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classUtility_a278b4cc8de2a7e9f97a57f4f02809a82}{Utility}}.
+
+\mbox{\Hypertarget{classSewage_aaaddd755f27c51f2f2904dc047695012}\label{classSewage_aaaddd755f27c51f2f2904dc047695012}} 
+\index{Sewage@{Sewage}!update@{update}}
+\index{update@{update}!Sewage@{Sewage}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Sewage\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state of the sewage system. 
+
+This method may involve refreshing internal states or triggering updates based on external conditions. 
+
+Implements \mbox{\hyperlink{classUtility_a564409491cdd9e4e6c429e0919603b00}{Utility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Sewage_8h}{Sewage.\+h}}\item 
+\mbox{\hyperlink{Sewage_8cpp}{Sewage.\+cpp}}\end{DoxyCompactItemize}

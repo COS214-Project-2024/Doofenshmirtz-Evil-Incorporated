@@ -13,15 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install Dependancies
+
+
+    - name: Install Dependencies
       run: sudo apt-get update && sudo apt-get install -y valgrind libboost-all-dev nlohmann-json3-dev doctest-dev
-    # - name: configure
-    #   run: ./configure
-    # - name: make
-    #   run: make
-    # - name: make check
-    #   run: make check
-    # - name: make distcheck
-    #   run: make distcheck
+
     - name: make run_tests
-      run: make run_tests
+      run: cd SystemFiles && make all && make run_tests
+
+

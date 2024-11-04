@@ -1,0 +1,5 @@
+<map id="ShortWorkWeekPolicy" name="ShortWorkWeekPolicy">
+<area shape="rect" id="node1" title="Command to implement a short workweek policy in a CityUnit." alt="" coords="9,155,173,181"/>
+<area shape="rect" id="node2" href="$classImplementPolicy.html" title="Abstract command to implement a policy in a CityUnit." alt="" coords="25,80,157,107"/>
+<area shape="rect" id="node3" href="$classGovernmentCommand.html" title="Base class for commands that can be executed on a CityUnit." alt="" coords="5,5,176,32"/>
+</map>

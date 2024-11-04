@@ -1,0 +1,277 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+Web\+Socket server class that handles client connections and message processing.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+
+
+Inheritance diagram for Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classServer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_a8c54645c9c065549fca2c46caa20fd35}{Server}} (int \&tax\+Rate)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classServer}{Server}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{$\sim$\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classServer}{Server}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a7eac07d2582fa01c2671362efa955b31}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the Web\+Socket server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop the Web\+Socket server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a9294c3527b198d5afc02413acb1b6ae3}{handle\+Session}} (tcp\+::socket socket)
+\begin{DoxyCompactList}\small\item\em Handle an individual client session. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classServer_ad81573c94aca3996029ae9a7de064ee2}{write}} (const nlohmann\+::json \&request)
+\begin{DoxyCompactList}\small\item\em Send a JSON message to the connected client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_ab283c97699a9a4acbd2e377ec974c5cc}{set\+Start\+Flag}} (std\+::atomic$<$ bool $>$ $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Set the flag that will be triggered by the \textquotesingle{}start\textquotesingle{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_aefa049ad00bf95ff1c3e22b3157b6583}{set\+Stop\+Flag}} (std\+::atomic$<$ bool $>$ $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Set the flag that will be triggered by the \textquotesingle{}stop\textquotesingle{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_af77b72ed8e2c87920829f1f3903fcc3e}{set\+Education\+Flag}} (std\+::atomic$<$ bool $>$ $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Set the flag that will be triggered by the \textquotesingle{}education\textquotesingle{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a1353947b67c99a4ece4bfef2b0cd8840}{set\+Work\+Flag}} (std\+::atomic$<$ bool $>$ $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Set the flag that will be triggered by the \textquotesingle{}shortwork\textquotesingle{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServer_a9b32be2410177048e35cda551964fe1c}{set\+Tax\+Flag}} (std\+::atomic$<$ bool $>$ $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Set the flag that will be triggered by the \textquotesingle{}tax\textquotesingle{} command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Web\+Socket server class that handles client connections and message processing. 
+
+This class implements a Web\+Socket server that can handle a single client connection. It supports starting and stopping the server, handling client sessions, and sending/receiving messages. The server runs on a specified port and can process commands from the client.
+
+\begin{DoxyNote}{Note}
+This class inherits from enable\+\_\+shared\+\_\+from\+\_\+this to safely create shared pointers to this instance when needed 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_a8c54645c9c065549fca2c46caa20fd35}\label{classServer_a8c54645c9c065549fca2c46caa20fd35}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{int \&}]{tax\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classServer}{Server}} object. 
+
+Initializes the server with default values. The server starts in a non-\/running state and must be explicitly started using the \mbox{\hyperlink{classServer_a7eac07d2582fa01c2671362efa955b31}{start()}} method \mbox{\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}} 
+\index{Server@{Server}!````~Server@{$\sim$Server}}
+\index{````~Server@{$\sim$Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{$\sim$Server()}{~Server()}}
+{\footnotesize\ttfamily Server\+::$\sim$\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classServer}{Server}} object. 
+
+Ensures proper cleanup by calling \mbox{\hyperlink{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}{stop()}} to close any open connections and free resources 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_a9294c3527b198d5afc02413acb1b6ae3}\label{classServer_a9294c3527b198d5afc02413acb1b6ae3}} 
+\index{Server@{Server}!handleSession@{handleSession}}
+\index{handleSession@{handleSession}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{handleSession()}{handleSession()}}
+{\footnotesize\ttfamily void Server\+::handle\+Session (\begin{DoxyParamCaption}\item[{tcp\+::socket}]{socket }\end{DoxyParamCaption})}
+
+
+
+Handle an individual client session. 
+
+Implementation of client session handling.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & TCP socket for the connected client\\
+\hline
+\end{DoxyParams}
+Manages the Web\+Socket connection with a client, processes incoming messages, and handles \textquotesingle{}start\textquotesingle{} and \textquotesingle{}stop\textquotesingle{} commands
+
+This method runs in its own thread and manages the lifecycle of a client connection. It processes incoming messages and responds to commands. The session continues until either a \textquotesingle{}stop\textquotesingle{} command is received or an error occurs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Connected client socket to be managed\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em May} & throw exceptions related to Web\+Socket operations which are caught and logged \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classServer_af77b72ed8e2c87920829f1f3903fcc3e}\label{classServer_af77b72ed8e2c87920829f1f3903fcc3e}} 
+\index{Server@{Server}!setEducationFlag@{setEducationFlag}}
+\index{setEducationFlag@{setEducationFlag}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{setEducationFlag()}{setEducationFlag()}}
+{\footnotesize\ttfamily void Server\+::set\+Education\+Flag (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ bool $>$ $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the flag that will be triggered by the \textquotesingle{}education\textquotesingle{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Pointer to atomic boolean that will be set when education command is received \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_ab283c97699a9a4acbd2e377ec974c5cc}\label{classServer_ab283c97699a9a4acbd2e377ec974c5cc}} 
+\index{Server@{Server}!setStartFlag@{setStartFlag}}
+\index{setStartFlag@{setStartFlag}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{setStartFlag()}{setStartFlag()}}
+{\footnotesize\ttfamily void Server\+::set\+Start\+Flag (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ bool $>$ $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the flag that will be triggered by the \textquotesingle{}start\textquotesingle{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Pointer to atomic boolean that will be set when start command is received \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_aefa049ad00bf95ff1c3e22b3157b6583}\label{classServer_aefa049ad00bf95ff1c3e22b3157b6583}} 
+\index{Server@{Server}!setStopFlag@{setStopFlag}}
+\index{setStopFlag@{setStopFlag}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{setStopFlag()}{setStopFlag()}}
+{\footnotesize\ttfamily void Server\+::set\+Stop\+Flag (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ bool $>$ $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the flag that will be triggered by the \textquotesingle{}stop\textquotesingle{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Pointer to atomic boolean that will be set when stop command is received \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_a9b32be2410177048e35cda551964fe1c}\label{classServer_a9b32be2410177048e35cda551964fe1c}} 
+\index{Server@{Server}!setTaxFlag@{setTaxFlag}}
+\index{setTaxFlag@{setTaxFlag}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{setTaxFlag()}{setTaxFlag()}}
+{\footnotesize\ttfamily void Server\+::set\+Tax\+Flag (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ bool $>$ $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the flag that will be triggered by the \textquotesingle{}tax\textquotesingle{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Pointer to atomic boolean that will be set when tax command is received \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_a1353947b67c99a4ece4bfef2b0cd8840}\label{classServer_a1353947b67c99a4ece4bfef2b0cd8840}} 
+\index{Server@{Server}!setWorkFlag@{setWorkFlag}}
+\index{setWorkFlag@{setWorkFlag}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{setWorkFlag()}{setWorkFlag()}}
+{\footnotesize\ttfamily void Server\+::set\+Work\+Flag (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ bool $>$ $\ast$}]{flag }\end{DoxyParamCaption})}
+
+
+
+Set the flag that will be triggered by the \textquotesingle{}shortwork\textquotesingle{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Pointer to atomic boolean that will be set when short work command is received \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_a7eac07d2582fa01c2671362efa955b31}\label{classServer_a7eac07d2582fa01c2671362efa955b31}} 
+\index{Server@{Server}!start@{start}}
+\index{start@{start}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Server\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the Web\+Socket server. 
+
+Implementation of server start procedure.
+
+Initializes the server on port 12345 and begins accepting client connections. The server will run until explicitly stopped or an error occurs
+
+Initializes the server on port 12345 and begins accepting connections. Only one client connection is handled at a time. The server continues running until explicitly stopped or an error occurs.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em May} & throw exceptions related to socket operations which are caught and logged \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}\label{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}} 
+\index{Server@{Server}!stop@{stop}}
+\index{stop@{stop}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Server\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop the Web\+Socket server. 
+
+Implementation of server stop procedure.
+
+Closes any active connections, stops accepting new connections, and performs cleanup of resources
+
+Safely shuts down the server by closing the acceptor and any active Web\+Socket connections. This method is thread-\/safe and can be called from any thread.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em May} & throw exceptions related to socket operations which are caught and logged \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classServer_ad81573c94aca3996029ae9a7de064ee2}\label{classServer_ad81573c94aca3996029ae9a7de064ee2}} 
+\index{Server@{Server}!write@{write}}
+\index{write@{write}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Server\+::write (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Send a JSON message to the connected client. 
+
+Implementation of JSON message writing to Web\+Socket.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & JSON object to be sent to the client\\
+\hline
+\end{DoxyParams}
+Thread-\/safe method to send JSON messages to the connected client. If no client is connected or an error occurs, the message will not be sent
+
+Sends a JSON message to the connected client in a thread-\/safe manner. If no client is connected or the connection is closed, the message will not be sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The JSON object to be sent to the client\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em May} & throw exceptions related to Web\+Socket operations which are caught and logged \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Server_8h}{Server.\+h}}\item 
+\mbox{\hyperlink{Server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

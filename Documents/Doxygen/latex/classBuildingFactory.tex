@@ -1,0 +1,160 @@
+\hypertarget{classBuildingFactory}{}\doxysection{Building\+Factory Class Reference}
+\label{classBuildingFactory}\index{BuildingFactory@{BuildingFactory}}
+
+
+Abstract factory class for creating buildings.  
+
+
+
+
+{\ttfamily \#include $<$Building\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Building\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classBuildingFactory__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuildingFactory_ae571e2d4e7aa74b9b395ab87a37a74d7}{Building\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classBuildingFactory_a7e80ef689190e23334b9eaa00723402a}{build}} ()
+\begin{DoxyCompactList}\small\item\em Builds a building object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classBuildingFactory_a9d2b189ccbf4bf411bb6475ac86d7801}{$\sim$\+Building\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}}. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{get\+Cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the cost of the building. \end{DoxyCompactList}\item 
+virtual std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{get\+Resource\+Cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the resource cost of the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{factory\+Method}} ()=0
+\begin{DoxyCompactList}\small\item\em Factory method for creating specific building objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBuildingFactory_a7bef6d601700745e6ce7b22a484f9a3a}\label{classBuildingFactory_a7bef6d601700745e6ce7b22a484f9a3a}} 
+int \mbox{\hyperlink{classBuildingFactory_a7bef6d601700745e6ce7b22a484f9a3a}{cost}} = 0
+\begin{DoxyCompactList}\small\item\em The cost of the building. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBuildingFactory_a150d7bc384d7288dfefe4691505d128e}\label{classBuildingFactory_a150d7bc384d7288dfefe4691505d128e}} 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classBuildingFactory_a150d7bc384d7288dfefe4691505d128e}{resource\+Cost}}
+\begin{DoxyCompactList}\small\item\em A map storing resource costs for the building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract factory class for creating buildings. 
+
+The \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} class defines the interface for creating building objects. Derived classes are responsible for defining specific types of buildings and their associated costs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBuildingFactory_ae571e2d4e7aa74b9b395ab87a37a74d7}\label{classBuildingFactory_ae571e2d4e7aa74b9b395ab87a37a74d7}} 
+\index{BuildingFactory@{BuildingFactory}!BuildingFactory@{BuildingFactory}}
+\index{BuildingFactory@{BuildingFactory}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{BuildingFactory()}{BuildingFactory()}}
+{\footnotesize\ttfamily Building\+Factory\+::\+Building\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}}. 
+
+Constructs a new \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} instance.
+
+Outputs a message to indicate that a new building has been created. \mbox{\Hypertarget{classBuildingFactory_a9d2b189ccbf4bf411bb6475ac86d7801}\label{classBuildingFactory_a9d2b189ccbf4bf411bb6475ac86d7801}} 
+\index{BuildingFactory@{BuildingFactory}!````~BuildingFactory@{$\sim$BuildingFactory}}
+\index{````~BuildingFactory@{$\sim$BuildingFactory}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$BuildingFactory()}{~BuildingFactory()}}
+{\footnotesize\ttfamily Building\+Factory\+::$\sim$\+Building\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}}. 
+
+Destructor for the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBuildingFactory_a7e80ef689190e23334b9eaa00723402a}\label{classBuildingFactory_a7e80ef689190e23334b9eaa00723402a}} 
+\index{BuildingFactory@{BuildingFactory}!build@{build}}
+\index{build@{build}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Building\+Factory\+::build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Builds a building object. 
+
+Builds a building using the factory method.
+
+\begin{DoxyReturn}{Returns}
+A pointer to a \mbox{\hyperlink{classBuilding}{Building}} object.
+\end{DoxyReturn}
+This function calls the {\ttfamily \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{factory\+Method()}}} to create a building object, which can then be added to a city.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the created \mbox{\hyperlink{classBuilding}{Building}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}\label{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}} 
+\index{BuildingFactory@{BuildingFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classBuilding}{Building}}$\ast$ Building\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Factory method for creating specific building objects. 
+
+This method should be implemented by derived classes to create specific types of buildings.
+
+\begin{DoxyReturn}{Returns}
+A pointer to a \mbox{\hyperlink{classBuilding}{Building}} object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaterPlantFactory_aaaf44fd96f32f4a1c226651363fa5200}{Water\+Plant\+Factory}}, \mbox{\hyperlink{classWasteSiteFactory_a73ca6f2dd9f8c5cc188041ada4fabd3c}{Waste\+Site\+Factory}}, \mbox{\hyperlink{classSewageSystemFactory_af6a5cea39473e3ae5109b2c2e6fdedd7}{Sewage\+System\+Factory}}, \mbox{\hyperlink{classResidentialFactory_a414bdb517274a4e958261b50f16462c0}{Residential\+Factory}}, \mbox{\hyperlink{classPowerPlantFactory_ac24f92a4ecb212e2ffb59b844da8b479}{Power\+Plant\+Factory}}, \mbox{\hyperlink{classLandmarkFactory_a9e6a02c14183c3647585728001b0ca48}{Landmark\+Factory}}, \mbox{\hyperlink{classIndustrialFactory_a126700790b23f57dabe47163de92550c}{Industrial\+Factory}}, and \mbox{\hyperlink{classCommercialFactory_a52b094345d33035ff8b6984afb0ddb52}{Commercial\+Factory}}.
+
+\mbox{\Hypertarget{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}\label{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}} 
+\index{BuildingFactory@{BuildingFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily virtual int Building\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the cost of the building. 
+
+\begin{DoxyReturn}{Returns}
+The cost of building as an integer. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaterPlantFactory_a9f084ef1ae3c054ac66aa9ccce1302da}{Water\+Plant\+Factory}}, \mbox{\hyperlink{classWasteSiteFactory_a08ef4490395106f22a64407384de2ad3}{Waste\+Site\+Factory}}, \mbox{\hyperlink{classSewageSystemFactory_aa48261ea7e489145a4bbf79300188f48}{Sewage\+System\+Factory}}, \mbox{\hyperlink{classResidentialFactory_a0be31540b26d7111e320786b6de29c4d}{Residential\+Factory}}, \mbox{\hyperlink{classPowerPlantFactory_ad6cb7e72cd67b9c83092a7dd79213c5c}{Power\+Plant\+Factory}}, \mbox{\hyperlink{classLandmarkFactory_a0004c84e3cfe0cb92dba9c9fa52a4d09}{Landmark\+Factory}}, \mbox{\hyperlink{classIndustrialFactory_a19735f493eea4212e6e83c43b8ed9866}{Industrial\+Factory}}, and \mbox{\hyperlink{classCommercialFactory_a21ca828eca79d13cda65a4a42140a1bc}{Commercial\+Factory}}.
+
+\mbox{\Hypertarget{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}\label{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}} 
+\index{BuildingFactory@{BuildingFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!BuildingFactory@{BuildingFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily virtual std\+::map$<$std\+::string, int$>$ Building\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the resource cost of the building. 
+
+\begin{DoxyReturn}{Returns}
+A map of resource names and their associated costs. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaterPlantFactory_a238ee36b05689b55df757089381ac04f}{Water\+Plant\+Factory}}, \mbox{\hyperlink{classWasteSiteFactory_a781f9430f071273f08d7920772604acd}{Waste\+Site\+Factory}}, \mbox{\hyperlink{classSewageSystemFactory_a32ce9345897b3c18f2176ef47e63853b}{Sewage\+System\+Factory}}, \mbox{\hyperlink{classResidentialFactory_a7776db107a3c36258b0ac97395233a08}{Residential\+Factory}}, \mbox{\hyperlink{classPowerPlantFactory_aabf5c35acfddf81ae75d07aae2a7fde3}{Power\+Plant\+Factory}}, \mbox{\hyperlink{classLandmarkFactory_a05ae3f07778f140007ebdbac6f26093b}{Landmark\+Factory}}, \mbox{\hyperlink{classIndustrialFactory_aee8c7d919c08375043b04109eec2dc98}{Industrial\+Factory}}, and \mbox{\hyperlink{classCommercialFactory_a4c18fc3f1861873cb8cc0f4100862aea}{Commercial\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{BuildingFactory_8h}{Building\+Factory.\+h}}\item 
+\mbox{\hyperlink{BuildingFactory_8cpp}{Building\+Factory.\+cpp}}\end{DoxyCompactItemize}

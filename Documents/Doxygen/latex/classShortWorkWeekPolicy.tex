@@ -1,0 +1,96 @@
+\hypertarget{classShortWorkWeekPolicy}{}\doxysection{Short\+Work\+Week\+Policy Class Reference}
+\label{classShortWorkWeekPolicy}\index{ShortWorkWeekPolicy@{ShortWorkWeekPolicy}}
+
+
+Command to implement a short workweek policy in a \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Short\+Work\+Week\+Policy.\+h$>$}
+
+
+
+Inheritance diagram for Short\+Work\+Week\+Policy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classShortWorkWeekPolicy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Short\+Work\+Week\+Policy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classShortWorkWeekPolicy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShortWorkWeekPolicy_a805e48813d2b8b0d3ac4b1f68d841034}{Short\+Work\+Week\+Policy}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district, int \&\mbox{\hyperlink{classImplementPolicy_a99feee4304fb5678754212944672eab3}{balance}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classShortWorkWeekPolicy}{Short\+Work\+Week\+Policy}} command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classShortWorkWeekPolicy_a39d9c394bbeaf1c21c48b5f1d9918c23}\label{classShortWorkWeekPolicy_a39d9c394bbeaf1c21c48b5f1d9918c23}} 
+\mbox{\hyperlink{classShortWorkWeekPolicy_a39d9c394bbeaf1c21c48b5f1d9918c23}{$\sim$\+Short\+Work\+Week\+Policy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classShortWorkWeekPolicy}{Short\+Work\+Week\+Policy}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classShortWorkWeekPolicy_aa30eb0af94a724c7ff3c9953f7071a8f}{execute\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Executes the command to implement the short workweek policy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to implement a short workweek policy in a \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This policy allows for the enhancement of the workweek structure by deducting a certain amount from the balance and increasing the short week policy multiplier. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classShortWorkWeekPolicy_a805e48813d2b8b0d3ac4b1f68d841034}\label{classShortWorkWeekPolicy_a805e48813d2b8b0d3ac4b1f68d841034}} 
+\index{ShortWorkWeekPolicy@{ShortWorkWeekPolicy}!ShortWorkWeekPolicy@{ShortWorkWeekPolicy}}
+\index{ShortWorkWeekPolicy@{ShortWorkWeekPolicy}!ShortWorkWeekPolicy@{ShortWorkWeekPolicy}}
+\doxysubsubsection{\texorpdfstring{ShortWorkWeekPolicy()}{ShortWorkWeekPolicy()}}
+{\footnotesize\ttfamily Short\+Work\+Week\+Policy\+::\+Short\+Work\+Week\+Policy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district,  }\item[{int \&}]{balance }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classShortWorkWeekPolicy}{Short\+Work\+Week\+Policy}} command. 
+
+Constructs a \mbox{\hyperlink{classShortWorkWeekPolicy}{Short\+Work\+Week\+Policy}} command with a specified balance reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} where the policy will be implemented. \\
+\hline
+{\em balance} & Reference to the balance to be modified. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShortWorkWeekPolicy_aa30eb0af94a724c7ff3c9953f7071a8f}\label{classShortWorkWeekPolicy_aa30eb0af94a724c7ff3c9953f7071a8f}} 
+\index{ShortWorkWeekPolicy@{ShortWorkWeekPolicy}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!ShortWorkWeekPolicy@{ShortWorkWeekPolicy}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Short\+Work\+Week\+Policy\+::execute\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the command to implement the short workweek policy. 
+
+Executes the command to enhance the short workweek policy.
+
+Deducts a specific amount from the balance and updates the short week multiplier if there are sufficient funds.
+
+If the balance is sufficient, the policy deducts a fixed amount from the balance and updates the short week multiplier of the associated \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Implements \mbox{\hyperlink{classImplementPolicy_ab85d6d5f1289b830f775f844415b4d0a}{Implement\+Policy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ShortWorkWeekPolicy_8h}{Short\+Work\+Week\+Policy.\+h}}\item 
+\mbox{\hyperlink{ShortWorkWeekPolicy_8cpp}{Short\+Work\+Week\+Policy.\+cpp}}\end{DoxyCompactItemize}

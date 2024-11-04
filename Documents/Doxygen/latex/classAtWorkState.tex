@@ -1,0 +1,108 @@
+\hypertarget{classAtWorkState}{}\doxysection{At\+Work\+State Class Reference}
+\label{classAtWorkState}\index{AtWorkState@{AtWorkState}}
+
+
+Concrete state representing a citizen\textquotesingle{}s location when they are at work.  
+
+
+
+
+{\ttfamily \#include $<$At\+Work\+State.\+h$>$}
+
+
+
+Inheritance diagram for At\+Work\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classAtWorkState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for At\+Work\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classAtWorkState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAtWorkState_ad3471c1a09d234db0a75e86bdb031558}\label{classAtWorkState_ad3471c1a09d234db0a75e86bdb031558}} 
+\mbox{\hyperlink{classAtWorkState_ad3471c1a09d234db0a75e86bdb031558}{At\+Work\+State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAtWorkState_acccae6f58e457d27ff42569c3070a2b3}\label{classAtWorkState_acccae6f58e457d27ff42569c3070a2b3}} 
+\mbox{\hyperlink{classAtWorkState_acccae6f58e457d27ff42569c3070a2b3}{$\sim$\+At\+Work\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAtWorkState_a565b1ca5596a0432d6a1eeb443c8ef63}{travel}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$citizen)
+\begin{DoxyCompactList}\small\item\em Handles the travel logic for a citizen in the \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAtWorkState_aad653d8e54dbe710644268ff5ffec76e}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of the current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Concrete state representing a citizen\textquotesingle{}s location when they are at work. 
+
+This class defines the behavior of a citizen when they are in their work state. It inherits from \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} and provides specific travel behavior when transitioning from work to other locations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAtWorkState_aad653d8e54dbe710644268ff5ffec76e}\label{classAtWorkState_aad653d8e54dbe710644268ff5ffec76e}} 
+\index{AtWorkState@{AtWorkState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!AtWorkState@{AtWorkState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string At\+Work\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the name of the current state. 
+
+Returns \char`\"{}\+At\+Work\+State\char`\"{}.
+
+This function returns a string representing the name of the state, specifically \char`\"{}\+At\+Work\+State\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A string indicating the name of the state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenLocationState_a01bcc506c8cf02decfd9830207b68a9c}{Citizen\+Location\+State}}.
+
+\mbox{\Hypertarget{classAtWorkState_a565b1ca5596a0432d6a1eeb443c8ef63}\label{classAtWorkState_a565b1ca5596a0432d6a1eeb443c8ef63}} 
+\index{AtWorkState@{AtWorkState}!travel@{travel}}
+\index{travel@{travel}!AtWorkState@{AtWorkState}}
+\doxysubsubsection{\texorpdfstring{travel()}{travel()}}
+{\footnotesize\ttfamily void At\+Work\+State\+::travel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{citizen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the travel logic for a citizen in the \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}}. 
+
+Transitions the citizen from the \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}} to the \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}} by calculating the travel distance between the work and leisure locations, setting the travel strategy, and changing the state of the citizen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The citizen who is attempting to travel.\\
+\hline
+\end{DoxyParams}
+This method transitions the citizen from the work state to their leisure state. The distance between the citizen\textquotesingle{}s work and leisure location is calculated, the appropriate travel strategy is chosen, and the citizen\textquotesingle{}s state is updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The citizen attempting to travel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCitizenLocationState_a80d1bab4e71ac7eb884a546b31dab648}{Citizen\+Location\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AtWorkState_8h}{At\+Work\+State.\+h}}\item 
+\mbox{\hyperlink{AtWorkState_8cpp}{At\+Work\+State.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,145 @@
+\hypertarget{classWasteSiteFactory}{}\doxysection{Waste\+Site\+Factory Class Reference}
+\label{classWasteSiteFactory}\index{WasteSiteFactory@{WasteSiteFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classWaste}{Waste}} Site buildings in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Waste\+Site\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Waste\+Site\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classWasteSiteFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Waste\+Site\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classWasteSiteFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWasteSiteFactory_ad9f7d69c168a30bf0080f9fd1cef6221}{Waste\+Site\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWasteSiteFactory}{Waste\+Site\+Factory}} with predefined resource requirements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWasteSiteFactory_ac8c2eae1bdf8d913295442d2ca90ff36}\label{classWasteSiteFactory_ac8c2eae1bdf8d913295442d2ca90ff36}} 
+\mbox{\hyperlink{classWasteSiteFactory_ac8c2eae1bdf8d913295442d2ca90ff36}{$\sim$\+Waste\+Site\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classWasteSiteFactory}{Waste\+Site\+Factory}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWasteSiteFactory_a08ef4490395106f22a64407384de2ad3}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost of constructing a \mbox{\hyperlink{classWaste}{Waste}} Site building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classWasteSiteFactory_a781f9430f071273f08d7920772604acd}{get\+Resource\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Provides the resource costs needed to build a \mbox{\hyperlink{classWaste}{Waste}} Site building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classWasteSiteFactory_a73ca6f2dd9f8c5cc188041ada4fabd3c}{factory\+Method}} () override
+\begin{DoxyCompactList}\small\item\em Factory method that creates a \mbox{\hyperlink{classWaste}{Waste}} Site building instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classWaste}{Waste}} Site buildings in the city simulation. 
+
+A factory class responsible for creating \mbox{\hyperlink{classWaste}{Waste}} Site buildings.
+
+The \mbox{\hyperlink{classWasteSiteFactory}{Waste\+Site\+Factory}} class implements the factory method to create instances of the \mbox{\hyperlink{classWaste}{Waste}} Site building type and provides resource cost details for building waste management sites.
+
+The \mbox{\hyperlink{classWasteSiteFactory}{Waste\+Site\+Factory}} class derives from \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} and provides the implementation details for creating a \mbox{\hyperlink{classWaste}{Waste}} Site building, retrieving its construction cost, and specifying the resources required. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWasteSiteFactory_ad9f7d69c168a30bf0080f9fd1cef6221}\label{classWasteSiteFactory_ad9f7d69c168a30bf0080f9fd1cef6221}} 
+\index{WasteSiteFactory@{WasteSiteFactory}!WasteSiteFactory@{WasteSiteFactory}}
+\index{WasteSiteFactory@{WasteSiteFactory}!WasteSiteFactory@{WasteSiteFactory}}
+\doxysubsubsection{\texorpdfstring{WasteSiteFactory()}{WasteSiteFactory()}}
+{\footnotesize\ttfamily Waste\+Site\+Factory\+::\+Waste\+Site\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWasteSiteFactory}{Waste\+Site\+Factory}} with predefined resource requirements. 
+
+Constructs a \mbox{\hyperlink{classWasteSiteFactory}{Waste\+Site\+Factory}} and initializes resource costs.
+
+Initializes the factory with the base cost and resource needs for constructing a \mbox{\hyperlink{classWaste}{Waste}} Site building.
+
+Sets the base cost for a \mbox{\hyperlink{classWaste}{Waste}} Site building and specifies resource requirements in terms of quantities for Wood, Steel, Concrete, and Brick. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWasteSiteFactory_a73ca6f2dd9f8c5cc188041ada4fabd3c}\label{classWasteSiteFactory_a73ca6f2dd9f8c5cc188041ada4fabd3c}} 
+\index{WasteSiteFactory@{WasteSiteFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!WasteSiteFactory@{WasteSiteFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Waste\+Site\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Factory method that creates a \mbox{\hyperlink{classWaste}{Waste}} Site building instance. 
+
+Factory method to create a \mbox{\hyperlink{classWaste}{Waste}} Site building.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} factory\+Method to return an instance of the \mbox{\hyperlink{classWaste}{Waste}} building with predefined specifications. \begin{DoxyReturn}{Returns}
+A pointer to a newly created \mbox{\hyperlink{classWaste}{Waste}} building.
+
+A pointer to a new \mbox{\hyperlink{classWaste}{Waste}} Site building with preset total capacity, initial used capacity, and tax rate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classWasteSiteFactory_a08ef4490395106f22a64407384de2ad3}\label{classWasteSiteFactory_a08ef4490395106f22a64407384de2ad3}} 
+\index{WasteSiteFactory@{WasteSiteFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!WasteSiteFactory@{WasteSiteFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily int Waste\+Site\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost of constructing a \mbox{\hyperlink{classWaste}{Waste}} Site building. 
+
+Retrieves the monetary cost to build a \mbox{\hyperlink{classWaste}{Waste}} Site structure.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} get\+Cost method and returns the monetary cost for creating a \mbox{\hyperlink{classWaste}{Waste}} Site structure. \begin{DoxyReturn}{Returns}
+The cost to construct a \mbox{\hyperlink{classWaste}{Waste}} Site building.
+
+The construction cost of a \mbox{\hyperlink{classWaste}{Waste}} Site building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classWasteSiteFactory_a781f9430f071273f08d7920772604acd}\label{classWasteSiteFactory_a781f9430f071273f08d7920772604acd}} 
+\index{WasteSiteFactory@{WasteSiteFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!WasteSiteFactory@{WasteSiteFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Waste\+Site\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides the resource costs needed to build a \mbox{\hyperlink{classWaste}{Waste}} Site building. 
+
+This method returns a map of resource types and their respective quantities required for the construction of a \mbox{\hyperlink{classWaste}{Waste}} Site structure. \begin{DoxyReturn}{Returns}
+A map of resource costs where keys are resource names and values are quantities.
+
+A map containing the required resource types and their respective costs. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WasteSiteFactory_8h}{Waste\+Site\+Factory.\+h}}\item 
+\mbox{\hyperlink{WasteSiteFactory_8cpp}{Waste\+Site\+Factory.\+cpp}}\end{DoxyCompactItemize}

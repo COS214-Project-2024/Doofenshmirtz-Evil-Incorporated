@@ -1,0 +1,11 @@
+<map id="CityUnit.h" name="CityUnit.h">
+<area shape="rect" id="node1" title="Defines the CityUnit class, which represents a unit in the city with various properties and functiona..." alt="" coords="164,5,251,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,68,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="93,80,143,107"/>
+<area shape="rect" id="node4" href="$Citizen_8h.html" title="Defines the Citizen class for managing citizen objects in the city simulation." alt="" coords="168,80,247,107"/>
+<area shape="rect" id="node8" href="$Iterator_8h.html" title="Defines the Iterator class for creating Iterator objects." alt="" coords="271,80,352,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="377,80,523,107"/>
+<area shape="rect" id="node5" href="$AtHomeState_8h.html" title="Defines the AtHomeState class." alt="" coords="147,155,268,181"/>
+<area shape="rect" id="node6" href="$CitizenLocationState_8h.html" title="Defines the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="123,229,291,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="178,304,237,331"/>
+</map>

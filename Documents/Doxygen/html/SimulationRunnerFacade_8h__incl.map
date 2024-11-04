@@ -1,0 +1,13 @@
+<map id="SimulationRunnerFacade.h" name="SimulationRunnerFacade.h">
+<area shape="rect" id="node1" title="Defines the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of th..." alt="" coords="579,5,773,32"/>
+<area shape="rect" id="node2" href="$WebSocketNotifier_8h.html" title="Defines the WebSocketNotifier class." alt="" coords="520,80,672,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="928,244,995,271"/>
+<area shape="rect" id="node3" title=" " alt="" coords="591,155,734,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="757,244,904,271"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,244,83,271"/>
+<area shape="rect" id="node6" href="$Server_8h.html" title="Defines the Server class for Server objects. Handles creation/deletion of a local web server." alt="" coords="492,162,567,189"/>
+<area shape="rect" id="node7" title=" " alt="" coords="574,244,733,271"/>
+<area shape="rect" id="node8" title=" " alt="" coords="106,244,305,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="328,244,445,271"/>
+<area shape="rect" id="node11" title=" " alt="" coords="469,244,549,271"/>
+</map>

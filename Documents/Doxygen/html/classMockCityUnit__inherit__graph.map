@@ -1,0 +1,4 @@
+<map id="MockCityUnit" name="MockCityUnit">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="23,5,98,32"/>
+</map>

@@ -1,0 +1,108 @@
+\hypertarget{classAtLeisureState}{}\doxysection{At\+Leisure\+State Class Reference}
+\label{classAtLeisureState}\index{AtLeisureState@{AtLeisureState}}
+
+
+Concrete state representing a citizen\textquotesingle{}s location when they are at leisure.  
+
+
+
+
+{\ttfamily \#include $<$At\+Leisure\+State.\+h$>$}
+
+
+
+Inheritance diagram for At\+Leisure\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classAtLeisureState__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for At\+Leisure\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classAtLeisureState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAtLeisureState_a9fdebdae14ba4a2ade14435cec1f149e}\label{classAtLeisureState_a9fdebdae14ba4a2ade14435cec1f149e}} 
+\mbox{\hyperlink{classAtLeisureState_a9fdebdae14ba4a2ade14435cec1f149e}{At\+Leisure\+State}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAtLeisureState_aa063b8a2575353a7795df13477687ed1}\label{classAtLeisureState_aa063b8a2575353a7795df13477687ed1}} 
+\mbox{\hyperlink{classAtLeisureState_aa063b8a2575353a7795df13477687ed1}{$\sim$\+At\+Leisure\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAtLeisureState_acab6ceb349e9cbb82456d76dcb762b3d}{travel}} (\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$citizen)
+\begin{DoxyCompactList}\small\item\em Handles the travel logic for a citizen in the \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAtLeisureState_a014fc92aceb16a829722f4a4d67ded4d}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of the current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Concrete state representing a citizen\textquotesingle{}s location when they are at leisure. 
+
+This class defines the behavior of a citizen when they are in their leisure state. It inherits from \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} and provides specific travel behavior when transitioning from leisure to other locations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAtLeisureState_a014fc92aceb16a829722f4a4d67ded4d}\label{classAtLeisureState_a014fc92aceb16a829722f4a4d67ded4d}} 
+\index{AtLeisureState@{AtLeisureState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!AtLeisureState@{AtLeisureState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily std\+::string At\+Leisure\+State\+::get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the name of the current state. 
+
+Returns \char`\"{}\+At\+Leisure\+State\char`\"{}.
+
+This function returns a string representing the name of the state, specifically \char`\"{}\+At\+Leisure\+State\char`\"{}.
+
+\begin{DoxyReturn}{Returns}
+A string indicating the name of the state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCitizenLocationState_a01bcc506c8cf02decfd9830207b68a9c}{Citizen\+Location\+State}}.
+
+\mbox{\Hypertarget{classAtLeisureState_acab6ceb349e9cbb82456d76dcb762b3d}\label{classAtLeisureState_acab6ceb349e9cbb82456d76dcb762b3d}} 
+\index{AtLeisureState@{AtLeisureState}!travel@{travel}}
+\index{travel@{travel}!AtLeisureState@{AtLeisureState}}
+\doxysubsubsection{\texorpdfstring{travel()}{travel()}}
+{\footnotesize\ttfamily void At\+Leisure\+State\+::travel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizen}{Citizen}} $\ast$}]{citizen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handles the travel logic for a citizen in the \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}}. 
+
+Transitions the citizen from the \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}} to the \mbox{\hyperlink{classAtHomeState}{At\+Home\+State}} by calculating the travel distance between the leisure and home locations, setting the travel strategy, and changing the state of the citizen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The citizen who is attempting to travel.\\
+\hline
+\end{DoxyParams}
+This method transitions the citizen from the leisure state to their home state. The distance between the citizen\textquotesingle{}s leisure location and home is calculated, the appropriate travel strategy is chosen, and the citizen\textquotesingle{}s state is updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen} & The citizen attempting to travel. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCitizenLocationState_a80d1bab4e71ac7eb884a546b31dab648}{Citizen\+Location\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AtLeisureState_8h}{At\+Leisure\+State.\+h}}\item 
+\mbox{\hyperlink{AtLeisureState_8cpp}{At\+Leisure\+State.\+cpp}}\end{DoxyCompactItemize}

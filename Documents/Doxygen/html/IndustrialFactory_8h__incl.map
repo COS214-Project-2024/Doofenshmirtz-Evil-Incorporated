@@ -1,0 +1,17 @@
+<map id="IndustrialFactory.h" name="IndustrialFactory.h">
+<area shape="rect" id="node1" title="Defines of the IndustrialFactory class for Industrial building creation." alt="" coords="299,5,439,32"/>
+<area shape="rect" id="node2" href="$BuildingFactory_8h.html" title="Defines the BuildingFactory class for creating building objects." alt="" coords="155,80,287,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="256,304,307,331"/>
+<area shape="rect" id="node10" title=" " alt="" coords="749,528,808,555"/>
+<area shape="rect" id="node15" href="$Industrial_8h.html" title="Defines the Industrial class for creating Industrial building objects." alt="" coords="389,80,483,107"/>
+<area shape="rect" id="node3" href="$Building_8h.html" title="Defines the Building class, which represents a building within a city unit." alt="" coords="418,155,505,181"/>
+<area shape="rect" id="node13" title=" " alt="" coords="5,155,85,181"/>
+<area shape="rect" id="node14" title=" " alt="" coords="109,155,181,181"/>
+<area shape="rect" id="node4" href="$CityUnit_8h.html" title="Defines the CityUnit class, which represents a unit in the city with various properties and functiona..." alt="" coords="418,229,505,256"/>
+<area shape="rect" id="node12" title=" " alt="" coords="627,304,773,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="437,304,499,331"/>
+<area shape="rect" id="node7" href="$Citizen_8h.html" title="Defines the Citizen class for managing citizen objects in the city simulation." alt="" coords="523,304,602,331"/>
+<area shape="rect" id="node11" href="$Iterator_8h.html" title="Defines the Iterator class for creating Iterator objects." alt="" coords="331,304,413,331"/>
+<area shape="rect" id="node8" href="$AtHomeState_8h.html" title="Defines the AtHomeState class." alt="" coords="533,379,654,405"/>
+<area shape="rect" id="node9" href="$CitizenLocationState_8h.html" title="Defines the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="571,453,739,480"/>
+</map>
