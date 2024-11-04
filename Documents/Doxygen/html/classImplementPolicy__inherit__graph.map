@@ -1,0 +1,6 @@
+<map id="ImplementPolicy" name="ImplementPolicy">
+<area shape="rect" id="node1" title="Abstract command to implement a policy in a CityUnit." alt="" coords="117,80,249,107"/>
+<area shape="rect" id="node3" href="$classBetterEducationPolicy.html" title="Command to implement a better education policy in a CityUnit." alt="" coords="5,155,171,181"/>
+<area shape="rect" id="node4" href="$classShortWorkWeekPolicy.html" title="Command to implement a short workweek policy in a CityUnit." alt="" coords="195,155,359,181"/>
+<area shape="rect" id="node2" href="$classGovernmentCommand.html" title="Base class for commands that can be executed on a CityUnit." alt="" coords="97,5,268,32"/>
+</map>

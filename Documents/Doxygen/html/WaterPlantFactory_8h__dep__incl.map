@@ -1,0 +1,5 @@
+<map id="WaterPlantFactory.h" name="WaterPlantFactory.h">
+<area shape="rect" id="node1" title="Defines the WaterPlantFactory class for creating Water building objects." alt="" coords="100,5,251,32"/>
+<area shape="rect" id="node2" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="5,80,161,107"/>
+<area shape="rect" id="node3" href="$WaterPlantFactory_8cpp.html" title="Implements the WaterPlantFactory class for creating Water building objects." alt="" coords="186,80,351,107"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Utility" name="Utility">
+<area shape="rect" id="node1" title="Abstract base class for utility buildings." alt="" coords="143,155,205,181"/>
+<area shape="rect" id="node4" href="$classPower.html" title="Represents a power plant utility in the city simulation." alt="" coords="5,229,68,256"/>
+<area shape="rect" id="node5" href="$classSewage.html" title=" " alt="" coords="92,229,165,256"/>
+<area shape="rect" id="node6" href="$classWaste.html" title="Represents a waste management utility building." alt="" coords="189,229,252,256"/>
+<area shape="rect" id="node7" href="$classWater.html" title="Represents a water utility building." alt="" coords="276,229,336,256"/>
+<area shape="rect" id="node2" href="$classBuilding.html" title="Represents a building within a city unit." alt="" coords="137,80,211,107"/>
+<area shape="rect" id="node3" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="137,5,211,32"/>
+</map>

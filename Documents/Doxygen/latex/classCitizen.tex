@@ -1,0 +1,338 @@
+\hypertarget{classCitizen}{}\doxysection{Citizen Class Reference}
+\label{classCitizen}\index{Citizen@{Citizen}}
+
+
+Represents a citizen in the city with attributes such as home, job, satisfaction score, and travel functionality.  
+
+
+
+
+{\ttfamily \#include $<$Citizen.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCitizen_a9c006b21b7aa395103007688749f14ac}{Citizen}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$home, \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$job, \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$leisure)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classCitizen}{Citizen}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCitizen_a5232bf42d9a211d81ce3e5e3cefcf04c}{$\sim$\+Citizen}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classCitizen}{Citizen}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ \mbox{\hyperlink{classCitizen_af6d1c8537e74777e6b0d15561ab96b63}{get\+Leisure}} () const
+\begin{DoxyCompactList}\small\item\em Gets the citizen\textquotesingle{}s leisure location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_af192a8b148faba2108d1146fc96b1ba6}{update\+Satisfaction}} (std\+::string op, int value)
+\begin{DoxyCompactList}\small\item\em Updates the citizen\textquotesingle{}s satisfaction level based on the specified operation and value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ \mbox{\hyperlink{classCitizen_a8a243a3856d9a1ca9d104d33453d0efc}{get\+Home}} () const
+\begin{DoxyCompactList}\small\item\em Gets the citizen\textquotesingle{}s home location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ \mbox{\hyperlink{classCitizen_aed11a6ba54bfd078b00e54496bdd2ac0}{get\+Job}} () const
+\begin{DoxyCompactList}\small\item\em Gets the citizen\textquotesingle{}s job location. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCitizen_a1722b76165394abd847f253198a38473}{get\+Satisfaction}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current satisfaction level of the citizen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCitizen_a6639356ad0cbd72712ca89481231a3bd}{get\+Balance}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current bank account balance of the citizen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} $\ast$ \mbox{\hyperlink{classCitizen_aaddf9726657afd141cac114ff9e12b19}{get\+Citzen\+Location\+Sate}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current location state of the citizen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_ad64cf5428d2e27c7ed340b63cf0abcac}{set\+State}} (\mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} $\ast$new\+State)
+\begin{DoxyCompactList}\small\item\em Sets the citizen\textquotesingle{}s location state while ensuring memory safety. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCitizen_a351d715c92145993b6e460feefb03d13}{employ\+Citizen}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$job)
+\begin{DoxyCompactList}\small\item\em Attempts to employ the citizen at the given job location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCitizen_aa142355abc9eba0fbc0aa57e7dabf342}{relax\+Citizen}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$stripclub)
+\begin{DoxyCompactList}\small\item\em Allows the citizen to relax at a given leisure location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a5491862ab5c63075c951188eec7dd0ca}{follow\+Routine}} ()
+\begin{DoxyCompactList}\small\item\em Makes the citizen travel to the next location in their routine\+: home → leisure → job. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a3f692579abb8e8dfd3a36821f59101c4}{take\+Tax}} (double amount)
+\begin{DoxyCompactList}\small\item\em Subtracts the specified tax amount from the citizen\textquotesingle{}s bank account. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a2a9bd5d1467fc27dd3397e9bcad47dbb}{recieve\+Salary}} (double amount)
+\begin{DoxyCompactList}\small\item\em Adds the specified amount to the citizen\textquotesingle{}s bank account. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCitizen_a590c3c2582c529fd541c80d23117cc60}{pay\+Fine}} (double amount)
+\begin{DoxyCompactList}\small\item\em Pays the fine at a leisure location from balance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCitizen_a5fa268d2c4ac9bb62c1b1c6f1272d08b}\label{classCitizen_a5fa268d2c4ac9bb62c1b1c6f1272d08b}} 
+double \mbox{\hyperlink{classCitizen_a5fa268d2c4ac9bb62c1b1c6f1272d08b}{get\+Salary}} ()
+\begin{DoxyCompactList}\small\item\em gets the Citizens salary \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCitizen_a33039749bbb2684a562982a4334f4e69}\label{classCitizen_a33039749bbb2684a562982a4334f4e69}} 
+std\+::string \mbox{\hyperlink{classCitizen_a33039749bbb2684a562982a4334f4e69}{last\+Used\+Strategy\+Name}}
+\begin{DoxyCompactList}\small\item\em The name of the last travel strategy used by the citizen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a citizen in the city with attributes such as home, job, satisfaction score, and travel functionality. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCitizen_a9c006b21b7aa395103007688749f14ac}\label{classCitizen_a9c006b21b7aa395103007688749f14ac}} 
+\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\index{Citizen@{Citizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{Citizen()}{Citizen()}}
+{\footnotesize\ttfamily Citizen\+::\+Citizen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{home,  }\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{job,  }\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{leisure }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classCitizen}{Citizen}} class. 
+
+Constructs a \mbox{\hyperlink{classCitizen}{Citizen}} with a given home, job and leisure. Initializes satisfaction score and bank balance randomly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em home} & Pointer to the citizen\textquotesingle{}s home \mbox{\hyperlink{classCityUnit}{City\+Unit}}. \\
+\hline
+{\em job} & Pointer to the citizen\textquotesingle{}s job \mbox{\hyperlink{classCityUnit}{City\+Unit}} (can be nullptr if unemployed). \\
+\hline
+{\em leisure} & Pointer to the citizen\textquotesingle{}s preferred leisure spot (randomly chosen) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a5232bf42d9a211d81ce3e5e3cefcf04c}\label{classCitizen_a5232bf42d9a211d81ce3e5e3cefcf04c}} 
+\index{Citizen@{Citizen}!````~Citizen@{$\sim$Citizen}}
+\index{````~Citizen@{$\sim$Citizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{$\sim$Citizen()}{~Citizen()}}
+{\footnotesize\ttfamily Citizen\+::$\sim$\+Citizen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classCitizen}{Citizen}} class. 
+
+Destructor that cleans up \mbox{\hyperlink{classCitizen}{Citizen}} resources. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCitizen_a351d715c92145993b6e460feefb03d13}\label{classCitizen_a351d715c92145993b6e460feefb03d13}} 
+\index{Citizen@{Citizen}!employCitizen@{employCitizen}}
+\index{employCitizen@{employCitizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{employCitizen()}{employCitizen()}}
+{\footnotesize\ttfamily bool Citizen\+::employ\+Citizen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{job }\end{DoxyParamCaption})}
+
+
+
+Attempts to employ the citizen at the given job location. 
+
+This method sets the {\ttfamily citizen\+Job} pointer if the citizen is currently unemployed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} (building) where the citizen will be employed if successful. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the citizen was unemployed and successfully assigned a job; false if the citizen is already employed.
+\end{DoxyReturn}
+This method sets the {\ttfamily citizen\+Job} pointer for the citizen if they are currently unemployed. If the citizen is already employed (i.\+e., {\ttfamily citizen\+Job} is not nullptr), the method will do nothing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em job} & A pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} (building) where the citizen will be employed if the operation is successful. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the citizen was unemployed and successfully assigned a job, false if the citizen already had a job. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a5491862ab5c63075c951188eec7dd0ca}\label{classCitizen_a5491862ab5c63075c951188eec7dd0ca}} 
+\index{Citizen@{Citizen}!followRoutine@{followRoutine}}
+\index{followRoutine@{followRoutine}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{followRoutine()}{followRoutine()}}
+{\footnotesize\ttfamily void Citizen\+::follow\+Routine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Makes the citizen travel to the next location in their routine\+: home → leisure → job. 
+
+Make citizen travel to next location in their natural routine i.\+e. home =$>$ leisure =$>$ job FFurthermore, slighlty influences satisfaction based on current state of citizen.
+
+This method also slightly influences the citizen\textquotesingle{}s satisfaction based on their current state. \mbox{\Hypertarget{classCitizen_a6639356ad0cbd72712ca89481231a3bd}\label{classCitizen_a6639356ad0cbd72712ca89481231a3bd}} 
+\index{Citizen@{Citizen}!getBalance@{getBalance}}
+\index{getBalance@{getBalance}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getBalance()}{getBalance()}}
+{\footnotesize\ttfamily int Citizen\+::get\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current bank account balance of the citizen. 
+
+Getter for citizen\textquotesingle{}s current bank account balance.
+
+\begin{DoxyReturn}{Returns}
+The bank balance as an integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_aaddf9726657afd141cac114ff9e12b19}\label{classCitizen_aaddf9726657afd141cac114ff9e12b19}} 
+\index{Citizen@{Citizen}!getCitzenLocationSate@{getCitzenLocationSate}}
+\index{getCitzenLocationSate@{getCitzenLocationSate}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getCitzenLocationSate()}{getCitzenLocationSate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} $\ast$ Citizen\+::get\+Citzen\+Location\+Sate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current location state of the citizen. 
+
+Getter for citizen\textquotesingle{}s state.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current \mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a8a243a3856d9a1ca9d104d33453d0efc}\label{classCitizen_a8a243a3856d9a1ca9d104d33453d0efc}} 
+\index{Citizen@{Citizen}!getHome@{getHome}}
+\index{getHome@{getHome}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getHome()}{getHome()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ Citizen\+::get\+Home (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the citizen\textquotesingle{}s home location. 
+
+Getter for citizen\textquotesingle{}s current Home City\+Unit$\ast$.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} representing the citizen\textquotesingle{}s home. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_aed11a6ba54bfd078b00e54496bdd2ac0}\label{classCitizen_aed11a6ba54bfd078b00e54496bdd2ac0}} 
+\index{Citizen@{Citizen}!getJob@{getJob}}
+\index{getJob@{getJob}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getJob()}{getJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ Citizen\+::get\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the citizen\textquotesingle{}s job location. 
+
+Getter for citizen\textquotesingle{}s current job City\+Unit$\ast$.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} representing the citizen\textquotesingle{}s job. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_af6d1c8537e74777e6b0d15561ab96b63}\label{classCitizen_af6d1c8537e74777e6b0d15561ab96b63}} 
+\index{Citizen@{Citizen}!getLeisure@{getLeisure}}
+\index{getLeisure@{getLeisure}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getLeisure()}{getLeisure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ Citizen\+::get\+Leisure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the citizen\textquotesingle{}s leisure location. 
+
+Getter for citizen\textquotesingle{}s leisure location City\+Unit$\ast$.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} representing the leisure location. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a1722b76165394abd847f253198a38473}\label{classCitizen_a1722b76165394abd847f253198a38473}} 
+\index{Citizen@{Citizen}!getSatisfaction@{getSatisfaction}}
+\index{getSatisfaction@{getSatisfaction}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{getSatisfaction()}{getSatisfaction()}}
+{\footnotesize\ttfamily int Citizen\+::get\+Satisfaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current satisfaction level of the citizen. 
+
+Getter for citizen\textquotesingle{}s current satisfaction level.
+
+\begin{DoxyReturn}{Returns}
+The satisfaction score as an integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_a590c3c2582c529fd541c80d23117cc60}\label{classCitizen_a590c3c2582c529fd541c80d23117cc60}} 
+\index{Citizen@{Citizen}!payFine@{payFine}}
+\index{payFine@{payFine}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{payFine()}{payFine()}}
+{\footnotesize\ttfamily void Citizen\+::pay\+Fine (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Pays the fine at a leisure location from balance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & of the cost of leisure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a2a9bd5d1467fc27dd3397e9bcad47dbb}\label{classCitizen_a2a9bd5d1467fc27dd3397e9bcad47dbb}} 
+\index{Citizen@{Citizen}!recieveSalary@{recieveSalary}}
+\index{recieveSalary@{recieveSalary}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{recieveSalary()}{recieveSalary()}}
+{\footnotesize\ttfamily void Citizen\+::recieve\+Salary (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Adds the specified amount to the citizen\textquotesingle{}s bank account. 
+
+Used in comercial to recieve salary for employed citizens It takes in an amount and adds it to the bank balance.
+
+This method is called to simulate receiving a salary for employed citizens.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to be added to the bank balance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_aa142355abc9eba0fbc0aa57e7dabf342}\label{classCitizen_aa142355abc9eba0fbc0aa57e7dabf342}} 
+\index{Citizen@{Citizen}!relaxCitizen@{relaxCitizen}}
+\index{relaxCitizen@{relaxCitizen}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{relaxCitizen()}{relaxCitizen()}}
+{\footnotesize\ttfamily bool Citizen\+::relax\+Citizen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{stripclub }\end{DoxyParamCaption})}
+
+
+
+Allows the citizen to relax at a given leisure location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stripclub} & Pointer to the leisure location where the citizen will relax. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the relaxation action was successful; false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCitizen_ad64cf5428d2e27c7ed340b63cf0abcac}\label{classCitizen_ad64cf5428d2e27c7ed340b63cf0abcac}} 
+\index{Citizen@{Citizen}!setState@{setState}}
+\index{setState@{setState}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Citizen\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCitizenLocationState}{Citizen\+Location\+State}} $\ast$}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Sets the citizen\textquotesingle{}s location state while ensuring memory safety. 
+
+Traverses citizen state in a memory safe manner.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & Pointer to the new state to transition to. Allowed values\+: \mbox{\hyperlink{classAtHomeState}{At\+Home\+State}}, \mbox{\hyperlink{classAtWorkState}{At\+Work\+State}}, \mbox{\hyperlink{classAtLeisureState}{At\+Leisure\+State}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_a3f692579abb8e8dfd3a36821f59101c4}\label{classCitizen_a3f692579abb8e8dfd3a36821f59101c4}} 
+\index{Citizen@{Citizen}!takeTax@{takeTax}}
+\index{takeTax@{takeTax}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{takeTax()}{takeTax()}}
+{\footnotesize\ttfamily void Citizen\+::take\+Tax (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+Subtracts the specified tax amount from the citizen\textquotesingle{}s bank account. 
+
+Used in district to collect tax This method subtracts the tax amount from the salary account of the citizen Influences Happiness based on amount.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The tax amount to be deducted from the citizen\textquotesingle{}s balance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCitizen_af192a8b148faba2108d1146fc96b1ba6}\label{classCitizen_af192a8b148faba2108d1146fc96b1ba6}} 
+\index{Citizen@{Citizen}!updateSatisfaction@{updateSatisfaction}}
+\index{updateSatisfaction@{updateSatisfaction}!Citizen@{Citizen}}
+\doxysubsubsection{\texorpdfstring{updateSatisfaction()}{updateSatisfaction()}}
+{\footnotesize\ttfamily void Citizen\+::update\+Satisfaction (\begin{DoxyParamCaption}\item[{std\+::string}]{op,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Updates the citizen\textquotesingle{}s satisfaction level based on the specified operation and value. 
+
+updates the citizen\textquotesingle{}z satisfaction level according to an operator and a value passed in
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & A string representing the operation (\char`\"{}increase\char`\"{} or \char`\"{}decrease\char`\"{}). \\
+\hline
+{\em value} & The amount to adjust the satisfaction score by. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Citizen_8h}{Citizen.\+h}}\item 
+\mbox{\hyperlink{Citizen_8cpp}{Citizen.\+cpp}}\end{DoxyCompactItemize}

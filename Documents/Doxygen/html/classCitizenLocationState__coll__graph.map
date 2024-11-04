@@ -1,0 +1,4 @@
+<map id="CitizenLocationState" name="CitizenLocationState">
+<area shape="rect" id="node1" title="Abstract class representing a state for a Citizen&#39;s location." alt="" coords="5,95,161,121"/>
+<area shape="rect" id="node2" href="$classCommuteStrategy.html" title="Represents a strategy for commuting." alt="" coords="13,5,154,32"/>
+</map>

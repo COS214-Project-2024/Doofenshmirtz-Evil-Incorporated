@@ -1,0 +1,170 @@
+\hypertarget{classIndustrial}{}\doxysection{Industrial Class Reference}
+\label{classIndustrial}\index{Industrial@{Industrial}}
+
+
+Represents an industrial building in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Industrial.\+h$>$}
+
+
+
+Inheritance diagram for Industrial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classIndustrial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Industrial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classIndustrial__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndustrial_ad535cda42d1795b972bb6ec8fd2e0fff}{Industrial}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classIndustrial}{Industrial}} building with specified capacity and tax rate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIndustrial_a674bfff9beaf30289bc58adf2d81c3df}\label{classIndustrial_a674bfff9beaf30289bc58adf2d81c3df}} 
+\mbox{\hyperlink{classIndustrial_a674bfff9beaf30289bc58adf2d81c3df}{$\sim$\+Industrial}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classIndustrial}{Industrial}} class. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classIndustrial_a1494b5c34dee235fb87e0856663a86d5}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources produced by the industrial building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classIndustrial_a578254098b0f630d6e900c50080c3b0e}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Returns utilities owned by the government. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIndustrial_a8b3a717c9e08f7e6e08ccb6dc3084c27}{update}} () override
+\begin{DoxyCompactList}\small\item\em Updates the building\textquotesingle{}s used capacity. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classIndustrial_af95a0999495dfe043cc66d3e945008ef}{get\+JSONrepresentation}} ()
+\begin{DoxyCompactList}\small\item\em Generates a JSON representation of the \mbox{\hyperlink{classIndustrial}{Industrial}} building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an industrial building in the city simulation. 
+
+Derived class representing an industrial building in the city simulation.
+
+The \mbox{\hyperlink{classIndustrial}{Industrial}} class inherits from \mbox{\hyperlink{classBuilding}{Building}} and includes functionality specific to industrial buildings, such as resource collection and capacity management.
+
+The \mbox{\hyperlink{classIndustrial}{Industrial}} class extends the \mbox{\hyperlink{classBuilding}{Building}} base class, adding functionality specific to industrial buildings, such as resource collection and updates to capacity over time. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndustrial_ad535cda42d1795b972bb6ec8fd2e0fff}\label{classIndustrial_ad535cda42d1795b972bb6ec8fd2e0fff}} 
+\index{Industrial@{Industrial}!Industrial@{Industrial}}
+\index{Industrial@{Industrial}!Industrial@{Industrial}}
+\doxysubsubsection{\texorpdfstring{Industrial()}{Industrial()}}
+{\footnotesize\ttfamily Industrial\+::\+Industrial (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classIndustrial}{Industrial}} building with specified capacity and tax rate. 
+
+Constructs an \mbox{\hyperlink{classIndustrial}{Industrial}} building with a specified capacity and tax rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total storage capacity for resources. \\
+\hline
+{\em used\+Cap} & The initial amount of used capacity. \\
+\hline
+{\em taxR} & The tax rate applicable to the industrial building.\\
+\hline
+{\em total\+Cap} & The total capacity of the industrial building. \\
+\hline
+{\em used\+Cap} & The initial used capacity. \\
+\hline
+{\em taxR} & The tax rate applied to the industrial building. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndustrial_a1494b5c34dee235fb87e0856663a86d5}\label{classIndustrial_a1494b5c34dee235fb87e0856663a86d5}} 
+\index{Industrial@{Industrial}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Industrial@{Industrial}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Industrial\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources produced by the industrial building. 
+
+Gathers all produced resources based on the current used capacity and resets the used capacity after collection. \begin{DoxyReturn}{Returns}
+A map of resources with types as keys and quantities as values.
+\end{DoxyReturn}
+This method collects all resources based on the used capacity and resets the used capacity to zero after collection. \begin{DoxyReturn}{Returns}
+A map containing the types and quantities of resources collected. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a08bb7856672566e1a1cd43f0c6b00fd9}{Building}}.
+
+\mbox{\Hypertarget{classIndustrial_a578254098b0f630d6e900c50080c3b0e}\label{classIndustrial_a578254098b0f630d6e900c50080c3b0e}} 
+\index{Industrial@{Industrial}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Industrial@{Industrial}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Industrial\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns utilities owned by the government. 
+
+\begin{DoxyReturn}{Returns}
+A map containing the types and quantities of utilities. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a67fc4e531f932a80bbf389b35947f59c}{Building}}.
+
+\mbox{\Hypertarget{classIndustrial_af95a0999495dfe043cc66d3e945008ef}\label{classIndustrial_af95a0999495dfe043cc66d3e945008ef}} 
+\index{Industrial@{Industrial}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Industrial@{Industrial}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Industrial\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generates a JSON representation of the \mbox{\hyperlink{classIndustrial}{Industrial}} building. 
+
+This function creates a JSON object containing the name of the building type and its total capacity. It is used for visual representation in the frontend.
+
+\begin{DoxyReturn}{Returns}
+nlohmann\+::json A JSON object representing the \mbox{\hyperlink{classIndustrial}{Industrial}} building with its name and total capacity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a080db9fe4a9a2ce05b9ac276e54bac17}{Building}}.
+
+\mbox{\Hypertarget{classIndustrial_a8b3a717c9e08f7e6e08ccb6dc3084c27}\label{classIndustrial_a8b3a717c9e08f7e6e08ccb6dc3084c27}} 
+\index{Industrial@{Industrial}!update@{update}}
+\index{update@{update}!Industrial@{Industrial}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Industrial\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the building\textquotesingle{}s used capacity. 
+
+Updates the industrial building\textquotesingle{}s used capacity.
+
+Increases the used capacity by a fixed amount. If the used capacity exceeds the total capacity, it is capped at the total capacity.
+
+Increases the used capacity by a fixed amount and ensures it does not exceed the total capacity. 
+
+Implements \mbox{\hyperlink{classBuilding_aa230e4820308440c15cf1688bbed91d1}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Industrial_8h}{Industrial.\+h}}\item 
+\mbox{\hyperlink{Industrial_8cpp}{Industrial.\+cpp}}\end{DoxyCompactItemize}

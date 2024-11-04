@@ -1,0 +1,4 @@
+<map id="RailwayStrategy" name="RailwayStrategy">
+<area shape="rect" id="node1" title="A concrete implementation of the CommuteStrategy class for railway&#45;based transportation." alt="" coords="11,80,141,107"/>
+<area shape="rect" id="node2" href="$classCommuteStrategy.html" title="Represents a strategy for commuting." alt="" coords="5,5,147,32"/>
+</map>

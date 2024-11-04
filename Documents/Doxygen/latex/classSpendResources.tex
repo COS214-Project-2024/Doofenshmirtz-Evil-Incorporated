@@ -1,0 +1,243 @@
+\hypertarget{classSpendResources}{}\doxysection{Spend\+Resources Class Reference}
+\label{classSpendResources}\index{SpendResources@{SpendResources}}
+
+
+Command that controls resource spending and construction within a \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Spend\+Resources.\+h$>$}
+
+
+
+Inheritance diagram for Spend\+Resources\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classSpendResources__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spend\+Resources\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classSpendResources__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpendResources_aba0b5ebb5754719d02fead2bb5a2ffa9}{Spend\+Resources}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district, double employment\+Rate, std\+::map$<$ std\+::string, int $>$ \&resources, int \&balance, double citizen\+Satisfaction, std\+::map$<$ std\+::string, double $>$ utilities)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSpendResources}{Spend\+Resources}} command. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSpendResources_a27ab7e11286c76435b09490ca52b5c1f}{$\sim$\+Spend\+Resources}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classSpendResources}{Spend\+Resources}}. Cleans up allocated building factories. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpendResources_a49062010f7c48d83d3de566db992b090}{execute\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Executes the command by assessing priorities and constructing buildings. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpendResources_ad867dc344a15a020698055f2c34c0757}{employment\+Priority}} (double employment\+Rate)
+\begin{DoxyCompactList}\small\item\em Calculates the priority based on employment rate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpendResources_a48d13121b7c570affccdb963bcbf6dfd}{citizen\+Priority}} (double citizen\+Satisfaction)
+\begin{DoxyCompactList}\small\item\em Calculates the priority based on citizen satisfaction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpendResources_aaeb480ec66728daa57ca31d71ffd3586}{util\+Priority}} (double dk)
+\begin{DoxyCompactList}\small\item\em Calculates the priority based on utility needs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpendResources_a89b7aeb605dea34b03ada04737f639c7}{resource\+Priority}} (std\+::map$<$ std\+::string, int $>$ resources)
+\begin{DoxyCompactList}\small\item\em Determines the priority of resources based on the provided resource map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpendResources_a9662b3c38b9e333c800d58038990e74c}{resedential\+Priority}} (double satisfaction)
+\begin{DoxyCompactList}\small\item\em Calculates the priority of residential areas based on citizen satisfaction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSpendResources_a81d6c125016c609abbf490fbb7f05bdf}{check\+Resources}} (std\+::map$<$ std\+::string, int $>$ \&have\+Resources, std\+::map$<$ std\+::string, int $>$ need\+Resources)
+\begin{DoxyCompactList}\small\item\em Checks if enough resources are available for construction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command that controls resource spending and construction within a \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This class checks priorities based on employment, citizen satisfaction, and utility needs to decide which buildings to construct and adjusts resources and balance accordingly. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSpendResources_aba0b5ebb5754719d02fead2bb5a2ffa9}\label{classSpendResources_aba0b5ebb5754719d02fead2bb5a2ffa9}} 
+\index{SpendResources@{SpendResources}!SpendResources@{SpendResources}}
+\index{SpendResources@{SpendResources}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{SpendResources()}{SpendResources()}}
+{\footnotesize\ttfamily Spend\+Resources\+::\+Spend\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district,  }\item[{double}]{employment\+Rate,  }\item[{std\+::map$<$ std\+::string, int $>$ \&}]{resources,  }\item[{int \&}]{balance,  }\item[{double}]{citizen\+Satisfaction,  }\item[{std\+::map$<$ std\+::string, double $>$}]{utilities }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classSpendResources}{Spend\+Resources}} command. 
+
+Constructs a \mbox{\hyperlink{classSpendResources}{Spend\+Resources}} command with specified parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} where resources are managed. \\
+\hline
+{\em employment\+Rate} & The employment rate of the district. \\
+\hline
+{\em resources} & Map of current resources. \\
+\hline
+{\em balance} & Reference to the current financial balance. \\
+\hline
+{\em citizen\+Satisfaction} & The satisfaction level of the citizens. \\
+\hline
+{\em utilities} & Map of utilities and their current levels. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpendResources_a27ab7e11286c76435b09490ca52b5c1f}\label{classSpendResources_a27ab7e11286c76435b09490ca52b5c1f}} 
+\index{SpendResources@{SpendResources}!````~SpendResources@{$\sim$SpendResources}}
+\index{````~SpendResources@{$\sim$SpendResources}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{$\sim$SpendResources()}{~SpendResources()}}
+{\footnotesize\ttfamily Spend\+Resources\+::$\sim$\+Spend\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \mbox{\hyperlink{classSpendResources}{Spend\+Resources}}. Cleans up allocated building factories. 
+
+Destructor for \mbox{\hyperlink{classSpendResources}{Spend\+Resources}}. Cleans up factory pointers. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpendResources_a81d6c125016c609abbf490fbb7f05bdf}\label{classSpendResources_a81d6c125016c609abbf490fbb7f05bdf}} 
+\index{SpendResources@{SpendResources}!checkResources@{checkResources}}
+\index{checkResources@{checkResources}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{checkResources()}{checkResources()}}
+{\footnotesize\ttfamily bool Spend\+Resources\+::check\+Resources (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$ \&}]{have\+Resources,  }\item[{std\+::map$<$ std\+::string, int $>$}]{need\+Resources }\end{DoxyParamCaption})}
+
+
+
+Checks if enough resources are available for construction. 
+
+Checks if sufficient resources are available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em have\+Resources} & Available resources. \\
+\hline
+{\em need\+Resources} & Required resources. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if resources are sufficient, otherwise false.
+\end{DoxyReturn}
+s \mbox{\Hypertarget{classSpendResources_a48d13121b7c570affccdb963bcbf6dfd}\label{classSpendResources_a48d13121b7c570affccdb963bcbf6dfd}} 
+\index{SpendResources@{SpendResources}!citizenPriority@{citizenPriority}}
+\index{citizenPriority@{citizenPriority}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{citizenPriority()}{citizenPriority()}}
+{\footnotesize\ttfamily int Spend\+Resources\+::citizen\+Priority (\begin{DoxyParamCaption}\item[{double}]{citizen\+Satisfaction }\end{DoxyParamCaption})}
+
+
+
+Calculates the priority based on citizen satisfaction. 
+
+Determines priority based on citizen satisfaction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em citizen\+Satisfaction} & The current citizen satisfaction level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Priority value based on citizen satisfaction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpendResources_ad867dc344a15a020698055f2c34c0757}\label{classSpendResources_ad867dc344a15a020698055f2c34c0757}} 
+\index{SpendResources@{SpendResources}!employmentPriority@{employmentPriority}}
+\index{employmentPriority@{employmentPriority}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{employmentPriority()}{employmentPriority()}}
+{\footnotesize\ttfamily int Spend\+Resources\+::employment\+Priority (\begin{DoxyParamCaption}\item[{double}]{employment\+Rate }\end{DoxyParamCaption})}
+
+
+
+Calculates the priority based on employment rate. 
+
+Determines priority based on employment rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em employment\+Rate} & The current employment rate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Priority value based on employment rate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpendResources_a49062010f7c48d83d3de566db992b090}\label{classSpendResources_a49062010f7c48d83d3de566db992b090}} 
+\index{SpendResources@{SpendResources}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Spend\+Resources\+::execute\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the command by assessing priorities and constructing buildings. 
+
+Executes the resource spending command, determining and building the highest priority structure. 
+
+Implements \mbox{\hyperlink{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}{Government\+Command}}.
+
+\mbox{\Hypertarget{classSpendResources_a9662b3c38b9e333c800d58038990e74c}\label{classSpendResources_a9662b3c38b9e333c800d58038990e74c}} 
+\index{SpendResources@{SpendResources}!resedentialPriority@{resedentialPriority}}
+\index{resedentialPriority@{resedentialPriority}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{resedentialPriority()}{resedentialPriority()}}
+{\footnotesize\ttfamily int Spend\+Resources\+::resedential\+Priority (\begin{DoxyParamCaption}\item[{double}]{satisfaction }\end{DoxyParamCaption})}
+
+
+
+Calculates the priority of residential areas based on citizen satisfaction. 
+
+This method assesses the satisfaction level of residents and determines the priority for residential developments or improvements. The priority may influence resource allocation and urban planning decisions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em satisfaction} & A double value representing the average satisfaction level of the residents, typically between 0.\+0 and 100.\+0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer representing the priority level for residential areas. Lower values indicate higher priority for attention or resources. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpendResources_a89b7aeb605dea34b03ada04737f639c7}\label{classSpendResources_a89b7aeb605dea34b03ada04737f639c7}} 
+\index{SpendResources@{SpendResources}!resourcePriority@{resourcePriority}}
+\index{resourcePriority@{resourcePriority}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{resourcePriority()}{resourcePriority()}}
+{\footnotesize\ttfamily int Spend\+Resources\+::resource\+Priority (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$}]{resources }\end{DoxyParamCaption})}
+
+
+
+Determines the priority of resources based on the provided resource map. 
+
+This method evaluates the given resources and assigns a priority level based on predefined criteria. The higher the priority, the more critical the resource is deemed for operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resources} & A map containing resource names as keys and their corresponding quantities as values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer representing the priority level of the resources. Lower values indicate higher priority. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSpendResources_aaeb480ec66728daa57ca31d71ffd3586}\label{classSpendResources_aaeb480ec66728daa57ca31d71ffd3586}} 
+\index{SpendResources@{SpendResources}!utilPriority@{utilPriority}}
+\index{utilPriority@{utilPriority}!SpendResources@{SpendResources}}
+\doxysubsubsection{\texorpdfstring{utilPriority()}{utilPriority()}}
+{\footnotesize\ttfamily int Spend\+Resources\+::util\+Priority (\begin{DoxyParamCaption}\item[{double}]{dk }\end{DoxyParamCaption})}
+
+
+
+Calculates the priority based on utility needs. 
+
+Determines priority based on utility levels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dk} & The current level of the utility. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Priority value based on utility level. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SpendResources_8h}{Spend\+Resources.\+h}}\item 
+\mbox{\hyperlink{SpendResources_8cpp}{Spend\+Resources.\+cpp}}\end{DoxyCompactItemize}

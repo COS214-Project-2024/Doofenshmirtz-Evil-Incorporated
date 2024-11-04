@@ -1,0 +1,4 @@
+<map id="AtLeisureState" name="AtLeisureState">
+<area shape="rect" id="node1" title="Concrete state representing a citizen&#39;s location when they are at leisure." alt="" coords="25,80,142,107"/>
+<area shape="rect" id="node2" href="$classCitizenLocationState.html" title="Abstract class representing a state for a Citizen&#39;s location." alt="" coords="5,5,161,32"/>
+</map>

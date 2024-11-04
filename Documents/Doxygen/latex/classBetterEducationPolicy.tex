@@ -1,0 +1,96 @@
+\hypertarget{classBetterEducationPolicy}{}\doxysection{Better\+Education\+Policy Class Reference}
+\label{classBetterEducationPolicy}\index{BetterEducationPolicy@{BetterEducationPolicy}}
+
+
+Command to implement a better education policy in a \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Better\+Education\+Policy.\+h$>$}
+
+
+
+Inheritance diagram for Better\+Education\+Policy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classBetterEducationPolicy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Better\+Education\+Policy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classBetterEducationPolicy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBetterEducationPolicy_a3f83f80e554ae5f02c4ed44cad0e272f}{Better\+Education\+Policy}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district, int \&\mbox{\hyperlink{classImplementPolicy_a99feee4304fb5678754212944672eab3}{balance}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classBetterEducationPolicy}{Better\+Education\+Policy}} command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBetterEducationPolicy_aecdc726673d64391719342e3c212b5ff}\label{classBetterEducationPolicy_aecdc726673d64391719342e3c212b5ff}} 
+\mbox{\hyperlink{classBetterEducationPolicy_aecdc726673d64391719342e3c212b5ff}{$\sim$\+Better\+Education\+Policy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classBetterEducationPolicy}{Better\+Education\+Policy}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBetterEducationPolicy_aa0d6690dd97ccf3b23d78217eaee0dae}{execute\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Executes the command to implement the better education policy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to implement a better education policy in a \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This policy allows for the enhancement of education by deducting a certain amount from the balance and increasing the education multiplier. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBetterEducationPolicy_a3f83f80e554ae5f02c4ed44cad0e272f}\label{classBetterEducationPolicy_a3f83f80e554ae5f02c4ed44cad0e272f}} 
+\index{BetterEducationPolicy@{BetterEducationPolicy}!BetterEducationPolicy@{BetterEducationPolicy}}
+\index{BetterEducationPolicy@{BetterEducationPolicy}!BetterEducationPolicy@{BetterEducationPolicy}}
+\doxysubsubsection{\texorpdfstring{BetterEducationPolicy()}{BetterEducationPolicy()}}
+{\footnotesize\ttfamily Better\+Education\+Policy\+::\+Better\+Education\+Policy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district,  }\item[{int \&}]{balance }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classBetterEducationPolicy}{Better\+Education\+Policy}} command. 
+
+Constructs a \mbox{\hyperlink{classBetterEducationPolicy}{Better\+Education\+Policy}} command with a specified balance reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} where the policy will be implemented. \\
+\hline
+{\em balance} & Reference to the balance to be modified. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBetterEducationPolicy_aa0d6690dd97ccf3b23d78217eaee0dae}\label{classBetterEducationPolicy_aa0d6690dd97ccf3b23d78217eaee0dae}} 
+\index{BetterEducationPolicy@{BetterEducationPolicy}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!BetterEducationPolicy@{BetterEducationPolicy}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Better\+Education\+Policy\+::execute\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the command to implement the better education policy. 
+
+Executes the command to enhance education policy.
+
+Deducts a specific amount from the balance and updates the education multiplier if there are sufficient funds.
+
+If the balance is sufficient, the policy deducts a fixed amount from the balance and updates the education multiplier of the associated \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+Implements \mbox{\hyperlink{classImplementPolicy_ab85d6d5f1289b830f775f844415b4d0a}{Implement\+Policy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{BetterEducationPolicy_8h}{Better\+Education\+Policy.\+h}}\item 
+\mbox{\hyperlink{BetterEducationPolicy_8cpp}{Better\+Education\+Policy.\+cpp}}\end{DoxyCompactItemize}

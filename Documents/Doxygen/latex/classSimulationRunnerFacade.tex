@@ -1,0 +1,90 @@
+\hypertarget{classSimulationRunnerFacade}{}\doxysection{Simulation\+Runner\+Facade Class Reference}
+\label{classSimulationRunnerFacade}\index{SimulationRunnerFacade@{SimulationRunnerFacade}}
+
+
+Facade class for running and managing simulations.  
+
+
+
+
+{\ttfamily \#include $<$Simulation\+Runner\+Facade.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSimulationRunnerFacade_a246b78a336e5e64ece9d57d56e5ee5df}{Simulation\+Runner\+Facade}} (std\+::atomic$<$ bool $>$ $\ast$stop\+Flag, std\+::atomic$<$ bool $>$ $\ast$Education\+Flag\+\_\+, std\+::atomic$<$ bool $>$ $\ast$Short\+Work\+Flag\+\_\+, std\+::atomic$<$ bool $>$ $\ast$Tax\+Flag, int \&tax\+Rate)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classSimulationRunnerFacade}{Simulation\+Runner\+Facade}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimulationRunnerFacade_a2308cdb4be3f8e368c5746d240d13c36}{run\+Simulation}} ()
+\begin{DoxyCompactList}\small\item\em Run the simulation loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Facade class for running and managing simulations. 
+
+This class implements the Facade pattern to provide a simplified interface for running simulations. It handles the simulation loop and communicates simulation status through the \mbox{\hyperlink{classWebSocketNotifier}{Web\+Socket\+Notifier}} singleton. The simulation can be stopped externally through an atomic flag.
+
+\begin{DoxyNote}{Note}
+This class uses the \mbox{\hyperlink{classWebSocketNotifier}{Web\+Socket\+Notifier}} singleton to communicate simulation status to connected clients 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSimulationRunnerFacade_a246b78a336e5e64ece9d57d56e5ee5df}\label{classSimulationRunnerFacade_a246b78a336e5e64ece9d57d56e5ee5df}} 
+\index{SimulationRunnerFacade@{SimulationRunnerFacade}!SimulationRunnerFacade@{SimulationRunnerFacade}}
+\index{SimulationRunnerFacade@{SimulationRunnerFacade}!SimulationRunnerFacade@{SimulationRunnerFacade}}
+\doxysubsubsection{\texorpdfstring{SimulationRunnerFacade()}{SimulationRunnerFacade()}}
+{\footnotesize\ttfamily Simulation\+Runner\+Facade\+::\+Simulation\+Runner\+Facade (\begin{DoxyParamCaption}\item[{std\+::atomic$<$ bool $>$ $\ast$}]{stop\+Flag,  }\item[{std\+::atomic$<$ bool $>$ $\ast$}]{Education\+Flag\+\_\+,  }\item[{std\+::atomic$<$ bool $>$ $\ast$}]{Short\+Work\+Flag\+\_\+,  }\item[{std\+::atomic$<$ bool $>$ $\ast$}]{Tax\+Flag,  }\item[{int \&}]{tax\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classSimulationRunnerFacade}{Simulation\+Runner\+Facade}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stop\+Flag} & Pointer to atomic boolean that controls simulation execution\\
+\hline
+\end{DoxyParams}
+Initializes the facade with a pointer to an external stop flag that can be used to terminate the simulation loop
+
+\begin{DoxyNote}{Note}
+The stop\+Flag must remain valid for the lifetime of the \mbox{\hyperlink{classSimulationRunnerFacade}{Simulation\+Runner\+Facade}} 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSimulationRunnerFacade_a2308cdb4be3f8e368c5746d240d13c36}\label{classSimulationRunnerFacade_a2308cdb4be3f8e368c5746d240d13c36}} 
+\index{SimulationRunnerFacade@{SimulationRunnerFacade}!runSimulation@{runSimulation}}
+\index{runSimulation@{runSimulation}!SimulationRunnerFacade@{SimulationRunnerFacade}}
+\doxysubsubsection{\texorpdfstring{runSimulation()}{runSimulation()}}
+{\footnotesize\ttfamily void Simulation\+Runner\+Facade\+::run\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the simulation loop. 
+
+Implementation of the simulation loop.
+
+Executes the main simulation loop which continues until the stop flag is set. During each iteration, it sends status updates through the \mbox{\hyperlink{classWebSocketNotifier}{Web\+Socket\+Notifier}}
+
+This method runs the main simulation loop. During each iteration\+:
+\begin{DoxyItemize}
+\item Checks if the simulation should continue
+\item Creates a JSON messages
+\item Sends the messages through the \mbox{\hyperlink{classWebSocketNotifier}{Web\+Socket\+Notifier}}
+\item Waits a certain time before the next iteration
+\end{DoxyItemize}
+
+The simulation continues until the stop\+Flag\+\_\+ is set to true.
+
+\begin{DoxyNote}{Note}
+This method blocks until the simulation is stopped
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classWebSocketNotifier_a883544bc62ba5d708e898fc0daeb2a84}{Web\+Socket\+Notifier\+::log()}} for message transmission details 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SimulationRunnerFacade_8h}{Simulation\+Runner\+Facade.\+h}}\item 
+\mbox{\hyperlink{SimulationRunnerFacade_8cpp}{Simulation\+Runner\+Facade.\+cpp}}\end{DoxyCompactItemize}

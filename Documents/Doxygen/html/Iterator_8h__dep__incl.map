@@ -1,0 +1,52 @@
+<map id="Iterator.h" name="Iterator.h">
+<area shape="rect" id="node1" title="Defines the Iterator class for creating Iterator objects." alt="" coords="2726,5,2807,32"/>
+<area shape="rect" id="node2" href="$CityUnit_8h.html" title="Defines the CityUnit class, which represents a unit in the city with various properties and functiona..." alt="" coords="1779,80,1866,107"/>
+<area shape="rect" id="node39" href="$ConcreteIterator_8h.html" title="Defines the ConcreteIterator class for creating Iterator objects." alt="" coords="3561,155,3700,181"/>
+<area shape="rect" id="node50" href="$Iterator_8cpp.html" title="Implements the Iterator class for creating Iterator objects." alt="" coords="2804,80,2900,107"/>
+<area shape="rect" id="node3" href="$AtHomeState_8cpp.html" title="Implements the AtHomeState class." alt="" coords="3401,155,3537,181"/>
+<area shape="rect" id="node4" href="$AtLeisureState_8cpp.html" title="Implements the AtLeisureState class." alt="" coords="5,155,149,181"/>
+<area shape="rect" id="node5" href="$AtWorkState_8cpp.html" title="Implements the AtWorkState class." alt="" coords="173,155,304,181"/>
+<area shape="rect" id="node6" href="$BetterEducationPolicy_8h.html" title="Declares the BetterEducationPolicy class for implementing an improved education policy." alt="" coords="109,304,283,331"/>
+<area shape="rect" id="node9" href="$Building_8h.html" title="Defines the Building class, which represents a building within a city unit." alt="" coords="2530,155,2617,181"/>
+<area shape="rect" id="node26" href="$SimulationRunnerFacade_8cpp.html" title="Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of..." alt="" coords="2707,379,2917,405"/>
+<area shape="rect" id="node34" href="$Government_8h.html" title="Defines the Government class for creating Government objects. Government acts as a central command fo..." alt="" coords="839,304,953,331"/>
+<area shape="rect" id="node38" href="$CityUnit_8cpp.html" title="Implements the CityUnit class, which represents a unit in the city with various properties and functi..." alt="" coords="3274,155,3377,181"/>
+<area shape="rect" id="node41" href="$District_8h.html" title="Defines the District class for managing a collection of CityUnit objects." alt="" coords="3590,229,3671,256"/>
+<area shape="rect" id="node42" href="$GovernmentCommand_8h.html" title="Declares the base class for government commands on city units." alt="" coords="842,155,1025,181"/>
+<area shape="rect" id="node46" href="$ShortWorkWeekPolicy_8h.html" title="Declares the ShortWorkWeekPolicy class for implementing a short workweek policy." alt="" coords="307,304,482,331"/>
+<area shape="rect" id="node48" href="$SetTax_8h.html" title="Declares the SetTax class, which is responsible for setting the tax rate in a CityUnit." alt="" coords="597,229,675,256"/>
+<area shape="rect" id="node7" href="$BetterEducationPolicy_8cpp.html" title="Implements the BetterEducationPolicy class for enhancing education." alt="" coords="93,379,283,405"/>
+<area shape="rect" id="node8" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="865,379,996,405"/>
+<area shape="rect" id="node10" href="$Building_8cpp.html" title="Implements the Building class, which represents a building within a city unit." alt="" coords="2850,304,2953,331"/>
+<area shape="rect" id="node11" href="$BuildingFactory_8h.html" title="Defines the BuildingFactory class for creating building objects." alt="" coords="1810,229,1942,256"/>
+<area shape="rect" id="node22" href="$Commercial_8h.html" title="Defines the Commercial class for creating commercial building objects." alt="" coords="3401,229,3514,256"/>
+<area shape="rect" id="node27" href="$Industrial_8h.html" title="Defines the Industrial class for creating Industrial building objects." alt="" coords="2587,229,2682,256"/>
+<area shape="rect" id="node29" href="$Landmark_8h.html" title="Defines the Landmark class for creating landmark objects." alt="" coords="2464,229,2563,256"/>
+<area shape="rect" id="node31" href="$Residential_8h.html" title="Defines the Residential class, representing residential buildings in the city simulation." alt="" coords="2937,229,3044,256"/>
+<area shape="rect" id="node33" href="$Utility_8h.html" title="Defines the Utility class, an abstract base class for utility buildings." alt="" coords="1229,229,1301,256"/>
+<area shape="rect" id="node12" href="$BuildingFactory_8cpp.html" title="Implementation of the BuildingFactory class for building creation." alt="" coords="1692,304,1839,331"/>
+<area shape="rect" id="node13" href="$CommercialFactory_8h.html" title="Defines the CommercialFactory class for creating commercial building objects." alt="" coords="3226,304,3385,331"/>
+<area shape="rect" id="node14" href="$IndustrialFactory_8h.html" title="Defines of the IndustrialFactory class for Industrial building creation." alt="" coords="2221,304,2361,331"/>
+<area shape="rect" id="node15" href="$LandmarkFactory_8h.html" title="Defines the LandmarkFactory class for creating Landmark building objects." alt="" coords="1913,304,2057,331"/>
+<area shape="rect" id="node16" href="$PowerPlantFactory_8h.html" title="Defines the PowerPlantFactory class for creating PowerPlant building objects." alt="" coords="1563,379,1715,405"/>
+<area shape="rect" id="node17" href="$ResidentialFactory_8h.html" title="Defines the ResidentialFactory class for creating Residential building objects." alt="" coords="2385,304,2537,331"/>
+<area shape="rect" id="node18" href="$SewageSystemFactory_8h.html" title="Defines the SewageSystemFactory class for creating SewageSystemFactory objects." alt="" coords="1088,379,1267,405"/>
+<area shape="rect" id="node19" href="$SpendResources_8h.html" title="Declares the SpendResources class, which manages the spending of resources and construction of buildi..." alt="" coords="673,304,815,331"/>
+<area shape="rect" id="node20" href="$WasteSiteFactory_8h.html" title="Defines the WasteSiteFactory class for creating Waste building objects." alt="" coords="1348,304,1492,331"/>
+<area shape="rect" id="node21" href="$WaterPlantFactory_8h.html" title="Defines the WaterPlantFactory class for creating Water building objects." alt="" coords="1517,304,1667,331"/>
+<area shape="rect" id="node23" href="$Citizen_8cpp.html" title="Implements the Citizen class for managing citizen objects in the city simulation." alt="" coords="3530,304,3625,331"/>
+<area shape="rect" id="node24" href="$Commercial_8cpp.html" title="Implements the Commercial class for creating commercial building objects." alt="" coords="3649,304,3777,331"/>
+<area shape="rect" id="node25" href="$District_8cpp.html" title="Implements the District class for managing a collection of CityUnit objects." alt="" coords="3409,304,3505,331"/>
+<area shape="rect" id="node28" href="$Industrial_8cpp.html" title="Implements the Industrial class for creating Industrial building objects." alt="" coords="2663,304,2774,331"/>
+<area shape="rect" id="node30" href="$Landmark_8cpp.html" title="Defines the Landmark class for creating landmark objects." alt="" coords="2081,304,2196,331"/>
+<area shape="rect" id="node32" href="$Residential_8cpp.html" title="Implements the Residential class for Residential building objects." alt="" coords="3028,304,3151,331"/>
+<area shape="rect" id="node35" href="$Power_8h.html" title="Implements the Power class for Power building objects." alt="" coords="1250,304,1323,331"/>
+<area shape="rect" id="node36" href="$Sewage_8h.html" title="Defines the Sewage class for Sewage building objects." alt="" coords="1089,304,1175,331"/>
+<area shape="rect" id="node37" href="$Utility_8cpp.html" title="Implements the Utility class, an abstract base class for utility buildings." alt="" coords="978,304,1065,331"/>
+<area shape="rect" id="node40" href="$ConcreteIterator_8cpp.html" title="Implements the ConcreteIterator class for creating Iterator objects." alt="" coords="3696,229,3851,256"/>
+<area shape="rect" id="node43" href="$AllocateBudget_8h.html" title="Defines the AllocateBudget class for executing budget allocation commands." alt="" coords="971,229,1104,256"/>
+<area shape="rect" id="node44" href="$GovernmentCommand_8cpp.html" title="Implements the GovernmentCommand class." alt="" coords="699,229,896,256"/>
+<area shape="rect" id="node45" href="$ImplementPolicy_8h.html" title="Declares the ImplementPolicy class, an abstract command for implementing policies in a CityUnit." alt="" coords="430,229,573,256"/>
+<area shape="rect" id="node47" href="$ShortWorkWeekPolicy_8cpp.html" title="Implements the ShortWorkWeekPolicy class for enhancing workweek structure." alt="" coords="308,379,497,405"/>
+<area shape="rect" id="node49" href="$SetTax_8cpp.html" title="Implements the SetTax class, which sets the tax rate for a CityUnit." alt="" coords="506,304,598,331"/>
+</map>

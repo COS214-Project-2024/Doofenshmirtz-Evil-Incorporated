@@ -1,0 +1,90 @@
+\hypertarget{classAllocateBudget}{}\doxysection{Allocate\+Budget Class Reference}
+\label{classAllocateBudget}\index{AllocateBudget@{AllocateBudget}}
+
+
+A class that represents a command for allocating budgets to a \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Allocate\+Budget.\+h$>$}
+
+
+
+Inheritance diagram for Allocate\+Budget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classAllocateBudget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Allocate\+Budget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classAllocateBudget__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAllocateBudget_a1164d3bceed82b4da7f51425aa720c4f}{Allocate\+Budget}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAllocateBudget}{Allocate\+Budget}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAllocateBudget_a67b8b1abfbbb46fd98caa056b721fcda}\label{classAllocateBudget_a67b8b1abfbbb46fd98caa056b721fcda}} 
+\mbox{\hyperlink{classAllocateBudget_a67b8b1abfbbb46fd98caa056b721fcda}{$\sim$\+Allocate\+Budget}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classAllocateBudget}{Allocate\+Budget}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAllocateBudget_a71025a9cb19285143653e1225d7c7971}{execute\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Executes the budget allocation command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a command for allocating budgets to a \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This class inherits from \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}} and provides functionality for executing budget allocation operations on a specified district. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAllocateBudget_a1164d3bceed82b4da7f51425aa720c4f}\label{classAllocateBudget_a1164d3bceed82b4da7f51425aa720c4f}} 
+\index{AllocateBudget@{AllocateBudget}!AllocateBudget@{AllocateBudget}}
+\index{AllocateBudget@{AllocateBudget}!AllocateBudget@{AllocateBudget}}
+\doxysubsubsection{\texorpdfstring{AllocateBudget()}{AllocateBudget()}}
+{\footnotesize\ttfamily Allocate\+Budget\+::\+Allocate\+Budget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classAllocateBudget}{Allocate\+Budget}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & A pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} object representing the district on which the budget allocation command will operate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAllocateBudget_a71025a9cb19285143653e1225d7c7971}\label{classAllocateBudget_a71025a9cb19285143653e1225d7c7971}} 
+\index{AllocateBudget@{AllocateBudget}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!AllocateBudget@{AllocateBudget}}
+\doxysubsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void Allocate\+Budget\+::execute\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executes the budget allocation command. 
+
+This function implements the logic for executing the budget allocation process.
+
+This function triggers the budget allocation process. The specific implementation for budget allocation can be defined where needed. 
+
+Implements \mbox{\hyperlink{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}{Government\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AllocateBudget_8h}{Allocate\+Budget.\+h}}\item 
+\mbox{\hyperlink{AllocateBudget_8cpp}{Allocate\+Budget.\+cpp}}\end{DoxyCompactItemize}

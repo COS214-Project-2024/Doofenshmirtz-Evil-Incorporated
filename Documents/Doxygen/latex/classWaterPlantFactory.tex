@@ -1,0 +1,145 @@
+\hypertarget{classWaterPlantFactory}{}\doxysection{Water\+Plant\+Factory Class Reference}
+\label{classWaterPlantFactory}\index{WaterPlantFactory@{WaterPlantFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classWater}{Water}} Plant buildings in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Water\+Plant\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Water\+Plant\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classWaterPlantFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Water\+Plant\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classWaterPlantFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaterPlantFactory_a7e86c04ea61a15dd93f501271f8950a6}{Water\+Plant\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classWaterPlantFactory}{Water\+Plant\+Factory}} with predefined resource requirements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWaterPlantFactory_a396c6234564e720d22c17f4e86eb51f5}\label{classWaterPlantFactory_a396c6234564e720d22c17f4e86eb51f5}} 
+\mbox{\hyperlink{classWaterPlantFactory_a396c6234564e720d22c17f4e86eb51f5}{$\sim$\+Water\+Plant\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classWaterPlantFactory}{Water\+Plant\+Factory}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWaterPlantFactory_a9f084ef1ae3c054ac66aa9ccce1302da}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost of constructing a \mbox{\hyperlink{classWater}{Water}} Plant building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classWaterPlantFactory_a238ee36b05689b55df757089381ac04f}{get\+Resource\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Provides the resource costs needed to build a \mbox{\hyperlink{classWater}{Water}} Plant building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classWaterPlantFactory_aaaf44fd96f32f4a1c226651363fa5200}{factory\+Method}} () override
+\begin{DoxyCompactList}\small\item\em Factory method that creates a \mbox{\hyperlink{classWater}{Water}} Plant building instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classWater}{Water}} Plant buildings in the city simulation. 
+
+A factory class responsible for creating \mbox{\hyperlink{classWater}{Water}} Plant buildings.
+
+The \mbox{\hyperlink{classWaterPlantFactory}{Water\+Plant\+Factory}} class implements the factory method to create instances of the \mbox{\hyperlink{classWater}{Water}} Plant building type and provides resource cost details for building water treatment facilities.
+
+The \mbox{\hyperlink{classWaterPlantFactory}{Water\+Plant\+Factory}} class derives from \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} and provides the implementation details for creating a \mbox{\hyperlink{classWater}{Water}} Plant building, retrieving its construction cost, and specifying the resources required. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWaterPlantFactory_a7e86c04ea61a15dd93f501271f8950a6}\label{classWaterPlantFactory_a7e86c04ea61a15dd93f501271f8950a6}} 
+\index{WaterPlantFactory@{WaterPlantFactory}!WaterPlantFactory@{WaterPlantFactory}}
+\index{WaterPlantFactory@{WaterPlantFactory}!WaterPlantFactory@{WaterPlantFactory}}
+\doxysubsubsection{\texorpdfstring{WaterPlantFactory()}{WaterPlantFactory()}}
+{\footnotesize\ttfamily Water\+Plant\+Factory\+::\+Water\+Plant\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classWaterPlantFactory}{Water\+Plant\+Factory}} with predefined resource requirements. 
+
+Constructs a \mbox{\hyperlink{classWaterPlantFactory}{Water\+Plant\+Factory}} and initializes resource costs.
+
+Initializes the factory with the base cost and resource needs for constructing a \mbox{\hyperlink{classWater}{Water}} Plant building.
+
+Sets the base cost for a \mbox{\hyperlink{classWater}{Water}} Plant building and specifies resource requirements in terms of quantities for Wood, Steel, Concrete, and Brick. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaterPlantFactory_aaaf44fd96f32f4a1c226651363fa5200}\label{classWaterPlantFactory_aaaf44fd96f32f4a1c226651363fa5200}} 
+\index{WaterPlantFactory@{WaterPlantFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!WaterPlantFactory@{WaterPlantFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Water\+Plant\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Factory method that creates a \mbox{\hyperlink{classWater}{Water}} Plant building instance. 
+
+Factory method to create a \mbox{\hyperlink{classWater}{Water}} Plant building.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} factory\+Method to return an instance of the \mbox{\hyperlink{classWater}{Water}} building with predefined specifications. \begin{DoxyReturn}{Returns}
+A pointer to a newly created \mbox{\hyperlink{classWater}{Water}} building.
+
+A pointer to a new \mbox{\hyperlink{classWater}{Water}} Plant building with preset total capacity, initial used capacity, and tax rate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classWaterPlantFactory_a9f084ef1ae3c054ac66aa9ccce1302da}\label{classWaterPlantFactory_a9f084ef1ae3c054ac66aa9ccce1302da}} 
+\index{WaterPlantFactory@{WaterPlantFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!WaterPlantFactory@{WaterPlantFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily int Water\+Plant\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost of constructing a \mbox{\hyperlink{classWater}{Water}} Plant building. 
+
+Retrieves the monetary cost to build a \mbox{\hyperlink{classWater}{Water}} Plant structure.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} get\+Cost method and returns the monetary cost for creating a \mbox{\hyperlink{classWater}{Water}} Plant structure. \begin{DoxyReturn}{Returns}
+The cost to construct a \mbox{\hyperlink{classWater}{Water}} Plant building.
+
+The construction cost of a \mbox{\hyperlink{classWater}{Water}} Plant building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classWaterPlantFactory_a238ee36b05689b55df757089381ac04f}\label{classWaterPlantFactory_a238ee36b05689b55df757089381ac04f}} 
+\index{WaterPlantFactory@{WaterPlantFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!WaterPlantFactory@{WaterPlantFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Water\+Plant\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides the resource costs needed to build a \mbox{\hyperlink{classWater}{Water}} Plant building. 
+
+This method returns a map of resource types and their respective quantities required for the construction of a \mbox{\hyperlink{classWater}{Water}} Plant structure. \begin{DoxyReturn}{Returns}
+A map of resource costs where keys are resource names and values are quantities.
+
+A map containing the required resource types and their respective costs. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WaterPlantFactory_8h}{Water\+Plant\+Factory.\+h}}\item 
+\mbox{\hyperlink{WaterPlantFactory_8cpp}{Water\+Plant\+Factory.\+cpp}}\end{DoxyCompactItemize}

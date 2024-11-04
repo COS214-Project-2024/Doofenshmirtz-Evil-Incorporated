@@ -1,0 +1,9 @@
+<map id="ImplementPolicy.h" name="ImplementPolicy.h">
+<area shape="rect" id="node1" title="Declares the ImplementPolicy class, an abstract command for implementing policies in a CityUnit." alt="" coords="220,5,363,32"/>
+<area shape="rect" id="node2" href="$BetterEducationPolicy_8h.html" title="Declares the BetterEducationPolicy class for implementing an improved education policy." alt="" coords="13,80,188,107"/>
+<area shape="rect" id="node5" href="$ImplementPolicy_8cpp.html" title="Implements the ImplementPolicy class, an abstract command for implementing policies." alt="" coords="213,80,370,107"/>
+<area shape="rect" id="node6" href="$ShortWorkWeekPolicy_8h.html" title="Declares the ShortWorkWeekPolicy class for implementing a short workweek policy." alt="" coords="395,80,569,107"/>
+<area shape="rect" id="node3" href="$BetterEducationPolicy_8cpp.html" title="Implements the BetterEducationPolicy class for enhancing education." alt="" coords="5,155,196,181"/>
+<area shape="rect" id="node4" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="227,155,358,181"/>
+<area shape="rect" id="node7" href="$ShortWorkWeekPolicy_8cpp.html" title="Implements the ShortWorkWeekPolicy class for enhancing workweek structure." alt="" coords="387,155,577,181"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="Water.h" name="Water.h">
+<area shape="rect" id="node1" title="Defines the Water class, representing a water utility building." alt="" coords="264,5,335,32"/>
+<area shape="rect" id="node2" href="$Utility_8h.html" title="Defines the Utility class, an abstract base class for utility buildings." alt="" coords="263,80,335,107"/>
+<area shape="rect" id="node3" href="$Building_8h.html" title="Defines the Building class, which represents a building within a city unit." alt="" coords="256,155,343,181"/>
+<area shape="rect" id="node4" href="$CityUnit_8h.html" title="Defines the CityUnit class, which represents a unit in the city with various properties and functiona..." alt="" coords="216,229,303,256"/>
+<area shape="rect" id="node12" title=" " alt="" coords="377,304,523,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,304,68,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="93,304,143,331"/>
+<area shape="rect" id="node7" href="$Citizen_8h.html" title="Defines the Citizen class for managing citizen objects in the city simulation." alt="" coords="168,304,247,331"/>
+<area shape="rect" id="node11" href="$Iterator_8h.html" title="Defines the Iterator class for creating Iterator objects." alt="" coords="271,304,352,331"/>
+<area shape="rect" id="node8" href="$AtHomeState_8h.html" title="Defines the AtHomeState class." alt="" coords="147,379,268,405"/>
+<area shape="rect" id="node9" href="$CitizenLocationState_8h.html" title="Defines the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="123,453,291,480"/>
+<area shape="rect" id="node10" title=" " alt="" coords="178,528,237,555"/>
+</map>

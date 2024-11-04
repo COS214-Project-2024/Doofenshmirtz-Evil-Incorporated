@@ -1,0 +1,13 @@
+<map id="ImplementPolicy.h" name="ImplementPolicy.h">
+<area shape="rect" id="node1" title="Declares the ImplementPolicy class, an abstract command for implementing policies in a CityUnit." alt="" coords="136,5,279,32"/>
+<area shape="rect" id="node2" href="$GovernmentCommand_8h.html" title="Declares the base class for government commands on city units." alt="" coords="116,80,299,107"/>
+<area shape="rect" id="node3" href="$CityUnit_8h.html" title="Defines the CityUnit class, which represents a unit in the city with various properties and functiona..." alt="" coords="164,155,251,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,229,68,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="93,229,143,256"/>
+<area shape="rect" id="node6" href="$Citizen_8h.html" title="Defines the Citizen class for managing citizen objects in the city simulation." alt="" coords="168,229,247,256"/>
+<area shape="rect" id="node10" href="$Iterator_8h.html" title="Defines the Iterator class for creating Iterator objects." alt="" coords="271,229,352,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="377,229,523,256"/>
+<area shape="rect" id="node7" href="$AtHomeState_8h.html" title="Defines the AtHomeState class." alt="" coords="147,304,268,331"/>
+<area shape="rect" id="node8" href="$CitizenLocationState_8h.html" title="Defines the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="123,379,291,405"/>
+<area shape="rect" id="node9" title=" " alt="" coords="178,453,237,480"/>
+</map>

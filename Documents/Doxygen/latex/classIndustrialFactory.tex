@@ -1,0 +1,147 @@
+\hypertarget{classIndustrialFactory}{}\doxysection{Industrial\+Factory Class Reference}
+\label{classIndustrialFactory}\index{IndustrialFactory@{IndustrialFactory}}
+
+
+Factory class for creating \mbox{\hyperlink{classIndustrial}{Industrial}} buildings in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Industrial\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Industrial\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classIndustrialFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Industrial\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classIndustrialFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndustrialFactory_add68669e75301c4f0d3ca9501c2ac773}{Industrial\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classIndustrialFactory}{Industrial\+Factory}} with predefined resource requirements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIndustrialFactory_a9d616c9a659cf06b31ba7294bf974639}\label{classIndustrialFactory_a9d616c9a659cf06b31ba7294bf974639}} 
+\mbox{\hyperlink{classIndustrialFactory_a9d616c9a659cf06b31ba7294bf974639}{$\sim$\+Industrial\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classIndustrialFactory}{Industrial\+Factory}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classIndustrialFactory_a19735f493eea4212e6e83c43b8ed9866}{get\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Retrieves the cost of constructing an \mbox{\hyperlink{classIndustrial}{Industrial}} building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classIndustrialFactory_aee8c7d919c08375043b04109eec2dc98}{get\+Resource\+Cost}} () override
+\begin{DoxyCompactList}\small\item\em Provides the resource costs needed to build an \mbox{\hyperlink{classIndustrial}{Industrial}} building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBuilding}{Building}} $\ast$ \mbox{\hyperlink{classIndustrialFactory_a126700790b23f57dabe47163de92550c}{factory\+Method}} () override
+\begin{DoxyCompactList}\small\item\em Factory method that creates an \mbox{\hyperlink{classIndustrial}{Industrial}} building instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Factory class for creating \mbox{\hyperlink{classIndustrial}{Industrial}} buildings in the city simulation. 
+
+A factory class responsible for creating \mbox{\hyperlink{classIndustrial}{Industrial}} buildings.
+
+The \mbox{\hyperlink{classIndustrialFactory}{Industrial\+Factory}} class implements the factory method to create instances of the \mbox{\hyperlink{classIndustrial}{Industrial}} building type and provides resource cost details for building industrial structures.
+
+The \mbox{\hyperlink{classIndustrialFactory}{Industrial\+Factory}} class derives from \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} and provides the implementation details for creating an \mbox{\hyperlink{classIndustrial}{Industrial}} building, retrieving its construction cost, and specifying the resources required. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIndustrialFactory_add68669e75301c4f0d3ca9501c2ac773}\label{classIndustrialFactory_add68669e75301c4f0d3ca9501c2ac773}} 
+\index{IndustrialFactory@{IndustrialFactory}!IndustrialFactory@{IndustrialFactory}}
+\index{IndustrialFactory@{IndustrialFactory}!IndustrialFactory@{IndustrialFactory}}
+\doxysubsubsection{\texorpdfstring{IndustrialFactory()}{IndustrialFactory()}}
+{\footnotesize\ttfamily Industrial\+Factory\+::\+Industrial\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classIndustrialFactory}{Industrial\+Factory}} with predefined resource requirements. 
+
+Constructs an \mbox{\hyperlink{classIndustrialFactory}{Industrial\+Factory}} and initializes resource costs.
+
+Initializes the factory with the base cost and resource needs for constructing an \mbox{\hyperlink{classIndustrial}{Industrial}} building.
+
+Sets the base cost for an \mbox{\hyperlink{classIndustrial}{Industrial}} building and specifies resource requirements in terms of quantities for Wood, Steel, Concrete, and Brick. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIndustrialFactory_a126700790b23f57dabe47163de92550c}\label{classIndustrialFactory_a126700790b23f57dabe47163de92550c}} 
+\index{IndustrialFactory@{IndustrialFactory}!factoryMethod@{factoryMethod}}
+\index{factoryMethod@{factoryMethod}!IndustrialFactory@{IndustrialFactory}}
+\doxysubsubsection{\texorpdfstring{factoryMethod()}{factoryMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBuilding}{Building}} $\ast$ Industrial\+Factory\+::factory\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Factory method that creates an \mbox{\hyperlink{classIndustrial}{Industrial}} building instance. 
+
+Factory method to create an \mbox{\hyperlink{classIndustrial}{Industrial}} building.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} factory\+Method to return an instance of the \mbox{\hyperlink{classIndustrial}{Industrial}} building with predefined specifications. \begin{DoxyReturn}{Returns}
+A pointer to a newly created \mbox{\hyperlink{classIndustrial}{Industrial}} building.
+
+A pointer to a new \mbox{\hyperlink{classIndustrial}{Industrial}} building with preset total capacity, initial used capacity, and tax rate. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a02a1ec073c3191f204d549d80089d56c}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classIndustrialFactory_a19735f493eea4212e6e83c43b8ed9866}\label{classIndustrialFactory_a19735f493eea4212e6e83c43b8ed9866}} 
+\index{IndustrialFactory@{IndustrialFactory}!getCost@{getCost}}
+\index{getCost@{getCost}!IndustrialFactory@{IndustrialFactory}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily int Industrial\+Factory\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the cost of constructing an \mbox{\hyperlink{classIndustrial}{Industrial}} building. 
+
+Gets the monetary cost to build an \mbox{\hyperlink{classIndustrial}{Industrial}} structure.
+
+This method overrides the \mbox{\hyperlink{classBuildingFactory}{Building\+Factory}} get\+Cost method and returns the monetary cost for creating an \mbox{\hyperlink{classIndustrial}{Industrial}} structure. \begin{DoxyReturn}{Returns}
+The cost to construct an \mbox{\hyperlink{classIndustrial}{Industrial}} building.
+
+The construction cost of an \mbox{\hyperlink{classIndustrial}{Industrial}} building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a761d15ef9c842028799de3fc5c073463}{Building\+Factory}}.
+
+\mbox{\Hypertarget{classIndustrialFactory_aee8c7d919c08375043b04109eec2dc98}\label{classIndustrialFactory_aee8c7d919c08375043b04109eec2dc98}} 
+\index{IndustrialFactory@{IndustrialFactory}!getResourceCost@{getResourceCost}}
+\index{getResourceCost@{getResourceCost}!IndustrialFactory@{IndustrialFactory}}
+\doxysubsubsection{\texorpdfstring{getResourceCost()}{getResourceCost()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Industrial\+Factory\+::get\+Resource\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Provides the resource costs needed to build an \mbox{\hyperlink{classIndustrial}{Industrial}} building. 
+
+Retrieves the resource cost for constructing an \mbox{\hyperlink{classIndustrial}{Industrial}} building.
+
+This method returns a map of resource types and their respective quantities required for the construction of an \mbox{\hyperlink{classIndustrial}{Industrial}} structure. \begin{DoxyReturn}{Returns}
+A map of resource costs where keys are resource names and values are quantities.
+
+A map containing the required resource types and their respective costs. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuildingFactory_a406bcd52fe1115758a5b4df18c40625e}{Building\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{IndustrialFactory_8h}{Industrial\+Factory.\+h}}\item 
+\mbox{\hyperlink{IndustrialFactory_8cpp}{Industrial\+Factory.\+cpp}}\end{DoxyCompactItemize}

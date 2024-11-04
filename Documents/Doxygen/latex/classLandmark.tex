@@ -1,0 +1,153 @@
+\hypertarget{classLandmark}{}\doxysection{Landmark Class Reference}
+\label{classLandmark}\index{Landmark@{Landmark}}
+
+
+Represents a landmark building in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Landmark.\+h$>$}
+
+
+
+Inheritance diagram for Landmark\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classLandmark__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Landmark\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classLandmark__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLandmark_a8e87d0f77f6a61ba8723d9e55cbb71f5}{Landmark}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classLandmark}{Landmark}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLandmark_add8b834269cebb84cc638c183ff83208}\label{classLandmark_add8b834269cebb84cc638c183ff83208}} 
+\mbox{\hyperlink{classLandmark_add8b834269cebb84cc638c183ff83208}{$\sim$\+Landmark}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \mbox{\hyperlink{classLandmark}{Landmark}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLandmark_a8e3c1631287a99f3b77ac3802f1653b9}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the landmark. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classLandmark_a12a9d93f11c565e1ff3ef54b9749766c}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from the landmark. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classLandmark_ac093417a579323d262792bea5a71b2fc}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utility data from the landmark. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classLandmark_a03330a2f82b77ebffa42224d44d05591}{get\+JSONrepresentation}} ()
+\begin{DoxyCompactList}\small\item\em Generates a JSON representation of the landmark. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a landmark building in the city simulation. 
+
+The \mbox{\hyperlink{classLandmark}{Landmark}} class inherits from the \mbox{\hyperlink{classBuilding}{Building}} class and provides functionality to manage its total and used capacity, collect resources, and provide utility data specific to landmarks. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandmark_a8e87d0f77f6a61ba8723d9e55cbb71f5}\label{classLandmark_a8e87d0f77f6a61ba8723d9e55cbb71f5}} 
+\index{Landmark@{Landmark}!Landmark@{Landmark}}
+\index{Landmark@{Landmark}!Landmark@{Landmark}}
+\doxysubsubsection{\texorpdfstring{Landmark()}{Landmark()}}
+{\footnotesize\ttfamily Landmark\+::\+Landmark (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classLandmark}{Landmark}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the landmark. \\
+\hline
+{\em used\+Cap} & The currently used capacity of the landmark. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandmark_a12a9d93f11c565e1ff3ef54b9749766c}\label{classLandmark_a12a9d93f11c565e1ff3ef54b9749766c}} 
+\index{Landmark@{Landmark}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Landmark@{Landmark}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Landmark\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the landmark. 
+
+This function overrides the collect\+Resources function in the \mbox{\hyperlink{classBuilding}{Building}} class and returns a map of resources collected from the landmark.
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, int$>$ A map containing the collected resources with their corresponding quantities. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a08bb7856672566e1a1cd43f0c6b00fd9}{Building}}.
+
+\mbox{\Hypertarget{classLandmark_ac093417a579323d262792bea5a71b2fc}\label{classLandmark_ac093417a579323d262792bea5a71b2fc}} 
+\index{Landmark@{Landmark}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Landmark@{Landmark}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Landmark\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility data from the landmark. 
+
+This function overrides the collect\+Utilities function in the \mbox{\hyperlink{classBuilding}{Building}} class and returns a map of utility data associated with the landmark.
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, double$>$ A map containing the collected utility data with their corresponding values. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a67fc4e531f932a80bbf389b35947f59c}{Building}}.
+
+\mbox{\Hypertarget{classLandmark_a03330a2f82b77ebffa42224d44d05591}\label{classLandmark_a03330a2f82b77ebffa42224d44d05591}} 
+\index{Landmark@{Landmark}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Landmark@{Landmark}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Landmark\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generates a JSON representation of the landmark. 
+
+This function creates a JSON object containing relevant information about the landmark, which can be used for visualization purposes in the frontend.
+
+\begin{DoxyReturn}{Returns}
+nlohmann\+::json A JSON object representing the landmark and its properties. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a080db9fe4a9a2ce05b9ac276e54bac17}{Building}}.
+
+\mbox{\Hypertarget{classLandmark_a8e3c1631287a99f3b77ac3802f1653b9}\label{classLandmark_a8e3c1631287a99f3b77ac3802f1653b9}} 
+\index{Landmark@{Landmark}!update@{update}}
+\index{update@{update}!Landmark@{Landmark}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Landmark\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state of the landmark. 
+
+This function is called to perform any necessary updates on the landmark, such as recalculating resources or utilities. 
+
+Implements \mbox{\hyperlink{classBuilding_aa230e4820308440c15cf1688bbed91d1}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Landmark_8h}{Landmark.\+h}}\item 
+\mbox{\hyperlink{Landmark_8cpp}{Landmark.\+cpp}}\end{DoxyCompactItemize}

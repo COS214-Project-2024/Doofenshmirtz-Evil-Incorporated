@@ -1,0 +1,6 @@
+<map id="District.h" name="District.h">
+<area shape="rect" id="node1" title="Defines the District class for managing a collection of CityUnit objects." alt="" coords="150,5,231,32"/>
+<area shape="rect" id="node2" href="$District_8cpp.html" title="Implements the District class for managing a collection of CityUnit objects." alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="125,80,256,107"/>
+<area shape="rect" id="node4" href="$SimulationRunnerFacade_8cpp.html" title="Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of..." alt="" coords="280,80,491,107"/>
+</map>

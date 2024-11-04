@@ -1,0 +1,9 @@
+<map id="Industrial.h" name="Industrial.h">
+<area shape="rect" id="node1" title="Defines the Industrial class for creating Industrial building objects." alt="" coords="243,5,338,32"/>
+<area shape="rect" id="node2" href="$Government_8cpp.html" title="Implements the Government class for creating Government objects. Government acts as a central command..." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$Industrial_8cpp.html" title="Implements the Industrial class for creating Industrial building objects." alt="" coords="161,80,271,107"/>
+<area shape="rect" id="node4" href="$IndustrialFactory_8h.html" title="Defines of the IndustrialFactory class for Industrial building creation." alt="" coords="295,80,435,107"/>
+<area shape="rect" id="node7" href="$SimulationRunnerFacade_8cpp.html" title="Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects. Runs the main loop of..." alt="" coords="460,80,671,107"/>
+<area shape="rect" id="node5" href="$IndustrialFactory_8cpp.html" title="Implementation of the IndustrialFactory class for Industrial building creation." alt="" coords="197,155,352,181"/>
+<area shape="rect" id="node6" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="377,155,533,181"/>
+</map>

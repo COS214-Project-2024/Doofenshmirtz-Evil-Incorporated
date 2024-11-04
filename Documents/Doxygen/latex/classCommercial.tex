@@ -1,0 +1,199 @@
+\hypertarget{classCommercial}{}\doxysection{Commercial Class Reference}
+\label{classCommercial}\index{Commercial@{Commercial}}
+
+
+Represents a commercial building in the city simulation.  
+
+
+
+
+{\ttfamily \#include $<$Commercial.\+h$>$}
+
+
+
+Inheritance diagram for Commercial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classCommercial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Commercial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classCommercial__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommercial_a7c08c3991ec15948c2bdf96b929a217b}{Commercial}} (int total\+Cap, int used\+Cap)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classCommercial}{Commercial}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommercial_aa74c5649dd0210d0edfd6f5ab8ea7cf0}{$\sim$\+Commercial}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classCommercial}{Commercial}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommercial_aa772c3fe281487a7d51685f63ceda591}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the commercial building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, int $>$ \mbox{\hyperlink{classCommercial_a97e19152fb540ae0901d9f6c1a2e37ad}{collect\+Resources}} () override
+\begin{DoxyCompactList}\small\item\em Collects resources from the commercial building. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classCommercial_a361ab6473ff611459c711c59940ff0fa}{collect\+Utilities}} () override
+\begin{DoxyCompactList}\small\item\em Collects utility usage data from the commercial building. \end{DoxyCompactList}\item 
+nlohmann\+::json \mbox{\hyperlink{classCommercial_a136d480740097e803c1df0762a7f2016}{get\+JSONrepresentation}} ()
+\begin{DoxyCompactList}\small\item\em Gets the JSON representation of the commercial building. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a commercial building in the city simulation. 
+
+Represents a commercial building in the city.
+
+The \mbox{\hyperlink{classCommercial}{Commercial}} class inherits from \mbox{\hyperlink{classBuilding}{Building}} and manages resources, salary payments to residents, and notifications for front-\/end updates.
+
+The \mbox{\hyperlink{classCommercial}{Commercial}} class inherits from the \mbox{\hyperlink{classBuilding}{Building}} class and implements functionalities specific to commercial buildings, such as updating salaries for residents, collecting resources, and providing JSON representation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommercial_a7c08c3991ec15948c2bdf96b929a217b}\label{classCommercial_a7c08c3991ec15948c2bdf96b929a217b}} 
+\index{Commercial@{Commercial}!Commercial@{Commercial}}
+\index{Commercial@{Commercial}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{Commercial()}{Commercial()}}
+{\footnotesize\ttfamily Commercial\+::\+Commercial (\begin{DoxyParamCaption}\item[{int}]{total\+Cap,  }\item[{int}]{used\+Cap }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classCommercial}{Commercial}} class. 
+
+Constructs a \mbox{\hyperlink{classCommercial}{Commercial}} object.
+
+Initializes a commercial building with specified total and used capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the commercial building. \\
+\hline
+{\em used\+Cap} & The currently used capacity of the commercial building.\\
+\hline
+\end{DoxyParams}
+Initializes a \mbox{\hyperlink{classCommercial}{Commercial}} building with specified total and used capacities. Sends an update message to the front end via \mbox{\hyperlink{classWebSocketNotifier}{Web\+Socket\+Notifier}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Cap} & The total capacity of the commercial building. \\
+\hline
+{\em used\+Cap} & The current used capacity of the commercial building. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommercial_aa74c5649dd0210d0edfd6f5ab8ea7cf0}\label{classCommercial_aa74c5649dd0210d0edfd6f5ab8ea7cf0}} 
+\index{Commercial@{Commercial}!````~Commercial@{$\sim$Commercial}}
+\index{````~Commercial@{$\sim$Commercial}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{$\sim$Commercial()}{~Commercial()}}
+{\footnotesize\ttfamily Commercial\+::$\sim$\+Commercial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classCommercial}{Commercial}} class. 
+
+Cleans up resources associated with the \mbox{\hyperlink{classCommercial}{Commercial}} building.
+
+Cleans up resources used by the \mbox{\hyperlink{classCommercial}{Commercial}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommercial_a97e19152fb540ae0901d9f6c1a2e37ad}\label{classCommercial_a97e19152fb540ae0901d9f6c1a2e37ad}} 
+\index{Commercial@{Commercial}!collectResources@{collectResources}}
+\index{collectResources@{collectResources}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{collectResources()}{collectResources()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, int $>$ Commercial\+::collect\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects resources from the commercial building. 
+
+This method currently does not implement resource collection and returns an empty map.
+
+\begin{DoxyReturn}{Returns}
+A map of resource names and their quantities (currently empty).
+\end{DoxyReturn}
+Currently, this implementation returns an empty resource map.
+
+\begin{DoxyReturn}{Returns}
+A map containing resources collected from the building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a08bb7856672566e1a1cd43f0c6b00fd9}{Building}}.
+
+\mbox{\Hypertarget{classCommercial_a361ab6473ff611459c711c59940ff0fa}\label{classCommercial_a361ab6473ff611459c711c59940ff0fa}} 
+\index{Commercial@{Commercial}!collectUtilities@{collectUtilities}}
+\index{collectUtilities@{collectUtilities}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{collectUtilities()}{collectUtilities()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Commercial\+::collect\+Utilities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Collects utility usage data from the commercial building. 
+
+Collects utilities from the commercial building.
+
+This method currently does not implement utility collection and returns an empty map.
+
+\begin{DoxyReturn}{Returns}
+A map of utility types and their usage (currently empty).
+\end{DoxyReturn}
+Currently, this implementation returns an empty utilities map.
+
+\begin{DoxyReturn}{Returns}
+A map containing utilities collected from the building. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a67fc4e531f932a80bbf389b35947f59c}{Building}}.
+
+\mbox{\Hypertarget{classCommercial_a136d480740097e803c1df0762a7f2016}\label{classCommercial_a136d480740097e803c1df0762a7f2016}} 
+\index{Commercial@{Commercial}!getJSONrepresentation@{getJSONrepresentation}}
+\index{getJSONrepresentation@{getJSONrepresentation}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{getJSONrepresentation()}{getJSONrepresentation()}}
+{\footnotesize\ttfamily nlohmann\+::json Commercial\+::get\+JSONrepresentation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the JSON representation of the commercial building. 
+
+Constructs a JSON object that includes the name of the building and its total capacity.
+
+\begin{DoxyReturn}{Returns}
+A nlohmann\+::json object representing the commercial building.
+
+A JSON object representing the commercial building\textquotesingle{}s name and value. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBuilding_a080db9fe4a9a2ce05b9ac276e54bac17}{Building}}.
+
+\mbox{\Hypertarget{classCommercial_aa772c3fe281487a7d51685f63ceda591}\label{classCommercial_aa772c3fe281487a7d51685f63ceda591}} 
+\index{Commercial@{Commercial}!update@{update}}
+\index{update@{update}!Commercial@{Commercial}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Commercial\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state of the commercial building. 
+
+Updates the salaries of residents in the commercial building.
+
+This method assigns a random salary to each resident of the building.
+
+Randomly assigns a salary between 100 and 1100 to each resident. 
+
+Implements \mbox{\hyperlink{classBuilding_aa230e4820308440c15cf1688bbed91d1}{Building}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Commercial_8h}{Commercial.\+h}}\item 
+\mbox{\hyperlink{Commercial_8cpp}{Commercial.\+cpp}}\end{DoxyCompactItemize}

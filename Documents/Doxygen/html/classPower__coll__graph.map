@@ -1,0 +1,6 @@
+<map id="Power" name="Power">
+<area shape="rect" id="node1" title="Represents a power plant utility in the city simulation." alt="" coords="11,229,74,256"/>
+<area shape="rect" id="node2" href="$classUtility.html" title="Abstract base class for utility buildings." alt="" coords="11,155,74,181"/>
+<area shape="rect" id="node3" href="$classBuilding.html" title="Represents a building within a city unit." alt="" coords="5,80,80,107"/>
+<area shape="rect" id="node4" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="5,5,80,32"/>
+</map>

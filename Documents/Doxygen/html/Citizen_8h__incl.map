@@ -1,0 +1,6 @@
+<map id="Citizen.h" name="Citizen.h">
+<area shape="rect" id="node1" title="Defines the Citizen class for managing citizen objects in the city simulation." alt="" coords="50,5,129,32"/>
+<area shape="rect" id="node2" href="$AtHomeState_8h.html" title="Defines the AtHomeState class." alt="" coords="29,80,150,107"/>
+<area shape="rect" id="node3" href="$CitizenLocationState_8h.html" title="Defines the CitizenLocationState class for creating objects and managing the state of a Citizen." alt="" coords="5,155,173,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="60,229,119,256"/>
+</map>

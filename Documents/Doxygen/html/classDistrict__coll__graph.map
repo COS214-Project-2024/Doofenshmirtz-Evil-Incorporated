@@ -1,0 +1,4 @@
+<map id="District" name="District">
+<area shape="rect" id="node1" title="A class that represents a district composed of multiple CityUnits." alt="" coords="8,80,77,107"/>
+<area shape="rect" id="node2" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="5,5,80,32"/>
+</map>

@@ -1,0 +1,93 @@
+\hypertarget{classGovernmentCommand}{}\doxysection{Government\+Command Class Reference}
+\label{classGovernmentCommand}\index{GovernmentCommand@{GovernmentCommand}}
+
+
+Base class for commands that can be executed on a \mbox{\hyperlink{classCityUnit}{City\+Unit}}.  
+
+
+
+
+{\ttfamily \#include $<$Government\+Command.\+h$>$}
+
+
+
+Inheritance diagram for Government\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGovernmentCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Government\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classGovernmentCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGovernmentCommand_a034d1f6606613f8d4d34932bf134547b}{Government\+Command}} (\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$district)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGovernmentCommand_a44542a6fc4f80839ba99e92343943fc2}{$\sim$\+Government\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}\label{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}} 
+virtual void \mbox{\hyperlink{classGovernmentCommand_a216ca7aa0c378ca58dd10f8303e43973}{execute\+Command}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the command. Must be overridden by derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGovernmentCommand_a89ee59902a49eeca71cfbf2faecff74f}\label{classGovernmentCommand_a89ee59902a49eeca71cfbf2faecff74f}} 
+\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$ \mbox{\hyperlink{classGovernmentCommand_a89ee59902a49eeca71cfbf2faecff74f}{receiver}}
+\begin{DoxyCompactList}\small\item\em Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} that the command affects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for commands that can be executed on a \mbox{\hyperlink{classCityUnit}{City\+Unit}}. 
+
+This abstract class defines an interface for commands that can be used to implement various government policies within a city unit (e.\+g., a district). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGovernmentCommand_a034d1f6606613f8d4d34932bf134547b}\label{classGovernmentCommand_a034d1f6606613f8d4d34932bf134547b}} 
+\index{GovernmentCommand@{GovernmentCommand}!GovernmentCommand@{GovernmentCommand}}
+\index{GovernmentCommand@{GovernmentCommand}!GovernmentCommand@{GovernmentCommand}}
+\doxysubsubsection{\texorpdfstring{GovernmentCommand()}{GovernmentCommand()}}
+{\footnotesize\ttfamily Government\+Command\+::\+Government\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCityUnit}{City\+Unit}} $\ast$}]{district }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}}. 
+
+Constructs a \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}} with a specified receiver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em district} & Pointer to the \mbox{\hyperlink{classCityUnit}{City\+Unit}} (receiver) on which the command operates. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if district is null. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classGovernmentCommand_a44542a6fc4f80839ba99e92343943fc2}\label{classGovernmentCommand_a44542a6fc4f80839ba99e92343943fc2}} 
+\index{GovernmentCommand@{GovernmentCommand}!````~GovernmentCommand@{$\sim$GovernmentCommand}}
+\index{````~GovernmentCommand@{$\sim$GovernmentCommand}!GovernmentCommand@{GovernmentCommand}}
+\doxysubsubsection{\texorpdfstring{$\sim$GovernmentCommand()}{~GovernmentCommand()}}
+{\footnotesize\ttfamily Government\+Command\+::$\sim$\+Government\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor for \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}}. 
+
+Destructor for \mbox{\hyperlink{classGovernmentCommand}{Government\+Command}}. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GovernmentCommand_8h}{Government\+Command.\+h}}\item 
+\mbox{\hyperlink{GovernmentCommand_8cpp}{Government\+Command.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="ResidentialFactory.h" name="ResidentialFactory.h">
+<area shape="rect" id="node1" title="Defines the ResidentialFactory class for creating Residential building objects." alt="" coords="105,5,257,32"/>
+<area shape="rect" id="node2" href="$ResidentialFactory_8cpp.html" title="Implements the ResidentialFactory class for creating Residential building objects." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node3" href="$SpendResources_8cpp.html" title="Implements the SpendResources class." alt="" coords="196,80,352,107"/>
+</map>

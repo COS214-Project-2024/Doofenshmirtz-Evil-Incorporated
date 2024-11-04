@@ -1,0 +1,5 @@
+<map id="Residential" name="Residential">
+<area shape="rect" id="node1" title="Represents a residential building in the city." alt="" coords="5,155,100,181"/>
+<area shape="rect" id="node2" href="$classBuilding.html" title="Represents a building within a city unit." alt="" coords="15,80,90,107"/>
+<area shape="rect" id="node3" href="$classCityUnit.html" title="Represents a unit within a city that has a capacity and tax rate." alt="" coords="15,5,90,32"/>
+</map>
