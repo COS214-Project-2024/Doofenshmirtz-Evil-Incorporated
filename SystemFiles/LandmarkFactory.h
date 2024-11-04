@@ -1,3 +1,8 @@
+/**
+ * @file LandmarkFactory.h
+ * @brief Defines the LandmarkFactory class for creating Landmark building objects.
+ */
+
 #ifndef LANDMARKFACTORY_H
 #define LANDMARKFACTORY_H
 

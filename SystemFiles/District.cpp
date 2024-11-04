@@ -1,3 +1,13 @@
+/**
+ * @file District.cpp
+ * @brief Implements the District class for managing a collection of CityUnit objects.
+ * 
+ * The District class is a composite structure that allows for the management of multiple
+ * CityUnit objects, such as buildings and landmarks, within a city simulation. It provides
+ * methods for adding, removing, and updating units, as well as collecting resources and utilities.
+ */
+
+
 #include "District.h"
 #include <algorithm>
 #include <vector>
@@ -10,9 +20,7 @@
 /**
  * @brief Constructs a District object.
  */
-District::District() : CityUnit(0, 0)
-{
-}
+District::District() : CityUnit(0, 0) {}
 
 /**
  * @brief Adds a new CityUnit to the district.
@@ -31,7 +39,6 @@ void District::add(CityUnit *newUnit)
 void District::remove(CityUnit *unit)
 {
     CityUnit *itemToRemove = unit;
-
     auto it = std::find(containedCityUnit.begin(), containedCityUnit.end(), itemToRemove);
 
     if (it != containedCityUnit.end())
@@ -46,7 +53,7 @@ void District::remove(CityUnit *unit)
 
 /**
  * @brief Destructor for the District class.
- *
+ * 
  * Cleans up dynamically allocated CityUnits and clears the containedCityUnit vector.
  */
 District::~District()
@@ -55,8 +62,8 @@ District::~District()
     {
         if (unit != nullptr)
         {
-            delete unit;    // Ensure each unit is only deleted once
-            unit = nullptr; // Avoid dangling pointers
+            delete unit;
+            unit = nullptr;
         }
     }
     containedCityUnit.clear();
@@ -76,13 +83,11 @@ void District::update()
 
 /**
  * @brief Employs residents from residential units in available commercial units.
- *
- * The method ensures that residents without jobs are employed in commercial units
- * that have open employment slots.
+ * 
+ * Ensures residents without jobs are employed in commercial units with open slots.
  */
 void District::employResidents()
 {
-    // Step 1: Collect available commercial units with open employment slots
     std::vector<Commercial *> availableCommercialUnits;
     for (auto unit : containedCityUnit)
     {
@@ -95,7 +100,6 @@ void District::employResidents()
         }
     }
 
-    // Step 2: Iterate over all residential units and employ residents if they don't have a job
     for (auto unit : containedCityUnit)
     {
         if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
@@ -104,13 +108,12 @@ void District::employResidents()
             {
                 if (person->getJob() == nullptr)
                 {
-                    // Step 3: Try to employ the person in an available commercial unit
                     for (auto commercialUnit : availableCommercialUnits)
                     {
                         if (commercialUnit->getRemainingCapacity() > 0)
                         {
                             person->employCitizen(commercialUnit);
-                            break; // Exit loop after employment to avoid extra iterations
+                            break;
                         }
 
                     }
@@ -120,6 +123,9 @@ void District::employResidents()
     }
 }
 
+/**
+ * @brief Sends residents to available landmark units for leisure activities.
+ */
 void District::partyResidents()
 {   
 
@@ -145,7 +151,6 @@ void District::partyResidents()
             {
                 if (person->getLeisure() == nullptr)
                 {
-
                     for (auto LandmarkUnit : availableLandmarkUnits)
                     {
                         if (LandmarkUnit->getRemainingCapacity() > 0)
@@ -178,29 +183,23 @@ double District::getEmploymentRate()
 {
     if (containedCityUnit.empty())
     {
-        return 0.0; // Avoid division by zero if no units are present
+        return 0.0;
     }
 
     double totalEmploymentRate = 0.0;
     int divisionCounter = 0;
     for (const auto &unit : containedCityUnit)
-    {   
+    {
         double unitEmploymentRate = unit->getEmploymentRate();
-        // std::cout << "\n\nBuilding employment rate " << unitEmploymentRate << "\n";
-
         // Check if unit is of type Residential
         Residential* residentialCityUnit = dynamic_cast<Residential*>(unit);
         if (residentialCityUnit) {
             totalEmploymentRate += unitEmploymentRate;   
             divisionCounter++;         
         }
-
     }
 
-    // Return average employment rate
-    if(divisionCounter != 0) { return totalEmploymentRate / divisionCounter;}
-    else {return  0.0;}
-   
+    return (divisionCounter != 0) ? (totalEmploymentRate / divisionCounter) : 0.0;
 }
 
 /**
@@ -209,7 +208,6 @@ double District::getEmploymentRate()
  */
 double District::payTaxes()
 {
-
     double totalTax = 0.0;
     for (auto unit : containedCityUnit)
     {
@@ -223,7 +221,6 @@ double District::payTaxes()
             }
         }
     }
-    // std::cout << "HERE: " << educationPolicyMultiplier << std::endl;
     return totalTax * this->educationPolicyMultiplier;
 }
 
@@ -251,12 +248,8 @@ int District::evaluateHappiness()
         throw "Negative happiness";
     }
 
-    // Calculate base happiness
     int averageHappiness = (unitCounter > 0) ? (totalHappiness / unitCounter) : 0;
-
-    // Apply policy multiplier and clamp
     float adjustedHappiness = averageHappiness * this->shortweekPolicyMultiplier;
-    // std::cout << "HERE: " << this->shortweekPolicyMultiplier << std::endl;
     return std::max(0, std::min(100, static_cast<int>(adjustedHappiness)));
 }
 
@@ -267,54 +260,73 @@ int District::evaluateHappiness()
 int District::countCitizens()
 {
     int totalCitizens = 0;
-
     for (auto unit : containedCityUnit)
     {
         if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
         {
-            // Count citizens in each Residential unit's residents list
             totalCitizens += residentialUnit->getResidents().size();
         }
     }
-
     return totalCitizens;
-    ;
 }
 
+/**
+ * @brief Sets the tax rate for the district.
+ * @param amount The tax rate to be set.
+ */
 void District::setTaxRate(double amount)
 {
     this->taxRate = amount;
 }
 
+
+
+/**
+ * @brief Calculates the distance from this District to another CityUnit.
+ * 
+ * @param other A pointer to the CityUnit to calculate the distance to.
+ * @return An integer representing the distance to the other CityUnit.
+ * @note This is a placeholder implementation that currently returns 0.
+ */
 int District::calculateDistanceTo(CityUnit *other)
 {
     return 0;
 }
 
+/**
+ * @brief Updates the education policy multiplier.
+ * @param mult The new multiplier for education policy.
+ */
 void District::updateEducationMultiplier(float mult)
 {
     this->educationPolicyMultiplier = mult;
 }
 
+/**
+ * @brief Updates the short week policy multiplier.
+ * @param mult The new multiplier for the short week policy.
+ */
 void District::updateWeekMultiplier(float mult)
 {
     this->shortweekPolicyMultiplier = mult;
 }
 
+/**
+ * @brief Evaluates traffic conditions based on residents' travel strategies.
+ */
 void District::evaluateTrafficConditions()
 {
-    // Loop through all residents and count how many use each type of travel strategy
-    std::map<std::string, int> travelStrategyMap;
-    travelStrategyMap["PublicTransportStrategy"] = 0;
-    travelStrategyMap["RailwayStrategy"] = 0;
-    travelStrategyMap["RoadStrategy"] = 0;
-    travelStrategyMap["AirportStrategy"] = 0;
+    std::map<std::string, int> travelStrategyMap = {
+        {"PublicTransportStrategy", 0},
+        {"RailwayStrategy", 0},
+        {"RoadStrategy", 0},
+        {"AirportStrategy", 0}};
 
-    std::map<std::string, std::string> helperMap;
-    helperMap["PublicTransportStrategy"] = "progress-public";
-    helperMap["RailwayStrategy"] = "progress-train";
-    helperMap["RoadStrategy"] = "progress-car";
-    helperMap["AirportStrategy"] = "progress-plane";
+    std::map<std::string, std::string> helperMap = {
+        {"PublicTransportStrategy", "progress-public"},
+        {"RailwayStrategy", "progress-train"},
+        {"RoadStrategy", "progress-car"},
+        {"AirportStrategy", "progress-plane"}};
 
     for (auto unit : containedCityUnit)
     {
@@ -329,13 +341,10 @@ void District::evaluateTrafficConditions()
         }
     }
 
-    // Take ratio of strategy used per citizen and send info to socket
     int totalCitizenCount = this->countCitizens();
-    std::cout << "\n\nTotal Citizens: " << totalCitizenCount << "\n\n\n";
 
     for (const auto &travelPair : travelStrategyMap)
     {   
-        std::cout << "\n\ntravelPair.second: " << travelPair.second << "\n";
         double dblRatio = static_cast<double>(travelPair.second) / (totalCitizenCount * this->getEmploymentRate());
         int ratioPercentageInt = static_cast<int>(dblRatio * 100);
 
@@ -349,32 +358,43 @@ void District::evaluateTrafficConditions()
     }
 }
 
+/**
+ * @brief Generates a JSON representation of the district.
+ * @return A JSON object representing the district.
+ */
 nlohmann::json District::getJSONrepresentation()
 {
     nlohmann::json district = {
-            {"name" , "district_x"},
-            {"children", nlohmann::json::array()}
-        };
+        {"name", "district_x"},
+        {"children", nlohmann::json::array()}};
 
-        for (size_t i = 0; i < containedCityUnit.size(); ++i)
-        {   
-            district["children"].emplace_back(containedCityUnit[i]->getJSONrepresentation());
-        }
+    for (size_t i = 0; i < containedCityUnit.size(); ++i)
+    {
+        district["children"].push_back(containedCityUnit[i]->getJSONrepresentation());
+    }
 
-     return district;
+    return district;
 }
 
-// Collect resources from all nested resources
+/**
+ * @brief Collects resources from all nested CityUnit objects within the district.
+ * 
+ * This method iterates through all CityUnit objects contained in the district,
+ * retrieves their resources, and aggregates them into a single collection.
+ * 
+ * @return A map containing the aggregated resources, where the keys are resource names
+ *         and the values are the total amounts of each resource.
+ */
 std::map<std::string, int> District::collectResources()
-{   
-    std::map<std::string, int> allResources; // Collector for resourcss
+{
+    std::map<std::string, int> allResources; ///< Collector for resources
 
-    for(CityUnit* nestedUnit : this->containedCityUnit)
-    {   
-        // Get contained city unit resources
+    for (CityUnit* nestedUnit : this->containedCityUnit)
+    {
+        // Get resources from each contained CityUnit
         std::map<std::string, int> nestedResources = nestedUnit->collectResources();
 
-        // Add contained resources to collector
+        // Aggregate resources
         for (const auto& resourcePair : nestedResources)
         {
             allResources[resourcePair.first] += resourcePair.second;
@@ -384,18 +404,30 @@ std::map<std::string, int> District::collectResources()
     return allResources;
 }
 
-std::map<std::string, double> District::collectUtilities() {
-    std::map<std::string, double> allUtilities;
+/**
+ * @brief Collects utility usage from all nested CityUnit objects within the district.
+ * 
+ * This method aggregates utility data from all contained CityUnit objects, combining
+ * the utility usage into a comprehensive report for the entire district.
+ * 
+ * @return A map containing the aggregated utilities, where the keys are utility names
+ *         and the values are the total usage of each utility.
+ */
+std::map<std::string, double> District::collectUtilities()
+{
+    std::map<std::string, double> allUtilities; ///< Collector for utilities
 
-    for (CityUnit* nestedUnit : this->containedCityUnit) {
+    for (CityUnit* nestedUnit : this->containedCityUnit)
+    {
+        // Get utilities from each contained CityUnit
         std::map<std::string, double> nestedUtilities = nestedUnit->collectUtilities();
 
-        for (const auto& utilityPair : nestedUtilities) {
+        // Aggregate utility usage
+        for (const auto& utilityPair : nestedUtilities)
+        {
             allUtilities[utilityPair.first] += utilityPair.second;
-
         }
     }
 
     return allUtilities;
 }
-

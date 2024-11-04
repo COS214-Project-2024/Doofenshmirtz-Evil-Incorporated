@@ -1,3 +1,8 @@
+/**
+ * @file PowerPlantFactory.h
+ * @brief Defines the PowerPlantFactory class for creating PowerPlant building objects.
+ */
+
 #ifndef POWERPLANTFACTORY_H
 #define POWERPLANTFACTORY_H
 

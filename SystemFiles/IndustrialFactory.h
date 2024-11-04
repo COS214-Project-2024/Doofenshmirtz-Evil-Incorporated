@@ -1,3 +1,8 @@
+/**
+ * @file IndustrialFactory.h
+ * @brief Defines of the IndustrialFactory class for Industrial building creation.
+ */
+
 #ifndef INDUSTRIALFACTORY_H
 #define INDUSTRIALFACTORY_H
 

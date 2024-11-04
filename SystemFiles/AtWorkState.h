@@ -1,3 +1,8 @@
+/**
+ * @file AtWorkState.h
+ * @brief Defines the AtWorkState class.
+ */
+
 #ifndef ATWORKSTATE_H
 #define ATWORKSTATE_H
 
@@ -40,8 +45,13 @@ public:
 	void travel(Citizen* citizen);
 
 	/**
-     * @brief Returns "AtWorkState"
-     */
+      * @brief Returns the name of the current state.
+      * 
+      * This function returns a string representing the name of the state,
+      * specifically "AtWorkState".
+      * 
+      * @return A string indicating the name of the state.
+      */
 	std::string getStateName();
 };
 

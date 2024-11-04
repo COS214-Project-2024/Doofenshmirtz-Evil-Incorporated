@@ -1,3 +1,8 @@
+/**
+ * @file PowerPlantFactory.cpp
+ * @brief Implements the PowerPlantFactory class for creating PowerPlant building objects.
+ */
+
 #include "PowerPlantFactory.h"
 
 /**

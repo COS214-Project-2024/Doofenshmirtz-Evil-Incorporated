@@ -1,3 +1,8 @@
+/**
+ * @file ConcreteIterator.cpp
+ * @brief Implements the ConcreteIterator class for creating Iterator objects.
+ */
+
 #include "ConcreteIterator.h"
 
 /**

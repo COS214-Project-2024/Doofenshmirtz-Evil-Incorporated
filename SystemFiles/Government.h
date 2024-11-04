@@ -1,3 +1,14 @@
+/**
+ * @file Government.h
+ * @brief Defines the Government class for creating Government objects.
+ * Government acts as a central command for interacting with the city.
+ * It forms the Subject for the Observer Design Pattern, 
+ * the Invoker for the Command Design Pattern,
+ * and is used by the Facade
+ * Implements methods such as: Collecting tax, Collecting resources, executeCommand (for the different commands),
+ * and notifies the city to update
+ */
+
 #ifndef GOVERNMENT_H
 #define GOVERNMENT_H
 
@@ -20,8 +31,8 @@ private:
 	std::vector<GovernmentCommand*> myCommand; /**< The commands issued by the government. */
 	std::vector<CityUnit*> observerList; /**< The list of city units observing the government. */
 	static constexpr int TAX_RATE = 1000; /**< The tax rate applied by the government. */
-	std::map<std::string, double> utilities;
-	int averageHappiness;
+	std::map<std::string, double> utilities; /**< Utility types managed by the government */
+	int averageHappiness; /**< Average happiness of citizens */
 
 
 public:
@@ -76,7 +87,10 @@ public:
 	 * @return The resources managed by the government.
 	 */
 	std::map<std::string, int>& getResources() {return resources;}
-
+	/**
+	 * @brief Gets the utilities managed by the government.
+	 * @return The utilities managed by the government.
+	 */
 	std::map<std::string, double>& getUtilities() {return utilities;}
 
 	/**
@@ -89,17 +103,35 @@ public:
 	 */
 	void evaluateHappiness();
 
+/**
+     * @brief Renders the city's visuals by updating the frontend with city unit representations.
+     */
 	void renderCity();
 
-
+/**
+     * @brief Executes the Better Education policy for all city units.
+     */
 	void executeEductation();
 
+/**
+     * @brief Executes the Short Work Week policy for all city units.
+     */
 	void executeShortWorkWeek();
 
+/**
+     * @brief Executes a new tax policy for all city units.
+     * @param tax The tax rate to be set.
+     */
 	void executeNewTax(double tax);
 
+ /**
+     * @brief Executes resource spending commands for all city units.
+     */
 	void executeSpendResources();
 
+/**
+     * @brief Finds employment for residents in all city units.
+     */
 	void findEmployment();
 
 	/**

@@ -1,3 +1,8 @@
+/**
+ * @file CitizenLocationState.cpp
+ * @brief Implements the CitizenLocationState class for creating objects and managing the state of a Citizen.
+ */
+
 #include "CitizenLocationState.h"
 #include <random>
 #include "RoadStrategy.h"

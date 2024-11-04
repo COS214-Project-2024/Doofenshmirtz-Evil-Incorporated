@@ -1,3 +1,8 @@
+/**
+ * @file AtHomeState.cpp
+ * @brief Implements the AtHomeState class.
+ */
+
 #include "AtHomeState.h"
 #include "Citizen.h"
 #include "CityUnit.h"

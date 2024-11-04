@@ -1,3 +1,8 @@
+/**
+ * @file AtHomeState.h
+ * @brief Defines the AtHomeState class.
+ */
+
 #ifndef ATHOMESTATE_H
 #define ATHOMESTATE_H
 
@@ -39,10 +44,17 @@ public:
      */
 	void travel(Citizen* citizen);
 
-	/**
-     * @brief Returns "AtHomeState"
-     */
-	std::string getStateName();
+	
+
+     /**
+      * @brief Returns the name of the current state.
+      * 
+      * This function returns a string representing the name of the state,
+      * specifically "AtHomeState".
+      * 
+      * @return A string indicating the name of the state ("AtHomeState").
+      */
+     std::string getStateName();
 };
 
 #endif

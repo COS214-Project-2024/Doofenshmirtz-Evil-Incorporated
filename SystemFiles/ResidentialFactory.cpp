@@ -1,3 +1,8 @@
+/**
+ * @file ResidentialFactory.cpp
+ * @brief Implements the ResidentialFactory class for creating Residential building objects.
+ */
+
 #include "ResidentialFactory.h"
 
 /**

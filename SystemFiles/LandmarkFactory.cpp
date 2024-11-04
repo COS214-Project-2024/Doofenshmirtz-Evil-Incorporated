@@ -1,3 +1,8 @@
+/**
+ * @file LandmarkFactory.cpp
+ * @brief Implements the LandmarkFactory class for creating Landmark building objects.
+ */
+
 #include "LandmarkFactory.h"
 
 /**

@@ -1,3 +1,8 @@
+/**
+ * @file WasteSiteFactory.h
+ * @brief Defines the WasteSiteFactory class for creating Waste building objects.
+ */
+
 #ifndef WASTESITEFACTORY_H
 #define WASTESITEFACTORY_H
 

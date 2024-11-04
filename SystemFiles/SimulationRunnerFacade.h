@@ -1,3 +1,10 @@
+/**
+ * @file SimulationRunnerFacade.h
+ * @brief Defines the SimulationRunnerFacade class for SimulationRunnerFacade objects.
+ * Runs the main loop of the simulation which involves:
+ * Finding employment, rendering the city, Updating the city, Collecting tax and resources, Implementing policies
+ */
+
 #ifndef SIMULATIONRUNNERFACADE_H
 #define SIMULATIONRUNNERFACADE_H
 

@@ -1,3 +1,7 @@
+/**
+ * @file Iterator.h
+ * @brief Defines the Iterator class for creating Iterator objects.
+ */
 #ifndef ITERATOR_H
 #define ITERATOR_H
 

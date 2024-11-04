@@ -1,3 +1,8 @@
+/**
+ * @file AtLeisureState.cpp
+ * @brief Implements the AtLeisureState class.
+ */
+
 #include "AtLeisureState.h"
 #include "Citizen.h"
 #include "CityUnit.h"

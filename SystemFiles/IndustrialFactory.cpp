@@ -1,3 +1,8 @@
+/**
+ * @file IndustrialFactory.cpp
+ * @brief Implementation of the IndustrialFactory class for Industrial building creation.
+ */
+
 #include "IndustrialFactory.h"
 
 /**

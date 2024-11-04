@@ -1,3 +1,9 @@
+/**
+ * @file WaterPlantFactory.h
+ * @brief Defines the WaterPlantFactory class for creating Water building objects.
+ */
+
+
 #ifndef WATERPLANTFACTORY_H
 #define WATERPLANTFACTORY_H
 

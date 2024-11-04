@@ -1,3 +1,8 @@
+/**
+ * @file CitizenLocationState.h
+ * @brief Defines the CitizenLocationState class for creating objects and managing the state of a Citizen.
+ */
+
 #ifndef CITIZENLOCATIONSTATE_H
 #define CITIZENLOCATIONSTATE_H
 
@@ -38,6 +43,14 @@ public:
      * @param travelDistance The distance the citizen needs to travel.
      */
 	void chooseStrategy(int travelDistance);
+     /**
+      * @brief Gets the travel method of the citizen.
+      * 
+      * This method returns a string that indicates the current method of travel 
+      * that the citizen employs to move between locations (home, leisure, job).
+      * 
+      * @return A string representing the travel method (e.g., "walking", "driving").
+      */
      std::string getTravelMethod();
 
 	/**

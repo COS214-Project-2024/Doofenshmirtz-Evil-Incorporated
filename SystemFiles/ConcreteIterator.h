@@ -1,3 +1,8 @@
+/**
+ * @file ConcreteIterator.h
+ * @brief Defines the ConcreteIterator class for creating Iterator objects.
+ */
+
 #ifndef CONCRETEITERATOR_H
 #define CONCRETEITERATOR_H
 

@@ -1,3 +1,10 @@
+/**
+ * @file SimulationRunnerFacade.cpp
+ * @brief Implements the SimulationRunnerFacade class for SimulationRunnerFacade objects.
+ * Runs the main loop of the simulation which involves:
+ * Finding employment, rendering the city, Updating the city, Collecting tax and resources, Implementing policies
+ */
+
 #include "WebSocketNotifier.h"
 #include "SimulationRunnerFacade.h"
 #include "CityUnit.h"

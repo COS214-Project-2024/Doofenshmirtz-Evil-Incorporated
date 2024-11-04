@@ -1,3 +1,8 @@
+/**
+ * @file AirportStrategy.h
+ * @brief Defines the AirportStrategy class methods.
+ */
+
 #ifndef AIRPORTSTRATEGY_H
 #define AIRPORTSTRATEGY_H
 
@@ -27,6 +32,14 @@ public:
      */
     std::string getTravelStrategyName();
 
+    /**
+     * @brief Handles the commute state for the airport strategy.
+     * 
+     * Manages and returns the specific state value associated with 
+     * the airport commuting strategy.
+     * 
+     * @return An integer representing the commute state.
+     */
     int handleCommuteState();
 };
 

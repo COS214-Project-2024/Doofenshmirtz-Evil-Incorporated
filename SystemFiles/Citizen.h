@@ -1,3 +1,11 @@
+/**
+ * @file Citizen.h
+ * @brief Defines the Citizen class for managing citizen objects in the city simulation.
+ *
+ * The Citizen class encapsulates the properties and behaviors of a citizen,
+ * including personal attributes, satisfaction, and job-related functionalities.
+ */
+
 #ifndef CITIZEN_H
 #define CITIZEN_H
 
@@ -22,11 +30,14 @@ private:
      CityUnit *citizenLeisure;              ///< Pointer to the citizen's prevered lesiure location
      int bankBalance;   
      double salary;
+
+     /**
+     * @brief Clamps the satisfaction score to ensure it remains within defined limits.
+     */
      void clampSatisfaction();
 
 public:
-     std::string lastUsedStrategyName;
-
+    std::string lastUsedStrategyName;      ///< The name of the last travel strategy used by the citizen.
      /**
       * @brief Constructor for Citizen class.
       * @param home Pointer to the citizen's home CityUnit.
@@ -41,79 +52,112 @@ public:
      ~Citizen();
 
      /**
-      * @brief Getter for citizen's leisure CityUnit*
-      */
-     CityUnit *getLeisure() const;
-     /**
-      * @brief updates the citizen'z satisfaction level according to an operator and a value passed in
-      */
-     void updateSatisfaction(std::string op, int value);
+     * @brief Gets the citizen's leisure location.
+     * 
+     * @return Pointer to the CityUnit representing the leisure location.
+     */
+    CityUnit *getLeisure() const;
 
-     /**
-      * @brief Getter for citizen's home CityUnit*
-      */
-     CityUnit *getHome() const;
+    /**
+     * @brief Updates the citizen's satisfaction level based on the specified operation and value.
+     * 
+     * @param op A string representing the operation ("increase" or "decrease").
+     * @param value The amount to adjust the satisfaction score by.
+     */
+    void updateSatisfaction(std::string op, int value);
 
-     /**
-      * @brief Getter for citizen's Job location CityUnit*
-      */
-     CityUnit *getJob() const;
+    /**
+     * @brief Gets the citizen's home location.
+     * 
+     * @return Pointer to the CityUnit representing the citizen's home.
+     */
+    CityUnit *getHome() const;
 
-     /**
-      * @brief Getter for citizen's current satisfaction level
-      */
-     int getSatisfaction() const;
+    /**
+     * @brief Gets the citizen's job location.
+     * 
+     * @return Pointer to the CityUnit representing the citizen's job.
+     */
+    CityUnit *getJob() const;
 
-     /**
-      * @brief Getter for citizen's current bank account balance
-      */
-     int getBalance() const;
+    /**
+     * @brief Gets the current satisfaction level of the citizen.
+     * 
+     * @return The satisfaction score as an integer.
+     */
+    int getSatisfaction() const;
 
-     /**
-      * @brief Getter for citizen's state
-      */
-     CitizenLocationState *getCitzenLocationSate();
+    /**
+     * @brief Gets the current bank account balance of the citizen.
+     * 
+     * @return The bank balance as an integer.
+     */
+    int getBalance() const;
 
-     /**
-      * @brief Sets citizen's state while ensuring memory safety
-      * @param newState state to transistion to allowed values : AtHomeState | AtWorkState | AtLeisureState
-      */
-     void setState(CitizenLocationState *newState);
+    /**
+     * @brief Gets the current location state of the citizen.
+     * 
+     * @return Pointer to the current CitizenLocationState.
+     */
+    CitizenLocationState *getCitzenLocationSate();
 
-     /**
-      * @brief Attempts to employ the citizen at the given job location.
-      *
-      * This method sets the `citizenJob` pointer for the citizen if they are currently unemployed.
-      * If the citizen is already employed (i.e., `citizenJob` is not nullptr), the method will do nothing.
-      *
-      * @param job A pointer to the CityUnit (building) where the citizen will be employed if the operation is successful.
-      * @return true if the citizen was unemployed and successfully assigned a job, false if the citizen already had a job.
-      */
-     bool employCitizen(CityUnit *job);
+    /**
+     * @brief Sets the citizen's location state while ensuring memory safety.
+     * 
+     * @param newState Pointer to the new state to transition to. Allowed values: AtHomeState, AtWorkState, AtLeisureState.
+     */
+    void setState(CitizenLocationState *newState);
 
-     bool relaxCitizen(CityUnit *stripclub);
+    /**
+     * @brief Attempts to employ the citizen at the given job location.
+     *
+     * This method sets the `citizenJob` pointer if the citizen is currently unemployed.
+     * 
+     * @param job Pointer to the CityUnit (building) where the citizen will be employed if successful.
+     * @return true if the citizen was unemployed and successfully assigned a job; false if the citizen is already employed.
+     */
+    bool employCitizen(CityUnit *job);
 
-     /**
-      * @brief Make citizen travel to next location in their natural routine i.e. home => leisure => job
-      * Furthermore, slighlty influences satisfaction based on current state of citizen
-      */
-     void followRoutine();
+    /**
+     * @brief Allows the citizen to relax at a given leisure location.
+     * 
+     * @param stripclub Pointer to the leisure location where the citizen will relax.
+     * @return true if the relaxation action was successful; false otherwise.
+     */
+    bool relaxCitizen(CityUnit *stripclub);
 
-     /**
-      * @brief Used in district to collect tax
-      * This method subtracts the tax amount from the bank account of the citizen
-      */
-     void takeTax(double amount);
+    /**
+     * @brief Makes the citizen travel to the next location in their routine: home → leisure → job.
+     *
+     * This method also slightly influences the citizen's satisfaction based on their current state.
+     */
+    void followRoutine();
 
-     /**
-      *@param amount A value that is added to the persons bank acount
-      * @brief Used in comercial to recieve salary for employed citizens
-      *It takes in an amount and adds it to the bank balance
-      */
-     void recieveSalary(double amount);
+    /**
+     * @brief Subtracts the specified tax amount from the citizen's bank account.
+     * 
+     * @param amount The tax amount to be deducted from the citizen's balance.
+     */
+    void takeTax(double amount);
 
+    /**
+     * @brief Adds the specified amount to the citizen's bank account.
+     * 
+     * This method is called to simulate receiving a salary for employed citizens.
+     * 
+     * @param amount The amount to be added to the bank balance.
+     */
+    void recieveSalary(double amount);
+    /**
+     * @brief Pays the fine at a leisure location from balance
+     * 
+     * @param amount of the cost of leisure
+     */
      void payFine(double amount);
-
+     /**
+     * @brief gets the Citizens salary
+     *
+     */
      double getSalary();
 };
 

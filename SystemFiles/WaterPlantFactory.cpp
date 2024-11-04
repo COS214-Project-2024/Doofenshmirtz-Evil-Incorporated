@@ -1,3 +1,8 @@
+/**
+ * @file WaterPlantFactory.cpp
+ * @brief Implements the WaterPlantFactory class for creating Water building objects.
+ */
+
 #include "WaterPlantFactory.h"
 
 /**

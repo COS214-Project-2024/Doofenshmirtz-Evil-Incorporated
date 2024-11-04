@@ -1,3 +1,8 @@
+/**
+ * @file AtWorkState.cpp
+ * @brief Implements the AtWorkState class.
+ */
+
 #include "AtWorkState.h"
 #include "Citizen.h"
 #include "CityUnit.h"
