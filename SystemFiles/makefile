@@ -43,3 +43,6 @@ run_tests:
 
 memory_tests:
 	valgrind --leak-check=full ./$(TEST_TARGET)
+
+demo_tests:
+	valgrind --leak-check=full ./$(DEMO_TARGET)

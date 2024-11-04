@@ -50,10 +50,12 @@ Commercial::~Commercial() {
  * Randomly assigns a salary between 100 and 1100 to each resident.
  */
 void Commercial::update() {
-    double salary = (rand() % 1000) + 100;
-    for (auto person : resident) {
-        person->recieveSalary(salary);
-    }
+
+	double salary = (rand() % 5000) + 10000;
+	for ( auto person:resident)
+	{
+		person->recieveSalary(salary);
+	}
 }
 
 /**

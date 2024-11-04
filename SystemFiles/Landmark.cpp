@@ -10,6 +10,7 @@
 
 #include "Landmark.h"
 #include "WebSocketNotifier.h"
+#include <iostream>
 
 // Note: This currently calls the parent constructor with a set number. Whoever is implementing this, it should be a random number [10,100]
 /**
@@ -46,7 +47,8 @@ Landmark::~Landmark()
      */
 void Landmark::update() {
 	for (auto person:resident){
-		person->updateSatisfaction("Visit landmark", 20);
+		person->updateSatisfaction("+", 40);
+		person->payFine(1000);
 	}
 }
 

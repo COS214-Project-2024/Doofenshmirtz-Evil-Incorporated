@@ -122,14 +122,20 @@ public:
      * @return The remaining capacity as an integer.
      * @note This is a placeholder implementation.
      */
-    int getRemainingCapacity() override;
+    int getRemainingCapacity() override {
+        // Placeholder implementation
+        return 0;
+    }
 
     /**
      * @brief Gets the used capacity of the district.
      * @return The used capacity as an integer.
      * @note This is a placeholder implementation.
      */
-    int getUsedCapacity() override;
+    int getUsedCapacity() override {
+        // Placeholder implementation
+        return 0;
+    }
 
     /**
      * @brief Updates the education policy multiplier.
@@ -141,6 +147,7 @@ public:
      * @brief Updates the short workweek policy multiplier.
      * @param mult The new multiplier value.
      */
+
     void updateWeekMultiplier(float mult);
 
     /**

@@ -64,5 +64,12 @@ std::map<std::string, int> WasteSiteFactory::getResourceCost()
  *         initial used capacity, and tax rate.
  */
 Building* WasteSiteFactory::factoryMethod() {
-    return new Waste(100, 0);
+
+    // Static engine and distribution to initialize only once
+    static std::mt19937 randomEngine(static_cast<unsigned>(std::time(nullptr)));
+    static std::uniform_int_distribution<int> dist(80, 120); // Range [80, 120]
+    
+    int rand = dist(randomEngine); // Generate a random number in the range
+
+    return new Waste(rand, 0);
 }

@@ -110,11 +110,12 @@ void District::employResidents()
                 {
                     for (auto commercialUnit : availableCommercialUnits)
                     {
-                        if (commercialUnit->getEmploymentRate() < 1)
+                        if (commercialUnit->getRemainingCapacity() > 0)
                         {
                             person->employCitizen(commercialUnit);
                             break;
                         }
+
                     }
                 }
             }
@@ -126,7 +127,10 @@ void District::employResidents()
  * @brief Sends residents to available landmark units for leisure activities.
  */
 void District::partyResidents()
-{
+{   
+
+    std::cout << "\n\n\npartyResident() called\n\n\n"; 
+
     std::vector<Landmark *> availableLandmarkUnits;
     for (auto unit : containedCityUnit)
     {
@@ -187,11 +191,11 @@ double District::getEmploymentRate()
     for (const auto &unit : containedCityUnit)
     {
         double unitEmploymentRate = unit->getEmploymentRate();
-        std::cout << "\n\nBuilding employment rate " << unitEmploymentRate << "\n";
-        if (unitEmploymentRate != 0)
-        {
-            totalEmploymentRate += unitEmploymentRate;
-            divisionCounter++;
+        // Check if unit is of type Residential
+        Residential* residentialCityUnit = dynamic_cast<Residential*>(unit);
+        if (residentialCityUnit) {
+            totalEmploymentRate += unitEmploymentRate;   
+            divisionCounter++;         
         }
     }
 
@@ -210,10 +214,10 @@ double District::payTaxes()
         if (Residential *residentialUnit = dynamic_cast<Residential *>(unit))
         {
             for (auto person : residentialUnit->getResidents())
-            {
-                double tax = (person->getBalance() * this->taxRate);
-                totalTax += tax;
-                person->takeTax(tax);
+            { // Ensure `getResidents()` is correct
+                double tax = (person->getSalary() * this->taxRate);
+                totalTax += (tax);
+                person->takeTax(tax); // Deduct tax from citizen’s balance
             }
         }
     }
@@ -275,16 +279,7 @@ void District::setTaxRate(double amount)
     this->taxRate = amount;
 }
 
-/**
- * @brief Retrieves the remaining capacity of the District.
- * 
- * @return An integer representing the remaining capacity.
- * @note This is a placeholder implementation that currently returns 0.
- */
-int District::getRemainingCapacity()
-{
-    return 0;
-}
+
 
 /**
  * @brief Calculates the distance from this District to another CityUnit.
@@ -297,18 +292,6 @@ int District::calculateDistanceTo(CityUnit *other)
 {
     return 0;
 }
-
-/**
- * @brief Retrieves the used capacity of the District.
- * 
- * @return An integer representing the used capacity.
- * @note This is a placeholder implementation that currently returns 0.
- */
-int District::getUsedCapacity()
-{
-    return 0;
-}
-
 
 /**
  * @brief Updates the education policy multiplier.
@@ -353,16 +336,19 @@ void District::evaluateTrafficConditions()
             {
                 std::string travelMethod = person->lastUsedStrategyName;
                 travelStrategyMap[travelMethod]++;
+                std::cout << "TRAVEL_METHOD: " << travelMethod << "\n";
             }
         }
     }
 
     int totalCitizenCount = this->countCitizens();
+
     for (const auto &travelPair : travelStrategyMap)
-    {
-        double dblRatio = travelPair.second / totalCitizenCount;
+    {   
+        double dblRatio = static_cast<double>(travelPair.second) / (totalCitizenCount * this->getEmploymentRate());
         int ratioPercentageInt = static_cast<int>(dblRatio * 100);
 
+        
         nlohmann::json message = {
             {"type", "valueUpdate"},
             {"data", {{"id", helperMap[travelPair.first]}, {"value", std::to_string(ratioPercentageInt)}}}};

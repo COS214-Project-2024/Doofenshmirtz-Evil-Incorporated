@@ -28,8 +28,9 @@ private:
      CityUnit *citizenHome;                 ///< Pointer to the citizen's home.
      CityUnit *citizenJob;                  ///< Pointer to the citizen's job.
      CityUnit *citizenLeisure;              ///< Pointer to the citizen's prevered lesiure location
-     int bankBalance;                       ///< The bank balance of the citizen (ranges from 20,000 to 100,000 on creation).
-     
+     int bankBalance;   
+     double salary;
+
      /**
      * @brief Clamps the satisfaction score to ensure it remains within defined limits.
      */
@@ -147,6 +148,17 @@ public:
      * @param amount The amount to be added to the bank balance.
      */
     void recieveSalary(double amount);
+    /**
+     * @brief Pays the fine at a leisure location from balance
+     * 
+     * @param amount of the cost of leisure
+     */
+     void payFine(double amount);
+     /**
+     * @brief gets the Citizens salary
+     *
+     */
+     double getSalary();
 };
 
 #endif

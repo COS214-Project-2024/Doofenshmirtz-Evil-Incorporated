@@ -8,7 +8,8 @@
 #include "Citizen.h"
 #include <random>
 #include <ctime>
-
+#include "Commercial.h"
+#include <iostream>
 /**
  * @brief Constructs a Citizen with a given home, job and leisure.
  * Initializes satisfaction score and bank balance randomly.
@@ -45,6 +46,7 @@ Citizen::Citizen(CityUnit *home, CityUnit *job, CityUnit *leisure)
     this->bankBalance = 20000 + (rand() % 80000);
 
     this->lastUsedStrategyName = "none";
+    this->salary = (rand() % 5000) + 10000;
 }
 
 /**
@@ -144,7 +146,7 @@ void Citizen::followRoutine()
     // Check for leisure state and increase satisfaction by [0-20]
     if (this->citizenLocation->getStateName() == "AtLeisureState")
     {
-        this->satisfactionScore += (rand() % 20);
+        this->satisfactionScore += ((rand() % 21) + 10);
     }
 
     // Checks for work state and decrease satisfaction by [0-10]
@@ -153,13 +155,6 @@ void Citizen::followRoutine()
         this->satisfactionScore -= (rand() % 10);
     }
 
-    // Checks for home state and either increase or decreases satisfaction by [0-10]
-    if (this->citizenLocation->getStateName() == "AtHomeState")
-    {
-        int satisfactionInfluence = rand() % 10;
-
-        (satisfactionInfluence % 2 == 0) ? this->satisfactionScore += satisfactionInfluence : this->satisfactionScore -= satisfactionInfluence;
-    }
     clampSatisfaction();
 }
 
@@ -193,10 +188,12 @@ void Citizen::setState(CitizenLocationState *newState)
  */
 bool Citizen::employCitizen(CityUnit *job)
 {
-    if (!this->isEmployed)
+
+    if (!this->isEmployed && job != nullptr)
     {
         this->isEmployed = true;
         this->citizenJob = job;
+        job->setUsedCapacity(job->getUsedCapacity()+1);
         return true;
     }
 
@@ -215,11 +212,36 @@ bool Citizen::relaxCitizen(CityUnit *stripclub)
 
 /**
  * @brief Used in district to collect tax
- * This method subtracts the tax amount from the bank account of the citizen
+ * This method subtracts the tax amount from the salary account of the citizen
+ * Influences Happiness based on amount
  */
 void Citizen::takeTax(double amount)
-{
-    this->bankBalance -= amount;
+{   
+    double ratio = (amount/this->salary);
+    double decreaseVal = ratio*100;
+    //update bank balance
+    this->bankBalance += amount;
+
+    if(decreaseVal <= 30)
+    {
+        //do nothing
+    }
+    else if(decreaseVal <= 50)
+    {
+        this->updateSatisfaction("-",5);
+    }
+    else if(decreaseVal <= 70)
+    {
+        this->updateSatisfaction("-",10);
+    }
+    else if(decreaseVal <= 90)
+    {
+        this->updateSatisfaction("-",15);
+    }
+    else if(decreaseVal <= 100)
+    {
+        this->updateSatisfaction("-",30);
+    }
 }
 
 /**
@@ -228,5 +250,25 @@ void Citizen::takeTax(double amount)
  */
 void Citizen::recieveSalary(double amount)
 {
-    this->bankBalance += amount;
+    	std::cout << "Recieve Salary start" << std::endl;
+
+    this->salary = amount;
+        	std::cout << "Recieve Salary end" << std::endl;
+
+}
+
+void Citizen::payFine(double amount)
+{
+    this->bankBalance -= amount;
+    if(this->bankBalance <0)
+    {
+        this->bankBalance = 0;
+        this->satisfactionScore = 0;
+    }
+    std::cout << "PAID FINE\n"; 
+}
+
+double Citizen::getSalary()
+{
+    return this->salary;
 }

@@ -6,6 +6,7 @@
 #include "Building.h"
 #include "Residential.h"
 #include <iostream>
+#include <random>
 
 /**
  * @brief Constructs a Building object.
@@ -36,8 +37,13 @@ Building::~Building() {
  * @return An integer representing the distance to the destination.
  */
 int Building::calculateDistanceTo(CityUnit* destination) {
-    return 0; // Default implementation, should be overridden in derived classes
+    // Static engine and distribution to initialize only once
+    static std::mt19937 randomEngine(static_cast<unsigned>(std::time(nullptr)));
+    static std::uniform_int_distribution<int> dist(0, 35); // Range [0, 35]
+    
+    return dist(randomEngine); // Generate a random number in the range
 }
+
 
 /**
  * @brief Gets the remaining capacity of the building.
@@ -80,6 +86,7 @@ int Building::getTotalCapacity() const {
  * @return A decimal value between 0 and 1 representing the employment rate.
  */
 double Building::getEmploymentRate() {
+
     // Check if this building is a Residential type
     Residential* residentialBuilding = dynamic_cast<Residential*>(this);
     if (!residentialBuilding) {

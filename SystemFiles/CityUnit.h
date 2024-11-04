@@ -69,6 +69,7 @@ public:
     virtual std::vector<Citizen*>& getResidents() {
         static std::vector<Citizen*> emptyList;  ///< An empty list for units without residents
         return emptyList;
+
     }
 
     /**
@@ -181,6 +182,15 @@ public:
      * @return A nlohmann::json object representing the city unit.
      */
     virtual nlohmann::json getJSONrepresentation() = 0;
+	
+    /**
+     * @brief Capacity used of building setter
+     *
+     */
+	  void setUsedCapacity(int val){
+		  this->usedCapacity = val;
+	  }
+
 };
 
 #endif // CITYUNIT_H

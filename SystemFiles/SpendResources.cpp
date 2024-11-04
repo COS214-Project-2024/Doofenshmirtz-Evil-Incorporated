@@ -40,7 +40,7 @@ SpendResources::SpendResources(
     this->IndustFact = new IndustrialFactory();
     this->ResedentialFact = new ResidentialFactory();
 
-
+    /*
     std::cout << "\n\n\nINFO\n:";
     std::cout << "EmploymentRate: " << employmentRate << "\n";
     std::cout << "balance: " << balance << "\n";
@@ -51,6 +51,7 @@ SpendResources::SpendResources(
         std::cout << util.first << " | " << util.second << "\n";
     }
     std::cout << "\n\n\n";
+    */
 }
 
 /**
@@ -83,13 +84,6 @@ void SpendResources::executeCommand() {
 
     // Identify the highest priority item to build
     int roulette[8] = {EmploymentPriority, citizenSatisfactionPriority, PowerPriority, WaterPriority, WastePriority, SewagePriority,ResidentialPriority,IndustrielPriority};
-    std::cout << "++++++++++++++++++++++++++++" << std::endl;
-    for (int i = 0; i < 8; i++)
-    {
-        std::cout << roulette[i] << " " ;
-    }
-    std::cout << "++++++++++++++++++++++++++++" << std::endl;
-
 
     int decisionVal = 0;
     int highNum = 999;
@@ -181,7 +175,7 @@ void SpendResources::executeCommand() {
 int SpendResources::employmentPriority(double employmentRate) {
     double tmp = (employmentRate * 10);
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0,1},{1,6},{2,11},{3,16},{4,21},{5,26},{6,31},{7,36},{8,41},{9,46},{10,51}};
+    std::map<int, int> value = {{0,1},{1,5},{2,9},{3,13},{4,18},{5,23},{6,28},{7,33},{8,38},{9,43},{10,48}};
     return value[bucket];
 }
 
@@ -191,7 +185,7 @@ int SpendResources::employmentPriority(double employmentRate) {
 int SpendResources::citizenPriority(double citizenSatisfaction) {
     double tmp = citizenSatisfaction * 10;
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0,2},{1,7},{2,12},{3,17},{4,22},{5,27},{6,32},{7,37},{8,42},{9,47},{10,52}};
+    std::map<int, int> value = {{0,2},{1,6},{2,10},{3,14},{4,19},{5,24},{6,29},{7,34},{8,39},{9,44},{10,49}};
     return value[bucket];
 }
 
@@ -201,7 +195,7 @@ int SpendResources::citizenPriority(double citizenSatisfaction) {
 int SpendResources::utilPriority(double dk) {
     double tmp = (dk * 10);
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0, 54},{1, 49},{2, 44},{3,39},{4,34}, {5,29}, {6,24}, {7,19}, {8,14}, {9,9}, {10,4}};
+    std::map<int, int> value = {{0, 51},{1, 46},{2, 41},{3,36},{4,31}, {5,26}, {6,21}, {7,16}, {8,12}, {9,8}, {10,4}};
             
     return value[bucket];
 }
@@ -229,7 +223,7 @@ int SpendResources::resourcePriority(std::map<std::string, int> resources)
     double tmp = (percentage * 10);
     int bucket = static_cast<int>(tmp);
 
-    std::map<int, int> value = {{0, 3}, {1,8}, {2,13}, {3,18}, {4,23}, {5,28}, {6,33}, {7,38}, {8,43}, {9,48}, {10,53}};
+    std::map<int, int> value = {{0, 3}, {1,7}, {2,11}, {3,15}, {4,20}, {5,25}, {6,30}, {7,35}, {8,40}, {9,45}, {10,50}}; 
 
     if(percentage > 1)
     {
@@ -246,11 +240,11 @@ int SpendResources::resedentialPriority(double satisfaction)
 {
     double tmp = (satisfaction * 10);
     int bucket = static_cast<int>(tmp);
-    std::map<int, int> value = {{0,55},{1,50},{2,45},{3,40},{4,35},{5,30},{6,25},{7,20},{8,15},{9,10},{10,5}};
+    std::map<int, int> value = {{0,67},{1,62},{2,57},{3,52},{4,47},{5,42},{6,37},{7,32},{8,27},{9,22},{10,17}};
     return value[bucket];
 }
 
-/**
+/**s
  * @brief Checks if sufficient resources are available.
  */
 bool SpendResources::checkResources(std::map<std::string, int>& haveResources, std::map<std::string, int> needResources) {
