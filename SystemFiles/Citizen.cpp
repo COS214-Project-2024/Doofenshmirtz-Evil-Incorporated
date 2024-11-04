@@ -212,7 +212,6 @@ void Citizen::takeTax(double amount)
 {   
     double ratio = (amount/this->salary);
     double decreaseVal = ratio*100;
-    std::cout << "DECREASE VALUE : " << decreaseVal << std::endl;
     //update bank balance
     this->bankBalance += amount;
 
