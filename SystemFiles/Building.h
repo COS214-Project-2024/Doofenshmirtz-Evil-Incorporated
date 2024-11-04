@@ -1,3 +1,8 @@
+/**
+ * @file Building.h
+ * @brief Defines the Building class, which represents a building within a city unit.
+ */
+
 #ifndef BUILDING_H
 #define BUILDING_H
 

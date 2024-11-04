@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file ResidentialFactory.cpp
+ * @brief Implements the ResidentialFactory class for creating Residential building objects.
  */
 
 #include "ResidentialFactory.h"

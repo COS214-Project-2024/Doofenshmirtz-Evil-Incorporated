@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file PublicTransportStrategy.h
+ * @brief Defines the PublicTransportStrategy class for PublicTransportStrategy objects.
  */
 
 #ifndef PUBLICTRANSPORTSTRATEGY_H

@@ -1,6 +1,10 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Waste.cpp
+ * @brief Implements the Waste class, representing a waste management utility building.
+ * 
+ * The Waste class extends the Utility class and is responsible for managing waste 
+ * resources within the city. It provides methods to update the state of the waste 
+ * site, collect waste resources, and retrieve utility-related data in JSON format.
  */
 
 #include "Waste.h"

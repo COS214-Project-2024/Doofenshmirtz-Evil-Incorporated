@@ -1,8 +1,12 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Water.cpp
+ * @brief Implements the Water class, representing a water utility building.
+ * 
+ * The Water class extends the Utility class and is responsible for managing 
+ * water resources within the city. It provides methods to update the state of 
+ * the water plant, collect water resources, and retrieve utility-related data 
+ * in JSON format.
  */
-
 #include "Water.h"
 
  /**

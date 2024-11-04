@@ -1,11 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
- * 
- * This file contains the declaration of the Power class, which inherits 
- * from the Utility class. The Power class represents a power plant 
- * and is responsible for managing its capacity, collecting resources, 
- * and generating its JSON representation.
+ * @file Power.cpp
+ * @brief Implements the Power class for Power building objects.
  */
 
 #ifndef POWER_H

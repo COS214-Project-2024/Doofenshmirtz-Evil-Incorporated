@@ -1,8 +1,13 @@
 /**
  * @file Government.h
- * @brief Defines the Government class for creating a government.
+ * @brief Defines the Government class for creating Government objects.
+ * Government acts as a central command for interacting with the city.
+ * It forms the Subject for the Observer Design Pattern, 
+ * the Invoker for the Command Design Pattern,
+ * and is used by the Facade
+ * Implements methods such as: Collecting tax, Collecting resources, executeCommand (for the different commands),
+ * and notifies the city to update
  */
-
 
 #ifndef GOVERNMENT_H
 #define GOVERNMENT_H

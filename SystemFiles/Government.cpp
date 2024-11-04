@@ -1,6 +1,12 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Government.cpp
+ * @brief Implements the Government class for creating Government objects.
+ * Government acts as a central command for interacting with the city.
+ * It forms the Subject for the Observer Design Pattern, 
+ * the Invoker for the Command Design Pattern,
+ * and is used by the Facade
+ * Implements methods such as: Collecting tax, Collecting resources, executeCommand (for the different commands),
+ * and notifies the city to update
  */
 
 #include "Government.h"

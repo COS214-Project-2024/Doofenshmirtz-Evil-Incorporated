@@ -1,6 +1,7 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Server.cpp
+ * @brief Implements the Server class for Server objects.
+ * Handles creation/deletion of a local web server
  */
 
 #include "Server.h"

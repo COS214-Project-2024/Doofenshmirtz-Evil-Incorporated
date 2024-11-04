@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file RailwayStrategy.h
+ * @brief Defines the RailwayStrategy class for RailwayStrategy objects.
  */
 
 #ifndef RAILWAYSTRATEGY_H

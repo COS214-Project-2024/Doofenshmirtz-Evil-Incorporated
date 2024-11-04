@@ -1,8 +1,7 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Iterator.h
+ * @brief Defines the Iterator class for creating Iterator objects.
  */
-
 #ifndef ITERATOR_H
 #define ITERATOR_H
 

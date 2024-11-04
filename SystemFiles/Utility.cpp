@@ -1,7 +1,12 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Utility.cpp
+ * @brief Implements the Utility class, an abstract base class for utility buildings.
+ * 
+ * The Utility class represents a type of building that provides essential services 
+ * to a city, such as power, water, sewage, etc. It extends the Building class 
+ * and defines common behaviors and attributes for all utility buildings.
  */
+
 
 #include "Utility.h"
 

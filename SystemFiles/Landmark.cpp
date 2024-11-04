@@ -1,5 +1,5 @@
 /**
- * @file Landmark.h
+ * @file Landmark.cpp
  * @brief Defines the Landmark class for creating landmark objects.
  * 
  * This file contains the declaration of the Landmark class, which inherits 

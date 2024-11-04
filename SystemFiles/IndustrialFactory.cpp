@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file IndustrialFactory.cpp
+ * @brief Implementation of the IndustrialFactory class for Industrial building creation.
  */
 
 #include "IndustrialFactory.h"

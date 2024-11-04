@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file WaterPlantFactory.cpp
+ * @brief Implements the WaterPlantFactory class for creating Water building objects.
  */
 
 #include "WaterPlantFactory.h"

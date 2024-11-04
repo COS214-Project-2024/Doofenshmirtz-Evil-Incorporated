@@ -1,3 +1,8 @@
+/**
+ * @file CityUnit.h
+ * @brief Defines the CityUnit class, which represents a unit in the city with various properties and functionalities.
+ */
+
 #include "CityUnit.h"
 #include <iostream>
 

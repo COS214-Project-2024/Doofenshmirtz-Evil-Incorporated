@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file PowerPlantFactory.h
+ * @brief Defines the PowerPlantFactory class for creating PowerPlant building objects.
  */
 
 #ifndef POWERPLANTFACTORY_H

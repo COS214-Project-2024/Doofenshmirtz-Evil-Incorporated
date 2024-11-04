@@ -1,7 +1,8 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file RoadStrategy.h
+ * @brief Defines the RoadStrategy class for RoadStrategy objects.
  */
+
 
 #ifndef ROADSTRATEGY_H
 #define ROADSTRATEGY_H

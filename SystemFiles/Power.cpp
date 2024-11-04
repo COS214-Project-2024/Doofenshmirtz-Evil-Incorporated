@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file Power.cpp
+ * @brief Implements the Power class for Power building objects.
  */
 
 #include "Power.h"

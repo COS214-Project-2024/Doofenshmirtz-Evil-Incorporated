@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file LandmarkFactory.h
+ * @brief Defines the LandmarkFactory class for creating Landmark building objects.
  */
 
 #ifndef LANDMARKFACTORY_H

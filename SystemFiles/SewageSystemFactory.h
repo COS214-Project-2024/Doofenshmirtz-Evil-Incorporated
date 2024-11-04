@@ -1,7 +1,8 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file SewageSystemFactory.h
+ * @brief Defines the SewageSystemFactory class for creating SewageSystemFactory objects.
  */
+
 
 #ifndef SEWAGESYSTEMFACTORY_H
 #define SEWAGESYSTEMFACTORY_H

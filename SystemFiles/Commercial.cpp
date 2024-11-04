@@ -1,3 +1,8 @@
+/**
+ * @file Commercial.cpp
+ * @brief Implements the Commercial class for creating commercial building objects.
+ */
+
 #include "Commercial.h"
 #include "WebSocketNotifier.h"
 

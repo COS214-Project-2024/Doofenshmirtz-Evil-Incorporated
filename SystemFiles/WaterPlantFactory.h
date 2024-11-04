@@ -1,7 +1,8 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file WaterPlantFactory.h
+ * @brief Defines the WaterPlantFactory class for creating Water building objects.
  */
+
 
 #ifndef WATERPLANTFACTORY_H
 #define WATERPLANTFACTORY_H

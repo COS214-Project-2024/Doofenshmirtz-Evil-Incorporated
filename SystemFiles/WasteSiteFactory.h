@@ -1,6 +1,6 @@
 /**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
+ * @file WasteSiteFactory.h
+ * @brief Defines the WasteSiteFactory class for creating Waste building objects.
  */
 
 #ifndef WASTESITEFACTORY_H
