@@ -1,8 +1,3 @@
-/**
- * @file BuildingFactory.h
- * @brief Defines the BuildingFactory class for creating building objects.
- */
-
 #ifndef DISTRICT_H
 #define DISTRICT_H
 
