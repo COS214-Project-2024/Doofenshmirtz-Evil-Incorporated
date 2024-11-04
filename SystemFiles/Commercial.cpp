@@ -19,7 +19,7 @@ Commercial::~Commercial()
 }
 
 void Commercial::update() {
-	double salary = (rand()%1000)+100;
+	int salary = (rand() % 90001) + 10000;
 	for ( auto person:resident)
 	{
 		person->recieveSalary(salary);

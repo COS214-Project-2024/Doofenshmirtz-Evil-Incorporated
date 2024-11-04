@@ -217,12 +217,12 @@ void Citizen::takeTax(double amount)
 {   
     if(bankBalance > 0)
     {
-        double ratioOfCitizenBalanceTaken = amount / bankBalance;
+        double ratioOfCitizenBalanceTaken = (amount / bankBalance);
 
         this->bankBalance -= amount;
 
         // For every 10 percent above 30% tax rate ==> decrease satisfaction by 10
-        if(ratioOfCitizenBalanceTaken >= 0.3)
+        if(ratioOfCitizenBalanceTaken > 0.3)
         {
             int satisfactionDecrease = (ratioOfCitizenBalanceTaken * 100) - 30;
 
@@ -239,7 +239,8 @@ void Citizen::takeTax(double amount)
     }
     else
     {
-        this->satisfactionScore = 0;
+        this->bankBalance = 0;
+        this->satisfactionScore = 0;  
     }
 
 }
@@ -251,4 +252,14 @@ void Citizen::takeTax(double amount)
 void Citizen::recieveSalary(double amount)
 {
     this->bankBalance += amount;
+}
+
+void Citizen::payFine(double amount)
+{
+    this->bankBalance -= amount;
+    if(this->bankBalance <0)
+    {
+        this->bankBalance = 0;
+        this->satisfactionScore = 0;
+    }
 }
