@@ -74,7 +74,7 @@ void SimulationRunnerFacade::runSimulation()
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		// Update all city units
 		myGov.notify();
-
+	
 		// Collect taxes
 		myGov.collectTaxes();
 		std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -130,7 +130,7 @@ void SimulationRunnerFacade::runSimulation()
 		if (*TaxFlag_)
 		{
 			double taxRateDouble = static_cast<double>(taxRate_);
-			myGov.executeNewTax(taxRateDouble / 100);
+			myGov.executeNewTax((taxRateDouble / 100));
 			message = {
 				{"type", "news"},
 				{"data", "Tax rate updated💸"}};

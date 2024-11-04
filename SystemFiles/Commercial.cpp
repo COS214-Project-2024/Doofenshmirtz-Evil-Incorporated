@@ -19,11 +19,12 @@ Commercial::~Commercial()
 }
 
 void Commercial::update() {
-	double salary = (rand()%1000)+100;
+	double salary = (rand() % 5000) + 10000;
 	for ( auto person:resident)
 	{
 		person->recieveSalary(salary);
 	}
+
 }
 
 std::map<std::string, int> Commercial::collectResources()

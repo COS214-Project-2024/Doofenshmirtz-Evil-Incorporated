@@ -20,7 +20,8 @@ private:
      CityUnit *citizenHome;                 ///< Pointer to the citizen's home.
      CityUnit *citizenJob;                  ///< Pointer to the citizen's job.
      CityUnit *citizenLeisure;              ///< Pointer to the citizen's prevered lesiure location
-     int bankBalance;                       ///< The bank balance of the citizen (ranges from 20,000 to 100,000 on creation).
+     int bankBalance;   
+     double salary;
      void clampSatisfaction();
 
 public:
@@ -110,6 +111,10 @@ public:
       *It takes in an amount and adds it to the bank balance
       */
      void recieveSalary(double amount);
+
+     void payFine(double amount);
+
+     double getSalary();
 };
 
 #endif

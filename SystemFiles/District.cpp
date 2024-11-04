@@ -217,7 +217,7 @@ double District::payTaxes()
         {
             for (auto person : residentialUnit->getResidents())
             { // Ensure `getResidents()` is correct
-                double tax = (person->getBalance() * this->taxRate);
+                double tax = (person->getSalary() * this->taxRate);
                 totalTax += (tax);
                 person->takeTax(tax); // Deduct tax from citizen’s balance
             }
